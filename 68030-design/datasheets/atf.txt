@@ -1,0 +1,2274 @@
+Features
+• High-density, High-performance, Electrically-erasable Complex
+  Programmable Logic Device
+    – 128 Macrocells
+    – 5 Product Terms per Macrocell, Expandable up to 40 per Macrocell
+    – 84, 100, 160 Pins
+    – 7.5 ns Maximum Pin-to-pin Delay
+    – Registered Operation up to 125 MHz
+    – Enhanced Routing Resources
+• Flexible Logic Macrocell
+    – D/T/Latch Configured Flip-flops
+    – Global and Individual Register Control Signals
+                                                                                       High-
+    – Global and Individual Output Enable
+    – Programmable Output Slew Rate
+                                                                                       performance
+    – Programmable Output Open Collector Option
+    – Maximum Logic Utilization by Burying a Register within a COM Output              EE PLD
+• Advanced Power Management Features
+    – Automatic 10 µA Standby for “L” Version
+    – Pin-controlled 1 mA Standby Mode
+    – Programmable Pin-keeper Inputs and I/Os                                          ATF1508AS
+    – Reduced-power Feature per Macrocell
+• Available in Commercial and Industrial Temperature Ranges                            ATF1508ASL
+• Available in 84-lead PLCC, 100-lead PQFP, 100-lead TQFP and 160-lead PQFP Packages
+• Advanced EE Technology
+    – 100% Tested
+    – Completely Reprogrammable
+    – 10,000 Program/Erase Cycles
+    – 20-year Data Retention
+    – 2000V ESD Protection
+    – 200 mA Latch-up Immunity
+• JTAG Boundary-scan Testing to IEEE Std. 1149.1-1990 and 1149.1a-1993 Supported
+• Fast In-System Programmability (ISP) via JTAG
+• PCI-compliant
+• 3.3 or 5.0V I/O Pins
+• Security Fuse Feature
+• Green (Pb/Halide-free/RoHS Compliant) Package Options
+
+
+Enhanced Features
+• Improved Connectivity (Additional Feedback Routing, Alternate Input Routing)
+• Output Enable Product Terms
+• Transparent-latch Mode
+• Combinatorial Output with Registered Feedback within Any Macrocell
+• Three Global Clock Pins
+• ITD (Input Transition Detection) Circuits on Global Clocks, Inputs and I/O
+• Fast Registered Input from Product Term
+• Programmable “Pin-keeper” Option
+• VCC Power-up Reset Option
+• Pull-up Option on JTAG Pins TMS and TDI
+• Advanced Power Management Features
+    – Edge-controlled Power-down “L”
+    – Individual Macrocell Power Option
+    – Disable ITD on Global Clocks, Inputs and I/O for “Z” Parts
+
+
+
+
+                                                                                             Rev. 0784P–PLD–7/05
+
+
+
+
+                                                                                                              1
+                           84-lead PLCC                                                              100-lead PQFP
+                             Top View                                                                  Top View
+
+
+
+
+                                                                                                  INPUT/OE2/GCLK2
+                       INPUT/OE2/GCLK2
+
+
+
+
+                                                                                                  INPUT/GCLK1
+                       INPUT/GCLK1
+
+
+
+
+                                                                                                  INPUT/GCLR
+                       INPUT/GCLR
+
+
+
+
+                                                                                                  INPUT/OE1
+
+
+
+                                                                                                  I/O/GCLK3
+                       INPUT/OE1
+
+
+
+                       I/O/GCLK3
+
+
+
+
+                                                                                                  VCCINT
+
+
+
+
+                                                                                                  VCCIO
+                       VCCINT
+
+
+
+
+                       VCCIO
+
+
+
+
+                                                                                                  GND
+
+
+
+
+                                                                                                  GND
+                                                                                                  I/O
+                                                                                                  I/O
+                                                                                                  I/O
+
+                                                                                                  I/O
+                                                                                                  I/O
+                                                                                                  I/O
+
+
+
+
+                                                                                                  I/O
+                                                                                                  I/O
+
+                                                                                                  I/O
+                                                                                                  I/O
+                                                                                                  I/O
+                       GND
+
+
+
+
+                       GND
+                       I/O
+                       I/O
+                       I/O
+                       I/O
+
+                       I/O
+                       I/O
+                       I/O
+
+
+
+
+                       I/O
+                       I/O
+
+                       I/O
+                       I/O
+                       I/O
+
+
+
+
+                                                                                                  100
+                                                                                                   99
+                                                                                                   98
+                                                                                                   97
+                                                                                                   96
+                                                                                                   95
+                                                                                                   94
+                                                                                                   93
+                                                                                                   92
+                                                                                                   91
+                                                                                                   90
+                                                                                                   89
+                                                                                                   88
+                                                                                                   87
+                                                                                                   86
+                                                                                                   85
+                                                                                                   84
+                                                                                                   83
+                                                                                                   82
+                                                                                                   81
+                       11
+                       10
+                        9
+                        8
+                        7
+                        6
+                        5
+                        4
+                        3
+                        2
+                        1
+                       84
+                       83
+                       82
+                       81
+                       80
+                       79
+                       78
+                       77
+                       76
+                       75
+           I/O/PD1    12                   74   I/O                                    I/O   1                       80   I/O
+            VCCIO     13                   73   I/O                                    I/O   2                       79   I/O
+            I/O/TDI   14                   72   GND                               I/O/PD1    3                       78   I/O
+                                                                                       I/O   4                       77   I/O
+                I/O   15                   71   I/O/TDO
+                                                                                   VCCIO     5                       76   GND
+                I/O   16                   70   I/O
+                                                                                   I/O/TDI   6                       75   I/O/TDO
+                I/O   17                   69   I/O                                    I/O   7                       74   I/O
+                I/O   18                   68   I/O                                    I/O   8                       73   I/O
+               GND    19                   67   I/O                                    I/O   9                       72   I/O
+                I/O   20                   66   VCCIO                                  I/O   10                      71   I/O
+                I/O   21                   65   I/O                                    I/O   11                      70   I/O
+                I/O   22                   64   I/O                                    I/O   12                      69   I/O
+          I/O/TMS     23                   63   I/O                                   GND    13                      68   VCCIO
+                                                                                       I/O   14                      67   I/O
+                I/O   24                   62   I/O/TCK
+                                                                                       I/O   15                      66   I/O
+                I/O   25                   61   I/O
+                                                                                       I/O   16                      65   I/O
+            VCCIO     26                   60   I/O                              I/O/TMS     17                      64   I/O/TCK
+                I/O   27                   59   GND                                    I/O   18                      63   I/O
+                I/O   28                   58   I/O                                    I/O   19                      62   I/O
+                I/O   29                   57   I/O                                VCCIO     20                      61   GND
+                I/O   30                   56   I/O                                    I/O   21                      60   I/O
+                I/O   31                   55   I/O                                    I/O   22                      59   I/O
+               GND    32                   54   I/O                                    I/O   23                      58   I/O
+                       33
+                       34
+                       35
+                       36
+                       37
+                       38
+                       39
+                       40
+                       41
+                       42
+                       43
+                       44
+                       45
+                       46
+                       47
+                       48
+                       49
+                       50
+                       51
+                       52
+                       53
+
+
+
+
+                                                                                       I/O   24                      57   I/O
+                                                                                       I/O   25                      56   I/O
+                            I/O
+                            I/O
+                            I/O
+                            I/O
+                            I/O
+                        VCCIO
+                            I/O
+                            I/O
+                            I/O
+                          GND
+                       VCCINT
+                            I/O
+                       I/O/PD2
+                            I/O
+                          GND
+                            I/O
+                            I/O
+                            I/O
+                            I/O
+                            I/O
+                        VCCIO
+
+
+
+
+                                                                                       I/O   26                      55   I/O
+                                                                                       I/O   27                      54   I/O
+                                                                                      GND    28                      53   VCCIO
+                                                                                       I/O   29                      52   I/O
+                                                                                       I/O   30                      51   I/O
+
+
+
+
+                                                                                                  31
+                                                                                                  32
+                                                                                                  33
+                                                                                                  34
+                                                                                                  35
+                                                                                                  36
+                                                                                                  37
+                                                                                                  38
+                                                                                                  39
+                                                                                                  40
+                                                                                                  41
+                                                                                                  42
+                                                                                                  43
+                                                                                                  44
+                                                                                                  45
+                                                                                                  46
+                                                                                                  47
+                                                                                                  48
+                                                                                                  49
+                                                                                                  50
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                   VCCIO
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                     GND
+                                                                                                  VCCINT
+                                                                                                       I/O
+                                                                                                  I/O/PD2
+                                                                                                       I/O
+                                                                                                     GND
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                                                                                                       I/O
+                           100-lead TQFP                                                             160-lead PQFP
+                             Top View                                                                  Top View
+
+
+                                                                                 INPUT/OE2/GCLK2
+                      INPUT/OE2/GCLK2
+
+
+
+
+                                                                                 INPUT/GCLK1
+                                                                                 INPUT/GCLR
+                                                                                 INPUT/OE1
+
+
+
+                                                                                 I/O/GCLK3
+                      INPUT/GCLK1
+
+
+
+
+                                                                                 VCCINT
+                                                                                 I/O/PD2
+                      INPUT/GCLR
+
+
+
+
+                                                                                 VCCIO
+                                                                                 GND
+
+
+
+
+                                                                                 GND
+                      INPUT/OE1
+
+
+
+
+                                                                                 N/C
+                                                                                 N/C
+                                                                                 N/C
+                                                                                 N/C
+
+
+
+
+                                                                                 N/C
+                                                                                 N/C
+                                                                                 N/C
+                                                                                 N/C
+                      I/O/GCLK3
+
+
+
+
+                                                                                 I/O
+
+                                                                                 I/O
+
+
+
+
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+
+
+
+
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+
+
+
+
+                                                                                 I/O
+                                                                                 I/O
+                                                                                 I/O
+                      VCCINT
+
+
+
+
+                      VCCIO
+
+
+
+
+                                                                                 160
+                                                                                 159
+                                                                                 158
+                                                                                 157
+                                                                                 156
+                                                                                 155
+                                                                                 154
+                                                                                 153
+                                                                                 152
+                                                                                 151
+                                                                                 150
+                                                                                 149
+                                                                                 148
+                                                                                 147
+                                                                                 146
+                                                                                 145
+                                                                                 144
+                                                                                 143
+                                                                                 142
+                                                                                 141
+                                                                                 140
+                                                                                 139
+                                                                                 138
+                                                                                 137
+                                                                                 136
+                                                                                 135
+                                                                                 134
+                                                                                 133
+                                                                                 132
+                                                                                 131
+                                                                                 130
+                                                                                 129
+                                                                                 128
+                                                                                 127
+                                                                                 126
+                                                                                 125
+                                                                                 124
+                                                                                 123
+                                                                                 122
+                                                                                 121
+                      GND
+
+
+
+
+                      GND
+                      I/O
+                      I/O
+                      I/O
+                      I/O
+                      I/O
+
+                      I/O
+                      I/O
+                      I/O
+
+
+
+
+                      I/O
+                      I/O
+
+                      I/O
+                      I/O
+                      I/O
+                      I/O
+                      I/O
+                      I/O
+
+
+
+
+                                                                     N/C    1                                                       120   N/C
+                                                                     N/C    2                                                       119   N/C
+                      100
+                       99
+                       98
+                       97
+                       96
+                       95
+                       94
+                       93
+                       92
+                       91
+                       90
+                       89
+                       88
+                       87
+                       86
+                       85
+                       84
+                       83
+                       82
+                       81
+                       80
+                       79
+                       78
+                       77
+                       76
+
+
+
+
+                                                                     N/C    3                                                       118   N/C
+                                                                     N/C    4                                                       117   N/C
+                                                                     N/C    5                                                       116   N/C
+     I/O/PD1    1                               75   I/O
+                                                                     N/C    6                                                       115   N/C
+          I/O   2                               74   GND             N/C    7                                                       114   N/C
+      VCCIO     3                               73   I/O/TDO     VCCIO      8                                                       113   GND
+                                                                 I/O/TDI    9                                                       112   I/O/TDO
+      I/O/TDI   4                               72   I/O
+                                                                      I/O   10                                                      111   I/O
+          I/O   5                               71   I/O              I/O   11                                                      110   I/O
+          I/O   6                               70   I/O              I/O   12                                                      109   I/O
+                                                                      I/O   13                                                      108   I/O
+          I/O   7                               69   I/O              I/O   14                                                      107   I/O
+          I/O   8                               68   I/O              I/O   15                                                      106   I/O
+          I/O   9                               67   I/O              I/O   16                                                      105   I/O
+                                                                    GND     17                                                      104   VCCIO
+          I/O   10                              66   VCCIO            I/O   18                                                      103   I/O
+         GND    11                              65   I/O              I/O   19                                                      102   I/O
+          I/O   12                              64   I/O              I/O   20                                                      101   I/O
+                                                                      I/O   21                                                      100   I/O
+          I/O   13                              63   I/O       I/O/TMS      22                                                       99   I/O/TCK
+          I/O   14                              62   I/O/TCK          I/O   23                                                       98   I/O
+    I/O/TMS     15                              61   I/O              I/O   24                                                       97   I/O
+                                                                      I/O   25                                                       96   I/O
+          I/O   16                              60   I/O         VCCIO      26                                                       95   GND
+          I/O   17                              59   GND              I/O   27                                                       94   I/O
+      VCCIO     18                              58   I/O              I/O   28                                                       93   I/O
+                                                                      I/O   29                                                       92   I/O
+          I/O   19                              57   I/O              I/O   30                                                       91   I/O
+          I/O   20                              56   I/O              I/O   31                                                       90   I/O
+          I/O   21                              55   I/O              I/O   32                                                       89   I/O
+                                                                      I/O   33                                                       88   I/O
+          I/O   22                              54   I/O             N/C    34                                                       87   N/C
+          I/O   23                              53   I/O             N/C    35                                                       86   N/C
+                                                                     N/C    36                                                       85   N/C
+          I/O   24                              52   I/O
+                                                                     N/C    37                                                       84   N/C
+          I/O   25                              51   VCCIO           N/C    38                                                       83   N/C
+                                                                     N/C    39                                                       82   N/C
+                      26
+                      27
+                      28
+                      29
+                      30
+                      31
+                      32
+                      33
+                      34
+                      35
+                      36
+                      37
+                      38
+                      39
+                      40
+                      41
+                      42
+                      43
+                      44
+                      45
+                      46
+                      47
+                      48
+                      49
+                      50
+
+
+
+
+                                                                     N/C    40                                                       81   N/C
+                                                                                 41
+                                                                                 42
+                                                                                 43
+                                                                                 44
+                                                                                 45
+                                                                                 46
+                                                                                 47
+                                                                                 48
+                                                                                 49
+                                                                                 50
+                                                                                 51
+                                                                                 52
+                                                                                 53
+                                                                                 54
+                                                                                 55
+                                                                                 56
+                                                                                 57
+                                                                                 58
+                                                                                 59
+                                                                                 60
+                                                                                 61
+                                                                                 62
+                                                                                 63
+                                                                                 64
+                                                                                 65
+                                                                                 66
+                                                                                 67
+                                                                                 68
+                                                                                 69
+                                                                                 70
+                                                                                 71
+                                                                                 72
+                                                                                 73
+                                                                                 74
+                                                                                 75
+                                                                                 76
+                                                                                 77
+                                                                                 78
+                                                                                 79
+                                                                                 80
+                         GND
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                       VCCIO
+                           I/O
+                           I/O
+                           I/O
+                         GND
+                      VCCINT
+                           I/O
+                      I/O/PD2
+                           I/O
+                         GND
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+                           I/O
+
+
+
+
+                                                                                      I/O
+                                                                                    GND
+                                                                                      I/O
+                                                                                     N/C
+                                                                                     N/C
+                                                                                     N/C
+                                                                                     N/C
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                  VCCIO
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                    GND
+                                                                                 VCCINT
+                                                                                      I/O
+                                                                                 I/O/PD1
+                                                                                      I/O
+                                                                                      I/O
+                                                                                    GND
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                      I/O
+                                                                                     N/C
+                                                                                     N/C
+                                                                                     N/C
+                                                                                     N/C
+                                                                                      I/O
+                                                                                  VCCIO
+                                                                                      I/O
+
+
+
+
+2                     ATF1508AS(L)
+                                                                                                                      0784P–PLD–7/05
+                      ATF1508AS(L)
+
+Block Diagram
+
+
+
+      8 to 12
+
+
+
+
+                 16
+
+
+
+
+                                 3
+0784P–PLD–7/05
+Description         The ATF1508AS is a high-performance, high-density complex programmable logic device
+                    (CPLD) that utilizes Atmel’s proven electrically-erasable technology. With 128 logic macrocells
+                    and up to 100 inputs, it easily integrates logic from several TTL, SSI, MSI, LSI and classic
+                    PLDs. The ATF1508AS’s enhanced routing switch matrices increase usable gate count and
+                    increase odds of successful pin-locked design modifications.
+                    The ATF1508AS has up to 96 bi-directional I/O pins and four dedicated input pins, depending
+                    on the type of device package selected. Each dedicated pin can also serve as a global control
+                    signal, register clock, register reset or output enable. Each of these control signals can be
+                    selected for use individually within each macrocell.
+                    Each of the 128 macrocells generates a buried feedback that goes to the global bus. Each
+                    input and I/O pin also feeds into the global bus. The switch matrix in each logic block then
+                    selects 40 individual signals from the global bus. Each macrocell also generates a foldback
+                    logic term that goes to a regional bus. Cascade logic between macrocells in the ATF1508AS
+                    allows fast, efficient generation of complex logic functions. The ATF1508AS contains eight
+                    such logic chains, each capable of creating sum term logic with a fan-in of up to 40 product
+                    terms.
+                    The ATF1508AS macrocell, shown in Figure 1, is flexible enough to support highly-complex
+                    logic functions operating at high speed. The macrocell consists of five sections: product terms
+                    and product term select multiplexer; OR/XOR/CASCADE logic, a flip-flop, output select and
+                    enable, and logic array inputs.
+                    Unused macrocells are automatically disabled by the compiler to decrease power consump-
+                    tion. A security fuse, when programmed, protects the contents of the ATF1508AS. Two bytes
+                    (16 bits) of User Signature are accessible to the user for purposes such as storing project
+                    name, part number, revision or date. The User Signature is accessible regardless of the state
+                    of the security fuse.
+                    The ATF1508AS device is an in-system programmable (ISP) device. It uses the industry-stan-
+                    dard 4-pin JTAG interface (IEEE Std. 1149.1), and is fully compliant with JTAG’s Boundary-
+                    scan Description Language (BSDL). ISP allows the device to be programmed without remov-
+                    ing it from the printed circuit board. In addition to simplifying the manufacturing flow, ISP also
+                    allows design modifications to be made in the field via software.
+
+Product Terms and   Each ATF1508AS macrocell has five product terms. Each product term receives as its inputs
+Select Mux          all signals from both the global bus and regional bus.
+                    The product term select multiplexer (PTMUX) allocates the five product terms as needed to
+                    the macrocell logic gates and control signals. The PTMUX programming is determined by the
+                    design compiler, which selects the optimum macrocell configuration.
+
+OR/XOR/             The ATF1508AS’s logic structure is designed to efficiently support all types of logic. Within a
+CASCADE Logic       single macrocell, all the product terms can be routed to the OR gate, creating a 5-input
+                    AND/OR sum term. With the addition of the CASIN from neighboring macrocells, this can be
+                    expanded to as many as 40 product terms with a little small additional delay.
+                    The macrocell’s XOR gate allows efficient implementation of compare and arithmetic func-
+                    tions. One input to the XOR comes from the OR sum term. The other XOR input can be a
+                    product term or a fixed high- or low-level. For combinatorial outputs, the fixed level input
+                    allows polarity selection. For registered functions, the fixed levels allow DeMorgan minimiza-
+                    tion of product terms. The XOR gate is also used to emulate T- and JK-type flip-flops.
+
+
+
+
+4      ATF1508AS(L)
+                                                                                                        0784P–PLD–7/05
+                                                                                        ATF1508AS(L)
+
+Flip-flop           The ATF1508AS’s flip-flop has very flexible data and control functions. The data input can
+                    come from either the XOR gate, from a separate product term or directly from the I/O pin.
+                    Selecting the separate product term allows creation of a buried registered feedback within a
+                    combinatorial output macrocell. (This feature is automatically implemented by the fitter soft-
+                    ware). In addition to D, T, JK and SR operation, the flip-flop can also be configured as a flow-
+                    through latch. In this mode, data passes through when the clock is high and is latched when
+                    the clock is low.
+                    The clock itself can be either the Global CLK Signal (GCK) or an individual product term. The
+                    flip-flop changes state on the clock’s rising edge. When the GCK signal is used as the clock,
+                    one of the macrocell product terms can be selected as a clock enable. When the clock enable
+                    function is active and the enable signal (product term) is low, all clock edges are ignored. The
+                    flip-flop’s asynchronous reset signal (AR) can be either the Global Clear (GCLEAR), a product
+                    term, or always off. AR can also be a logic OR of GCLEAR with a product term. The asynchro-
+                    nous preset (AP) can be a product term or always off.
+
+Extra Feedback      The ATF15xxSE Family macrocell output can be selected as registered or combinatorial. The
+                    extra buried feedback signal can be either combinatorial or a registered signal regardless of
+                    whether the output is combinatorial or registered. (This enhancement function is automatically
+                    implemented by the fitter software.) Feedback of a buried combinatorial output allows the cre-
+                    ation of a second latch within a macrocell.
+
+I/O Control         The output enable multiplexer (MOE) controls the output enable signal. Each I/O can be indi-
+                    vidually configured as an input, output or for bi-directional operation. The output enable for
+                    each macrocell can be selected from the true or compliment of the two output enable pins, a
+                    subset of the I/O pins, or a subset of the I/O macrocells. This selection is automatically done
+                    by the fitter software when the I/O is configured as an input, all macrocell resources are still
+                    available, including the buried feedback, expander and cascade logic.
+
+Global Bus/Switch   The global bus contains all input and I/O pin signals as well as the buried feedback signal from
+Matrix              all 128 macrocells. The switch matrix in each logic block receives as its inputs all signals from
+                    the global bus. Under software control, up to 40 of these signals can be selected as inputs to
+                    the logic block.
+
+Foldback Bus        Each macrocell also generates a foldback product term. This signal goes to the regional bus
+                    and is available to 16 macrocells. The foldback is an inverse polarity of one of the macrocell’s
+                    product terms. The 16 foldback terms in each region allows generation of high fan-in sum
+                    terms (up to 21 product terms) with a little additional delay.
+
+3.3V or 5.0V I/O    The ATF1508AS device has two sets of VCC pins viz, VCCINT and VCCIO. VCCINT pins must
+Operation           always be connected to a 5.0V power supply. VCCINT pins are for input buffers and are “com-
+                    patible” with both 3.3V and 5.0V inputs. V CCIO pins are for I/O output drives and can be
+                    connected for 3.3/5.0V power supply.
+
+Open-collector      This option enables the device output to provide control signals such as an interrupt that can
+Output Option       be asserted by any of the several devices.
+
+
+
+
+                                                                                                                   5
+0784P–PLD–7/05
+Figure 1. ATF1508AS Macrocell
+
+
+
+
+Programmable            The ATF1508AS offers the option of programming all input and I/O pins so that “pin-keeper”
+                        circuits can be utilized. When any pin is driven high or low and then subsequently left floating,
+Pin-keeper
+                        it will stay at that previous high- or low-level. This circuitry prevents unused input and I/O lines
+Option for              from floating to intermediate voltage levels, which causes unnecessary power consumption
+Inputs and I/Os         and system noise. The keeper circuits eliminate the need for external pull-up resistors and
+                        eliminate their DC power consumption.
+
+
+Input Diagram
+
+
+
+
+6       ATF1508AS(L)
+                                                                                                              0784P–PLD–7/05
+                                                                                   ATF1508AS(L)
+
+Speed/Power      The ATF1508AS has several built-in speed and power management features. The
+                 ATF1508AS contains circuitry that automatically puts the device into a low-power stand-by
+Management       mode when no logic transitions are occurring. This not only reduces power consumption dur-
+                 ing inactive periods, but also provides proportional power-savings for most applications
+                 running at system speeds below 5 MHz.
+                 To further reduce power, each ATF1508AS macrocell has a Reduced-power bit feature. This
+                 feature allows individual macrocells to be configured for maximum power savings. This feature
+                 may be selected as a design option.
+
+
+I/O Diagram
+
+
+
+
+                 All ATF1508 also have an optional power-down mode. In this mode, current drops to below 10
+                 mA. When the power-down option is selected, either PD1 or PD2 pins (or both) can be used to
+                 power down the part. The power-down option is selected in the design source file. When
+                 enabled, the device goes into power-down when either PD1 or PD2 is high. In the power-down
+                 mode, all internal logic signals are latched and held, as are any enabled outputs.
+                 All pin transitions are ignored until the PD pin is brought low. When the power-down feature is
+                 enabled, the PD1 or PD2 pin cannot be used as a logic input or output. However, the pin’s
+                 macrocell may still be used to generate buried foldback and cascade logic signals.
+                 All power-down AC characteristic parameters are computed from external input or I/O pins,
+                 with Reduced-power Bit turned on. For macrocells in reduced-power mode (Reduced-power
+                 bit turned on), the reduced-power adder, tRPA, must be added to the AC parameters, which
+                 include the data paths tLAD, tLAC, tIC, tACL, tACH and tSEXP.
+                 Each output also has individual slew rate control. This may be used to reduce system noise by
+                 slowing down outputs that do not need to operate at maximum speed. Outputs default to slow
+                 switching, and may be specified as fast switching in the design file.
+
+
+
+
+                                                                                                              7
+0784P–PLD–7/05
+Design           ATF1508AS designs are supported by several third-party tools. Automated fitters allow logic
+                 synthesis using a variety of high level description languages and formats.
+Software
+Support
+
+Power-up Reset   The ATF1508AS is designed with a power-up reset, a feature critical for state machine initial-
+                 ization. At a point delayed slightly from VCC crossing VRST, all registers will be initialized, and
+                 the state of each output will depend on the polarity of its buffer. However, due to the asynchro-
+                 nous nature of reset and uncertainty of how VCC actually rises in the system, the following
+                 conditions are required:
+                 1. The VCC rise must be monotonic,
+                 2. After reset occurs, all input and feedback setup times must be met before driving the
+                    clock pin high, and,
+                 3. The clock must remain stable during TD.
+                 The ATF1508AS has two options for the hysteresis about the reset level, VRST, Small and
+                 Large. During the fitting process users may configure the device with the Power-up Reset hys-
+                 teresis set to Large or Small. Atmel POF2JED users may select the Large option by including
+                 the flag “-power_reset” on the command line after “filename.POF”. To allow the registers to be
+                 properly reinitialized with the Large hysteresis option selected, the following condition is
+                 added:
+                 4. If VCC falls below 2.0V, it must shut off completely before the device is turned on again.
+                 When the Large hysteresis option is active, ICC is reduced by several hundred microamps as
+                 well.
+
+
+Security Fuse    A single fuse is provided to prevent unauthorized copying of the ATF1508AS fuse patterns.
+                 Once programmed, fuse verify is inhibited. However, User Signature and device ID remains
+Usage
+                 accessible.
+
+
+Programming      ATF1508AS devices are in-system programmable (ISP) devices utilizing the 4-pin JTAG pro-
+                 tocol. This capability eliminates package handling normally required for programming and
+                 facilitates rapid design iterations and field changes.
+                 Atmel provides ISP hardware and software to allow programming of the ATF1508AS via the
+                 PC. ISP is performed by using either a download cable or a comparable board tester or a sim-
+                 ple microprocessor interface.
+                 To allow ISP programming support by the Automated Test Equipment (ATE) vendors, Serial
+                 Vector Format (SVF) files can be created by the Atmel ISP Software. Conversion to other ATE
+                 tester format beside SVF is also possible
+                 ATF1508AS devices can also be programmed using standard third-party programmers. With
+                 third-party programmer, the JTAG ISP port can be disabled thereby allowing four additional
+                 I/O pins to be used for logic.
+                 Contact your local Atmel representatives or Atmel PLD applications for details.
+
+
+
+
+8     ATF1508AS(L)
+                                                                                                      0784P–PLD–7/05
+                                                                                      ATF1508AS(L)
+ISP              The ATF1508AS has a special feature that locks the device and prevents the inputs and I/O
+                 from driving if the programming process is interrupted for any reason. The inputs and I/O
+Programming      default to high-Z state during such a condition. In addition the pin-keeper option preserves the
+Protection       former state during device programming.
+                 All ATF1508AS devices are initially shipped in the erased state thereby making them ready to
+                 use for ISP.
+                 Note:   For more information refer to the “Designing for In-System Programmability with Atmel CPLDs”
+                         application note.
+
+
+JTAG-BST         The JTAG boundary-scan testing is controlled by the Test Access Port (TAP) controller in the
+                 ATF1508AS. The boundary-scan technique involves the inclusion of a shift-register stage
+Overview
+                 (contained in a boundary-scan cell) adjacent to each component so that signals at component
+                 boundaries can be controlled and observed using scan testing principles. Each input pin and
+                 I/O pin has its own boundary-scan cell (BSC) in order to support boundary-scan testing. The
+                 ATF1508AS does not currently include a Test Reset (TRST) input pin because the TAP con-
+                 troller is automatically reset at power-up. The six JTAG BST modes supported include:
+                 SAMPLE/PRELOAD, EXTEST, BYPASS and IDCODE. BST on the ATF1508AS is imple-
+                 mented using the Boundary-scan Definition Language (BSDL) described in the JTAG
+                 specification (IEEE Standard 1149.1). Any third-party tool that supports the BSDL format can
+                 be used to perform BST on the ATF1508AS.
+                 The ATF1508AS also has the option of using four JTAG-standard I/O pins for In-System pro-
+                 gramming (ISP). The ATF1508AS is programmable through the four JTAG pins using
+                 programming compatible with the IEEE JTAG Standard 1149.1. Programming is performed by
+                 using 5V TTL-level programming signals from the JTAG ISP interface. The JTAG feature is a
+                 programmable option. If JTAG (BST or ISP) is not needed, then the four JTAG control pins are
+                 available as I/O pins.
+
+
+JTAG             The ATF1508AS contains up to 96 I/O pins and four input pins, depending on the device type
+                 and package type selected. Each input pin and I/O pin has its own boundary-scan cell (BSC)
+Boundary-scan
+                 in order to support boundary-scan testing as described in detail by IEEE Standard 1149.1. A
+Cell (BSC)       typical BSC consists of three capture registers or scan registers and up to two update regis-
+Testing          ters. There are two types of BSCs, one for input or I/O pin, and one for the macrocells. The
+                 BSCs in the device are chained together through the (BST) capture registers. Input to the cap-
+                 ture register chain is fed in from the TDI pin while the output is directed to the TDO pin.
+                 Capture registers are used to capture active device data signals, to shift data in and out of the
+                 device and to load data into the update registers. Control signals are generated internally by
+                 the JTAG TAP controller. The BSC configuration for the input and I/O pins and macrocells are
+                 shown below.
+
+
+
+
+                                                                                                                   9
+0784P–PLD–7/05
+BSC
+Configuration
+Pins and
+Macrocells
+(Except JTAG
+TAP Pins)
+
+
+
+
+                  Note:   The ATF1508AS has a pull-up option on TMS and TDI pins. This feature is selected as a design
+                          option.
+
+
+BSC
+Configuration                                                       TDO
+for Macrocell                            OEJ
+                                                                                      0
+                                                                                      1
+                                                        0
+                                                             D Q              D Q
+                                                        1
+
+
+
+
+                                         OUTJ
+                                                                                      0
+                                                                                      1          Pin
+                                                        0
+                                                             D Q              D Q
+                                                        1
+
+                                                            Capture          Update
+                                                              DR              DR
+
+                                          TDI                                             Mode
+                                                Shift                     Clock
+
+
+                                                                   Macrocell BSC
+
+
+
+Boundary Scan     These are now available in all package types via the Atmel Web Site. These models can be
+                  used for Boundary-scan Test Operation in the ATF1508AS and have been scheduled to con-
+Definition
+                  form to the IEEE 1149.1 standard.
+Language
+(BSDL) Models
+for the ATF1508
+
+
+
+
+10    ATF1508AS(L)
+                                                                                                        0784P–PLD–7/05
+                                                                                                               ATF1508AS(L)
+
+PCI Compliance    The ATF1508AS also supports the growing need in the industry to support the new Peripheral
+                  Component Interconnect (PCI) interface standard in PCI-based designs and specifications.
+                  The PCI interface calls for high current drivers, which are much larger than the traditional TTL
+                  drivers.
+
+
+PCI Voltage-to-
+current Curves
+                                                                               Pull Up
+for +5V                                    VCC
+                                                                                                         Test Point
+
+
+
+
+                                                 Voltage
+Signaling in
+Pull-up Mode
+                                            2.4
+
+
+                                                                 DC
+                                                                 drive point
+                                            1.4
+
+
+                                                                  AC drive
+                                                                   point
+
+
+                                                           -2                   -44 Current (mA) -178
+
+
+
+PCI Voltage-to-
+current Curves                                                            Pull Down
+for +5V                                   VCC
+                                                                 AC drive
+                                              Voltage
+
+
+
+
+Signaling in                                                      point
+
+Pull-down Mode
+                                           2.2
+
+                                                           DC
+                                                           drive point
+
+
+
+
+                                           0.55
+                                                                                                  Test Point
+
+                                                                                         Current (mA)
+                                                           3,6                  95                      380
+
+
+
+
+                                                                                                                         11
+0784P–PLD–7/05
+PCI DC Characteristics
+  Symbol                         Parameter                                     Conditions                    Min          Max                 Units
+ VCC            Supply Voltage                                                                            4.75            5.25                  V
+ VIH            Input High Voltage                                                                           2.0        VCC + 0.5               V
+ VIL            Input Low Voltage                                                                            -0.5          0.8                  V
+                                             (1)
+ IIH            Input High Leakage Current                                     VIN = 2.7V                                  70                  µA
+                                            (1)
+ IIL            Input Low Leakage Current                                      VIN = 0.5V                                  -70                 µA
+ VOH            Output High Voltage                                           IOUT = -2 mA                   2.4                                V
+ VOL            Output Low Voltage                                          IOUT = 3 mA, 6 mA                              0.55                 V
+ CIN            Input Pin Capacitance                                                                                      10                  pF
+ CCLK           CLK Pin Capacitance                                                                                        12                  pF
+ CIDSEL         IDSEL Pin Capacitance                                                                                         8                pF
+ LPIN           Pin Inductance                                                                                             20                  nH
+Note:      1. Leakage current is without pin-keeper off.
+
+
+PCI AC Characteristics
+ Symbol           Parameter                                 Conditions                          Min                     Max                  Units
+ IOH(AC)          Switching                                0 < VOUT ≤ 1.4                       -44                                           mA
+                  Current High                         1.4 < VOUT < 2.4               -44+(VOUT - 1.4)/0.024                                  mA
+                                                       3.1 < VOUT < VCC                                             Equation A(1)             mA
+                  (Test High)                               VOUT = 3.1V                                                 -142                  µA
+ IOL(AC)          Switching                                 VOUT > 2.2V                         95                                            mA
+                  Current Low                              2.2 > VOUT > 0                    VOUT/0.023                                       mA
+                                                                                                                                  (2)
+                                                           0.1 > VOUT > 0                                           Equation B                mA
+                  (Test Point)                              VOUT = 0.71                                                 206                   mA
+ ICL              Low Clamp Current                         -5 < VIN ≤ -1              -25+(VIN + 1)/0.015                                    mA
+ SLEWR            Output Rise Slew Rate                0.4V to 2.4V load                        0.5                     3.0                  V/ns
+ SLEWF            Output Fall Slew Rate                2.4V to 0.4V load                        0.5                     3.0                   V/ns
+Notes:     1. Equation A: IOH = 11.9 (VOUT - 5.25) * (VOUT + 2.45) for VCC > VOUT > 3.1V.
+           2. Equation B: IOL = 78.5 * VOUT * (4.4 - VOUT) for 0V < VOUT < 0.71V.
+
+
+
+
+12           ATF1508AS(L)
+                                                                                                                                        0784P–PLD–7/05
+                                                                                                                               ATF1508AS(L)
+
+Power-down                                 The ATF1508AS includes two pins for optional pin-controlled power-down feature. When this
+                                           mode is enabled, the PD pin acts as the power-down pin. When the PD1 and PD2 pin is high,
+Mode                                       the device supply current is reduced to less than 10 mA. During power-down, all output data
+                                           and internal logic states are latched and held. Therefore, all registered and combinatorial out-
+                                           put data remain valid. Any outputs that were in a high-Z state at the onset will remain at high-
+                                           Z. During power-down, all input signals except the power-down pin are blocked. Input and I/O
+                                           hold latches remain active to ensure that pins do not float to indeterminate levels, further
+                                           reducing system power. The power-down pin feature is enabled in the logic design file.
+                                           Designs using either power-down pin may not use the PD pin logic array input. However, bur-
+                                           ied logic resources in this macrocell may still be used.
+
+
+Power-down AC Characteristics(1)(2)
+                                                                        -7               -10                 -15              -20              -25
+ Symbol                                Parameter                  Min        Max   Min     Max         Min     Max      Min     Max      Min     Max      Units
+ tIVDH         Valid I, I/O before PD High                         7               10                  15               20               25                ns
+                               (2)
+ tGVDH         Valid OE              before PD High                7               10                  15               20               25                ns
+ tCVDH         Valid Clock(2) before PD High                       7               10                  15               20               25                ns
+ tDHIX         I, I/O Don’t Care after PD High                               12                15                  25               30               35    ns
+                   (2)
+ tDHGX         OE        Don’t Care after PD High                            12                15                  25               30               35    ns
+                         (2)
+ tDHCX         Clock           Don’t Care after PD High                      12                15                  25               30               35    ns
+ tDLIV         PD Low to Valid I, I/O                                         1                1                   1                1                1     µs
+ tDLGV         PD Low to Valid OE (Pin or Term)                               1                1                   1                1                1     µs
+ tDLCV         PD Low to Valid Clock (Pin or Term)                            1                1                   1                1                1     µs
+ tDLOV         PD Low to Valid Output                                         1                1                   1                1                1     µs
+Notes:    1. For slow slew outputs, add tSSO.
+          2. Pin or product term.
+
+
+Absolute Maximum Ratings*
+ Temperature Under Bias.................................. -40°C to +85°C            *NOTICE:            Stresses beyond those listed under “Absolute
+                                                                                                        Maximum Ratings” may cause permanent dam-
+ Storage Temperature ..................................... -65°C to +150°C                              age to the device. This is a stress rating only and
+                                                                                                        functional operation of the device at these or any
+ Voltage on Any Pin with                                                                                other conditions beyond those indicated in the
+ Respect to Ground .........................................-2.0V to +7.0V(1)                           operational sections of this specification is not
+                                                                                                        implied. Exposure to absolute maximum rating
+ Voltage on Input Pins                                                                                  conditions for extended periods may affect device
+ with Respect to Ground                                                                                 reliability.
+ During Programming.....................................-2.0V to +14.0V(1)          Note:           1. Minimum voltage is -0.6V DC, which may under-
+                                                                                                       shoot to -2.0V for pulses of less than 20 ns.
+ Programming Voltage with                                                                              Maximum output pin voltage is VCC + 0.75V DC,
+ Respect to Ground .......................................-2.0V to +14.0V(1)                           which may overshoot to 7.0V for pulses of less
+                                                                                                       than 20 ns.
+
+
+
+
+                                                                                                                                                                13
+0784P–PLD–7/05
+DC and AC Operating Conditions
+                                                                                      Commercial                     Industrial
+ Operating Temperature (Ambient)                                                       0°C - 70°C                   -40°C - 85°C
+ VCCINT or VCCIO (5V) Power Supply                                                      5V ± 5%                      5V ± 10%
+ VCCIO (3.3V) Power Supply                                                            2.7V - 3.6V                    2.7V - 3.6V
+
+
+
+DC Characteristics(1)
+ Symbol       Parameter                                         Condition                  Min           Typ          Max            Units
+ IIL          Input or I/O Low                   VIN = VCC                                               -2            -10            µA
+              Leakage Current
+ IIH          Input or I/O High                                                                           2            10             µA
+              Leakage Current
+ IOZ          Tri-state Output                   VO = VCC or GND                            -40                        40             µA
+              Off-state Current
+ ICC1         Power Supply                       VCC = Max        Std Mode     Com.                      160                          mA
+              Current, Standby                   VIN = 0, VCC                  Ind.                      180                          mA
+                                                                  “L” Mode     Com.                      10                           µA
+                                                                               Ind.                      10                           µA
+ ICC2         Power Supply Current,              VCC = Max        “PD” Mode                               1            10             mA
+              Power-down Mode                    VIN = 0, VCC
+ ICC3(2)      Reduced-power Mode                 VCC = Max        Std Mode     Com.                      65                           mA
+              Supply Current                     VIN = 0, VCC                  Ind.                      85                           mA
+ VCCIO                                           5.0V Device Output            Com.        4.75                       5.25             V
+              Supply Voltage
+                                                                               Ind.         4.5                        5.5             V
+ VCCIO        Supply Voltage                     3.3V Device Output                         3.0                        3.6             V
+ VIL          Input Low Voltage                                                            -0.3                        0.8             V
+ VIH          Input High Voltage                                                            2.0                    VCCIO + 0.3         V
+ VOL                                             VIN = VIH or VIL              Com.                                   0.45             V
+              Output Low Voltage (TTL)           VCCIO = MIN, IOL = 12 mA      Ind.                                   0.45             V
+                                                 VIN = VIH or VIL              Com.                                    0.2             V
+              Output Low Voltage (CMOS)          VCC = MIN, IOL = 0.1 mA       Ind.                                    0.2             V
+ VOH                                             VIN = VIH or VIL                           2.4                                        V
+              Output High Voltage (TTL)
+                                                 VCCIO = MIN, IOH = -4.0 mA
+Notes:     1. Not more than one output at a time should be shorted. Duration of short circuit test should not exceed 30 sec.
+           2. ICC3 refers to the current in the reduced-power mode when macrocell reduced-power is turned ON.
+
+
+
+
+14           ATF1508AS(L)
+                                                                                                                               0784P–PLD–7/05
+                                                                                                        ATF1508AS(L)
+
+Pin Capacitance(1)
+                                        Typ                 Max               Units                      Conditions
+ CIN                                     8                  10                 pF                    VIN = 0V; f = 1.0 MHz
+ CI/O                                    8                  10                 pF                   VOUT = 0V; f = 1.0 MHz
+Note:    1. Typical values for nominal supply voltage. This parameter is only sampled and is not 100% tested. The OGI pin (high-voltage
+            pin during programming) has a maximum capacitance of 12 pF.
+
+
+Timing Model
+
+
+
+
+                                 U
+
+
+
+
+Input Test Waveforms and Measurement Levels
+
+
+
+
+                                  rR, tF = 1.5 ns typical
+
+
+Output AC Test Loads
+                                                                    (3.0V)*
+
+
+                                                      (703 )*
+
+
+
+                                                     (8060 )*
+
+Note:    *Numbers in parenthesis refer to 3.0V operating conditions (preliminary).
+
+
+
+
+                                                                                                                                    15
+0784P–PLD–7/05
+                                                                                                                                                SUPPLY CURRENT VS. FREQUENCY
+                                                                                                                                                   LOW-POWER ("L") VERSION
+                                 SUPPLY CURRENT VS. SUPPLY VOLTAGE
+                                                                                                                                                          (TA = 25°C)
+                                           (TA = 25°C, F = 0)
+                                                                                                                      200.0
+                 250.0
+
+                                                                                                                                         STANDARD POWER
+                 200.0                                                                                                150.0
+                               STANDARD POWER
+
+
+
+
+                                                                                                   ICC (mA)
+      ICC (mA)
+
+
+
+
+                 150.0                                                                                                100.0
+                                                      REDUCED POWER MODE                                                                                                               REDUCED POWER MODE
+
+                 100.0                                                                                                 50.0
+
+
+
+                  50.0                                                                                                  0.0
+                        4.50           4.75             5.00             5.25            5.50                              0.00                   5.00                10.00                       15.00               20.00
+                                                       VCC (V)                                                                                                   FREQUENCY (MHz)
+
+
+
+
+                                SUPPLY CURRENT VS. SUPPLY VOLTAGE                                                                              OUTPUT SOURCE CURRENT
+                                     LOW-POWER ("L") VERSION                                                                           VS. SUPPLY VOLTAGE (VOH = 2.4V, TA = 25°C)
+                                                                                                                       0
+                                          (TA = 25°C, F = 0)
+                 30.0
+                                                                                                                      -10
+
+
+                                                                                                                      -20
+
+
+
+
+                                                                                                IOH (mA)
+                 20.0
+                                                                                                                      -30
+     ICC ( A)
+
+
+
+
+                                                                                                                      -40
+                 10.0
+                                                                                                                      -50
+
+
+                                                                                                                      -60
+                  0.0
+                                                                                                                         4.50                   4.75                     5.00                5.25                   5.50
+                     4.50             4.75              5.00             5.25            5.50
+                                                       VCC (V)                                                                                                SUPPLY VOLTAGE (V)
+
+
+
+
+                                    SUPPLY CURRENT VS. FREQUENCY                                                                                  INPUT CLAMP CURRENT
+                                          STANDARD POWER                                                                                  VS. INPUT VOLTAGE (VCC = 5V, TA = 25°C)
+                                                                                                                            0
+                                            (TA = 25°C, F = 0)
+                 300.0                                                                                                 -20
+                                                                                                 INPUT CURRENT (mA)
+
+
+
+
+                                                                                                                       -40
+                 250.0
+
+                               STANDARD POWER                                                                          -60
+                 200.0
+                                                                                                                       -80
+     ICC ( A)
+
+
+
+
+                 150.0
+                                                                                                                      -100
+
+                 100.0                                                                                                -120
+                                                                  REDUCED POWER MODE
+
+                  50.0                                                                                                -140
+
+                                                                                                                      -160
+                   0.0
+                                                                                                                                -1.4     -1.2          -1.0       -0.8          -0.6       -0.4           -0.2       0.0
+                      0.00         20.00          40.00      60.00         80.00       100.00
+                                                  FREQUENCY (MHz)                                                                                              INPUT VOLTAGE (V)
+
+
+
+
+                                 SUPPLY CURRENT VS. SUPPLY VOLTAGE                                                                              OUTPUT SINK CURRENT
+                                  PIN-CONTROLLED POWER-DOWN MODE                                                                       VS. SUPPLY VOLTAGE (VOL = 0.5V, TA = 25°C)
+                                                                                                                      43
+                                           (TA = 25°C, F = 0)
+                 1100.0                                                                                               42
+
+                                                                                                                      41
+                 1000.0
+                                                                                                  IOL (mA)
+
+
+
+
+                               STANDARD POWER                                                                         40
+     ICC ( A)
+
+
+
+
+                  900.0                                                                                               39
+
+                                                                                                                      38
+
+                  800.0
+                                                                                                                      37
+                                                       REDUCED POWER MODE
+                                                                                                                      36
+                  700.0
+                                                                                                                        4.50                    4.75                     5.00               5.25                    5.50
+                       4.50                4.75          5.00             5.25           5.50
+                                                        VCC (V)                                                                                               SUPPLY VOLTAGE (V)
+
+
+
+
+16                       ATF1508AS(L)
+                                                                                                                                                                                                                 0784P–PLD–7/05
+                                                                                                                                                                         ATF1508AS(L)
+
+
+                                                     OUTPUT SOURCE CURRENT                                                                                  NORMALIZED TCO
+                                               VS. SUPPLY VOLTAGE (VCC = 5V, TA = 25°C)                                                              VS. SUPPLY VOLTAGE (TA = 25°C)
+                                                                                                                                        1.20
+                             -10
+
+
+                             -30                                                                                                        1.10
+
+
+
+
+                                                                                                                       NORMALIZED TPD
+         IOH (mA)
+
+
+
+
+                             -50
+                                                                                                                                        1.00
+
+                             -70
+
+                                                                                                                                        0.90
+                             -90
+
+
+                            -110
+                                                                                                                                        0.80
+                                   0.0    0.5      1.0          1.5     2.0   2.5   3.0    3.5     4.0   4.5   5.0
+                                                                                                                                            4.50       4.75              5.00               5.25   5.50
+                                                                      OUTPUT VOLTAGE (V)                                                                          SUPPLY VOLTAGE (V)
+
+
+
+
+                                                           INPUT CURRENT                                                                                    NORMALIZED TSU
+                                                VS. INPUT VOLTAGE (VCC = 5V, TA = 25°C)                                                              VS. SUPPLY VOLTAGE (TA = 25°C)
+                             40                                                                                                         1.20
+
+                             30
+       INPUT CURRENT ( A)
+
+
+
+
+                             20                                                                                                         1.10
+
+
+
+
+                                                                                                                       NORMALIZED TSU
+                             10
+                                                                                                                                        1.00
+                              0
+
+                            -10
+                                                                                                                                        0.90
+                            -20
+
+                            -30
+                                                                                                                                        0.80
+                                  0.0    0.5      1.0       1.5        2.0    2.5   3.0    3.5     4.0   4.5   5.0
+                                                                                                                                            4.50       4.75              5.00               5.25   5.50
+                                                                      INPUT VOLTAGE (V)                                                                           SUPPLY VOLTAGE (V)
+
+
+
+
+                                                       OUTPUT SINK CURRENT                                                                                   NORMALIZED TPD
+                                               VS. OUTPUT VOLTAGE (VCC = 5V, TA = 25°C)                                                                VS. TEMPERATURE (VCC = 5.0V)
+                            140                                                                                                         1.20
+
+                            120
+
+                            100                                                                                                         1.10
+                                                                                                                       NORMALIZED TPD
+       IOL (mA)
+
+
+
+
+                             80
+                                                                                                                                        1.00
+                             60
+
+                             40
+                                                                                                                                        0.90
+                             20
+
+                              0
+                                                                                                                                        0.80
+                                   0.0   0.5      1.0       1.5        2.0    2.5   3.0    3.5     4.0   4.5   5.0                             -40            0                        25           75
+                                                                      OUTPUT VOLTAGE (V)                                                                           TEMPERATURE (C)
+
+
+
+
+                                                          NORMALIZED TPD                                                                                    NORMALIZED TCO
+                                                   VS. SUPPLY VOLTAGE (TA = 25°C)                                                                     VS. TEMPERATURE (VCC = 5.0V)
+                                                                                                                                        1.20
+                            1.20
+
+
+
+                                                                                                                                        1.10
+                            1.10
+                                                                                                                       NORMALIZED TCO
+     NORMALIZED TPD
+
+
+
+
+                                                                                                                                        1.00
+                            1.00
+
+
+
+                            0.90                                                                                                        0.90
+
+
+
+
+                            0.80                                                                                                        0.80
+                                4.50                     4.75                5.00                5.25           5.50                           -40            0                        25           75
+                                                                      SUPPLY VOLTAGE (V)                                                                           TEMPERATURE (C)
+
+
+
+
+                                                                                                                                                                                                          17
+0784P–PLD–7/05
+                                         NORMALIZED TSU
+                                   VS. TEMPERATURE (VCC = 5.0V)
+                      1.20
+
+
+
+                      1.10
+     NORMALIZED TSU
+
+
+
+
+                      1.00
+
+
+
+                      0.90
+
+
+
+                      0.80
+                             -40         0                     25   75
+                                             TEMPERATURE (C)
+
+
+
+
+18                            ATF1508AS(L)
+                                                                         0784P–PLD–7/05
+                                                                                                                   ATF1508AS(L)
+
+AC Characteristics (1)
+                                                      -7               -10                -15                -20                -25
+ Symbol      Parameter                        Min          Max   Min     Max       Min          Max   Min          Max   Min          Max   Units
+ tPD1        Input or Feedback to                          7.5               10     3           15                 20                 25     ns
+             Non-registered Output
+ tPD2        I/O Input or Feedback to                       7                9      3           12                 16                 20     ns
+             Non-registered Feedback
+ tSU         Global Clock Setup Time           6                  7                11                 16                 20                  ns
+ tH          Global Clock Hold Time            0                  0                 0                  0                  0                  ns
+ tFSU        Global Clock Setup Time of        3                  3                 3                  3                  3                  ns
+             Fast Input
+ tFH         Global Clock Hold Time of         0.5               0.5               1.0                1.5                 2                 MHz
+             Fast Input
+ tCOP        Global Clock to Output Delay                  4.5               5                   8                 10                 13     ns
+ tCH         Global Clock High Time            3                  4                 5                  6                  7                  ns
+ tCL         Global Clock Low Time             3                  4                 5                  6                  7                  ns
+ tASU        Array Clock Setup Time            3                  3                 4                  4                  5                  ns
+ tAH         Array Clock Hold Time             2                  3                 4                  5                  6                  ns
+ tACOP       Array Clock Output Delay                      7.5               10                 15                 20                 25     ns
+ tACH        Array Clock High Time             3                  4                 6                  8                 10                  ns
+ tACL        Array Clock Low Time              3                  4                 6                  8                 10                  ns
+ tCNT        Minimum Clock Global Period                    8                10                 13                 17                 22     ns
+ fCNT        Maximum Internal Global          125                100               76.9               66                 50                 MHz
+             Clock Frequency
+ tACNT       Minimum Array Clock Period                     8                10                 13                 17                 22     ns
+ fACNT       Maximum Internal Array           125                100               76.9               66                 50                 MHz
+             Clock Frequency
+ fMAX        Maximum Clock Frequency          166.7              125               100                41.7               33.3               MHz
+ tIN         Input Pad and Buffer Delay                    0.5               0.5                 2                  2                  2     ns
+ tIO         I/O Input Pad and Buffer Delay                0.5               0.5                 2                  2                  2     ns
+ tFIN        Fast Input Delay                               1                1                   2                  2                  2     ns
+ tSEXP       Foldback Term Delay                            4                5                   8                 10                 12     ns
+ tPEXP       Cascade Logic Delay                           0.8               0.8                 1                  1                 1.2    ns
+ tLAD        Logic Array Delay                              3                5                   6                  7                  8     ns
+ tLAC        Logic Control Delay                            3                5                   6                  7                  8     ns
+ tIOE        Internal Output Enable Delay                   2                2                   3                  3                  4     ns
+ tOD1        Output Buffer and Pad Delay                    2                1.5                 4                  5                  6     ns
+             (Slow slew rate = OFF;
+             VCCIO = 5V; CL = 35 pF)
+
+
+
+
+                                                                                                                                                  19
+0784P–PLD–7/05
+AC Characteristics (Continued)(1)
+                                                      -7               -10               -15               -20               -25
+ Symbol      Parameter                          Min        Max   Min     Max       Min         Max   Min         Max   Min         Max    Units
+ tOD2        Output Buffer and Pad Delay                   2.5               2.0                5                 6                 7       ns
+             (Slow slew rate = OFF;
+             VCCIO = 3.3V; CL = 35 pF)
+ tOD3        Output Buffer and Pad Delay                    5                5.5                8                10                12       ns
+             (Slow slew rate = ON;
+             VCCIO = 5V or 3.3V; CL = 35 pF)
+ tZX1        Output Buffer Enable Delay                    4.0               5.0                7                 9                10       ns
+             (Slow slew rate = OFF;
+             VCCIO = 5.0V; CL = 35 pF)
+ tZX2        Output Buffer Enable Delay                    4.5               5.5                7                 9                10       ns
+             (Slow slew rate = OFF;
+             VCCIO = 3.3V; CL = 35 pF)
+ tZX3        Output Buffer Enable Delay                     9                9                 10                11                12       ns
+             (Slow slew rate = ON;
+             VCCIO = 5.0V/3.3V; CL = 35 pF)
+ tXZ         Output Buffer Disable Delay                    4                5                  6                 7                 8       ns
+             (CL = 5 pF)
+ tSU         Register Setup Time                 3                2                 4                 5                 6                   ns
+ tH          Register Hold Time                  2                3                 4                 5                 6                   ns
+ tFSU        Register Setup Time of Fast         3                3                 2                 2                 3                   ns
+             Input
+ tFH         Register Hold Time of Fast         0.5              0.5                2                 2                2.5                  ns
+             Input
+ tRD         Register Delay                                 1                2                  1                 2                 2       ns
+ tCOMB       Combinatorial Delay                            1                2                  1                 2                 2       ns
+ tIC         Array Clock Delay                              3                5                  6                 7                 8       ns
+ tEN         Register Enable Time                           3                5                  6                 7                 8       ns
+ tGLOB       Global Control Delay                           1                1                  1                 1                 1       ns
+ tPRE        Register Preset Time                           2                3                  4                 5                 6       ns
+ tCLR        Register Clear Time                            2                3                  4                 5                 6       ns
+ tUIM        Switch Matrix Delay                            1                1                  2                 2                 2       ns
+                                    (2)
+ tRPA        Reduced-power Adder                           10                11                13                14                15       ns
+Notes:   1. See ordering information for valid part numbers.
+         2. The tRPA parameter must be added to the tLAD, tLAC,tTIC, tACL, and tSEXP parameters for macrocells running in the reduced-
+            power mode.
+
+
+
+
+20         ATF1508AS(L)
+                                                                                                                                    0784P–PLD–7/05
+                                                                                       ATF1508AS(L)
+
+ATF1508AS Dedicated Pinouts
+ Dedicated Pin       84-lead J-lead      100-lead PQFP           100-lead TQFP             160-lead PQFP
+ INPUT/OE2/GCLK2           2                    92                     90                        142
+ INPUT/GCLR                1                    91                     89                        141
+ INPUT/OE1                 84                   90                     88                        140
+ INPUT/GCLK1               83                   89                     87                        139
+ I/O /GCLK3                81                   87                     85                        137
+ I/O / PD (1, 2)         12,45                 3,43                   1,41                     63,159
+ I/O / TDI(JTAG)           14                   6                       4                         9
+ I/O / TMS(JTAG)           23                   17                     15                         22
+ I/O / TCK(JTAG)           62                   64                     62                         99
+ I/O / TDO(JTAG)           71                   75                     73                        112
+ GND                  7,19,32,42,          13,28,40,45,            11,26,38,43,            17,42,60,66,95,
+                      47,59,72,82          61,76,88,97             59,74,86,95              113,138,148
+ VCCINT                   3,43                41,93                   39,91                    61,143
+ VCCIO                 13,26,38,         5,20,36,53,68,84        3,18,34,51,66,82        8,26,55,79,104,133
+                       53,66,78
+ N/C                       –                    –                       –               1,2,3,4,5,6,7,34,35,36,
+                                                                                        37,38,39,40,44,45,46,
+                                                                                        47,74,75,76,77,81,82,
+                                                                                         83,84,85,86,87,114,
+                                                                                        115,116,117,118,119,
+                                                                                        120,124,125,126,127,
+                                                                                           154,155,156,157
+ # of SIGNAL PINS          68                   84                     84                        100
+ # USER I/O PINS           64                   80                     80                         96
+OE (1, 2)            Global OE Pins
+GCLR                 Global Clear Pin
+GCLK (1, 2, 3)       Global Clock Pins
+PD (1, 2)            Power-down pins
+TDI, TMS, TCK, TDO   JTAG pins used for boundary scan testing or in-system programming
+GND                  Ground Pins
+VCCINT               VCC pins for the device (+5V - Internal)
+VCCIO                VCC pins for output drivers (for I/O pins) (+5V or 3.3V - I/Os)
+
+
+
+
+                                                                                                                  21
+0784P–PLD–7/05
+ATF1508AS I/O Pinouts
+            84-lead   100-lead   100-lead   160-lead              84-lead   100-lead   100-lead      160-lead
+ MC   PLB    J-lead    PQFP       TQFP       PQFP      MC   PLB    J-lead    PQFP       TQFP          PQFP
+ 1    A       –          4          2         160      33   C       –         27         25             41
+ 2    A       –          –          –          –       34   C       –          –          –             –
+       A/
+ 3            12         3          1         159      35   C       31        26         24             33
+      PD1
+ 4    A       –          –          –         158      36   C       –          –          –             32
+ 5    A       11         2         100        153      37   C       30        25         23             31
+ 6    A       10         1         99         152      38   C       29        24         22             30
+ 7    A       –          –          –          –       39   C       –          –          –             –
+ 8    A       9         100        98         151      40   C       28        23         21             29
+ 9    A       –         99         97         150      41   C       –         22         20             28
+ 10   A       –          –          –          –       42   C       –          –          –             –
+ 11   A       8         98         96         149      43   C       27        21         19             27
+ 12   A       –          –          –         147      44   C       –          –          –             25
+ 13   A       6         96         94         146      45   C       25        19         17             24
+ 14   A       5         95         93         145      46   C       24        18         16             23
+ 15   A       –          –          –          –       47   C       –          –          –             –
+                                                             C/
+ 16   A       4         94         92         144      48           23        17         15             22
+                                                            TMS
+ 17   B       22        16         14         21       49   D       41        39         37             59
+ 18   B       –          –          –          –       50   D       –          –          –             –
+ 19   B       21        15         13         20       51   D       40        38         36             58
+ 20   B       –          –          –         19       52   D       –          –          –             57
+ 21   B       20        14         12         18       53   D       39        37         35             56
+ 22   B       –         12         10         16       54   D       –         35         33             54
+ 23   B       –          –          –          –       55   D       –          –          –             –
+ 24   B       18        11          9         15       56   D       37        34         32             53
+ 25   B       17        10          8         14       57   D       36        33         31             52
+ 26   B       –          –          –          –       58   D       –          –          –             –
+ 27   B       16         9          7         13       59   D       35        32         30             51
+ 28   B       –          –          –         12       60   D       –          –          –             50
+ 29   B       15         8          6         11       61   D       34        31         29             49
+ 30   B       –          7          5         10       62   D       –         30         28             48
+ 31   B       –          –          –          –       63   D       –          –          –             –
+       B/
+ 32           14         6          4          9       64   D       33        29         27             43
+      TDI
+ 65   E       44        42         40         62       97   G       63        65         63            100
+
+
+
+22    ATF1508AS(L)
+                                                                                                  0784P–PLD–7/05
+                                                                                        ATF1508AS(L)
+
+ATF1508AS I/O Pinouts (Continued)
+                 84-lead   100-lead   100-lead   160-lead                 84-lead   100-lead   100-lead   160-lead
+ MC      PLB      J-lead    PQFP       TQFP       PQFP      MC     PLB     J-lead    PQFP       TQFP       PQFP
+  66       E       –          –          –          –       98     G        –          –          –          –
+          E/
+  67               45        43         41         63       99     G        64        66         64         101
+         PD2
+  68       E       –          –          –         64       100    G        –          –          –         102
+  69       E       46        44         42         65       101    G        65        67         65         103
+  70       E       –         46         44         67       102    G        –         69         67         105
+  71       E       –          –          –          –       103    G        –          –          –          –
+  72       E       48        47         45         68       104    G        67        70         68         106
+  73       E       49        48         46         69       105    G        68        71         69         107
+  74       E       –          –          –          –       106    G        –          –          –          –
+  75       E       50        49         47         70       107    G        69        72         70         108
+  76       E       –          –          –         71       108    G        –          –          –         109
+  77       E       51        50         48         72       109    G        70        73         71         110
+  78       E       –         51         49         73       110    G        –         74         72         111
+  79       E       –          –          –          –       111    G        –          –          –          –
+                                                                   G/
+  80       E       52        52         50         78       112             71        75         73         112
+                                                                  TDO
+  81       F       –         54         52         80       113    H        –         77         75         121
+  82       F       –          –          –          –       114    H        –          –          –          –
+  83       F       54        55         53         88       115    H        73        78         76         122
+  84       F       –          –          –         89       116    H        –          –          –         123
+  85       F       55        56         54         90       117    H        74        79         77         128
+  86       F       56        57         55         91       118    H        75        80         78         129
+  87       F       –          –          –          –       119    H        –          –          –          –
+  88       F       57        58         56         92       120    H        76        81         79         130
+  89       F       –         59         57         93       121    H        –         82         80         131
+  90       F       –          –          –          –       122    H        –          –          –          –
+  91       F       58        60         58         94       123    H        77        83         81         132
+  92       F       –          –          –         96       124    H        –          –          –         134
+  93       F       60        62         60         97       125    H        79        85         83         135
+  94       F       61        63         61         98       126    H        80        86         84         136
+  95       F       –          –          –          –       127    H        –          –          –          –
+          F/                                                        H/
+  96               62        64         62         99       128             81        87         85         137
+         TCK                                                      GCLK3
+
+
+
+
+                                                                                                                  23
+0784P–PLD–7/05
+Ordering Information
+ATF1508AS Standard Package Options
+      tPD         tCO1             fMAX
+                                               Ordering Code                       Package
+     (ns)         (ns)            (MHz)                                                       Operation Range
+                                              ATF1508AS-7 JC84                     84J
+                                              ATF1508AS-7 QC100                    100Q1         Commercial
+     7.5           4.5            166.7
+                                              ATF1508AS-7 AC100                    100A         (0°C to 70°C)
+                                              ATF1508AS-7 QC160                    160Q1
+                                              ATF1508AS-10 JC84                    84J
+                                              ATF1508AS-10 QC100                   100Q1         Commercial
+     10             5              125
+                                              ATF1508AS-10 AC100                   100A         (0°C to 70°C)
+                                              ATF1508AS-10 QC160                   160Q1
+                                              ATF1508AS-10 Jl84                    84J
+                                              ATF1508AS-10 Ql100                   100Q1           Industrial
+     10             5              125
+                                              ATF1508AS-10 Al100                   100A        (-40°C to +85°C)
+                                              ATF1508AS-10 Ql160                   160Q1
+
+                                              ATF1508AS-15 JC84                    84J
+                                              ATF1508AS-15 QC100                   100Q1         Commercial
+     15             5              100
+                                              ATF1508AS-15 AC100                   100A         (0°C to 70°C)
+                                              ATF1508AS-15 QC160                   160Q1
+                                              ATF1508AS-15 JI84                    84J
+                                              ATF1508AS-15 QI100                   100Q1           Industrial
+     15             8              100
+                                              ATF1508AS-15 AI100                   100A        (-40°C to +85°C)
+                                              ATF1508AS-15 QI160                   160Q1
+Notes:      1. The last time buy is Sept. 30, 2005 for shaded parts.
+            2. The recommended replacement package for QC160 is the AU100.
+
+
+Using “C” Product for Industrial
+To use commercial product for Industrial temperature ranges, down-grade one speed grade from the “I” to the “C” device
+(7 ns “C” = 10 ns “I”) and de-rate power by 30%.
+
+
+ATF1508AS Green Package Options (Pb/Halide-free/RoHS Compliant)
+      tPD         tCO1             fMAX
+                                               Ordering Code                       Package
+     (ns)         (ns)            (MHz)                                                       Operation Range
+                                               ATF1508AS-7 JX84                    84J           Commercial
+     7.5           4.5            166.7
+                                               ATF1508AS-7 AX100                   100A         (0°C to 70°C)
+                                               ATF1508AS-10 JU84                   84J             Industrial
+     10             5              125         ATF1508AS-10 QU100                  100Q1
+                                                                                               (-40°C to +85°C)
+                                               ATF1508AS-10 AU100                  100A
+
+
+                                                                Package Type
+ 84J                    84-lead, Plastic J-leaded Chip Carrier (PLCC)
+ 100Q1                  100-lead, Plastic Quad Pin Flat Package (PQFP)
+ 100A                   100-lead, Very Thin Plastic Gull Wing Quad Flat Package (TQFP)
+ 160Q1                  160-lead, Plastic Quad Pin Flat Package (PQFP)
+
+
+24            ATF1508AS(L)
+                                                                                                          0784P–PLD–7/05
+                                                                                           ATF1508AS(L)
+
+ATF1508ASL Standard Package Options
+     tPD          tCO1           fMAX
+                                             Ordering Code                      Package
+    (ns)          (ns)          (MHz)                                                         Operation Range
+                                             ATF1508ASL-20 JC84                 84J
+                                            ATF1508ASL-20 QC100                 100Q1            Commercial
+    20             12           83.3
+                                            ATF1508ASL-20 AC100                 100A            (0°C to 70°C)
+                                            ATF1508ASL-20 QC160                 160Q1
+                                             ATF1508ASL-25 JI84                 84J
+                                            ATF1508ASL-25 QI100                 100Q1              Industrial
+    25             15            70
+                                            ATF1508ASL-25 AI100                 100A           (-40°C to +85°C)
+                                            ATF1508ASL-25 QI160                 160Q1
+Note:      1. The last time buy is Sept. 30, 2005 for shaded parts.
+
+
+Using “C” Product for Industrial
+To use commercial product for Industrial temperature ranges, down-grade one speed grade from the “I” to the “C” device
+(7 ns “C” = 10 ns “I”) and de-rate power by 30%.
+
+
+
+ATF1508ASL Green Package Options (Pb/Halide-free/RoHS Compliant)
+     tPD          tCO1           fMAX
+                                             Ordering Code                      Package
+    (ns)          (ns)          (MHz)                                                         Operation Range
+                                             ATF1508ASL-25 JU84                 84J                Industrial
+    25             15            70
+                                             ATF1508ASL-25 AU100                100A           (-40°C to +85°C)
+
+
+
+
+                                                              Package Type
+ 84J                 84-lead, Plastic J-leaded Chip Carrier (PLCC)
+ 100Q1               100-lead, Plastic Quad Pin Flat Package (PQFP)
+ 100A                100-lead, Very Thin Plastic Gull Wing Quad Flat Package (TQFP)
+ 160Q1               160-lead, Plastic Quad Pin Flat Package (PQFP)
+
+
+
+                                                                                                                   25
+0784P–PLD–7/05
+Package Information
+
+84J – PLCC
+
+
+
+
+                                                                        1.14(0.045) X 45˚
+                     1.14(0.045) X 45˚               PIN NO. 1
+                                                                                                             0.318(0.0125)
+                                                     IDENTIFIER                                              0.191(0.0075)
+
+
+
+
+                                                                   E1      E                            B1                D2/E2
+                           B
+
+
+
+
+                           e
+                                                                                                             A2
+                                                D1
+                                                                                                             A1
+                                                 D
+                                                                                                  A
+
+
+
+
+                 0.51(0.020)MAX
+                   45˚ MAX (3X)
+                                                                                                       COMMON DIMENSIONS
+                                                                                                        (Unit of Measure = mm)
+
+                                                                                       SYMBOL          MIN          NOM       MAX         NOTE
+                                                                                             A        4.191          –        4.572
+                                                                                             A1       2.286          –        3.048
+                                                                                             A2       0.508          –          –
+                                                                                             D        30.099         –        30.353
+                                                                                             D1       29.210         –        29.413      Note 2
+                                                                                             E        30.099         –        30.353
+     Notes:    1. This package conforms to JEDEC reference MS-018, Variation AF.
+               2. Dimensions D1 and E1 do not include mold protrusion.                       E1       29.210         –        29.413      Note 2
+                  Allowable protrusion is .010"(0.254 mm) per side. Dimension D1            D2/E2     27.686         –        28.702
+                  and E1 include mold mismatch and are measured at the extreme
+                                                                                             B        0.660          –        0.813
+                  material condition at the upper or lower parting line.
+               3. Lead coplanarity is 0.004" (0.102 mm) maximum.                             B1       0.330          –        0.533
+                                                                                             e                    1.270 TYP
+
+
+                                                                                                                                             10/04/01
+
+                                         TITLE                                                                            DRAWING NO.              REV.
+            2325 Orchard Parkway
+                                           84J, 84-lead, Plastic J-leaded Chip Carrier (PLCC)                                       84J             B
+        R   San Jose, CA 95131
+
+
+
+
+26      ATF1508AS(L)
+                                                                                                                                           0784P–PLD–7/05
+                                                                                                    ATF1508AS(L)
+
+100Q1 – PQFP
+
+
+
+
+                                             E
+                 PIN 1 ID
+
+
+                                PIN 1
+
+                            e
+                                                     D1
+
+                            B
+                                                              D
+
+
+
+
+                                        E1                                                COMMON DIMENSIONS
+                                                                                           (Unit of Measure = mm)
+                                                          A
+                                                                                       JEDEC STANDARD MS-022, GC-1
+         C              0º~7º
+                                                                              SYMBOL      MIN      NOM       MAX     NOTE
+
+                                                 L                                A        –       3.04      3.4
+                                                       A1                         A1      0.25     0.33      0.5
+                                                                                  D              23.20 BSC
+                                                                                  E              17.20 BSC
+                                                                                  E1             14.00 BSC
+                                                                                  B       0.22      –        0.40
+                                                                                 C        0.11      –        0.23
+                                                                                  D1              20 BSC
+                                                                                  L       0.73      –        1.03
+                                                                                  e              0.65 BSC
+
+
+
+
+                                                                                                                    07/6/2005
+                                      TITLE                                                              DRAWING NO.        REV.
+                 2325 Orchard Parkway
+                                      100Q1, 100-lead, 14 x 20 mm Body, 3.2 mm Footprint, 0.65 mm Pitch,     100Q1           C
+             R   San Jose, CA 95131    Plastic Quad Flat Package (PQFP)
+
+
+
+
+                                                                                                                                   27
+0784P–PLD–7/05
+100A – TQFP
+
+
+
+
+                           PIN 1
+                                                                       B
+                                         PIN 1 IDENTIFIER
+
+
+                       e                                                   E1    E
+
+
+
+
+                                                 D1
+                                                   D
+
+
+                   C         0˚~7˚
+
+
+                                                                            A1       A2   A
+                                     L
+                                                                                                   COMMON DIMENSIONS
+                                                                                                    (Unit of Measure = mm)
+
+                                                                                          SYMBOL   MIN      NOM       MAX      NOTE
+                                                                                              A     –          –      1.20
+                                                                                              A1   0.05        –      0.15
+                                                                                              A2   0.95      1.00     1.05
+                                                                                              D    15.75    16.00     16.25
+                                                                                              D1   13.90    14.00     14.10    Note 2
+                                                                                              E    15.75    16.00     16.25
+     Notes:       1. This package conforms to JEDEC reference MS-026, Variation AED.
+                  2. Dimensions D1 and E1 do not include mold protrusion. Allowable           E1   13.90    14.00     14.10    Note 2
+                     protrusion is 0.25 mm per side. Dimensions D1 and E1 are maximum         B    0.17        –      0.27
+                     plastic body size dimensions including mold mismatch.
+                                                                                              C    0.09        –      0.20
+                  3. Lead coplanarity is 0.08 mm maximum.
+                                                                                              L    0.45        –       0.75
+                                                                                              e            0.50 TYP
+
+                                                                                                                              10/5/2001
+                                           TITLE                                                                   DRAWING NO.      REV.
+                  2325 Orchard Parkway
+                                            100A, 100-lead, 14 x 14 mm Body Size, 1.0 mm Body Thickness,
+              R   San Jose, CA 95131                                                                                   100A             C
+                                            0.5 mm Lead Pitch, Thin Profile Plastic Quad Flat Package (TQFP)
+
+
+
+
+28        ATF1508AS(L)
+                                                                                                                              0784P–PLD–7/05
+                                                                                                             ATF1508AS(L)
+
+160Q1 – PQFP
+
+
+
+                                       D1
+                                                                                                     D
+
+
+
+
+                 E1                                                                                                             E
+
+
+
+
+                                Top View                                                          Bottom View
+
+
+                      A2
+
+
+
+        A1                                                                                           COMMON DIMENSIONS
+                                   e
+                                             b                                                        (Unit of Measure = mm)
+                                                                  L1
+                                                                                            SYMBOL   MIN      NOM        MAX        NOTE
+                               Side View                                                     A1      0.25      –        0.50         5
+                                                                                             A2      3.20     3.40      3.60
+    Notes: 1. This drawing is for general information only. Refer to JEDEC Drawing           D              31.20 BSC                2
+              MS-022, Variation DD-1, for additional information.                            D1             28.00 BSC                3
+           2. To be determined at seating plane.
+           3. Regardless of the relative size of the upper and lower body sections,          E              31.20 BSC                2
+              dimensions D1 and E1 are determined at the largest feature of the body         E1             28.00 BSC                3
+              exclusive of mold Flash and gate burrs, but including any mismatch
+              between the upper and lower sections of the molded body.                       e              0.65 BSC
+           4. Dimension b does not include Dambar protrusion. The Dambar                     b       0.22      –        0.40         4
+              protrusion(s) shall not cause the lead width to exceed b maximum by more
+              than 0.08 mm. Dambar cannot be located on the lower radius or the lead         L1             1.60 REF
+              foot.
+           5. A1 is defined as the distance from the seating plane to the lowest point of
+              the package body.
+
+
+
+                                                                                                                                     3/28/02
+                                                    TITLE                                                            DRAWING NO.         REV.
+                 2325 Orchard Parkway               160Q1, 160-lead, 28 x 28 mm Body, 3.2 Form Opt.,
+             R   San Jose, CA 95131                 Plastic Quad Flat Pack (PQFP)                                       160Q1              A
+
+
+
+
+                                                                                                                                                29
+0784P–PLD–7/05
+Revision History
+
+                   Revision   Comments
+                   0784P      Green package options added.
+                              The ATF1508ASL-25 commercial speed offering was obsoleted in 2002
+                   0784O
+                              and replaced by the ATF1508ASL-20 commercial speed grade.
+
+
+
+
+30    ATF1508AS(L)
+                                                                                          0784P–PLD–7/05
+ Atmel Corporation                                   Atmel Operations
+    2325 Orchard Parkway                             Memory                                                      RF/Automotive
+    San Jose, CA 95131, USA                             2325 Orchard Parkway                                        Theresienstrasse 2
+    Tel: 1(408) 441-0311                                San Jose, CA 95131, USA                                     Postfach 3535
+    Fax: 1(408) 487-2600                                Tel: 1(408) 441-0311                                        74025 Heilbronn, Germany
+                                                        Fax: 1(408) 436-4314                                        Tel: (49) 71-31-67-0
+                                                                                                                    Fax: (49) 71-31-67-2340
+ Regional Headquarters                               Microcontrollers
+ Europe                                                 2325 Orchard Parkway                                        1150 East Cheyenne Mtn. Blvd.
+    Atmel Sarl                                          San Jose, CA 95131, USA                                     Colorado Springs, CO 80906, USA
+    Route des Arsenaux 41                               Tel: 1(408) 441-0311                                        Tel: 1(719) 576-3300
+    Case Postale 80                                     Fax: 1(408) 436-4314                                        Fax: 1(719) 540-1759
+    CH-1705 Fribourg
+    Switzerland                                         La Chantrerie                                            Biometrics/Imaging/Hi-Rel MPU/
+    Tel: (41) 26-426-5555                               BP 70602                                                 High Speed Converters/RF Datacom
+    Fax: (41) 26-426-5500                               44306 Nantes Cedex 3, France                                Avenue de Rochepleine
+                                                        Tel: (33) 2-40-18-18-18                                     BP 123
+ Asia                                                   Fax: (33) 2-40-18-19-60                                     38521 Saint-Egreve Cedex, France
+    Room 1219                                                                                                       Tel: (33) 4-76-58-30-00
+    Chinachem Golden Plaza                           ASIC/ASSP/Smart Cards                                          Fax: (33) 4-76-58-34-80
+    77 Mody Road Tsimshatsui                            Zone Industrielle
+    East Kowloon                                        13106 Rousset Cedex, France
+    Hong Kong                                           Tel: (33) 4-42-53-60-00
+    Tel: (852) 2721-9778                                Fax: (33) 4-42-53-60-01
+    Fax: (852) 2722-1369
+                                                        1150 East Cheyenne Mtn. Blvd.
+ Japan                                                  Colorado Springs, CO 80906, USA
+    9F, Tonetsu Shinkawa Bldg.                          Tel: 1(719) 576-3300
+    1-24-8 Shinkawa                                     Fax: 1(719) 540-1759
+    Chuo-ku, Tokyo 104-0033
+    Japan                                               Scottish Enterprise Technology Park
+    Tel: (81) 3-3523-3551                               Maxwell Building
+    Fax: (81) 3-3523-7581                               East Kilbride G75 0QR, Scotland
+                                                        Tel: (44) 1355-803-000
+                                                        Fax: (44) 1355-242-743
+
+
+                                                                                                                 Literature Requests
+                                                                                                                 www.atmel.com/literature
+
+
+Disclaimer: The information in this document is provided in connection with Atmel products. No license, express or implied, by estoppel or otherwise, to any
+intellectual property right is granted by this document or in connection with the sale of Atmel products. EXCEPT AS SET FORTH IN ATMEL’S TERMS AND CONDI-
+TIONS OF SALE LOCATED ON ATMEL’S WEB SITE, ATMEL ASSUMES NO LIABILITY WHATSOEVER AND DISCLAIMS ANY EXPRESS, IMPLIED OR STATUTORY
+WARRANTY RELATING TO ITS PRODUCTS INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE, SPECIAL OR INCIDEN-
+TAL DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, BUSINESS INTERRUPTION, OR LOSS OF INFORMATION) ARISING OUT
+OF THE USE OR INABILITY TO USE THIS DOCUMENT, EVEN IF ATMEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. Atmel makes no
+representations or warranties with respect to the accuracy or completeness of the contents of this document and reserves the right to make changes to specifications
+and product descriptions at any time without notice. Atmel does not make any commitment to update the information contained herein. Unless specifically provided
+otherwise, Atmel products are not suitable for, and shall not be used in, automotive applications. Atmel’s products are not intended, authorized, or warranted for use
+as components in applications intended to support or sustain life.
+
+
+© Atmel Corporation 2005. All rights reserved. Atmel®, logo and combinations thereof, Everywhere You Are ® and others, are registered trade-
+marks or trademarks of Atmel Corporation or its subsidiaries. Other terms and product names may be trademarks of others.
+
+
+
+                                                                                                                                         Printed on recycled paper.
+
+                                                                                                                                          0784P–PLD–7/05           xM
+

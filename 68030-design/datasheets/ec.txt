@@ -1,0 +1,840 @@
+                                                Order this document
+                                                by MC68030EC/D
+  MOTOROLA
+m SEMICONDUCTOR
+  TECHNICAL DATA
+
+
+
+
+                           MC68030
+                    ELECTRICAL SPECIFICATIONS
+
+
+
+
+  (~)MOTOROLA INC., 1990
+                                       ( •MOTOROLA
+                                                             Rev 1
+                                                                     m:
+ Motorola'reserves the right to make changes without further notice to any products herein
+to improve reliability, function or design. Motorola does not assume any liability arising out
+ of the application or use of any product or circuit described herein; neither does it convey
+.any license under its patent rights nor the rights of others. Motorola products are not author-
+ ized for use as components in life support devices or systems intended for surgical implant
+ into the body or intended to support or sustain life. Buyer agrees to notify Motorola o f any
+ such intended end use whereupon Motorola shall determine availability an d suitability of its
+ product or products for the use intended. Motorola and (~ are registered trademarks of
+ Motorola, Inc. Motorola, Inc. is an Equal E m p l o y m e n t O p p o r t u n i t y / A f f i r m a t i v e Action
+ Employer.
+                        ELECTRICAL SPECIFICATIONS
+
+MAXIMUM RATINGS
+                      Rating               Symbol       Value          Unit     This device contains protective cir-
+                                                                                cuitry against damage due to high
+      Supply Voltage*                        VC~C    -0.3 to +7.0        V      static voltages or electrical fields;
+      Input Voltage                          Vin     - (~:5 to + 7.0   "V       however, it is advised that normal
+                                                                                precautions be taken to avoid ap-
+      Operating Temperature Range                                       °C      plication of any voltages higher than
+       Minimum Ambient Temperature           TA            0                    maximum-rated voltages to this
+       40-MHz Maximum Ambient                TA           70                    high-impedance circuit. Reliability
+         Temperature                                                            of operation is enhanced if unused
+       50-MHz Maximum Case                   TC           80                    inputs are tied to in appropriate
+         Temperature                                                            logic voltage level (e.g., either GND
+      Storage Temperature Range              Tstg     - 5 5 to 150      °C      or VCC).
+
+     *A continuous clock must be supplied to the MC68030 when it is powered
+      up.
+
+
+
+
+THERMAL CHARACTERISTICS- PGA PACKAGE
+                  Characteristic           Symbol        Value         Rating
+      Thermal Resistance - - Ceramic                                   °C/W
+        J~Jnction tO Ambient                 ejA          30*
+        Junction to Case                     0jC          15"
+
+     ~Estimated
+
+
+
+
+MO,TOROLA                          M C 6 8 0 3 0 ELECTRICAL SPECIFICATIONS
+POWER CONSIDERATIONS
+   The average chip-junction temperature, T j , in °C can be obtained from:
+                                  T j = T A + (PD ° 03A)                    (1
+   where:.        ..
+     TA       = Ambient Temperature, °C
+     0jA      = Package Thermal Resistance,
+                 Junction-to-Ambient, °C/W
+     PD       = PINT+ PI/O
+    'PINT     = I c c x V c c , W a t t s - - Chip lnternaI Power
+     PI/O .   - Power,Dissipationon Input and Output Pins
+                 - - User Determined                                -.
+   For most applications PI/O<PINT and can be neglected. '
+
+   The foliowing is an approximate relationship between PD and T j (if PI/O is
+   neglected):.    .. .
+            ......      .     PD=.K+(Tj+273°C)         , ,,..  .           (2)
+
+   Solving equations (1)and (2) f o r K g i v e s :           ' ' " " ":
+                            K = PD" (TA + 273°C) + eJA ° PD2                     (3)
+   where K is a constant pertaining to the particular part. K can be determined
+   from equation (3) by measuring PD (at equilibrium) for a known TA. Using
+   this value of K, the values (~f PD and T j can be obtained by solving'equ"ations
+   (1) and (2) iteratively for any value of T A.
+
+   The total thermal resistance of a package (0jA)can be separated into two
+   components, 0jC and 0CA, representing the barrier to h e a t f l o w from the
+   semiconductor junction to the package (case) surface (eJC) and from the case
+   to the outside ambient (0CA). These terms are related by the equation:
+                                 0jA=0jC+0CA                                  (4)
+
+    ejC is device related and cannot be influenced by the user. However, 0CA is
+    user dependent and can be minimized by such thermal management tech-
+    niques as heat sinks, ambient air cooling, and thermal convection. Thus,
+    good thermal management on the part of the user can significantly reduce
+    eCA so that 0jA approximately equals 0jC. Substitution of ejC for 0jA in
+    equation (1) will result in a lower semiconductor junction temperature.
+
+   Values for thermal resistance presented in this document, unless.estimated,
+   were derived using the procedure described in Motorola Reliability Report
+   7843, "Thermal Resistance Measurement Method for MC68XX Microcom-
+   ponent Devices," and are provided for design purposes only. Thermal meas-
+   urements are complex and dependent on procedure and setup. User derived
+   values for thermal resistance may differ.
+
+
+
+                      MC68030~ELECTRICAL;SP.ECIFICATIO
+                                                     NS                 •MOTOROLA
+AC ELECTRICAL SPECIFICATIONS          DEFINITIONS •
+    The AC specifications presented consist of output delays, input setup and
+    hold times, and signal skew times. All signals are specified relative to an
+    appropriate edge of the MC68030 clock input and, possibly, relative to one
+    or more other signals.
+
+    The measurement of the AC specifications is defined by the waveforms in
+    Figure 1. To test the parameters guaranteed by MQtorola, inputs must be
+    driven to the voltage levels •specified in~ Figure 1. Outputs of the MC68030
+    are specifiedwith minimum.and/or maximum limits, as appropriate, and are
+    measured as shown. Inputs to the MC68030 are specified with minimum and,
+    as appropriate, maximum setup and hold times, and are measured asshown.
+    Finally, the measurements for signal-to-signal specifications are also shown.
+
+    Note that the testing levels used to verify conformance of the MC68030 to
+    the AC specifications:does ~not affect the guaranteed DC operation of the
+    device as specified in the DC electrical characteristics.
+
+
+
+
+ME)'~OROEA            MC68030!ELECTRICAL
+                                      SPECIFICATIONS                            3
+                                        " "                    DRIVE
+                                                              TO 2.4 V
+
+
+
+           '       "         '    CLK
+
+
+
+
+                       D°TPUTS(2):L~                               '        "            VAL'O '" ~ 2 " 0 V                   2.OV .'VA"0'
+                                                                                      I 00TP,T° 0 . a V ~ V _ / _ / - ' I ~ _ ~ V OUTPOTo+,
+
+
+.....   , ........                            To 2:iv         " T A - - Y - 2.0 v VAL,O 28 v - & V 7 7
+                                                ;RIVE                              IN0T 08V
+                                        T00,v                                          t._c4._0_, t                     .
+
+
+
+               .        INPUTS(4)CLK                                            "-~2E08;         :NApL~DT: . : : ~                   T02.4V
+
+
+
+
+                                                                           V
+                       ALL SIGNALS(S)
+
+
+
+
+                                                                                     . --~--   2.0 V
+                                                                                   . ~ -       0.8 V
+
+
+
+                   NOTES: -
+                        1 - This out[)ut timing is applicable to all parameters specified relative to the rising edge of the clock
+                        2"-This output'timing is applicable to all parameiers specified relative to" the fallingecIge o f t h e cl()ck "
+                        3 - This input timing is applicable to all parameters specified relative to the rising edge of the Clock
+                        4 - This input timing is applicable to all parameters specified relative to the falling edge of the clock
+                        5 - This timing is applicable to all parameters specified relative to the assertion/negation of another signal
+
+                   LEGEND:
+                     A - Maximum output delay specification
+                      B - Minimum output hold time
+                      C - Minimum input setup time specification
+                      D - Minimum input hold time specification
+                      E - Signal valid to signal valid specification (maximum or minimum)
+                      F - Signal valid to signal invalid specification (maximum or minimum)
+
+
+                            Figure        1. D r i v e L e v e l s a n d T e s t P o i n t s f o r A C S p e c i f i c a t i o n s
+
+
+
+
+4                                                  MC68030 ELECTRICAL-SPECIFICATIONS                                                 MOTOROLA
+DC ELECTRICAL SPECIFICATIONS
+   ( V c c = 5.0 Vdc_+ 5%; G ND = 0 Vdc; 40 MHz-T A = 0 ° to 70°C, 50 M Hz-TA = 0°C to T C = 80°C)
+
+                 •   ..                     Characteristic                                                   Symbol           Min         Max       Unit
+ Input High Voltage                                                                                            ViH            2.0         VCC        V'
+ Input Low Voltage                                                                                             VIL'           GND         0.8       "V
+                                                                                                                              -0.5
+ Input Leakage Current                               BERR, BR, BGACK, CEK,,IPL0-1PL2, AVEC                     lin            -2.5        2.5       ~A
+   GND ~< Vin ~< VCC                                               ,CDIS, DSACKO, DSACK1
+                                                                              HALT, RESET                                     - 20        20
+ Hi-Z (Off-State) Leakage Current                  A0-A31,'A'~, DBEI~, D--'S,D0-D31, FC0-FC2;                 ITS I -         -20         20        #A
+   (, 2.4 V/0.5 V                                                       R/W, RMC, SIZ0-SIZ1
+ Output High Voltage                A0-A31, AS, BG, D0-D31, DBEN, DS, ECS, R/W, IPEND,                        VOH             2.4                    V
+  IOH = 400 p,A                                          OCS, RMC, SIZ0-SIZ1, FC0-FC2,
+                                                        CBREQ, CLOUT, STATUS, REFILL
+ Output Low Voltage                                                                        m                  VOL                                    V
+  IOL =3.2 mA                                      A0-A31, FC0-FC2, SIZ0-SIZ1, BG, D0-D31                                                 0.5
+  IOL = 5.3 mA                                      CBREQ, AS, DS, R/W, RMC, DSEN, IPEND                                      m           0.5
+  IOL = 2.0 mA                                           STATUS, REFILL, CLOUT, ECS, OCS                                                  0.5
+  IOL = 10.7 mA                                                                     RESET                                     m           0.5
+ Power Dissipation (TA=0°C)                                                      "                             PD ,           --          2.6        W
+ Capacitance (see Note)                                                                                        Cin            --          2O        pF
+  Vin=0 V, TA= 25°C, f = l MHz
+ Load Capacitance                                                                      ECS, OCS                CL             --          5O        pF
+                                                                           CLOUT, STATUS, REFILL                                          70
+             :                                                                          All Other                                         130
+
+NOTE: Capacitance is periodically sampled rather than 100% tested.
+
+
+
+AC ELECTRICAL SPECIFICATIONS - - CLOCK I N P U T (seeFigure 2)
+                                                              20 MHz        25 MHz         33.33 MHz           40 M H z              50 MHz*
+  Num.                    Characteristic                                                                                                            Unit
+                                                         Min      Max      Min       Max       Min   Max      Min     Max           Min    Max
+
+          Frequency of Operation                         12.5"     20      12.5      25        20    33.33     25       40           25     50      MHz
+    1     Cycle Time Clock                                   50    80      40        80        30     50       25       40           20     40       ns
+   2, 3   ClockPulse Widtll Measured                         23    57      19        61        14     36      11.5      29          9.5    30.5      ns
+           from 1.5 V to 1.5 V
+   4, 5   ClockRise and Fall Times                           --        5   --         4        --      3.     --          2          --         2    ns
+
+*Tcase = 80°C Maximum . .
+
+
+
+
+MoTOR01"A                                  MC68030~EI~ECTRICAI
+                                                           • SPECIFICATIONS                                                                                5
+AC ELECTRICAL SPECIFICATIONS - - READ A N D WRITE CYCLES•
+     ( V c c . = 5.0 V d c - + 5 % ; G N D = 0             Vdc; 40 MHz-TA =0 ° to 70°C, 50 MHz-TA =0°.C to TC =80°C)
+     (see..Figures.3-8)
+
+                                                                                         20MHz               25MHz                .33.33MHz                   40MHz                   50MHz*
+     Num."                           Characteristic                                                                                                                                                    Unit
+                                                                                     Min          Max       Min      Max          Min        Max          Min          Max           Min       Max    • -
+
+           6        C!ock'Hig h to Function Code,                               I,       0        25         0           20        0           14             O          14            0        14     ns
+                      Size, R M C , I P E N D ,
+                      CLOUT, A d d r e s s Valid
+
+       6A           Clock,High to EC~, OCS                          ' ,                  0        15         0           i5        0           12             0          10            0        10     ns
+                     •Asserted                                                                                                                        I
+
+       6B       '   Functioni~ode,'Size, RMC,'                                           4        --         3           --        3           --    'I       3          --            3        --     ns
+                      IPEND, CLOUT A d d r e s s
+                      Valid to N e g a t i n g Edge o f ECS
+
+           7        Clock High to Function Code,                                         O        50         O       " 40          O           30             0          25            0        20     ns
+                      Size, RMC, CLOUT,
+                      A d d r e s s Data High
+                      Impedance
+
+           .8       Clock High to Fu'nction Code,                                        O        --         0           --        O           --             0          --            0        --    . ns
+                      Size, RMC, IPEND,
+                      CLOUT, A d d r e s s I n v a i i d
+
+           9        Clock L o w to AS, D'S A s s e r t e d ,                             3        20         3           18        2           10         2              10            2        10    .ns
+                      CBREQ Valid
+
+      9A 1          AS t o D S A s s e r t i o n S k e w (Read)                      -10          10"       -10          10        -8          8          :6                 6        -6        6      ns
+
+      9B! 4         A T A s s e r t e d to D ~ A s s e r t e d                       32           --        27           --        22          --          16            --           14        --.    ns
+                       (Wri.te)
+
+       10           ECS W i d t h A s s e r t e d                                        15       --        10           --        8           --           5 "          --            4        --     ns
+
+      "10A          OCS W i d t h A s s e r t e d                                        15       --        10           --        8         " --             5          --            4        --     ns
+
+      1087          ECS, OCS W i d t h N e g a t e d                                     10       --         5           --        5           --             5          --            4        --     ns
+
+           11       Function Code, Size, RMC,                                            IO       --         7           --        5.          --             5"         --            3        --     ns
+                      CLOUT, A d d r e s s Valid t o
+                      A s s e r t i n g Edge o f A S
+                      A s s e r t e d (arid D S A s s e r t e d ,
+                      Read)
+
+       12           Clock L o w to AS, DS, C e R E Q '                                   'O       20         O           18       ' O          10         "O . . . .     10"           O        10'   " ns
+                      Negated
+
+       12A          Clock L o w to ECS/OCS N e g a t e d .....                           0        20         O           18        0           15           0            12          ' 0        11     ns'
+
+       13,          AS, DS N e g a t e d to Function                                     1O       --         7           --        5         :--            3            -- ~          3        --     ns
+                      Code, Size, RMC, CLOUT,
+                      A d d r e s s Invalid   .    .                .      .         .        .    .    .        .   .        .    .     .
+
+           14       AS (and DS Read) W i d t h                                       85           --        70           --        45,         --'        30             --           25        --     ns
+       '              A s s e r t e d (Asynchronou's             .....
+                      Cycle)
+
+     ~4A 11         D ~ W i d t h Asse'rted (Write)                       " '        38 "         ~         30           --        23"         --          18           m            - 13       7      ns
+
+      14B "         AS (and'DS, Read) W i d t h '                                    35           --        30           --        23         '--         "18            --           13        --     ns
+      ..              Asserted (Synchronous
+                        Cycle)
+      ,15'          AS, D S W i d t h     Negated                          ' "       38           --        30           --        23          --         18             ~           .13        --    .ns
+
+    _ .15A 8        ~    N e g a i e d to A T Assertecl ..                           30           --        25           --        18.         --          16          . .            :1~'"     --     ns
+
+       16           Clock High to AS, DS, R/W,                                       --           50                     40                    30         --             25      I    --        20     ns
+                      DBEN, CBREQ High I m p e d a n c e
+                                                                                                                                                                                 I
+
+
+6                                                          MC68030                   ELECTRICAL!SPECIF.ICATIONS                                                                               MOTOROLA
+A C ELECTRICAL S P E C I F I C A T I O N S (Continued)                                     " {'
+                                                            20MHz        25MHz       33.33MHz       40MHz           50MHz*
+  Num.                    Characteristic                                                                                        Unit
+                                                           Min   ,Max   Min   Max    Min   Max     Min     Max     Min    Max
+
+    17'     A'--S, D~ Negated to R/W Invalid               1Q     ---   .7"   --~     5      --     3       --       3    --     ns
+
+    18      Clock High to R / ~ High                        O     25     0    20      0      15     O       14       0    14     ns
+
+   20       Clock High to R/W Low                           0     25     0    20      O      15     0       !4       O    14     ns
+
+   21       R/W'High to A T 'Asserted                      10     --     7            5      --     5       --       3    --     ns
+
+    22      R/W Low to D'--S,~sserted (Write)              60     --    47    --     35      --    24      .--      23    --     ns
+
+    23      Clock H i g h to Data-Out Valid                --     25    --    20     --      14    --       14      --    14     ns
+
+
+    24      Data-Out Valid to Negating                      8     --     5    --      3      --     3       --       3'   --     ns
+              Edge.of AS ..
+
+  2511      AS, DS Negated to Data-Out                     10     --     7    --      5      --     3       --     . 3    --     ns
+              Invalid
+
+ 25A 9'11   D-S Negated to DBEN Negated                    10     --     7    --      5      --     3       --       3    --     ns
+              (Write)
+  2611      Data-Out Valid to Asse~ting Edge               10     --     7    --      5      --     3       --       3    --    ns
+              of DS Asserted (Write)
+
+    27      Data-In Valid to Clock Low                      4     --     2    --      1      --     1       --       1    --     ns
+              (Setup)
+
+   27A      Late BERR/HALT Asserted to                     10     --     5    --      3      --     3       --       3    --     ns
+              Clock Low (Setup)
+
+  2812      AS, D S N e g a t e d to DSACKx,                O     50     0    40      0      30     0       20       0    15     ns
+              BERR, HALT, AVE C
+              Negated ( A s y n c h r o n o u s Hold)
+
+ ;)8A17     Clock Low to DSACKx, BERR,                     12     85     8    70      6      50     6       40       6    35     ns
+              HALT, AVEC Negated
+              ( S y n c h r o n o u s Hold)
+
+  2912      AS, DS Negated, to Data-In                      0     --     0    --      0      --     0       --       0    --     ns
+              Invalid '(Asynchronous Hold)
+
+ 29A 12     AS, DS Negated to Data-In                      --     50    --    40     --      30    --       25      --    20     ns
+              High Impedance
+
+  :3012     Clock Low to Da'ta-ln Invalid                  12     --     8    --      6      --     6       --       6    --     ns
+              ( S y n c h r o n o u s Hold)
+
+ 30A 12     Clock.Low to.Data-In H i g h .                 --     75    --    60     --     '45.   --       30'     --    25     ns
+              Impedance (Read followed
+              by Write)
+
+   31 ~ .   D~ACKx Asserted to Data-In .                   --     43    --    28     --      20    --       14      --    13     ns
+             Valid ( A s y n c h r o n o u s Data.Setup)
+
+  31A 3     DSACKx Asserted to DSACKx                      --     10    --       7   --       5    --        3      --     3     ns
+             . Valid (Skew)
+
+ • :32      RESET input Transition T i m e "               --     1,5   .~    1.5    --    .1.5,   ~        .1.5    --    1.5   Clks
+
+    33      C i o c k L o w to B-G Asserted                 0     25     0    20      0      15     0. ,    14      "0    14     ns
+
+    34      Clock Low to ~        Negated                   0     25     O    20      0      15     0       14       0    14     ns
+
+  • .35     BR A s s e r t e d t o BG Asserted             1,5    3,5   1.5   3.5    1.5     3.5   1,5      3.5     1.5   3.5   Clks
+              (RMC Not Asserted)
+
+
+
+
+MOTOROLA                                    MC68030        Er ECTRIGAL;SPECIEICATIONS                                                  7
+AC ELECTRICAL SPECIFICATIONS (Continued)
+                       '"                                                 20 MH~'             25 MHz      33~33 MHz     40 M H z     50 M H z *
+      NUm.                    "       Characteristic                                                                                                Unit
+         .~                                                             'Min   Max"      Min       Max    Min   Max   Min    Max     Min    Max
+
+          37          BGACK Asserted to BG.Negated                       1.5    3.5      1,5       3.5    1.5   3,5    1,5    3.5    1.5     3.5    Clks
+
+      37A 6 ,. BG-ACK Asserted to ~                      Negated:        .0.    1.5           0,    115    0    1.5     0     1.5     0      1.5-   Clks
+
+          39.         BG Width" Negated                                  75     --       60         --    45    --     30      --    30      --       ns
+
+         39A          B'G Width' Asserted                                75     --       60         --    45    --     30      --    :30     --      ns
+
+          @.oJ        Clock H!gh to DBEN Asserted                         O     25            0     20     0     18     0      16     0      14      ns
+           •!           (Read)
+
+          41          C!ock L o w t o DBE N Negated                       O    " 25           0     20     0     18     0      16     0      14       ns
+                        (Read)
+
+          42          Clock Low to DBEN Asserted                          0     25            0     20     0    18      0      16     0      14      ns
+                        (Write)
+
+          43 '        Clock High to DBEN N e g a t e d                    O     25            0     20     0     18     0      16     0      14      ns
+                        (Write)
+
+          44          R#~ Low to DB~N Asserted                            10    --            7     --     5    --      5      --     5      --      ns
+                        (Write)
+
+         455          DB-EN Width Asserted                                50    --       40'        --    30    --      22     --    20      --      ns
+     .      .     .      .         ,~synchronous Read                    lOg    --       80         --    60    --    ' 45     --'   40      --
+                                   A s y n c h r o n o u s Write
+
+      45A 9           DBEN Width Asserted                                10     --        5         --.    5    --      5             5      --      ns
+                                    S y n c h r o n o u s Read           50     --       40         --    30    --     22      --    20
+                                   S y n c h r o n o u s Write
+
+        46            R/FN Width Asserted                                125    --       100        --    75    --     5'0     --    40      --      ns
+     ".i .             ( A s y n c h r o n 0 u s W r i t e or'Rea d )                    ., .
+
+      '46A '          R/W Width'Asserted ( S y n c h r o n o u s         75          '   60         --    45    --     30    ' --    25      --      ns
+                        Write or Read)
+
+         47A'"        Asynchronous Input Setup Time                       4     --            2     --     2    --      2      --     2      --      ns
+                        to Clock Low
+
+     "478 "           ~,synchronous Input Hold T i m e                    12    --:           8    --:     6    --      6      --     6      --      ns
+                        f r o m Clock Low
+
+     • 484        DSACKx Asserted to BERR,,                              --     20       --         25    --    18     --.    .14    --      13      ns
+                   HALT Asserted
+
+          53."        Data-Out ~'iold f r o m Clock High                  3     --            3     --     2    --      2      --     2      --      ns
+
+          55          RAN Asserted to Data Bus                           25     --       20         --    15    --     11     --     11      --      ns
+                        Impedance Chan~je
+
+          56          RESE=r Pulse Width                                 512    --       512'       --    512   --    512      --    512     --     Clks
+                        (Reset In'struction)
+
+          57          BERR Negated to H A L T                             0     --            0     --     0    --     0      --      O      --      ns
+                        Negated (Rerun)
+
+         58 l °       BGACK Negated to Bus Driven                         I     --       .I         --     1    --     .I      --     I      --     Clks
+
+
+
+         59 l °       B'-G Negated to Bus Driven                          I     --            I     --     1    --      1      --     I      --     Clks
+
+
+
+
+8'                                                         MC68030      EI'ECTRICALSPECIEICATIONS                                          MOTOROLA.
+AC ELECTRICAL SPECIFICATIONS (Concluded)
+                                                      20 MHz         25 MHz      33.33 MHz      40 MHz       50 MHz*
+  Num.                Characteristic                                                                                       Unit
+                                                     Min    Max    Min    Max     Min    Max   Min   Max    Min    Max
+  6013     Synchronous Input Valid to                 4      --     2      --      2      --    2     --      2     --      ns
+            Clock High (Setup Time)
+  6113    !Clock High to Synchronous                 12      --     8      --      6      --    6     --      6     --     ns
+             Input Invalid (Hold Time)
+   62      Clock Low to STATUS,                       0      25     O      20      O      15    0     15      0     15     ns
+             REFILL Asserted
+    63    Clock Low to STATUS,                        0      25     0      20      0      15    O     15      0     15     ns
+            REFILL Negated
+
+NOTES:
+*Tcase = 80°C Maximum
+   1. This number can be reduced to 5 ns if strobes have equal loads.
+   2. If the asynchronous setup time (#47A) requirements are satisfied, the DSACKx low to data setup time (#31) and
+       DSACKx low to BERR low setup time (#48) can be ignored. The data must only satisfy the data-in clock low setup
+       time (#27) for the following clock Cycle, and BERR must only satisfy the late BERR low to clock low setup time (#27A)
+       for the following clock cycle.
+   3. This parameter specifies the maximum allowable skew between DSACK0 to DSACK1 asserted or DSACK1 to DSACK0
+       asserted specification #47A must be met by DSACK0 or DSACK1.
+   4. This specification applies to the first (DSACK0 or DSACK1) DSACKx signal asserted. In the absence of DSACKx, BERR
+       is an asynchronous input using the asynchronous input setup time (#47A).
+   5. DBEN may stay asserted on consecutive write cycles•
+   6. The minimum values must be met to guarantee proper operation. If this maximum value is exceeded, B'-G may be
+       reasserted.
+   7. This specification indicates the minimum high time for ECS and OCS in the event of an internal cache hit followed
+       immediately by another cache hit, a cache miss, or an operand cycle.
+   8. This__specification guarantees ~)peration with the MC68881/MC68882, which specifies a minimum time for ~ negated
+    • to,AS asserted (specification #13A in the MC68881/MC68882 User's Manual). Without this specification, incorrect
+     • interpretation of specifications #9A and #15 would indicate that the MC68030 does not meet the MC68881/MC68882
+       requirements.
+   9. This specification allows a system designer to guarantee data hold times on the output side of data buffers that have
+       output enable signals generated with DBEN. The timing on DBEN precludes its use for synchronous READ cycles with
+       no wait states.
+  10. These specifi(;ations allow system designers to guarantee that an alternate bus master has stopped driving the bus
+       when the MC68030 regains control of the bus after an arbitration sequence.
+ .11. DS will not be asserted for synchronous write cycles with no wait states~
+  12. These hold times are specified with respect to strobes (asynchronous) and with respect to the clock (synchronous).
+       The designer is free to use either time.
+  13. Synch?or~ous__ inputs must meet specifications #60 and #61 with stabJe logic levels for all rising edges of the clock
+       while AS is asserted. These values are specified relative to the high level of the rising clock edge The values originally
+       published were specified relative to the low level of the rising clock edge.
+  14. This specification allows system des~qners'._.tto qualify t h e ~ signal of an MC68881/MC68882 with AT (allowing 7 ns
+       for a gate delay) and still meet the CS to DS setup time requirement (spec 8B) of the MC68881/MC68882.
+
+
+
+
+MOTOROLA                               M C 6 8 0 3 0 E L E C T R CAL.~SPEC F, C A T I O N S                                      9
+                                       .-@
+
+                     Figure 2. Clock Input Timing Diagram
+
+
+
+
+     .   .   . . .   , , .      .
+
+
+
+
+10                           MC68030 ELECTRICAESPECIEICATIONS   MOTOROLA
+                                        $1     $2     $3      $4         $5
+
+                      CLK               _ _ 2 ~"-2- . _ _ .
+
+                                                      m
+           AO-A31, FCO.FC2
+                                                      m
+                 SIZ0-SIZI
+
+
+
+                     RMC
+
+
+
+
+                             ~-.~            @
+                      oc-g - -      ~
+
+                             ~_              ®                           ---i
+
+
+
+                             (~-             ~
+                                                     ®
+                             (5>.            ®
+                     R/W
+                                                      ®
+
+
+                  DSACKO
+
+
+
+
+                  OSACKI
+
+                                             (~.
+                                                              .-   ],.
+                                                      ®
+                     8ERR
+
+                                                                    .@
+                     HALT
+
+
+                     ALL
+           ASYNCHRONOUS                       ¥               %
+                                                  %
+                  INPUTS
+                                                              .           ' ~'~)
+                      CIIN
+
+
+
+
+             Figure 3. Asynchronous Read Cycle Timing Diagram
+
+
+MOTOROLA                     MC68030 ELEC'TRICAE~SPECIFICATIONS                    11
+                               SO       SI   $2   $3   .   $4      $5   SO
+
+
+
+
+     A0-A31, FC0-FC2 /
+           SIZ0-SIZ1
+
+
+
+                RMC- .
+
+
+
+
+                ~_                  --~ ®
+                '0-'~               .Z,
+                                                                ---tP
+
+
+
+
+                         @          .
+
+
+
+
+         -                    _/                   ®
+
+
+             00-031
+
+
+                                                                -.4          ~
+
+                                                                --.<~
+
+
+        F.igure:4: Asyncliro'nous Write .Cycle Timing.Diagram
+
+
+
+
+12                       MC68030"EI~ECTRIC'AL SPE~:IFICP,TiONS                   MOTOI~OI"A"
+                                        SO           $1         $2   S3         SO          Sl             S2
+
+
+
+
+           AO-A3!.FC0-FC2 ,,--__%
+                SIZO-SIZ1   -   -   J
+                                                                     • --lID   ,).4.-4 8 I - . "   , , .
+
+
+
+
+                     .RMC
+
+                                                 -        .®
+                      [c-~ - - - ~ ,
+
+
+                                                          ...@_
+
+                                                          i i
+
+
+                                             i,.--
+
+
+
+
+                    DBEN
+
+                                                                                 -@
+                                                                                 t"    ,
+                   CLOUT
+
+
+                   CBREO
+
+
+
+
+           OSACK0/0SACKI    J
+
+
+
+
+                   STERM
+
+
+
+
+                     CIIN
+
+
+
+
+                   CBACK
+
+
+                                                     "1
+                  00-031
+
+
+
+
+            Figure 5. SynchronousReadCycle Timing Diagram
+
+
+
+MOTOROLA
+• •  ,                          MC68030 . ELECTRICAL
+                                            . . . . . . SPECIEICATIONS
+                                                         . . .                                                  13
+                                SO        SI       $2      S3   SO   Sl   S2
+
+                 CLK
+
+
+     A0-A31. FC0-FC2
+           SIZ0-SlZ~i
+
+
+
+                 RMC
+
+                                               •    A~."
+                     ECS
+
+
+                 m
+                 OCS
+
+
+
+
+                 R/W
+
+
+
+
+              00.031
+
+
+
+     OSACK0/DSACKI         .___/
+
+              ....                                  141
+
+
+
+
+                HAL'--"T           .. z            ~ r
+
+
+
+
+         Figure 6. Synchronous Write Cycle Timing Diagram
+
+
+
+
+14                         MC68030"EI'ECTRICAL SPECIF.ICATIONS                 MOTORO#A':
+                     SO   $1               $2       $3   $4       $5
+
+       CLK
+
+
+
+   A0-A31 ~           '
+
+
+
+   00-031                          <
+   FC0-FC2
+
+
+
+  SIZ0-SIZI
+
+
+
+
+       EC7~ _ _ _ ~
+
+
+
+
+                           \
+                           \
+      R/W
+
+     DBEN
+
+
+
+  0SACK0                           \
+  0SACKI                           \            '
+                                                              ®
+                                   4:
+              --t_                                   ®
+   86ACK                                                                   /
+                               i           I
+                                       i
+
+                          Figure 7. Bus Arbitration Timing Diagram
+
+
+
+
+MOTOROLA                               MC68030 ELECTRICAL SPECIEICATIONS       1:5
+        CLK ~
+
+
+      IPENO
+
+
+     MMU01S
+
+
+       C01S
+
+
+     STATUS
+
+
+      REFILL
+                                               }
+                  Figure 8. Other Signal Timings
+
+
+
+
+16              MC68030 ELECTRICAl' SPECIFICATIONS   MOTOROLA
+                                                                                                           .,   ,   .
+
+
+
+
+    Literature Distribution Centers:
+    USA: Motorola Literature Distribution; P.O. Box 20912; Phoenix, Arizona 85036.
+    EUROPE: Motorola Ltd.; European LiteratUre Center; 88 Tanners Drive, Blakelands, Milton Keynes, MK14 5BP, England.
+    ASIA PACIFIC: Motorola Semiconductors H.K. Ltd.; P.O. Box 80300; Cheung Sha Wan Post Office; KowIoon Hong Kong.
+    JAPAN: Nippon Motorola Ltd.; 3-20-1 Minamiazabu, Minato-ku, Tokyo 106 Japan.
+                                                                  "
+
+
+B               MOTOROLA                      =
+                                                                                                                    MC68030EC/D
+

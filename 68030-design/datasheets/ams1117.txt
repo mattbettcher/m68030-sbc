@@ -1,0 +1,561 @@
+  Advanced                                                                                                   AMS1117
+  Monolithic                                                      1A LOW DROPOUT VOLTAGE REGULATOR
+
+  Systems
+                                                                                              RoHs Compliant
+FEATURES                                                                 APPLICATIONS
+• Three Terminal Adjustable or Fixed Voltages*                           • High Efficiency Linear Regulators
+   1.5V, 1.8V, 2.5V, 2.85V, 3.3V and 5.0V                                • Post Regulators for Switching Supplies
+• Output Current of 1A                                                   • 5V to 3.3V Linear Regulator
+• Operates Down to 1V Dropout                                            • Battery Chargers
+• Line Regulation: 0.2% Max.                                             • Active SCSI Terminators
+• Load Regulation: 0.4% Max.                                             • Power Management for Notebook
+• SOT-223, TO-252 and SO-8 package available                             • Battery Powered Instrumentation
+
+
+
+GENERAL DESCRIPTION
+The
+ The AMS1117 series of adjustable and fixed voltage regulators are designed to provide up to1A output current and to operate
+down to 1V input-to-output differential. The dropout voltage of the device is guaranteed maximum 1.3V, decreasing at lower
+load currents.
+ On-chip trimming adjusts the reference voltage to 1.5%. Current limit is set to minimize the stress under overload conditions
+on both the regulator and power source circuitry.
+The AMS1117 devices are pin compatible with other three-terminal SCSI regulators and are offered in the low profile surface
+mount SOT-223 package, in the 8L SOIC package and in the TO-252 (DPAK) plastic package.
+
+
+ORDERING INFORMATION:
+
+
+                     PACKAGE TYPE                              OPERATING JUNCTION
+      TO-252                SOT-223              8L SOIC       TEMPERATURE RANGE
+ AMS1117CD            AMS1117              AMS1117CS                     -40 to 125° C
+ AMS1117CD-1.5 AMS1117-1.5                 AMS1117CS-1.5                 -40 to 125° C
+ AMS1117CD-1.8 AMS1117-1.8                 AMS1117CS-1.8                 -40 to 125° C
+ AMS1117CD-2.5 AMS1117-2.5                 AMS1117CS-2.5                 -40 to 125° C                      8L SOIC Top View
+ AMS1117CD-2.85 AMS1117-2.85               AMS1117CS-2.85                -40 to 125° C
+ AMS1117CD-3.3 AMS1117-3.3                 AMS1117CS-3.3                 -40 to 125° C             GND/ADJ 1                8   N/C
+ AMS1117CD-5.0 AMS1117-5.0                 AMS1117CS-5.0                 -40 to 125° C                VOUT      2           7   VOUT
+*For additional available fixed voltages contact factory.                                             VOUT      3           6   VOUT
+                                                                                                       VIN      4           5   N/C
+
+PIN CONNECTIONS                                               SOT-223 Top View
+
+3 PIN FIXED/ADJUSTABLE                                                                                      TO-252 FRONT VIEW
+VERSION
+                                                                                                   TAB IS              3
+                                                                                                  OUTPUT               2
+1- Ground/Adjust                                                 1   2     3
+                                                                                                                       1
+
+2- VOUT
+3- VIN
+
+
+
+
+   Advanced Monolithic Systems, Inc.      www.advanced-monolithic.com          Phone (925) 443-0722    Fax (925) 443-0723
+                                                                                                                  AMS1117
+ABSOLUTE MAXIMUM RATINGS (Note 1)
+Power Dissipation                           Internally limited             Soldering information
+Input Voltage                                             15V                Lead Temperature (25 sec)                        265°C
+Operating Junction Temperature Range                                       Thermal Resistance
+  Control Section                             -40°C to 125°C                 SO-8 package                              ϕ JA= 160°C/W
+  Power Transistor                            -40°C to 125°C                 TO-252 package                             ϕ JA= 80°C/W
+Storage temperature                        - 65°C to +150°C                  SOT-223 package                           ϕ JA= 90°C/W*
+                                                                           * With package soldering to copper area over backside
+                                                                           ground plane or internal power plane ϕ JA can vary from
+                                                                           46°C/W to >90°C/W depending on mounting technique and
+                                                                           the size of the copper area.
+
+ELECTRICAL CHARACTERISTICS
+Electrical Characteristics at IOUT = 0 mA, and TJ = +25°C unless otherwise specified.
+Parameter           Device                  Conditions                                          Min     Typ          Max      Units
+
+Reference Voltage   AMS1117                 IOUT = 10 mA                                       1.232   1.250          1.268          V
+(Note 2)                                    1.5V≤ (VIN - VOUT) ≤ 12V                          1.2125   1.250         1.2875          V
+Output Voltage      AMS1117-1.5             VIN = 3V                                           1.478   1.500         1.522           V
+(Note 2)                                                                                       1.455   1.500         1.545           V
+                    AMS1117-1.8             VIN = 3.3V                                         1.773   1.800         1.827           V
+                                                                                               1.746   1.800         1.854           V
+                    AMS1117-2.5             VIN = 4V                                           2.463   2.500         2.537           V
+                                                                                               2.425   2.500         2.575           V
+                    AMS1117-2.85            VIN = 4.35V                                        2.808   2.850          2.892          V
+                                                                                              2.7645   2.850         2.9355          V
+                    AMS1117-3.3             VIN = 4.8V                                         3.251   3.300         3.349           V
+                                                                                               3.201   3.300         3.399           V
+                    AMS1117-5.0             VIN = 6.5V                                         4.925   5.000         5.075           V
+                                                                                               4.850   5.000         5.150           V
+Line Regulation     AMS1117                 1.5V≤ (VIN - VOUT) ≤ 12V                                   0.015          0.2         %
+                                                                                                       0.035          0.2         %
+                    AMS1117-1.5             1.5V≤ (VIN - VOUT) ≤ 12V                                    0.3            5         mV
+                                                                                                        0.6            6         mV
+                    AMS1117-1.8             1.5V≤ (VIN - VOUT) ≤ 12V                                    0.3            5         mV
+                                                                                                        0.6            6         mV
+                    AMS1117-2.5             1.5V≤ (VIN - VOUT) ≤ 12V                                    0.3            6         mV
+                                                                                                        0.6            6         mV
+                    AMS1117-2.85            1.5V≤ (VIN - VOUT) ≤ 12V                                    0.3            6         mV
+                                                                                                        0.6            6         mV
+                    AMS1117-3.3             1.5V≤ (VIN - VOUT) ≤ 12V                                    0.5           10         mV
+                                                                                                        1.0           10         mV
+                    AMS1117-5.0             1.5V≤ (VIN - VOUT) ≤ 12V                                    0.5           10         mV
+                                                                                                        1.0           10         mV
+
+Load Regulation     AMS1117                 (VIN - VOUT) =1.5V, 10mA ≤ IOUT ≤ 0.8A                      0.1           0.3         %
+(Notes 2, 3)                                                                                            0.2           0.4         %
+
+                    AMS1117-1.5             VIN = 3V, 0 ≤ IOUT ≤ 0.8A                                       3         10         mV
+                                                                                                            6         20         mV
+                    AMS1117-1.8             VIN = 3.3V, 0 ≤ IOUT ≤ 0.8A                                     3         10         mV
+                                                                                                            6         20         mV
+                    AMS1117-2.5             VIN = 5V, 0 ≤ IOUT ≤ 0.8A                                       3         12         mV
+                                                                                                            6         20         mV
+
+
+
+    Advanced Monolithic Systems, Inc.      www.advanced-monolithic.com               Phone (925) 443-0722       Fax (925) 443-0723
+                                                                                                                                 AMS1117
+ELECTRICAL CHARACTERISTICS
+Electrical Characteristics at IOUT = 0 mA, and TJ = +25°C unless otherwise specified.
+Parameter               Device                      Conditions                                               Min         Typ        Max        Units
+
+Load Regulation         AMS1117-2.85                VIN = 4.35V, 0 ≤ IOUT ≤ 0.8A                                          3          12            mV
+(Notes 2, 3)                                                                                                              6          20            mV
+
+                        AMS1117-3.3                 VIN = 4.75V, 0 ≤ IOUT ≤ 0.8A                                          3          15            mV
+                                                                                                                          7          25            mV
+                        AMS1117-5.0                 VIN = 6.5V, 0 ≤ IOUT ≤ 0.8A                                           5          20            mV
+                                                                                                                         10          35            mV
+
+Dropout Voltage         AMS1117-1.5/-1.8/-2.5/-     ∆VOUT , ∆VREF = 1%, IOUT = 0.8A (Note 4)                             1.1         1.3            V
+(VIN - VOUT)            2.85/-3.3/-5.0
+
+Current Limit           AMS1117-1.5/-1.8/-2.5/-     (VIN - VOUT) = 1.5V                                      900        1,100       1,500          mA
+                        2.85/-3.3/-5.0
+
+Minimum Load            AMS1117                     (VIN - VOUT) = 1.5V (Note 5)                                          5          10            mA
+Current
+                                                    (VIN - VOUT) = 1.5V
+Quiescent Current       AMS1117-1.5/-1.8/-2.5/-                                                                           5          11            mA
+                        2.85/-3.3/-5.0
+
+Ripple Rejection        AMS1117                     f =120Hz , COUT = 22µF Tantalum, IOUT = 1A,               60         75                         dB
+                                                    (VIN-VOUT ) = 3V, CADJ =10µF
+                        AMS1117-1.5/-1.8/-2.5/-     f =120Hz , COUT = 22µF Tantalum, IOUT = 1A,               60         72                         dB
+                        2.85                        VIN = 4.35V
+                        AMS1117-3.3                 f =120Hz , COUT = 22µF Tantalum, IOUT = 1A                60         72                         dB
+                                                    VIN = 4.75V
+                        AMS1117-5.0                 f =120Hz , COUT = 22µF Tantalum, IOUT = 1A                60         68                         dB
+                                                    VIN = 6.5V
+Thermal Regulation      AMS1117                     TA = 25°C, 30ms pulse                                               0.008        0.04          %W
+
+Adjust Pin Current      AMS1117                     IOUT =10mA , 1.5V≤ (VIN - VOUT) ≤ 12V                                55                         µA
+                                                                                                                                     120            µA
+
+Adjust Pin Current      AMS1117                     IOUT =10mA, 1.5V≤ (VIN - VOUT) ≤ 12V                                 0.2          5             µA
+Change
+Temperature Stability                                                                                                    0.5                        %
+
+Long Term Stability                                 TA =125°C, 1000Hrs                                                   0.3          1             %
+
+RMS Output Noise                                     TA = 25°C , 10Hz ≤ f ≤ 10kHz                                       0.003                       %
+(% of VOUT )
+                                                    All packages
+Thermal Resistance                                                                                                                   15           °C/W
+Junction-to-Case
+
+
+Parameters identified with boldface type apply over the full operating temperature range.
+Note 1: Absolute Maximum Ratings indicate limits beyond which damage to the device may occur. For guaranteed specifications and test conditions, see the
+Electrical Characteristics. The guaranteed specifications apply only for the test conditions listed.
+Note 2: Line and Load regulation are guaranteed up to the maximum power dissipation of 1.2 W for SOT-223, 2.2W for TO-252 and 780mW for 8-Lead
+SOIC. Power dissipation is determined by the input/output differential and the output current. Guaranteed maximum power dissipation will not be available
+over the full input/output range.
+Note 3: See thermal regulation specifications for changes in output voltage due to heating effects. Line and load regulation are measured at a constant
+junction temperature by low duty cycle pulse testing. Load regulation is measured at the output lead ~1/8” from the package.
+Note 4: Dropout voltage is specified up to 0.8A load. For currents over 0.8A dropout will be higher
+Note 5: Minimum load current is defined as the minimum output current required to maintain regulation. When 1.5V ≤ (VIN - VOUT) ≤ 12V the device is
+guaranteed to regulate if the output current is greater than 10mA.
+
+
+
+
+    Advanced Monolithic Systems, Inc.               www.advanced-monolithic.com               Phone (925) 443-0722             Fax (925) 443-0723
+                                                                                                                     AMS1117
+APPLICATION HINTS
+The AMS1117 series of adjustable and fixed regulators are easy to
+use and are protected against short circuit and thermal overloads.
+Thermal protection circuitry will shut-down the regulator should                                       D1
+the junction temperature exceed 165°C at the sense point.
+Pin compatible with older three terminal adjustable regulators,
+these devices offer the advantage of a lower dropout voltage, more
+                                                                                                AMS1117
+precise reference tolerance and improved reference stability with          VIN                                                      VOUT
+                                                                                               IN   OUT
+temperature.                                                                                                                +
+                                                                                                  ADJ                  R1        COUT
+                                                                                                                                 22µF
+
+
+Stability                                                                                                   CADJ       R2
+                                                                                                            10µF
+The circuit design used in the AMS1117 series requires the use of
+an output capacitor as part of the device frequency compensation.
+The addition of 22µF solid tantalum on the output will ensure
+stability for all operating conditions.                                                                Ĥigure 1.
+When the adjustment terminal is bypassed with a capacitor to
+improve the ripple rejection, the requirement for an output
+capacitor increases. The value of 22µF tantalum covers all cases of   Output Voltage
+bypassing the adjustment terminal. Without bypassing the
+adjustment terminal smaller capacitors can be used with equally       The AMS1117 series develops a 1.25V reference voltage between
+good results.                                                         the output and the adjust terminal. Placing a resistor between these
+To further improve stability and transient response of these          two terminals causes a constant current to flow through R1 and
+devices larger values of output capacitor can be used.                down through R2 to set the overall output voltage. This current is
+                                                                      normally the specified minimum load current of 10mA. Because
+                                                                      IADJ is very small and constant it represents a small error and it
+Protection Diodes                                                     can usually be ignored.
+
+Unlike older regulators, the AMS1117 family does not need any
+                                                                                                  AMS1117
+protection diodes between the adjustment pin and the output and               VIN                                                VOUT
+                                                                                                 IN   OUT
+from the output to the input to prevent over-stressing the die.
+Internal resistors are limiting the internal current paths on the                                   ADJ              VREF   R1
+AMS1117 adjustment pin, therefore even with capacitors on the                                     IADJ
+adjustment pin no protection diode is needed to ensure device                                     50µA
+                                                                                                                            R2
+safety under short-circuit conditions.
+Diodes between the input and output are not usually needed.
+Microsecond surge currents of 50A to 100A can be handled by the                           VOUT = VREF (1+ R2/R1)+IADJR2
+internal diode between the input and output pins of the device. In
+normal operations it is difficult to get those values of surge                         Figure 2. Basic Adjustable Regulator
+currents even with the use of large output capacitances. If high
+value output capacitors are used, such as 1000µF to 5000µF and
+the input pin is instantaneously shorted to ground, damage can        Load Regulation
+occur. A diode from output to input is recommended, when a
+crowbar circuit at the input of the AMS1117 is used (Figure 1).       True remote load sensing it is not possible to provide, because the
+                                                                      AMS1117 is a three terminal device. The resistance of the wire
+                                                                      connecting the regulator to the load will limit the load regulation.
+                                                                      The data sheet specification for load regulation is measured at the
+                                                                      bottom of the package. Negative side sensing is a true Kelvin
+                                                                      connection, with the bottom of the output divider returned to the
+                                                                      negative side of the load.
+                                                                      The best load regulation is obtained when the top of the resistor
+                                                                      divider R1 is connected directly to the case not to the load. If R1
+                                                                      were connected to the load, the effective resistance between the
+                                                                      regulator and the load would be:
+
+                                                                                    RP x ( R2+R1 ) ,     RP = Parasitic Line Resistance
+                                                                                            R1
+
+
+   Advanced Monolithic Systems, Inc.            www.advanced-monolithic.com         Phone (925) 443-0722           Fax (925) 443-0723
+                                                                                                                    AMS1117
+APPLICATION HINTS
+Connected as shown , RP is not multiplied by the divider ratio            The total thermal resistance from junction to ambient can be as
+                                                                          low as 45°C/W. This requires a reasonable sized PC board with at
+                                       RP                                 least on layer of copper to spread the heat across the board and
+                                   PARASITIC                              couple it into the surrounding air.
+                                LINE RESISTANCE
+                  AMS1117                                                 Experiments have shown that the heat spreading copper layer does
+     VIN         IN   OUT                                                 not need to be electrically connected to the tab of the device. The
+                    ADJ                                                   PC material can be very effective at transmitting heat between the
+                                                                          pad area, attached to the pad of the device, and a ground plane
+                                                        RL
+                                                                          layer either inside or on the opposite side of the board. Although
+                                  R1*
+                                                                          the actual thermal resistance of the PC material is high, the
+                                                                          Length/Area ratio of the thermal resistance between layers is
+                                                                          small. The data in Table 1, was taken using 1/16” FR-4 board with
+                                   R2*                                    1 oz. copper foil, and it can be used as a rough guideline for
+                                                                          estimating thermal resistance.
+                                                                          For each application the thermal resistance will be affected by
+                                                                          thermal interactions with other components on the board. To
+                                                                          determine the actual value some experimentation will be
+                                                                          necessary.
+                                                                          The power dissipation of the AMS1117 is equal to:
+*CONNECT R1 TO CASE                                                       PD = ( VIN - VOUT )( IOUT )
+ CONNECT R2 TO LOAD
+                                                                          Maximum junction temperature will be equal to:
+        Figure 3. Connections for Best Load Regulation                    TJ = TA(MAX) + PD(Thermal Resistance (junction-to-ambient))
+                                                                          Maximum junction temperature must not exceed 125°C.
+ In the case of fixed voltage devices the top of R1 is connected
+Kelvin internally, and the ground pin can be used for negative side
+sensing.
+                                                                          Ripple Rejection
+
+                                                                          The ripple rejection values are measured with the adjustment pin
+Thermal Considerations
+                                                                          bypassed. The impedance of the adjust pin capacitor at the ripple
+The AMS1117 series have internal power and thermal limiting               frequency should be less than the value of R1 (normally 100Ω to
+circuitry designed to protect the device under overload conditions.       200Ω) for a proper bypassing and ripple rejection approaching the
+                                                                          values shown. The size of the required adjust pin capacitor is a
+However maximum junction temperature ratings of 125°C should
+                                                                          function of the input ripple frequency. If R1=100Ω at 120Hz the
+not be exceeded under continuous normal load conditions.
+Careful consideration must be given to all sources of thermal             adjust pin capacitor should be >13µF. At 10kHz only 0.16µF is
+resistance from junction to ambient. For the surface mount                needed.
+package SOT-223 additional heat sources mounted near the device
+must be considered. The heat dissipation capability of the PC             The ripple rejection will be a function of output voltage, in circuits
+board and its copper traces is used as a heat sink for the device.        without an adjust pin bypass capacitor. The output ripple will
+The thermal resistance from the junction to the tab for the               increase directly as a ratio of the output voltage to the reference
+AMS1117 is 15°C/W. Thermal resistance from tab to ambient can             voltage (VOUT / VREF ).
+be as low as 30°C/W.
+
+
+Table 1.
+        COPPER AREA                                       THERMAL RESISTANCE
+TOP SIDE*        BACK SIDE           BOARD AREA           (JUNCTION-TO-AMBIENT)
+2500 Sq. mm        2500 Sq. mm         2500 Sq. mm                    55°C/W
+1000 Sq. mm        2500 Sq. mm         2500 Sq. mm                    55°C/W
+ 225 Sq. mm        2500 Sq. mm         2500 Sq. mm                    65°C/W
+ 100 Sq. mm        2500 Sq. mm         2500 Sq. mm                    80°C/W
+1000 Sq. mm        1000 Sq. mm         1000 Sq. mm                    60°C/W
+1000 Sq. mm             0              1000 Sq. mm                    65°C/W
+* Tab of device attached to topside copper.
+
+   Advanced Monolithic Systems, Inc.            www.advanced-monolithic.com         Phone (925) 443-0722         Fax (925) 443-0723
+                                                                                                                                                                                                                                        AMS1117
+TYPICAL PERFORMANCE CHARACTERISTICS
+
+                                                                         Minimum Operating Current
+                                                                         (Adjustable Device)                                                                                           Short-Circuit Current
+                                                              12                                                                                                          1.25
+                           MINIMUM OPERATING CURRENT (mA)
+
+
+
+
+                                                                                                                                                                                                      TJ = 125°C
+                                                                                                                                                                          1.00
+
+
+
+
+                                                                                                                                              SHORT CIRCUIT CURRENT (A)
+                                                               9                                                                                                                                                         TJ = 25°C
+                                                                                                            TJ = 125°C
+
+                                                                                                                                                                          0.75
+                                                                                                             TJ = 25°C
+                                                               6
+
+                                                                                                                                                                          0.50
+
+
+                                                               3
+                                                                                                                                                                          0.25
+
+
+
+                                                               0                                                                                                            0
+                                                                    0               5                  10                15          20                                           0                   5                    10                   15
+
+                                                                                  INPUT/OUTPUT DIFFERENTIAL (V)                                                                                INPUT/OUTPUT DIFFERENTIAL
+
+
+
+                                                                         Load Regulation                                                                                               Ripple Rejection vs. Current
+                                                            0.10                                                                                                          100
+                                                                            ∆ ILOAD = 1A                                                                                   90
+                                                                                                                                                                                                                         fRIPPLE = 120Hz
+         OUTPUT VOLTAGE DEVIATION (%)
+
+
+
+
+                                                            0.05
+                                                                                                                                                                           80
+                                                                                                                                              RIPPLE REJECTION (dB)
+
+
+
+
+                                                                                                                                                                           70                         VRIPPLE≤3Vp-p
+                                                                0
+                                                                                                                                                                           60
+                                                                                                                                                                                                                         fRIPPLE = 20Hz
+                                                            -0.05                                                                                                          50
+
+                                                                                                                                                                           40                                  VRIPPLE≤0.5Vp-p
+                                                            -0.10
+                                                                                                                                                                           30
+
+                                                                                                                                                                           20
+                                                            -0.15
+                                                                                                                                                                                       VOUT = 5V
+                                                                                                                                                                           10          CADJ = 25µF
+                                                                                                                                                                                       COUT = 25µF
+                                                            -0.20                                                                                                           0
+                                                                 -50        -25         0         25         50         75     100   125                                          0            0.25               0.5            0.75           1.0
+                                                                                            TEMPERATURE (°C)                                                                                         OUTPUT CURRENT (A)
+
+
+
+                                                                         Temperature Stability                                                                                         Adjust Pin Current
+                                                             2.0                                                                                                          100
+
+                                                                                                                                                                           90
+                           OUTPUT VOLTAGE CHANGE (%)
+
+
+
+
+                                                                                                                                                                           80
+                                                             1.0
+                                                                                                                                              ADJUST PIN CURRENT (µA)
+
+
+
+
+                                                                                                                                                                           70
+
+                                                                                                                                                                           60
+
+                                                               0                                                                                                           50
+
+                                                                                                                                                                           40
+
+                                                                                                                                                                           30
+                                                             -1.0
+                                                                                                                                                                           20
+
+                                                                                                                                                                           10
+
+                                                            -2.0                                                                                                            0
+                                                                   -50     -25      0        25        50         75     100   125   150                                         -50     -25    0         25       50    75      100      125   150
+                                                                                            TEMPERATURE (°C)                                                                                          TEMPERATURE (°C)
+
+
+
+
+ Advanced Monolithic Systems, Inc.                                                                                     www.advanced-monolithic.com                                     Phone (925) 443-0722                       Fax (925) 443-0723
+                                                                                                                                                                             AMS1117
+PACKAGE DIMENSIONS inches (millimeters) unless otherwise noted.
+
+
+
+                                                                   TO-252 PLASTIC PACKAGE (D)
+
+
+
+                                                   0.255-0.265
+                                                   (6.48-6.73)
+                                                   0.206-0.214                                          0.087-0.094
+                                                   (5.23-5.44)                                          (2.21-2.39)                               0.018-0.023
+                                                                                                                                                  (0.46-0.58)
+                                                                                                                                                     0.035-0.050
+                                                                                                                    7.0°                             (0.89-1.27)
+
+
+
+                                                                                    0.235-0.245
+               0.380-0.410                                                          (5.969-6.223)
+               (9.65-10.41)
+
+
+                                                                                                        0.045-0.060                                0.035-0.045
+                                      0.025                                                               (1.14-1.52)                              (0.89-1.14)
+                                     (0.635)                                                                                                         0.020±0.002
+                                      TYP                                                                                                           (0.510±0.0508)
+                                                                           0.030                                      0.018-0.023
+                               0.156-0.204                                (0.762)                                     (0.46-0.58)                       D (D3) AMS DRW# 011601
+                                (3.96-5.18)                                TYP
+
+
+
+
+                                                           3 LEAD SOT-223 PLASTIC PACKAGE
+
+
+                                                          0.248-0.264
+                                                         (6.30-6.71)
+                                                          0.116-0.124
+                                                          (2.95-3.15)
+
+
+
+
+             0.264-0.287
+              (6.71-7.29)
+                            0.130-0.146
+                            (3.30-3.71)
+
+
+
+
+                                          0.090                                               0.033-0.041
+                                          (2.29)                                              (0.84-1.04)
+                                          NOM
+
+
+
+
+                                                                                                                10°-16°
+
+                                0.071                                                                         10°
+                                (1.80)                                                                       MAX                                                 0.010-0.014
+                                                                                                                                                                 (0.25-0.36)
+                                MAX
+
+                                                                                                                                                        10°-16°
+                                                                                                    0.012                           0.025-0.033
+                                                          0.025-0.033                               (0.31)
+                                                          (0.64-0.84)                                                               (0.64-0.84)
+                                                                                                     MIN
+                                                                 0.181                                                                                           (SOT-223 ) AMS DRW# 042292
+                                                                 (4.60)
+                                                                 NOM
+
+
+
+
+  Advanced Monolithic Systems, Inc.                         www.advanced-monolithic.com                                    Phone (925) 443-0722                         Fax (925) 443-0723
+                                                                                                                                                    AMS1117
+PACKAGE DIMENSIONS inches (millimeters) unless otherwise noted (Continued).
+
+
+                                                          8 LEAD SOIC PLASTIC PACKAGE (S)
+
+
+
+                                           0.189-0.197*
+                                          (4.801-5.004)
+                                      8     7      6       5
+
+
+
+
+                 0.228-0.244                                              0.150-0.157**
+                (5.791-6.197)                                            (3.810-3.988)
+
+
+
+
+                                      1     2      3       4
+
+
+                                                                                                          0.010-0.020 x 45°
+                  0.053-0.069                                                                             (0.254-0.508)
+                 (1.346-1.752)
+                                                                     0.004-0.010
+                                                                    (0.101-0.254)          0.008-0.010
+                                                                                          (0.203-0.254)                             0°-8° TYP
+
+
+                       0.014-0.019                              0.050                                      0.016-0.050
+                      (0.355-0.483)                            (1.270)                                    (0.406-1.270)       S (SO-8 ) AMS DRW# 042293
+                                                                 TYP
+
+                     *DIMENSION DOES NOT INCLUDE MOLD FLASH. MOLD FLASH
+                     SHALL NOT EXCEED 0.006" (0.152mm) PER SIDE
+
+                     **DIMENSION DOES NOT INCLUDE INTERLEAD FLASH. INTERLEAD
+                     FLASH SHALL NOT EXCEED 0.010" (0.254mm) PER SIDE
+
+
+
+
+  Advanced Monolithic Systems, Inc.                       www.advanced-monolithic.com                       Phone (925) 443-0722               Fax (925) 443-0723
+

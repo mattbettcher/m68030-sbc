@@ -1,0 +1,2167 @@
+                        INTEGRATED CIRCUITS
+
+
+
+
+   SC26C92
+   Dual universal asynchronous
+   receiver/transmitter (DUART)
+
+Product specification                         2000 Jan 31
+Supersedes data of 1998 Nov 09
+IC19 Data Handbook
+
+
+
+
+ 
+   
+Philips Semiconductors                                                                                                       Product specification
+
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                      SC26C92
+
+
+DESCRIPTION                                                                 • Programmable baud rate for each receiver and transmitter
+The SC26C92 is a pin and function replacement for the SCC2692                 selectable from:
+and SCN2681 with added features and deeper FIFOs. Its                         – 27 fixed rates: 50 to 230.4k baud
+configuration on power up is that of the 2692. Its differences from
+                                                                              – Other baud rates to 230.4k baud at 16X
+the 2692 are: 8 character receiver, 8 character transmit FIFOs,
+watch dog timer for each receiver, mode register 0 is added,                  – Programmable user-defined rates derived from a
+extended baud rate and overall faster speeds, programmable                      programmable counter/timer
+receiver and transmitter interrupts. (The SCC2692 is not being                – External 1X or 16X clock
+discontinued.)
+                                                                            • Parity, framing, and overrun error detection
+The Philips Semiconductors SC26C92 Dual Universal
+Asynchronous Receiver/Transmitter (DUART) is a single-chip
+                                                                            • False start bit detection
+CMOS-LSI communications device that provides two full-duplex                • Line break detection and generation
+                                                                            • Programmable channel mode
+asynchronous receiver/transmitter channels in a single package. It
+interfaces directly with microprocessors and may be used in a polled
+or interrupt driven system and provides modem and DMA interface.              – Normal (full-duplex)
+                                                                              – Automatic echo
+The operating mode and data format of each channel can be
+programmed independently. Additionally, each receiver and                     – Local loopback
+transmitter can select its operating speed as one of 27 fixed baud            – Remote loopback
+rates, a 16X clock derived from a programmable counter/timer, or an           – Multidrop mode (also called ‘wake-up’ or ‘9-bit’)
+external 1X or 16X clock. The baud rate generator and
+counter/timer can operate directly from a crystal or from external          • Multi-function 7-bit input port
+clock inputs. The ability to independently program the operating              – Can serve as clock, modem, or control inputs
+speed of the receiver and transmitter make the DUART particularly             – Change of state detection on four inputs
+attractive for dual-speed channel applications such as clustered              – Inputs have typically >100k pull-up resistors
+terminal systems.
+                                                                            • Multi-function 8-bit output port
+Each receiver and transmitter is buffered by eight character FIFOs
+to minimize the potential of receiver overrun, transmitter underrun           – Individual bit set/reset capability
+and to reduce interrupt overhead in interrupt driven systems. In              – Outputs can be programmed to be status/interrupt signals
+addition, a flow control capability is provided via RTS/CTS signaling         – FIFO states for DMA and modem interface
+to disable a remote transmitter when the receiver buffer is full.
+                                                                            • Versatile interrupt system
+Also provided on the SC26C92 are a multipurpose 7-bit input port              – Single interrupt output with eight maskable interrupting
+and a multipurpose 8-bit output port. These can be used as general              conditions
+purpose I/O ports or can be assigned specific functions (such as
+                                                                              – Output port can be configured to provide a total of up to six
+clock inputs or status/interrupt outputs) under program control.
+                                                                                separate wire-ORable interrupt outputs
+The SC26C92 is available in three package versions: 40-pin 0.6”               – Each FIFO can be programmed for four different interrupt levels
+wide DIP, a 44-pin PLCC and 44–pin plastic quad flat pack (PQFP).             – Watch dog timer for each receiver
+
+FEATURES                                                                    • Maximum data transfer rates:
+                                                                              1X – 1Mb/sec, 16X – 1Mb/sec
+• Dual full-duplex independent asynchronous receiver/transmitters
+                                                                            • Automatic wake-up mode for multidrop applications
+• 8 character FIFOs for each receiver and transmitter
+                                                                            • Start-end break interrupt/status
+• Programmable data format
+  – 5 to 8 data bits plus parity
+                                                                            • Detects break which originates in the middle of a character
+  – Odd, even, no parity or force parity                                    • On-chip crystal oscillator
+  – 1, 1.5 or 2 stop bits programmable in 1/16-bit increments               • Power down mode
+• 16-bit programmable Counter/Timer                                         • Receiver timeout mode
+                                                                            • Single +5V power supply
+                                                                            • Powers up to emulate SCC2692
+
+ORDERING INFORMATION
+                                                          COMMERCIAL1                              INDUSTRIAL
+                DESCRIPTION                                                                                                          DWG #
+                                                  VCC = +5V ±10%, TA = 0 to +70°C        VCC = +5V ±10%, TA = -40 to +85°C
+ 40-Pin Plastic Dual In-Line Package (DIP)                 SC26C92C1N                              SC26C92A1N                       SOT129-1
+ 44-Pin Plastic Leaded Chip Carrier (PLCC)                  SC26C92C1A                               SC26C92A1A                     SOT187-2
+ 44–Pin Plastic Quad Flat Pack (PQFP)                       SC26C92C1B                               SC26C92A1B                     SOT307–2
+
+
+
+2000 Jan 31                                                             2                                                       853–1585 23061
+Philips Semiconductors                                                                                                           Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                        SC26C92
+
+
+NOTE:
+1. Commercial devices are tested for the –40 to +85_C.
+
+
+PIN CONFIGURATIONS
+
+
+         A0   1             40 VCC                                                               INDEX
+                                                                                               CORNER
+                                                                                                               6         1             40
+        IP3   2             39 IP4
+                                                               44                34
+                                                                                                          7                                 39
+         A1   3             38 IP5
+                                                          1                            33
+        IP1   4             37 IP6
+
+         A2   5             36 IP2                                     PQFP                                             PLCC
+
+         A3   6             35 CEN
+
+        IP0   7             34 RESET                      11                           23                17                                 29
+       WRN    8             33 X2                              12                22                            18                      28
+       RDN 9                32 X1/CLK                               TOP VIEW
+                                                                                                                      TOP VIEW
+
+       RxDB 10              31 RxDA
+                   DIP                                                                                   PIN/FUNCTION        PIN/FUNCTION
+      TxDB 11               30 TxDA                      PIN/FUNCTION         PIN/FUNCTION
+                                                                                                           1   NC                23    NC
+       OP1 12               29 OP0                        1    A3               23    N/C
+                                                                                                           2   A0                24    INTRN
+                                                           2   IP0              24    OP6
+                                                                                                           3   IP3               25    D6
+       OP3 13               28 OP2                         3   WRN              25    OP4
+                                                                                                           4   A1                26    D4
+                                                           4   RDN              26    OP2
+                                                                                                           5   IP1               27    D2
+       OP5 14               27 OP4                         5   RxDB             27    OP0
+                                                                                                           6   A2                28    D0
+                                                           6   TxDB             28    TxDA
+                                                                                                           7   A3                29    OP6
+                                                           7   OP1              29    RxDA
+       OP7 15               26 OP6                                                                         8   IP0               30    OP4
+                                                           8   OP3              30    X1/CLK
+                                                                                                           9   WRN               31    OP2
+                                                           9   OP5              31    X2
+         D1 16              25 D0                                                                         10   RDN               32    OP0
+                                                          10   OP7              32    RESET
+                                                                                                          11   RXDB              33    TXDA
+                                                          11   N/C              33    CEN
+         D3 17              24 D2                                                                         12   NC                34    NC
+                                                          12   D1               34    IP2
+                                                                                                          13   TXDB              35    RXDA
+                                                          13   D3               35    IP6
+         D5 18              23 D4                                                                         14   OP1               36    X1/CLK
+                                                          14   D5               36    IP5
+                                                                                                          15   OP3               37    X2
+                                                          15   D7               37    IP4
+         D7 19              22 D6                                                                         16   OP5               38    RESET
+                                                          16   GND              38    VCC
+                                                                                                          17   OP7               39    CEN
+                                                          17   GND              39    VCC
+                                                                                                          18   D1                40    IP2
+       VSS 20               21 INTRN                      18   INTRN            40    A0
+                                                                                                          19   D3                41    IP6
+                                                          19   D6               41    IP3
+                                                                                                          20   D5                42    IP5
+                                                          20   D4               42    A1
+                                                                                                          21   D7                43    IP4
+                                                          21   D2               43    IP1
+                                                          22   D0               44    A2                  22   VSS               44    VCC
+
+
+
+
+                                                                                                                                      SD00667
+
+                                                         Figure 1. Pin Configurations
+
+
+
+
+2000 Jan 31                                                               3
+Philips Semiconductors                                                                                       Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                   SC26C92
+
+
+BLOCK DIAGRAM
+
+
+                        8                                                                CHANNEL A
+        D0–D7                  BUS BUFFER
+                                                                                       8 BYTE TRANSMIT              TxDA
+                                                                                             FIFO
+
+                                                                                          TRANSMIT
+                                                                                       SHIFT REGISTER
+
+         RDN                OPERATION CONTROL
+                                                                                       8 BYTE RECEIVE
+         WRN                                                                                FIFO
+                                ADDRESS
+         CEN                    DECODE                                                 WATCH DOG TIMER              RxDA
+                    4
+        A0–A3                                                                           RECEIVE SHIFT
+                               R/W CONTROL                                                REGISTER
+       RESET
+                                                                                          MRA0, 1, 2
+                                                                                             CRA
+                                                                                             SRA
+
+
+                            INTERRUPT CONTROL
+        INTRN                     IMR                                                                               TxDB
+                                                                                         CHANNEL B
+                                  ISR                                                    (AS ABOVE)
+                                                                                                                    RxDB
+                                                                    INTERNAL DATABUS
+
+
+
+
+                                                                                         INPUT PORT
+                                                 CONTROL
+
+
+
+
+                                                                                         CHANGE OF
+                                                           TIMING
+
+
+
+
+                                 TIMING                                                    STATE
+                                                                                        DETECTORS (4)    7
+                                                                                                                    IP0-IP6
+                               BAUD RATE
+                               GENERATOR                                                     IPCR
+                                                                                             ACR
+
+                                 CLOCK
+                               SELECTORS
+
+
+
+                                COUNTER/                                                OUTPUT PORT
+                                 TIMER
+                                                                                          FUNCTION       8
+                                                                                        SELECT LOGIC                OP0-OP7
+       X1/CLK
+                                XTAL OSC
+          X2                                                                                OPCR
+                                                                                            OPR
+                                  CSRA
+                                  CSRB
+                                  ACR
+                                    U
+                                  CTPL
+                                  CTPL                                                                              VCC
+
+                                                                                                                    VSS
+
+
+
+                                                                                                                  SD00153
+
+                                                Figure 2. Block Diagram
+
+
+
+
+2000 Jan 31                                                         4
+Philips Semiconductors                                                                                                      Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                   SC26C92
+
+
+PIN DESCRIPTION
+               PKG        PIN
+ SYMBOL                                                                    NAME AND FUNCTION
+              40,44      TYPE
+  D0-D7         X        I/O    Data Bus: Bidirectional 3-State data bus used to transfer commands, data and status between the DUART
+                                and the CPU. D0 is the least significant bit.
+  CEN           X         I     Chip Enable: Active-Low input signal. When Low, data transfers between the CPU and the DUART are
+                                enabled on D0-D7 as controlled by the WRN, RDN and A0-A3 inputs. When High, places the D0-D7 lines
+                                in the 3-State condition.
+  WRN           X         I     Write Strobe: When Low and CEN is also Low, the contents of the data bus is loaded into the addressed
+                                register. The transfer occurs on the rising edge of the signal.
+  RDN           X         I     Read Strobe: When Low and CEN is also Low, causes the contents of the addressed register to be
+                                presented on the data bus. The read cycle begins on the falling edge of RDN.
+  A0-A3         X         I     Address Inputs: Select the DUART internal registers and ports for read/write operations.
+  RESET         X         I     Reset: A High level clears internal registers (SRA, SRB, IMR, ISR, OPR, OPCR), puts OP0-OP7 in the
+                                High state, stops the counter/timer, and puts Channels A and B in the inactive state, with the TxDA and
+                                TxDB outputs in the mark (High) state. Sets MR pointer to MR1 and resets MR0.
+  INTRN         X         O     Interrupt Request: Active-Low, open-drain, output which signals the CPU that one or more of the eight
+                                maskable interrupting conditions are true. Requires a pullup resistor.
+  X1/CLK        X         I     Crystal 1: Crystal connection or an external clock input. A crystal of a clock the appropriate frequency
+                                (nominally 3.6864 MHz) must be supplied at all times. For crystal connections see Figure 7, Clock Timing.
+  X2            X         I     Crystal 2: Crystal connection. See Figure 7. If a crystal is not used this pin must be left open or not driving
+                                more than one TTL equivalent load.
+  RxDA          X         I     Channel A Receiver Serial Data Input: The least significant bit is received first. “Mark” is High, “space” is Low.
+  RxDB          X         I     Channel B Receiver Serial Data Input: The least significant bit is received first. “Mark” is High, “space” is Low.
+  TxDA          X         O     Channel A Transmitter Serial Data Output: The least significant bit is transmitted first. This output is held
+                                in the “mark” condition when the transmitter is disabled, idle or when operating in local loopback mode.
+                                “Mark” is High, “space” is Low.
+  TxDB          X         O     Channel B Transmitter Serial Data Output: The least significant bit is transmitted first. This output is
+                                held in the ‘mark’ condition when the transmitter is disabled, idle, or when operating in local loopback mode.
+                                ‘Mark’ is High, ‘space’ is Low.
+  OP0           X         O     Output 0: General purpose output or Channel A request to send (RTSAN, active-Low). Can be
+                                deactivated automatically on receive or transmit.
+  OP1           X         O     Output 1: General purpose output or Channel B request to send (RTSBN, active-Low). Can be
+                                deactivated automatically on receive or transmit.
+  OP2           X         O     Output 2: General purpose output, or Channel A transmitter 1X or 16X clock output, or Channel A receiver
+                                1X clock output.
+  OP3           X         O     Output 3: General purpose output or open-drain, active-Low counter/timer output or Channel B transmitter
+                                1X clock output, or Channel B receiver 1X clock output.
+  OP4           X         O     Output 4: General purpose output or Channel A open-drain, active-Low, RxA interrupt ISR[1] output.
+  OP5           X         O     Output 5: General purpose output or Channel B open-drain, active-Low, RxB interrupt ISR[5] output.
+  OP6           X         O     Output 6: General purpose output or Channel A open-drain, active-Low, TxA interrupt ISR[0] output.
+  OP7           X         O     Output 7: General purpose output, or Channel B open-drain, active-Low, TxB interrupt ISR[4] output.
+  IP0           X         I     Input 0: General purpose input or Channel A clear to send active-Low input (CTSAN). Pin has an internal
+                                VCC pull-up device supplying 1 to 4 mA of current.
+  IP1           X         I     Input 1: General purpose input or Channel B clear to send active-Low input (CTSBN). Pin has an internal
+                                VCC pull-up device supplying 1 to 4 mA of current.
+  IP2           X         I     Input 2: General purpose input or counter/timer external clock input. Pin has an internal VCC pull-up device
+                                supplying 1 to 4 mA of current.
+  IP3           X         I     Input 3: General purpose input or Channel A transmitter external clock input (TxCA). When the external
+                                clock is used by the transmitter, the transmitted data is clocked on the falling edge of the clock. Pin has an
+                                internal VCC pull-up device supplying 1 to 4 mA of current.
+  IP4           X         I     Input 4: General purpose input or Channel A receiver external clock input (RxCA). When the external
+                                clock is used by the receiver, the received data is sampled on the rising edge of the clock. Pin has an
+                                internal VCC pull-up device supplying 1 to 4 mA of current.
+  IP5           X         I     Input 5: General purpose input or Channel B transmitter external clock input (TxCB). When the external
+                                clock is used by the transmitter, the transmitted data is clocked on the falling edge of the clock. Pin has an
+                                internal VCC pull-up device supplying 1 to 4 mA of current.
+  IP6           X         I     Input 6: General purpose input or Channel B receiver external clock input (RxCB). When the external
+                                clock is used by the receiver, the received data is sampled on the rising edge of the clock. Pin has an
+                                internal VCC pull-up device supplying 1 to 4 mA of current.
+  VCC           X         I     Power Supply: +5V supply input.
+  GND           X         I     Ground
+
+
+
+2000 Jan 31                                                          5
+Philips Semiconductors                                                                                                        Product specification
+
+
+   Dual universal asynchronous receiver/transmitter (DUART)                                                                   SC26C92
+
+
+ABSOLUTE MAXIMUM RATINGS1
+       SYMBOL                                      PARAMETER                                                    RATING                 UNIT
+  TA               Operating ambient temperature range2                                                          Note 4                  °C
+  TSTG             Storage temperature range                                                                   -65 to +150               °C
+  VCC              Voltage from VCC to GND3                                                                    -0.5 to +7.0              V
+  VS               Voltage from any pin to GND3                                                           -0.5 to VCC +0.5               V
+  PD               Package power dissipation (DIP40)                                                               2.8                   W
+  PD               Package power dissipation (PLCC44)                                                              2.4                   W
+  PD               Package power dissipation (PQFP44)                                                             1.78                   W
+                   Derating factor above 25_C (PDIP40)                                                             22                 mW/_C
+                   Derating factor above 25_C (PLCC44)                                                             19                 mW/_C
+                   Derating factor above 25_C (PQFP44)                                                             14                 mW/_C
+NOTES:
+1. Stresses above those listed under Absolute Maximum Ratings may cause permanent damage to the device. This is a stress rating only and
+   functional operation of the device at these or any other condition above those indicated in the operation section of this specification is not
+   implied.
+2. For operating at elevated temperatures, the device must be derated based on +150°C maximum junction temperature.
+3. This product includes circuitry specifically designed for the protection of its internal devices from damaging effects of excessive static
+   charge. Nonetheless, it is suggested that conventional precautions be taken to avoid applying any voltages larger than the rated maxima.
+4. Parameters are valid over specified temperature range.
+
+
+DC ELECTRICAL CHARACTERISTICS1, 2
+VCC = 5V ± 10%, TA = –40_C to 85_C, unless otherwise specified.
+                                                                                                                   LIMITS
+  SYMBOL                            PARAMETER                               TEST CONDITIONS              Min          Typ     Max        UNIT
+  VIL           Input low voltage                                                                                             0.8          V
+  VIH           Input high voltage (except X1/CLK)                            –40 to +85°C               2.5                               V
+  VIH           Input high voltage (X1/CLK)                                                           0.8 VCC                              V
+  VOL           Output low voltage                                             IOL = 2.4mA                                    0.4          V
+  VOH           Output high voltage (except OD outputs)3                      IOH = -400µA            VCC -0.5                             V
+  IIX1PD        X1/CLK input current - power down                             VIN = 0 to VCC            -0.5                  +0.5        µA
+  IILX1         X1/CLK input low current - operating                             VIN = 0                -130                              µA
+  IIHX1         X1/CLK input high current - operating                           VIN = VCC                                     130         µA
+                Input leakage current:
+  II
+                 All except input port pins                                   VIN = 0 to VCC             -0.5                 +0.5        µA
+                 Input port pins                                              VIN = 0 to VCC              -8                  +0.5        µA
+  IOZH          Output off current high, 3-State data bus                       VIN = VCC                                     0.5         µA
+  IOZL          Output off current low, 3-State data bus                        VIN = 0V                –0.5                              µA
+  IODL          Open-drain output low current in off-state                       VIN = 0                –0.5                              µA
+  IODH          Open-drain output high current in off-state                     VIN = VCC                                     0.5         µA
+                Power supply current4
+  ICC                    Operating mode                                     CMOS input levels                            5     10         mA
+                         Power down mode5                                   CMOS input levels                            2     15         mA
+NOTES:
+1. Parameters are valid over specified temperature range.
+2. Typical values are at +25°C, typical supply voltages, and typical processing parameters.
+3. Test conditions for outputs: CL = 150pF, except interrupt outputs. Test conditions for interrupt outputs: CL = 50pF, RL = 2.7KΩ to VCC.
+4. All outputs are disconnected. Inputs are switching between CMOS levels of VCC -0.2V and VSS + 0.2V.
+5. See UART application note for power down currents of 5µA or less.
+
+
+
+
+2000 Jan 31                                                             6
+Philips Semiconductors                                                                                                   Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                               SC26C92
+
+
+AC CHARACTERISTICS1, 2, 4
+VCC = 5V ± 10%, TA = –40_C to 85_C, unless otherwise specified.
+                                                                                                             LIMITS
+ SYMBOL                                         PARAMETER                                            Min      Typ3       Max        UNIT
+  Reset Timing (See Figure 3)
+ tRES         RESET pulse width                                                                      200                             ns
+  Bus Timing5 (See Figure 4)
+ tAS          A0-A3 setup time to RDN, WRN Low                                                        10                             ns
+ tAH          A0-A3 hold time from RDN, WRN Low                                                       25                             ns
+ tCS          CEN setup time to RDN, WRN Low                                                          0                              ns
+ tCH          CEN hold time from RDN, WRN High                                                        0                              ns
+ tRW          WRN, RDN pulse width                                                                    70                             ns
+ tDD          Data valid after RDN Low                                                                                    55         ns
+ tDF          Data bus floating after RDN High                                                                            25         ns
+ tDS          Data setup time before WRN or CEN High                                                  25                             ns
+ tDH          Data hold time after WRN or CEN High                                                    0                              ns
+ tRWD         High time between reads and/or writes5, 6                                               30                             ns
+              5
+  Port Timing (See Figure 5)
+ tPS          Port input setup time before RDN Low                                                    0                              ns
+ tPH          Port input hold time after RDN High                                                     0                              ns
+ tPD          OPn output valid from WRN High                                                                             100         ns
+  Interrupt Timing (See Figure 6)
+              INTRN (or OP3-OP7 when used as interrupts) negated from:
+                 Read RxFIFO (RxRDY/FFULL interrupt)                                                                     100         ns
+                 Write TxFIFO (TxRDY interrupt)                                                                          100         ns
+ tIR             Reset command (break change interrupt)                                                                  100         ns
+                 Stop C/T command (counter interrupt)                                                                    100         ns
+                 Read IPCR (input port change interrupt)                                                                 100         ns
+                 Write IMR (clear of interrupt mask bit)                                                                 100         ns
+  Clock Timing (See Figure 7)
+ tCLK         X1/CLK High or Low time                                                                50                              ns
+ fCLK         X1/CLK frequency                                                                       0.1      3.6864      8         MHz
+ tCTC         CTCLK (IP2) High or Low time                                                           55                              ns
+ fCTC         CTCLK (IP2) frequency                                                                   0                   8         MHz
+ tRX          RxC High or Low time (16X)                                                             30                              ns
+ fRX          RxC frequency (16X)                                                                     0                   16        MHz
+                                (1X)8                                                                 0                   1         MHz
+ tTX          TxC High or Low time (16X)                                                             30                              ns
+ fTX          TxC frequency (16X)                                                                     0                   16        MHz
+                                (1X)8                                                                 0                   1         MHz
+   Transmitter Timing (See Figure 8)
+  tTXD           TxD output delay from TxC external clock input on IP pin                                                      60        ns
+  tTCS           Output delay from TxC low at OP pin to TxD data output                                              5         30        ns
+   Receiver Timing (See Figure 9)
+  tRXS           RxD data setup time before RxC high at external clock input on IP pin                     50                            ns
+  tRXH           RxD data hold time after RxC high at external clock input on IP pin                       50                            ns
+NOTES:
+1. Parameters are valid over specified temperature range.
+2. All voltage measurements are referenced to ground (GND). For testing, all inputs swing between 0.4V and 3.0V with a transition time of 5ns
+    maximum. For X1/CLK this swing is between 0.4V and 4.4V. All time measurements are referenced at input voltages of 0.8V and 2.0V and
+    output voltages of 0.8V and 2.0V, as appropriate.
+3. Typical values are at +25°C, typical supply voltages, and typical processing parameters.
+4. Test conditions for outputs: CL = 150pF, except interrupt outputs. Test conditions for interrupt outputs: CL = 50pF, RL = 2.7KΩ to VCC.
+5. Timing is illustrated and referenced to the WRN and RDN inputs. Also, CEN may be the ‘strobing’ input. CEN and RDN (also CEN and
+    WRN) are ORed internally. The signal asserted last initiates the cycle and the signal negated first terminates the cycle.
+6. If CEN is used as the ‘strobing’ input, the parameter defines the minimum High times between one CEN and the next. The RDN signal must
+    be negated for tRWD to guarantee that any status register changes are valid.
+7. Minimum frequencies are not tested but are guaranteed by design. Crystal frequencies 2 to 4 MHz.
+8. Clocks for 1X mode should be symmetrical.
+
+
+
+
+2000 Jan 31                                                           7
+Philips Semiconductors                                                                                                           Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                       SC26C92
+
+
+Block Diagram                                                                 Counter–Timer
+The SC26C92 DUART consists of the following eight major sections:             The Counter/Timer is a programmable 16–bit divider that is used for
+data bus buffer, operation control, interrupt control, timing,                generating miscellaneous clocks or generating timeout periods.
+communications Channels A and B, input port and output port.                  These clocks may be used by any or all of the receivers and trans-
+Refer to the Block Diagram.                                                   mitters in the DUART or may be directed to an I/O pin for miscella-
+                                                                              neous use.
+Data Bus Buffer
+The data bus buffer provides the interface between the external and
+internal data buses. It is controlled by the operation control block to       Counter/Timer programming
+allow read and write operations to take place between the controlling         The counter timer is a 16–bit programmable divider that operates in
+CPU and the DUART.                                                            one of three modes: counter, timer, and time out.
+Operation Control                                                             • Timer mode generates a square wave.
+The operation control logic receives operation commands from the              • Counter mode generates a time delay.
+CPU and generates appropriate signals to internal sections to
+control device operation. It contains address decoding and read and           • Time out mode counts time between received characters.
+write circuits to permit communications with the microprocessor via
+                                                                              The C/T uses the numbers loaded into the Counter/Timer Lower
+the data bus.
+                                                                              Register (CTPL) and the Counter/Timer Upper Register (CTPU) as
+Interrupt Control                                                             its divisor. The counter timer is controlled with six commands: Start/
+A single active-Low interrupt output (INTRN) is provided which is             Stop C/T, Read/Write Counter/Timer lower register and Read/Write
+activated upon the occurrence of any of eight internal events.                Counter/Timer upper register. These commands have slight differ-
+Associated with the interrupt system are the Interrupt Mask Register          ences depending on the mode of operation. Please see the detail of
+(IMR) and the Interrupt Status Register (ISR). The IMR can be                 the commands under the CTPL/CTPU register descriptions.
+programmed to select only certain conditions to cause INTRN to be
+asserted. The ISR can be read by the CPU to determine all                     Baud Rate Generation with the C/T
+currently active interrupting conditions.
+                                                                              When the timer is selected as baud rates for receiver or transmitter
+Outputs OP3-OP7 can be programmed to provide discrete interrupt               via the Clock Select register their output will be configured as a 16x
+outputs for the transmitter, receivers, and counter/timer.                    clock. Therefore one needs to program the timer to generate a
+When OP3 to OP7 are programmed as interrupts, their output                    clock 16 times faster than the data rate. The formula for calculating
+buffers are changed to the open drain active low configuration.               ’n’, the number loaded to the CTPU and CTPL registers, based on a
+These pins may be used for DMA and modem control.                             particular input clock frequency is shown below.
+                                                                              For the timer mode the formula is as follows:
+
+TIMING CIRCUITS                                                                        Clockinputfrequency
+                                                                              n=
+Crystal Clock                                                                      2    16 Baudratedesired
+The timing block consists of a crystal oscillator, a baud rate
+generator, a programmable 16-bit counter/timer, and four clock                NOTE: ‘n’ may not assume values of 0 and 1.
+selectors. The crystal oscillator operates directly from a crystal
+                                                                              The frequency generated from the above formula will be at a rate 16
+connected across the X1/CLK and X2 inputs. If an external clock of
+                                                                              times faster than the desired baud rate. The transmitter and receiv-
+the appropriate frequency is available, it may be connected to
+                                                                              er state machines include divide by 16 circuits, which provide the
+X1/CLK. The clock serves as the basic timing reference for the
+                                                                              final frequency and provide various timing edges used in the qualify-
+Baud Rate Generator (BRG), the counter/timer, and other internal
+                                                                              ing the serial data bit stream. Often this division will result in a non–
+circuits. A clock signal within the limits specified in the
+                                                                              integer value: 26.3 for example. One may only program integer
+specifications section of this data sheet must always be supplied to
+                                                                              numbers to a digital divider. There for 26 would be chosen. If 26.7
+the DUART.
+                                                                              were the result of the division then 27 would be chosen. This gives
+If an external is used instead of a crystal, X1 should be driven using        a baud rate error of 0.3/26.3 or 0.3/26.7 that yields a percentage
+a configuration similar to the one in Figure 7.                               error of 1.14% or 1.12% respectively, well within the ability of the
+                                                                              asynchronous mode of operation. Higher input frequency to the
+BRG
+                                                                              counter reduces the error effect of the fractional division
+The baud rate generator operates from the oscillator or external
+clock input and is capable of generating 27 commonly used data                One should be cautious about the assumed benign effects of small
+communications baud rates ranging from 50 to 38.4K baud.                      errors since the other receiver or transmitter with which one is com-
+Programming bit 0 of MR0 to a “1” gives additional baud rates to              municating may also have a small error in the precise baud rate. In
+230.4kB. These will be in the 16X mode. A 3.6864MHz crystal or                a ”clean” communications environment using one start bit, eight data
+external clock must be used to get the standard baud rates. The               bits and one stop bit the total difference allowed between the trans-
+clock outputs from the BRG are at 16X the actual baud rate. The               mitter and receiver frequency is approximately 4.6%. Less than
+counter/timer can be used as a timer to produce a 16X clock for any           eight data bits will increase this percentage.
+other baud rate by counting down the crystal clock or an external
+clock. The four clock selectors allow the independent selection, for          Communications Channels A and B
+each receiver and transmitter, of any of these baud rates or external         Each communications channel of the SC26C92 comprises a
+timing signal.                                                                full-duplex asynchronous receiver/transmitter (UART). The
+
+
+
+
+2000 Jan 31                                                               8
+Philips Semiconductors                                                                                                                  Product specification
+
+
+   Dual universal asynchronous receiver/transmitter (DUART)                                                                              SC26C92
+
+
+operating frequency for each receiver and transmitter can be                         RxRDY) they will be switched to an open drain configuration. In this
+selected independently from the baud rate generator, the                             configuration an external pull–up device will be required
+counter/timer, or from an external input.
+                                                                                     OPERATION
+The transmitter accepts parallel data from the CPU, converts it to a
+                                                                                     Transmitter
+serial bit stream, inserts the appropriate start, stop, and optional
+                                                                                     The SC26C92 is conditioned to transmit data when the transmitter is
+parity bits and outputs a composite serial stream of data on the TxD
+                                                                                     enabled through the command register. The SC26C92 indicates to
+output pin.
+                                                                                     the CPU that it is ready to accept a character by setting the TxRDY
+The receiver accepts serial data on the RxD pin, converts this serial                bit in the status register. This condition can be programmed to
+input to parallel format, checks for start bit, stop bit, parity bit (if any),       generate an interrupt request at OP0, OP1 and INTRN. When the
+or break condition and sends an assembled character to the CPU                       transmitter is initially enabled the TxRDY and TxEMT bits will be set
+via the receive FIFO. Three status bits (Break Received, Framing                     in the status register. When a character is loaded to the transmit
+and Parity Errors) are also FIFOed with each data character.                         FIFO the TxEMT bit will be reset. The TxEMT will not set until: 1)
+                                                                                     the transmit FIFO is empty and the transmit shift register has
+Input Port
+                                                                                     finished transmitting the stop bit of the last character written to the
+The inputs to this unlatched 7-bit port can be read by the CPU by
+                                                                                     transmit FIFO, or 2) the transmitter is disabled and then re–enabled.
+performing a read operation at address H’D’. A High input results in
+                                                                                     The TxRDY bit is set whenever the transmitter is enabled and the
+a logic 1 while a Low input results in a logic 0. D7 will always read
+                                                                                     TxFIFO is not full. Data is transferred from the holding register to
+as a logic 1. The pins of this port can also serve as auxiliary inputs
+                                                                                     transmit shift register when it is idle or has completed transmission
+to certain portions of the DUART logic or modem and DMA control.
+                                                                                     of the previous character. Characters cannot be loaded into the
+Four change-of-state detectors are provided which are associated                     TxFIFO while the transmitter is disabled.
+with inputs IP3, IP2, IP1 and IP0. A High-to-Low or Low-to-High
+                                                                                     The transmitter converts the parallel data from the CPU to a serial
+transition of these inputs, lasting longer than 25 - 50µs, will set the
+                                                                                     bit stream on the TxD output pin. It automatically sends a start bit
+corresponding bit in the input port change register. The bits are
+                                                                                     followed by the programmed number of data bits, an optional parity
+cleared when the register is read by the CPU. Any change-of-state
+                                                                                     bit, and the programmed number of stop bits. The least significant
+can also be programmed to generate an interrupt to the CPU.
+                                                                                     bit is sent first. Following the transmission of the stop bits, if a new
+The input port pulse detection circuitry uses a 38.4KHz sampling                     character is not available in the TxFIFO, the TxD output remains
+clock derived from one of the baud rate generator taps. This results                 High and the TxEMT bit in the Status Register (SR) will be set to 1.
+in a sampling period of slightly more than 25µs (this assumes that                   Transmission resumes and the TxEMT bit is cleared when the CPU
+the clock input is 3.6864MHz). The detection circuitry, in order to                  loads a new character into the TxFIFO.
+guarantee that a true change in level has occurred, requires two
+                                                                                     If the transmitter is disabled, it continues operating until the charac-
+successive samples at the new logic level be observed. As a
+                                                                                     ter currently being transmitted and any characters in the TxFIFO
+consequence, the minimum duration of the signal change is 25µs if
+                                                                                     including parity and stop bit(s) have been completed.
+the transition occurs “coincident with the first sample pulse”. The
+50µs time refers to the situation in which the change-of-state is “just              Note the differences between the transmitter disable and the trans-
+missed” and the first change-of-state is not detected until 25µs later.              mitter reset: reset stops all transmission immediately, effectively
+All the IP pins have a small pull-up device that will source 1 to 4 mA               clears the TxFIFO and resets all status and Tx interrupt conditions.
+of current from VCC. These pins do not require pull-up devices or                    Transmitter disable clears all Tx status and interrupts BUT allows
+VCC connections if they are not used.                                                the Tx to complete the transmission of all data in the TxFIFO and in
+                                                                                     the shift register. While the Tx is disabled the TxFIFO can not be
+Output Port                                                                          loaded with data.
+The output ports are controlled from five places: the OPCR register,                 The transmitter can be forced to send a continuous Low condition by
+SOPR, ROPR, the MR registers and the command register (CR).                          issuing a send break command from the command register. The
+The OPCR register controls the source of the data for the output                     transmitter output is returned to the normal high with a stop break
+ports OP2 through OP7. The data source for output ports OP0 and                      command.
+OP1 is controlled by the MR and CR registers. Normally the data
+source for the OP pins is from the OPR register. The OP pin drive                    The transmitter can be reset through a software command. If it is
+the inverted level (complement) of the OPR register. Example:                        reset, operation ceases immediately and the transmitter must be
+when the SOPR is used to set the OPR bit to a logical 1 then the                     enabled through the command register before resuming operation.
+associated OP pin will drive a logical 0.                                            If the CTS option is enabled (MR2[4] = 1), the CTSN input at IP0 or
+The content of the OPR register is controlled by the “Set Output Port                IP1 must be low in order for the character to be transmitted. The
+Bits Command” and the “Reset Output Bits Command”. These com-                        transmitter will check the state of the CTS input at the beginning of
+mands are at E and F, respectively. When these commands are                          each character transmitted. If it is found to be High, the transmitter
+used, action takes place only at the bit locations where ones exist.                 will delay the transmission of any following characters until the CTS
+For example, a one in bit location 5 of the data word used with the                  has returned to the low state. CTS going high during the serializa-
+“Set Output Port Bits” command will result in OPR(5) being set to                    tion of a character will not affect that character.
+one. The OP5 would then be set to zero (VSS ). Similarly, a one in
+                                                                                     Transmitter “RS485 turnaround”
+bit position 5 of the data word associated with the “Reset Output
+                                                                                     The transmitter can also control the RTSN outputs, OP0 or OP1 via
+Ports Bits” command would set OPR(5) to zero and, hence, the pin
+                                                                                     MR2[5]. When this mode of operation is set, the meaning of the
+OP5 to a one (Vdd).
+                                                                                     OP0 and OP1 signal will usually be ‘end of message’. See
+Please note that these pins drive both high and low. However when                    description of the MR2[5] bit for more detail.
+they are programmed to represent interrupt type functions (such as
+
+
+2000 Jan 31                                                                      9
+Philips Semiconductors                                                                                                             Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                         SC26C92
+
+
+This feature may be used automatically “turnaround” a transceiver               edges since the clock of the controller is not synchronous to
+when operating in a simplex system.                                             the X1 clock.
+
+Transmitter Disable Note (W.R.T. Turnaround)                                    Receiver FIFO
+When the TxEMT bit is set the sequence of instructions: enable                  The RxFIFO consists of a First-In-First-Out (FIFO) stack with a
+transmitter — load transmit holding register — disable transmitter              capacity of eight characters. Data is loaded from the receive shift
+will often result in nothing being sent. In the condition of the TxEMT          register into the topmost empty position of the FIFO. The RxRDY bit
+being set do not issue the disable until the TxRDY bit goes active              in the status register is set whenever one or more characters are
+again after the character is loaded to the TxFIFO. The data is not              available to be read, and a FFULL status bit is set if all eight stack
+sent if the time between the end of loading the transmit holding                positions are filled with data. Either of these bits can be selected to
+register and the disable command is less that 3/16 bit time in the              cause an interrupt. A read of the RxFIFO outputs the data at the top
+16x mode. One bit time in the 1x mode.                                          of the FIFO. After the read cycle, the data FIFO and its associated
+                                                                                status bits (see below) are ‘popped’ thus emptying a FIFO position
+This is sometimes the condition when the RS485 automatic “turn-
+                                                                                for new data.
+around” is enabled . It will also occur when only one character is to
+be sent and it is desired to disable the transmitter immediately after          Receiver Status Bits
+the character is loaded.
+                                                                                There are five (5) status bits that are evaluated with each byte (or
+In general, when it is desired to disable the transmitter before the            character) received: received break, framing error, parity error, over-
+last character is sent AND the TxEMT bit is set in the status register          run error, and change of break. The first three are appended to
+be sure the TxRDY bit is active immediately before issuing the                  each byte and stored in the RxFIFO. The last two are not necessar-
+transmitter disable instruction. (TxEMT is always set if the transmit-          ily related to the byte being received or a byte that is in the RxFIFO.
+ter has underrun or has just been enabled), TxRDY sets at the end               They are however developed by the receiver state machine.
+of the “start bit” time. It is during the start bit that the data in the
+                                                                                The received break, framing error, parity error and overrun error (if
+transmit holding register is transferred to the transmit shift register.
+                                                                                any) are strobed into the RxFIFO at the received character bound-
+Transmitter Flow control                                                        ary, before the RxRDY status bit is set. For character mode (see
+                                                                                below) status reporting the SR (Status Register) indicates the condi-
+The transmitter may be controlled by the CTSN input when enabled
+                                                                                tion of these bits for the character that is the next to be read from the
+by MR2(4). The CTSN input would be connected to RTSN output of
+                                                                                FIFO
+the receiver to which it is communicating. See further description in
+the MR 1 and MR2 register descriptions.                                         The ”received break” will always be associated with a zero byte in
+                                                                                the RxFIFO. It means that zero character was a break character
+Receiver
+                                                                                and not a zero data byte. The reception of a break condition will
+The SC26C92 is conditioned to receive data when enabled through
+                                                                                always set the ”change of break” (see below) status bit in the Inter-
+the command register. The receiver looks for a High-to-Low
+                                                                                rupt Status Register (ISR). The Change of break condition is reset
+(mark-to-space) transition of the start bit on the RxD input pin. If a
+                                                                                by a reset error status command in the command register
+transition is detected, the state of the RxD pin is sampled each 16X
+clock for 7-1/2 clocks (16X clock mode) or at the next rising edge of           Break Detection
+the bit time clock (1X clock mode). If RxD is sampled High, the start           If a break condition is detected (RxD is Low for the entire character
+bit is invalid and the search for a valid start bit begins again. If RxD        including the stop bit), a character consisting of all zeros will be
+is still Low, a valid start bit is assumed and the receiver continues to        loaded into the RxFIFO and the received break bit in the SR is set to
+sample the input at one bit time intervals at the theoretical center of         1. The change of break bit also sets in the ISR The RxD input must
+the bit, until the proper number of data bits and parity bit (if any)           return to high for two (2) clock edges of the X1 crystal clock for the
+have been assembled, and one stop bit has been detected. The                    receiver to recognize the end of the break condition and begin the
+least significant bit is received first. The data is then transferred to        search for a start bit.
+the Receive FIFO and the RxRDY bit in the SR is set to a 1. This
+condition can be programmed to generate an interrupt at OP4 or                  This will usually require a high time of one X1 clock period or 3
+OP5 and INTRN. If the character length is less than 8 bits, the most            X1 edges since the clock of the controller is not synchronous
+significant unused bits in the RxFIFO are set to zero.                          to the X1 clock.
+
+After the stop bit is detected, the receiver will immediately look for          Framing Error
+the next start bit. However, if a non-zero character was received               A framing error occurs when a non–zero character whose parity bit
+without a stop bit (framing error) and RxD remains Low for one half             (if used) and stop; bit are zero. If RxD remains low for one half of
+of the bit period after the stop bit was sampled, then the receiver             the bit period after the stop bit was sampled, then the receiver
+operates as if a new start bit transition had been detected at that             operates as if the start bit of the next character had been detected.
+point (one-half bit time after the stop bit was sampled).                       The parity error indicates that the receiver–generated parity was not
+The parity error, framing error, and overrun error (if any) are strobed         the same as that sent by the transmitter.
+into the SR at the received character boundary, before the RxRDY                The framing, parity and received break status bits are reset when
+status bit is set. If a break condition is detected (RxD is Low for the         the associated data byte is read from the RxFIFO since these “error”
+entire character including the stop bit), a character consisting of all         conditions are attached to the byte that has the error
+zeros will be loaded into the RxFIFO and the received break bit in
+the SR is set to 1. The RxD input must return to high for two (2)               Overrun Error
+clock edges of the X1 crystal clock for the receiver to recognize the           The overrun error occurs when the RxFIFO is full, the receiver shift
+end of the break condition and begin the search for a start bit. This           register is full, and another start bit is detected. At this moment the
+will usually require a high time of one X1 clock period or 3 X1                 receiver has 9 valid characters and the start bit of the 10th has been
+
+
+
+2000 Jan 31                                                                10
+Philips Semiconductors                                                                                                           Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                       SC26C92
+
+
+seen. At this point the host has approximately 6/16–bit time to read           If the receiver is disabled, the FIFO characters can be read. Howev-
+a byte from the RxFIFO or the overrun condition will be set. The               er, no additional characters can be received until the receiver is
+10th character then overruns the 9th and the 11th the 10th and so on           enabled again. If the receiver is reset, the FIFO and all of the re-
+until an open position in the RxFIFO is seen. (“seen” meaning at               ceiver status, and the corresponding output ports and interrupt are
+least one byte was read from the RxFIFO.)                                      reset. No additional characters can be received until the receiver is
+                                                                               enabled again.
+Overrun is cleared by a use of the “error reset” command in the
+command register.                                                              Receiver Reset and Disable
+The fundamental meaning of the overrun is that data has been lost.             Receiver disable stops the receiver immediately – data being
+Data in the RxFIFO remains valid. The receiver will begin placing              assembled in the receiver shift register is lost. Data and status in
+characters in the RxFIFO as soon as a position becomes vacant.                 the FIFO is preserved and may be read. A re-enable of the receiver
+                                                                               after a disable will cause the receiver to begin assembling
+Note: Precaution must be taken when reading an overrun FIFO.                   characters at the next start bit detected. A receiver reset will discard
+There will be 8 valid characters in the receiver FIFO. There will              the present shift register date, reset the receiver ready bit (RxRDY),
+be one character in the receiver shift register. However it will               clear the status of the byte at the top of the FIFO and re-align the
+NOT be known if more than one “over–running” character has                     FIFO read/write pointers.
+been received since the overrun bit was set. The 9th character
+is received and read as valid but it will not be known how many                A ‘watchdog timer’ is associated with each receiver. Its interrupt is
+characters were lost between the two characters of the 8th and                 enabled by MR0[7]. The purpose of this timer is to alert the control
+9th reads of the RxFIFO                                                        processor that characters are in the RxFIFO which have not been
+                                                                               read and/or the data stream has stopped. This situation may occur
+The ”Change of break” means that either a break has been detected              at the end of a transmission when the last few characters received
+or that the break condition has been cleared. This bit is available in         are not sufficient to cause an interrupt.
+the ISR. The break change bit being set in the ISR and the received
+break bit being set in the SR will signal the beginning of a break. At         This counter times out after 64 bit times. It is reset each time a
+the termination of the break condition only the change of break in             character is transferred from the receiver shift register to the
+the ISR will be set. After the break condition is detected the ter-            RxFIFO or a read of the RxFIFO is executed.
+mination of the break will only be recognized when the RxD input
+                                                                               Receiver Timeout Mode
+has returned to the high state for two successive edges of the 1x
+                                                                               In addition to the watch dog timer described in the receiver section,
+clock; 1/2 to 1 bit time (see above).
+                                                                               the counter/timer may be used for a similar function. Its
+The receiver is disabled by reset or via CR commands. A disabled               programmability, of course, allows much greater precision of time
+receiver will not interrupt the host CPU under any circumstance in             out intervals.
+the normal mode of operation. If the receiver is in the multi–drop or
+                                                                               The timeout mode uses the received data stream to control the
+special mode, it will be partially enabled and thus may cause an
+                                                                               counter. Each time a received character is transferred from the shift
+interrupt. Refer to section on Wake–Up and the register description
+                                                                               register to the RxFIFO, the counter is restarted. If a new character
+for MR1 for more information.
+                                                                               is not received before the counter reaches zero count, the counter
+Receiver Status Modes (block and character)                                    ready bit is set, and an interrupt can be generated. This mode can
+                                                                               be used to indicate when data has been left in the RxFIFO for more
+In addition to the data word, three status bits (parity error, framing
+error, and received break) are also appended to each data character            than the programmed time limit. Otherwise, if the receiver has been
+in the FIFO (overrun is not). Status can be provided in two ways, as           programmed to interrupt the CPU when the receive FIFO is full, and
+programmed by the error mode control bit in the mode register. In              the message ends before the FIFO is full, the CPU may not know
+the ‘character’ mode, status is provided on a character–by–charac-             there is data left in the FIFO. The CTU and CTL value would be
+ter basis; the status applies only to the character at the top of the          programmed for just over one character time, so that the CPU would
+FIFO. In the ‘block’ mode, the status provided in the SR for these             be interrupted as soon as it has stopped receiving continuous data.
+three bits is the logical–OR of the status for all characters coming to        This mode can also be used to indicate when the serial line has
+the top of the FIFO since the last ‘reset error’ command was issued.           been marking for longer than the programmed time limit. In this
+In either mode reading the SR does not affect the FIFO. The FIFO               case, the CPU has read all of the characters from the FIFO, but the
+is ‘popped’ only when the RxFIFO is read. Therefore the status                 last character received has started the count. If there is no new
+register should be read prior to reading the FIFO.                             data during the programmed time interval, the counter ready bit will
+                                                                               get set, and an interrupt can be generated.
+Receiver Flow Control
+                                                                               The timeout mode is enabled by writing the appropriate command to
+The receiver can control the deactivation of RTS. If programmed to             the command register. Writing an ‘Ax’ to CRA or CRB will invoke
+operate in this mode, the RTSN output will be negated when a valid             the timeout mode for that channel. Writing a ‘Cx’ to CRA or CRB will
+start bit was received and the FIFO is full. When a FIFO position              disable the timeout mode. The timeout mode should only be used
+becomes available, the RTSN output will be re–asserted automati-               by one channel at once, since it uses the C/T. If, however, the
+cally. This feature can be used to prevent an overrun, in the receiv-          timeout mode is enabled from both receivers, the timeout will occur
+er, by connecting the RTSN output to the CTSN input of the                     only when both receivers have stopped receiving data for the
+transmitting device.                                                           timeout period. CTU and CTL must be loaded with a value greater
+Note: The transmitter may also control the “RTSN” pin. When                    than the normal receive character period. The timeout mode
+under transmitter control the meaning is completely changed.                   disables the regular START/STOP Counter commands and puts the
+The meaning is the transmission has ended. This signal is                      C/T into counter mode under the control of the received data stream.
+usually used to switch (turnaround) a bi–directional driver from               Each time a received character is transferred from the shift register
+transmit to receive.                                                           to the RxFIFO, the C/T is stopped after 1 C/T clock, reloaded with
+
+
+2000 Jan 31                                                               11
+Philips Semiconductors                                                                                                             Product specification
+
+
+   Dual universal asynchronous receiver/transmitter (DUART)                                                                         SC26C92
+
+
+the value in CTU and CTL and then restarted on the next C/T clock.                the MR registers) will return the OP pins pin to the control of the
+If the C/T is allowed to end the count before a new character has                 OPR register.
+been received, the counter ready bit, ISR[3], will be set. If IMR[3] is
+set, this will generate an interrupt. Receiving a character after the             Multidrop Mode (9-bit or Wake-Up)
+C/T has timed out will clear the counter ready bit, ISR[3], and the               The DUART is equipped with a wake up mode for multidrop
+interrupt. Invoking the ‘Set Timeout Mode On’ command, CRx = ‘Ax’,                applications. This mode is selected by programming bits MR1A[4:3]
+will also clear the counter ready bit and stop the counter until the              or MR1B[4:3] to ‘11’ for Channels A and B, respectively. In this
+next character is received.                                                       mode of operation, a ‘master’ station transmits an address character
+                                                                                  followed by data characters for the addressed ‘slave’ station. The
+Time Out Mode Caution                                                             slave stations, with receivers that are normally disabled, examine
+When operating in the special time out mode, it is possible to                    the received data stream and ‘wakeup’ the CPU (by setting RxRDY)
+generate what appears to be a “false interrupt”, i.e., an interrupt               only upon receipt of an address character. The CPU compares the
+without a cause. This may result when a time-out interrupt occurs                 received address to its station address and enables the receiver if it
+and then, BEFORE the interrupt is serviced, another character is                  wishes to receive the subsequent data characters. Upon receipt of
+received, i.e., the data stream has started again. (The interrupt                 another address character, the CPU may disable the receiver to
+latency is longer than the pause in the data stream.) In this case,               initiate the process again.
+when a new character has been receiver, the counter/timer will be
+                                                                                  A transmitted character consists of a start bit, the programmed
+restarted by the receiver, thereby withdrawing its interrupt. If, at this
+                                                                                  number of data bits, and Address/Data (A/D) bit, and the
+time, the interrupt service begins for the previously seen interrupt, a
+                                                                                  programmed number of stop bits. The polarity of the transmitted
+read of the ISR will show the “Counter Ready” bit not set. If nothing
+                                                                                  A/D bit is selected by the CPU by programming bit
+else is interrupting, this read of the ISR will return a x’00 character.
+                                                                                  MR1A[2]/MR1B[2]. MR1A[2]/MR1B[2] = 0 transmits a zero in the
+The CTS, RTS, CTS Enable Tx signals                                               A/D bit position, which identifies the corresponding data bits as data
+CTS (Clear To Send) is usually meant to be a signal to the transmit-              while MR1A[2]/MR1B[2] = 1 transmits a one in the A/D bit position,
+ter meaning that it may transmit data to the receiver. The CTS input              which identifies the corresponding data bits as an address. The
+is on pin IP0 or IP1 for the transmitter. The CTS signal is active low;           CPU should program the mode register prior to loading the
+thus, it is called CTSN. RTS is usually meant to be a signal from the             corresponding data bits into the TxFIFO.
+receiver indicating that the receiver is ready to receive data. It is             In this mode, the receiver continuously looks at the received data
+also active low and is, thus, called RTSN. RTSN is on pin OP0 or                  stream, whether it is enabled or disabled. If disabled, it sets the
+OP1. A receiver’s RTS output will usually be connected to the CTS                 RxRDY status bit and loads the character into the RxFIFO if the
+input of the associated transmitter. Therefore, one could say that                received A/D bit is a one (address tag), but discards the received
+RTS and CTS are different ends of the same wire!                                  character if the received A/D bit is a zero (data tag). If enabled, all
+MR2(4) is the bit that allows the transmitter to be controlled by the             received characters are transferred to the CPU via the RxFIFO. In
+CTS pin ( IP0 or IP1). When this bit is set to one AND the CTS                    either case, the data bits are loaded into the data FIFO while the
+input is driven high, the transmitter will stop sending data at the end           A/D bit is loaded into the status FIFO position normally used for
+of the present character being serialized. It is usually the RTS out-             parity error (SRA[5] or SRB[5]). Framing error, overrun error, and
+put of the receiver that will be connected to the transmitter’s CTS               break detect operate normally whether or not the receive is enabled.
+input. The receiver will set RTS high when the receiver FIFO is full
+                                                                                  PROGRAMMING
+AND the start bit of the ninth character is sensed. Transmission
+                                                                                  The operation of the DUART is programmed by writing control words
+then stops with nine valid characters in the receiver. When MR2(4)
+                                                                                  into the appropriate registers. Operational feedback is provided via
+is set to one, CTSN must be at zero for the transmitter to operate. If
+                                                                                  status registers which can be read by the CPU. The addressing of
+MR2(4) is set to zero, the IP0 or IP1 pin will have no effect on the
+                                                                                  the registers is described in Table 1.
+operation of the transmitter.
+                                                                                  The contents of certain control registers are initialized to zero on
+MR1(7) is the bit that allows the receiver to control OP0 or OP1.
+                                                                                  RESET. Care should be exercised if the contents of a register are
+When OP0 or OP1 is controlled by the receiver, the meaning of that
+                                                                                  changed during operation, since certain changes may cause
+pin will be RTS. However, a point of confusion arises in that these
+                                                                                  operational problems.
+pins may also be controlled by the transmitter. When the transmit-
+ter is controlling them the meaning is not RTS at all. It is, rather, that        For example, changing the number of bits per character while the
+the transmitter has finished sending its last data byte.                          transmitter is active may cause the transmission of an incorrect
+                                                                                  character. In general, the contents of the MR, the CSR, and the
+Programming the OP0 or OP1 pin to be controlled by the receiver
+                                                                                  OPCR should only be changed while the receiver(s) and
+and the transmitter at the same time is allowed, but would usually be
+                                                                                  transmitter(s) are not enabled, and certain changes to the ACR
+incompatible.
+                                                                                  should only be made while the C/T is stopped.
+RTS can also be controlled by the commands 1000 and 1001 in the
+                                                                                  Each channel has 3 mode registers (MR0, 1, 2) which control the
+command register. RTS is expressed at the OP0 or OP1 pin which
+                                                                                  basic configuration of the channel. Access to these registers is
+is still an output port. Therefore, the state of OP0 or OP1 should be
+                                                                                  controlled by independent MR address pointers. These pointers are
+set low (either by commands of the CR register or by writing to the
+                                                                                  set to 0 or 1 by MR control commands in the command register
+SOPR or ROPR (Set or Reset Output Port Registers) for the receiv-
+                                                                                  “Miscellaneous Commands”. Each time the MR registers are
+er to generate the proper RTS signal. The logic at the output is
+                                                                                  accessed the MR pointer increments, stopping at MR2. It remains
+basically a NAND of the bit in OPR(0) or OPR(1) register and the
+                                                                                  pointing to MR2 until set to 0 or 1 via the miscellaneous commands
+RTS signal as generated by the receiver. When the RTS flow con-
+                                                                                  of the command register. The pointer is set to 1 on reset for
+trol is selected via the MR1(7) bit the state of the OPR(0) or OPR(1)
+                                                                                  compatibility with previous Philips Semiconductors UART software.
+register is not changed. Terminating the use of “Flow Control” (via
+
+
+2000 Jan 31                                                                  12
+Philips Semiconductors                                                                                                               Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                              SC26C92
+
+
+Mode, command, clock select, and status registers are duplicated                    registers at addresses H‘02’ and H‘0A’ should never be read during
+for each channel to provide total independent operation and control.                normal operation since they are reserved for internal diagnostics.
+Refer to Table 2 for register bit descriptions. The reserved
+
+Table 1. SC26C92 Register Addressing
+    A3          A2         A1            A0                         READ (RDN = 0)                                        WRITE (WRN = 0)
+     0           0          0              0             Mode Register A (MR0A, MR1A, MR2A)                   Mode Register A (MR0A, MR1A, MR2A)
+     0           0          0              1             Status Register A (SRA)                              Clock Select Register A (CSRA)
+     0           0          1              0             Reserved                                             Command Register A (CRA)
+     0           0          1              1             Rx Holding Register A (RxFIFOA)                      Tx Holding Register A (TxFIFOA)
+     0           1          0              0             Input Port Change Register (IPCR)                    Aux. Control Register (ACR)
+     0           1          0              1             Interrupt Status Register (ISR)                      Interrupt Mask Register (IMR)
+     0           1          1              0             Counter/Timer Upper Value (CTU)                      C/T Upper Preset Value (CTPU)
+     0           1          1              1             Counter/Timer Lower Value (CTL)                      C/T Lower Preset Value (CTPL)
+     1           0          0              0             Mode Register B (MR0B, MR1B, MR2B)                   Mode Register B (MR0B, MR1B, MR2B)
+     1           0          0              1             Status Register B (SRB)                              Clock Select Register B (CSRB)
+     1           0          1              0             Reserved                                             Command Register B (CRB)
+     1           0          1              1             Rx Holding Register B (RxFIFOB)                      Tx Holding Register B (TxFIFOB)
+     1           1          0              0             User Defined Flag/Status Flag                        User Defined Flag/Status Flag
+     1           1          0              1             Input Ports IP0 to IP6                               Output Port Conf. Register (OPCR)
+     1           1          1              0             Start Counter Command                                Set Output Port Bits Command (SOP12)
+     1           1          1              1             Stop Counter Command                                 Reset Output Port Bits Command (ROP12)
+NOTE:
+The three MR Registers are accessed via the MR Pointer and Commands 1xh and Bxh. (Where “x” represents receiver and transmitter enable/
+disable control)
+
+ The following named registers are the same for Channels                             These registers control the functions which service both
+ A and B                                                                             Channels
+ Mode Register                    MRnA            MRnB            R/W                Input Port Change Register                  IPCR               R
+ Status Register                   SRA            SRB            R only              Auxiliary Control Register                  ACR                W
+ Clock Select                     CSRA            CSRB           W only              Interrupt Status Register                    ISR               R
+ Command Register                  CRA            CRB            W only              Interrupt Mask Register                      IMR               W
+ Receiver FIFO                   RxFIFOA        RxFIFOB          R only              Counter Timer Upper Value                   CTU                R
+ Transmitter FIFO                TxFIFOA        TxFIFOB          W only              Counter Timer Lower Value                   CTL                R
+                                                                                     Counter Timer Preset Upper                  CTPU               W
+                                                                                     Counter Timer Preset Lower                  CTPL               W
+                                                                                     Input Port Register                          IPR               R
+                                                                                     Output Configuration Register               OPCR               W
+                                                                                     Set Output Port Bits                        SOPR               W
+                                                                                     Reset Output Port Bits                      ROPR               W
+
+Table 2. Register Bit Formats
+                                 BIT 7                  BIT 6        BIT 5   BIT 4           BIT 3                  BIT 2       BIT 1          BIT 0
+    MR0A, MR0B             Rx WATCH               RxINT BIT 2         TxINT (1:0)           DON’T              BAUD RATE       TEST 2      BAUD RATE
+   MR0B[3:0] are              DOG                                                           CARE               EXTENDED II                 EXTENDED 1
+      reserved             0 = Disable           See Tables in                             Set to 0             0 = Normal     Set to 0     0 = Normal
+  Returns F on read        1 = Enable           MR0 description                        Returns 1 on read       1 = Extend II                1 = Extend
+
+                         BIT 7                 BIT 6             BIT 5         BIT 4            BIT 3             BIT 2         BIT 1              BIT 0
+                     Rx CONTROLS               Rx INT           ERROR                                            PARITY             BITS PER
+                                                                                    PARITY MODE
+     MR1A                RTS                    BIT 1           MODE                                              TYPE             CHARACTER
+     MR1B                                                                      00 = With Parity                                           00 = 5
+     0x00              0 = No              0 = RxRDY            0 = Char       01 = Force Parity                 0 = Even                 01 = 6
+                       1 = Yes             1 = FFULL            1 = Block      10 = No Parity                    1 = Odd                  10 = 7
+                                                                               11 = Multidrop Mode                                        11 = 8
+NOTE: *In block error mode, block error conditions must be cleared by using the error reset command (command 4x) or a receiver reset.
+
+
+
+
+2000 Jan 31                                                                  13
+Philips Semiconductors                                                                                                               Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                           SC26C92
+
+
+
+                   BIT 7                     BIT 6           BIT 5              BIT 4           BIT 3            BIT 2         BIT 1            BIT 0
+                                                         Tx CONTROLS             CTS
+                          CHANNEL MODE                                                                           STOP BIT LENGTH*
+     MR2A                                                    RTS              ENABLE Tx
+     MR2B                  00 = Normal                                                         0 = 0.563       4 = 0.813      8 = 1.563      C = 1.813
+     0x00                  01 = Auto-Echo                   0 = No             0 = No          1 = 0.625       5 = 0.875      9 = 1.625      D = 1.875
+                           10 = Local loop                  1 = Yes            1 = Yes         2 = 0.688       6 = 0.938      A = 1.688      E = 1.938
+                           11 = Remote loop                                                    3 = 0.750       7 = 1.000      B = 1.750      F = 2.000
+ NOTE: *Add 0.5 to values shown for 0 – 7 if channel is programmed for 5 bits/char.
+
+     CSRA                BIT 7        BIT 6              BIT 5         BIT 4                 BIT 3         BIT 2            BIT 1           BIT 0
+     CSRB                         RECEIVER CLOCK SELECT                                              TRANSMITTER CLOCK SELECT
+     0x01
+                                              See Text                                                             See Text
+
+
+                      BIT 7          BIT 6           BIT 5            BIT 4        BIT 3               BIT 2               BIT 1              BIT 0
+     CRA
+                              MISCELLANEOUS COMMANDS*                           DISABLE Tx           ENABLE Tx        DISABLE Rx          ENABLE Rx
+     CRB
+     0x01                                                                          0 = No              0 = No              0 = No            0 = No
+                                         See Text
+                                                                                   1 = Yes             1 = Yes             1 = Yes           1 = Yes
+ NOTE: Access to the miscellaneous commands should be separated by 3 X1 clock edges. A disabled transmitter cannot be loaded.
+
+
+
+
+2000 Jan 31                                                              14
+Philips Semiconductors                                                                                                       Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                   SC26C92
+
+
+Table 2.      Register Bit Formats (Continued)
+
+                      BIT 7           BIT 6          BIT 5           BIT 4           BIT 3             BIT 2         BIT 1             BIT 0
+     SRA           RECEIVED        FRAMING          PARITY        OVERRUN
+                                                                                    TxEMT             TxRDY         FFULL             RxRDY
+     SRB            BREAK*          ERROR*          ERROR*         ERROR
+     0x01            0 = No          0 = No          0 = No          0 = No         0 = No            0 = No        0 = No            0 = No
+                     1 = Yes         1 = Yes         1 = Yes         1 = Yes        1 = Yes           1 = Yes       1 = Yes           1 = Yes
+ NOTE: *These status bits are appended to the corresponding data character in the receive FIFO. A read of the status provides these bits
+ (7:5) from the top of the FIFO together with bits (4:0). These bits are cleared by a “reset error status” command. In character mode they are
+ discarded when the corresponding data character is read from the FIFO. In block error mode, block error conditions must be cleared by using
+ the error reset command (command 4x) or a receiver reset.
+
+                      BIT 7           BIT 6          BIT 5           BIT 4            BIT 3          BIT 2           BIT 1           BIT 0
+                      OP7             OP6             OP5             OP4                      OP3                             OP2
+     OPCR                                                                              00 = OPR[3]                     00 = OPR[2]
+     0x0D                                         0 = OPR[5]      0 = OPR[4]
+                   0 = OPR[7]     0 = OPR[6]                                           01 = C/T OUTPUT                 01 = TxCA(16X)
+                                                  1 = RxRDY/      1 = RxRDY/
+                   1 = TxRDYB     1 = TxRDYA                                           10 = TxCB(1X)                   10 = TxCA(1X)
+                                                      FFULLB          FFULLA
+                                                                                       11 = RxCB(1X)                   11 = RxCA(1X)
+
+     SOPR              BIT 7           BIT 6           BIT 5          BIT 4           BIT 3            BIT 2         BIT 1            BIT 0
+     0x0E            See Note        See Note        See Note       See Note        See Note         See Note      See Note          See Note
+ NOTE: 0 = No Change; 1 = Set
+
+     ROPR              BIT 7           BIT 6           BIT 5          BIT 4           BIT 3            BIT 2         BIT 1            BIT 0
+     0x0F            See Note        See Note        See Note       See Note        See Note         See Note      See Note          See Note
+ NOTE: 0 = No Change; 1 = Reset
+                      BIT 7           BIT 6          BIT 5           BIT 4          BIT 3             BIT 2         BIT 1             BIT 0
+                      OP 7            OP 6           OP 5            OP 4            OP 3             OP 2          OP 1              OP 0
+      OPR
+                  0 = Pin High    0 = Pin High    0 = Pin High   0 = Pin High   0 = Pin High     0 = Pin High   0 = Pin High      0 = Pin High
+                  1 = Pin Low     1 = Pin Low     1 = Pin Low    1 = Pin Low    1 = Pin Low      1 = Pin Low    1 = Pin Low       1 = Pin Low
+
+                      BIT 7           BIT 6           BIT 5          BIT 4          BIT 3             BIT 2         BIT 1             BIT 0
+
+     ACR            BRG SET                     COUNTER/TIMER                       DELTA             DELTA         DELTA             DELTA
+     0x04           SELECT                     MODE AND SOURCE                     IP 3 INT          IP 2 INT      IP 1 INT          IP 0 INT
+                    0 = set 1                                                      0 = Off           0 = Off       0 = Off           0 = Off
+                                                  See Table 6
+                    1 = set 2                                                      1 = On            1 = On        1 = On            1 = On
+
+                      BIT 7           BIT 6          BIT 5           BIT 4           BIT 3             BIT 2         BIT 1             BIT 0
+                     DELTA           DELTA           DELTA          DELTA
+     IPCR                                                                             IP 3             IP 2          IP 1               IP 0
+                      IP 3            IP 2            IP 1           IP 0
+     0x04
+                     0 = No         0 = No          0 = No          0 = No          0 = Low          0 = Low       0 = Low           0 = Low
+                     1 = Yes        1 = Yes         1 = Yes         1 = Yes         1 = High         1 = High      1 = High          1 = High
+
+
+                      BIT 7           BIT 6          BIT 5           BIT 4           BIT 3             BIT 2         BIT 1             BIT 0
+                     INPUT
+                                    DELTA           RxRDY/                        COUNTER             DELTA        RxRDY/
+     ISR             PORT                                          TxRDYB                                                            TxRDYA
+                                   BREAK B          FFULLB                         READY             BREAK A       FFULLA
+     0x05           CHANGE
+                     0 = No         0 = No          0 = No          0 = No          0 = No           0 = No        0 = No            0 = No
+                     1 = Yes        1 = Yes         1 = Yes         1 = Yes         1 = Yes          1 = Yes       1 = Yes           1 = Yes
+
+                      BIT 7           BIT 6          BIT 5           BIT 4           BIT 3             BIT 2         BIT 1             BIT 0
+                    IN. PORT        DELTA           RxRDY/                        COUNTER             DELTA        RxRDY/
+                                                                   TxRDYB                                                            TxRDYA
+     IMR            CHANGE         BREAK B          FFULLB                         READY             BREAK A       FFULLA
+                                                                     INT                                                               INT
+     0x05              INT           INT              INT                           INT                INT           INT
+                     0 = Off        0 = Off         0 = Off         0 = Off         0 = Off          0 = Off       0 = Off           0 = Off
+                     1 = On         1 = On          1 = On          1 = On          1 = On           1 = On        1 = On            1 = On
+
+
+
+
+2000 Jan 31                                                           15
+Philips Semiconductors                                                                                                                  Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                              SC26C92
+
+
+
+                       BIT 7            BIT 6            BIT 5             BIT 4            BIT 3             BIT 2             BIT 1             BIT 0
+     CTPU             C/T[15]          C/T[14]          C/T[13]            C/T[12]         C/T[11]           C/T[10]           C/T[9]            C/T[8]
+     0x06
+
+
+
+                       BIT 7            BIT 6            BIT 5             BIT 4            BIT 3             BIT 2             BIT 1             BIT 0
+     CTPL
+                       C/T[7]           C/T[6]           C/T[5]            C/T[4]           C/T[3]            C/T[2]           C/T[1]            C/T[0]
+     0x07
+
+
+REGISTER DESCRIPTIONS Mode Registers                                             100    Extended mode II
+MR0 is accessed by setting the MR pointer to 0 via the command                   Other combinations should not be used
+register command B.
+                                                                                 Note: MR0[3:0] are not used in channel B and should be set to 0.
+MR0A
+                                                                                 MR1A
+MR0[7] – This bit controls the receiver watch dog timer. 0 = disable,            MR1A is accessed when the Channel A MR pointer points to MR1.
+1 = enable. When enabled, the watch dog timer will generate a                    The pointer is set to MR1 by RESET or by a ‘set pointer’ command
+receiver interrupt if the receiver FIFO has not been accessed within             applied via CR command 1. After reading or writing MR1A, the
+64 bit times of the receiver 1X clock. This is used to alert the control         pointer will point to MR2A.
+processor that data is in the RxFIFO that has not been read. This
+situation may occur when the byte count of the last part of a                    MR1A[7] – Channel A Receiver Request-to-Send Control
+message is not large enough to generate an interrupt.                            (Flow Control)
+                                                                                 This bit controls the deactivation of the RTSAN output (OP0) by the
+MR0[6] – Bit 2 of receiver FIFO interrupt level. This bit along with Bit         receiver. This output is normally asserted by setting OPR[0] and
+6 of MR1 sets the fill level of the 8 byte FIFO that generates the               negated by resetting OPR[0].
+receiver interrupt.                                                              MR1A[7] = 1 causes RTSAN to be negated (OP0 is driven to a ‘1’
+                                                                                 [VCC]) upon receipt of a valid start bit if the Channel A FIFO is full.
+Table 3. Receiver FIFO Interrupt Fill Level                                      This is the beginning of the reception of the ninth byte. If the FIFO is
+   MR0[6]          MR1[6]                Interrupt Condition                     not read before the start of the tenth byte, an overrun condition will
+                                                                                 occur and the tenth byte will be lost. However, the bit in OPR[0] is
+       0              0          1 or more bytes in FIFO
+                                   (Rx RDY)                                      not reset and RTSAN will be asserted again when an empty FIFO
+       0               1         3 or more bytes in FIFO                         position is available. This feature can be used for flow control to
+       1               0         6 or more bytes in FIFO                         prevent overrun in the receiver by using the RTSAN output signal to
+                                                                                 control the CTSN input of the transmitting device.
+       1               1         8 bytes in FIFO
+                                   (Rx FULL)                                     MR1[6] – Bit 1 of the receiver interrupt control. See description
+For the receiver these bits control the number of FIFO positions                 under MR0[6].
+empty when the receiver will attempt to interrupt. After the reset the
+receiver FIFO is empty. The default setting of these bits cause the              MR1A[5] – Channel A Error Mode Select
+receiver to attempt to interrupt when it has one or more bytes in it.            This bit select the operating mode of the three FIFOed status bits
+                                                                                 (FE, PE, received break) for Channel A. In the ‘character’ mode,
+MR0[5:4] – Tx interrupt fill level.                                              status is provided on a character-by-character basis; the status
+                                                                                 applies only to the character at the top of the FIFO. In the ‘block’
+Table 4. Transmitter FIFO Interrupt Fill Level                                   mode, the status provided in the SR for these bits is the
+   MR0[5]          MR0[4]                Interrupt Condition                     accumulation (logical-OR) of the status for all characters coming to
+                                                                                 the top of the FIFO since the last ‘reset error’ command for Channel
+       0              0          8 bytes empty
+                                   (Tx EMPTY)                                    A was issued.
+       0               1         4 or more bytes empty                           MR1A[4:3| – Channel A Parity Mode Select
+       1               0         6 or more bytes empty                           If ‘with parity’ or ‘force parity’ is selected a parity bit is added to the
+       1               1         1 or more bytes empty                           transmitted character and the receiver performs a parity check on
+                                    (Tx RDY)                                     incoming data MR1A[4:3] = 11 selects Channel A to operate in the
+For the transmitter these bits control the number of FIFO positions              special multidrop mode described in the Operation section.
+empty when the receiver will attempt to interrupt. After the reset the
+transmit FIFO has 8 bytes empty. It will then attempt to interrupt as            MR1A[2] – Channel A Parity Type Select
+soon as the transmitter is enabled. The default setting of the MR0               This bit selects the parity type (odd or even) if the ‘with parity’ mode
+bits (00) condition the transmitter to attempt to interrupt only when it         is programmed by MR1A[4:3], and the polarity of the forced parity bit
+is completely empty. As soon as one byte is loaded, it is no longer              if the ‘force parity’ mode is programmed. It has no effect if the ‘no
+empty and hence will withdraw its interrupt request.                             parity’ mode is programmed. In the special multidrop mode it
+                                                                                 selects the polarity of the A/D bit.
+MR0[3] – Not used. Should be set to 0.
+                                                                                 MR1A[1:0] – Channel A Bits Per Character Select
+MR0[2:0] – These bits are used to select one of the six baud rates
+                                                                                 This field selects the number of data bits per character to be
+(see Table 5).
+                                                                                 transmitted and received. The character length does not include the
+000 Normal mode
+                                                                                 start, parity, and stop bits.
+001 Extended mode I
+
+
+2000 Jan 31                                                                 16
+Philips Semiconductors                                                                                                           Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                       SC26C92
+
+
+MR2A – Channel A Mode Register 2                                             8. A delay of one bit time is seen at the remote receiver.
+MR2A is accessed when the Channel A MR pointer points to MR2,
+which occurs after any access to MR1A. Accesses to MR2A do not               The user must exercise care when switching into and out of the
+change the pointer.                                                          various modes. The selected mode will be activated immediately
+                                                                             upon mode selection, even if this occurs in the middle of a received
+MR2A[7:6] – Channel A Mode Select                                            or transmitted character. Likewise, if a mode is deselected the
+Each channel of the DUART can operate in one of four modes.                  device will switch out of the mode immediately. An exception to this
+MR2A[7:6] = 00 is the normal mode, with the transmitter and                  is switching out of autoecho or remote loopback modes: if the
+receiver operating independently.                                            de-selection occurs just after the receiver has sampled the stop bit
+MR2A[7:6] = 01 places the channel in the automatic echo mode,                (indicated in autoecho by assertion of RxRDY), and the transmitter
+which automatically retransmits the received data. The following             is enabled, the transmitter will remain in autoecho mode until the
+conditions are true while in automatic echo mode:                            entire stop has been re-transmitted.
+1. Received data is reclocked and retransmitted on the TxDA out-
+   put.                                                                      MR2A[5] – Channel A Transmitter Request-to-Send Control
+                                                                             This bit controls the deactivation of the RTSAN output (OP0) by the
+2. The receive clock is used for the transmitter. Data is received on        transmitter. This output is normally asserted by setting OPR[0] and
+   the rising edge of the RxC1x clock and retransmitted on the next          negated by resetting OPR[0].
+   fall of the RxC!x clock.
+                                                                             MR2A[5] = 1 caused OPR[0] to be reset automatically one bit time
+3. The receiver must be enabled, but the transmitter need not be             after the characters in the Channel A transmit shift register and in
+   enabled.                                                                  the TxFIFO, if any, are completely transmitted including the
+4. The Channel A TxRDY and TxEMT status bits are inactive.                   programmed number of stop bits. If the transmitter is not enabled,
+                                                                             this feature can be used to automatically terminate the transmission
+5. The received parity is checked, but is not regenerated for trans-         of a message as follows:
+   mission, i.e. transmitted parity bit is as received.                      1. Program auto-reset mode: MR2A[5] = 1.
+6. Character framing is checked, but the stop bits are retransmitted         2. Enable transmitter.
+   as received.
+                                                                             3. Asset RTSAN: OPR[0] = 1.
+7. A received break is echoed as received until the next valid start
+   bit is detected.                                                          4. Send message.
+
+8. CPU to receiver communication continues normally, but the CPU             5. Disable transmitter after the last character is loaded into the
+   to transmitter link is disabled.                                             Channel A TxFIFO. Tx status and Tx interrupts will be disabled
+                                                                                at this time.
+MR2A(7:6) = 10 selects the local loop back diagnostic mode. In this          6. The last character will be transmitted and OPR[0] will be reset
+mode:                                                                           one bit time after the last stop bit, causing RTSAN to be negated.
+1. The transmitter output is internally connected to the receiver               In this mode, the meaning of “RTSAN” is that the transmission is
+   input.                                                                       ended.
+2. The transmit clock is used for the receiver.
+                                                                             MR2A[4] – Channel A Clear-to-Send Control
+3. The TxDA output is held High.
+                                                                             If this bit is 0, CTSAN has no effect on the transmitter. If this bit is a
+4. The RxDA input is ignored.                                                1, the transmitter checks the state of CTSAN (IPO) each time it is
+                                                                             ready to send a character. If IPO is asserted (Low), the character is
+5. The transmitter must be enabled, but the receiver need not be
+                                                                             transmitted. If it is negated (High), the TxDA output remains in the
+   enabled.
+                                                                             marking state and the transmission is delayed until CTSAN goes
+6. CPU to transmitter and receiver communications continue nor-              low. Changes in CTSAN while a character is being transmitted do
+   mally.                                                                    not affect the transmission of that character..
+
+MR2A[7:6] = 11 selects a remote loop back diagnostic mode. In this           MR2A[3:0] – Channel A Stop Bit Length Select
+mode:                                                                        This field programs the length of the stop bit appended to the
+1. Received data is reclocked and retransmitted on the TxDA out-             transmitted character. Stop bit lengths of 9/16 to 1 and 1-9/16 to 2
+   put.                                                                      bits, in increments of 1/16 bit, can be programmed for character
+                                                                             lengths of 6, 7, and 8 bits. For a character lengths of 5 bits, 1-1/16
+2. The receive clock is used for the transmitter.                            to 2 stop bits can be programmed in increments of 1/16 bit. In all
+3. Received data is not sent to the local CPU, and the error status          cases, the receiver only checks for a ‘mark’ condition at the center
+   conditions are inactive.                                                  of the stop bit position (one–half bit time after the last data bit, or
+                                                                             after the parity bit if enabled is sampled).
+4. The received parity is not checked and is not regenerated for
+   transmission, i.e., transmitted parity is as received.                    If an external 1X clock is used for the transmitter, MR2A[3] = 0
+                                                                             selects one stop bit and MR2A[3] = 1 selects two stop bits to be
+5. The receiver must be enabled.                                             transmitted.
+6. Character framing is not checked, and the stop bits are retrans-
+   mitted as received.
+                                                                             MR0B – Channel B Mode Register 0
+                                                                             MR0B is accessed when the Channel B MR pointer points to MR1.
+7. A received break is echoed as received until the next valid start         The pointer is set to MR0 by RESET or by a ‘set pointer’ command
+   bit is detected.
+
+
+2000 Jan 31                                                             17
+Philips Semiconductors                                                                                                            Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                        SC26C92
+
+
+applied via CRB. After reading or writing MR0B, the pointer will                The receiver clock is always a 16X clock except for CSRB[7:4] = 1111.
+point to MR1B.
+                                                                                CSRA[3:0] – Channel A Transmitter Clock Select
+The bit definitions for this register are identical to MR0A, except that        This field selects the baud rate clock for the Channel A transmitter.
+all control actions apply to the Channel B receiver and transmitter             The field definition is as shown in Table 5, except as follows:
+and the corresponding inputs and outputs. MR0B[3:0] are reserved.
+                                                                                     CSRA[3:0]               ACR[7] = 0              ACR[7] = 1
+MR1B – Channel B Mode Register 1                                                         1110               IP3-16X                IP3-16X
+                                                                                         1111               IP3-1X                 IP3-1X
+MR1B is accessed when the Channel B MR pointer points to MR1.
+The pointer is set to MR1 by RESET or by a ‘set pointer’ command                The transmitter clock is always a 16X clock except for CSR[3:0] = 1111.
+applied via CRB. After reading or writing MR1B, the pointer will
+point to MR2B.                                                                  CSRB – Channel B Clock Select Register
+                                                                                CSRB[7:4] – Channel B Receiver Clock Select
+The bit definitions for this register are identical to MR1A, except that
+                                                                                This field selects the baud rate clock for the Channel B receiver.
+all control actions apply to the Channel B receiver and transmitter
+                                                                                The field definition is as shown in Table 5, except as follows:
+and the corresponding inputs and outputs.
+                                                                                     CSRB[7:4]               ACR[7] = 0              ACR[7] = 1
+MR2B – Channel B Mode Register 2                                                         1110               IP6-16X                IP6-16X
+MR2B is accessed when the Channel B MR pointer points to MR2,                            1111               IP6-1X                 IP6-1X
+which occurs after any access to MR1B. Accesses to MR2B do not
+change the pointer.                                                             The receiver clock is always a 16X clock except for CSRB[7:4] = 1111.
+The bit definitions for mode register are identical to the bit
+                                                                                CSRB[3:0] – Channel B Transmitter Clock Select
+definitions for MR2A, except that all control actions apply to the
+                                                                                This field selects the baud rate clock for the Channel B transmitter.
+Channel B receiver and transmitter and the corresponding inputs
+                                                                                The field definition is as shown in Table 5, except as follows:
+and outputs.
+                                                                                     CSRB[3:0]               ACR[7] = 0              ACR[7] = 1
+CSRA – Channel A Clock Select Register                                                   1110               IP5-16X                 IP5-16X
+CSRA[7:4] – Channel A Receiver Clock Select                                              1111               IP5-1X                  IP5-1X
+This field selects the baud rate clock for the Channel A receiver.
+The field definition is shown in Table 5.
+                                                                                The transmitter clock is always a 16X clock except for
+      CSRB[7:4]               ACR[7] = 0              ACR[7] = 1                CSRB[3:0] = 1111.
+         1110                IP4-16X                IP4-16X
+         1111                IP4-1X                 IP4-1X
+
+
+Table 5. Baud Rate (Base on a 3.6864MHz crystal clock)
+                         MR0[0] = 0 (Normal Mode)                    MR0[0] = 1 (Extended Mode I)                MR0[2] = 1 (Extended Mode II)
+   CSRA[7:4]           ACR[7] = 0            ACR[7] = 1              ACR[7] = 0           ACR[7] = 1            ACR[7] = 0            ACR[7] = 1
+     0000                   50                    75                     300                  450                  4,800                 7,200
+     0001                  110                   110                     110                  110                   880                   880
+     0010                 134.5                 134.5                   134.5                134.5                 1,076                 1,076
+     0011                  200                   150                    1200                  900                  19.2K                14.4K
+     0100                  300                   300                    1800                 1800                  28.8K                28.8K
+     0101                  600                   600                    3600                 3600                  57.6K                57.6K
+     0110                 1,200                 1,200                   7200                 7,200                115.2K                115.2K
+     0111                 1,050                 2,000                   1,050                2,000                 1,050                 2,000
+     1000                 2,400                 2,400                   14.4K                14.4K                 57.6K                57.6K
+     1001                 4,800                 4,800                   28.8K                28.8K                 4,800                 4,800
+     1010                 7,200                 1,800                   7,200                1,800                 57.6K                14.4K
+     1011                 9,600                 9,600                   57.6K                57.6K                 9,600                 9,600
+     1100                 38.4K                  19.2K                 230.4K               115.2K                 38.4K                19.2K
+     1101                 Timer                 Timer                   Timer                Timer                 Timer                 Timer
+     1110               IP4-16X               IP4-16X                 IP4-16X              IP4-16X               IP4-16X               IP4-16X
+     1111                IP4-1X                IP4-1X                  IP4-1X               IP4-1X                IP4-1X                IP4-1X
+ NOTE: The receiver clock is always a 16X clock except for CSRA[7:4] = 1111.
+
+
+
+
+2000 Jan 31                                                                18
+Philips Semiconductors                                                                                                           Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                       SC26C92
+
+
+CRA – Channel A Command Register                                                  prior to placing the DUART into power down mode. This
+CRA is a register used to supply commands to Channel A. Multiple                  command is in CRA only.
+commands can be specified in a single write to CRA as long as the            1111 Disable Power Down Mode. This command restarts the
+                                                                                  oscillator. After invoking this command, wait for the oscillator
+commands are non-conflicting, e.g., the ‘enable transmitter’ and
+                                                                                  to start up before writing further commands to the CR. This
+‘reset transmitter’ commands cannot be specified in a single
+                                                                                  command is in CRA only. For maximum power reduction
+command word.                                                                     input pins should be at VSS or VDD.
+CRA[7:4] – Miscellaneous Commands                                            CRA[3] – Disable Channel A Transmitter
+Execution of the commands in the upper four bits of this register            This command terminates transmitter operation and reset the
+must be separated by 3 X1 clock edges. Other reads or writes                 TxDRY and TxEMT status bits. However, if a character is being
+(including writes tot he lower four bits) may be inserted to achieve         transmitted or if a character is in the TxFIFO when the transmitter is
+this separation.                                                             disabled, the transmission of the character(s) is completed before
+CRA[7:4] – Command                                                           assuming the inactive state.
+0000 No command.
+0001 Reset MR pointer. Causes the Channel A MR pointer to point              CRA[2] – Enable Channel A Transmitter
+     to MR1.                                                                 Enables operation of the Channel A transmitter. The TxRDY and
+0010 Reset receiver. Resets the Channel A receiver as if a                   TxEMT status bits will be asserted if the transmitter is idle.
+     hardware reset had been applied. The receiver is disabled
+     and the FIFO is flushed.                                                CRA[1] – Disable Channel A Receiver
+0011 Reset transmitter. Resets the Channel A transmitter as if a             This command terminates operation of the receiver immediately – a
+     hardware reset had been applied.                                        character being received will be lost. The command has no effect
+0100 Reset error status. Clears the Channel A Received Break, Parity         on the receiver status bits or any other control registers. If the
+     Error, and Overrun Error bits in the status register (SRA[7:4]).        special multidrop mode is programmed, the receiver operates even
+     Used in character mode to clear OE status (although RB, PE              if it is disabled. See Operation section.
+     and FE bits will also be cleared) and in block mode to clear all
+     error status after a block of data has been received.                   CRA[0] – Enable Channel A Receiver
+0101 Reset Channel A break change interrupt. Causes the                      Enables operation of the Channel A receiver. If not in the special
+     Channel A break detect change bit in the interrupt status               wakeup mode, this also forces the receiver into the search for
+     register (ISR[2]) to be cleared to zero.                                start-bit state.
+0110 Start break. Forces the TxDA output Low (spacing). If the
+     transmitter is empty the start of the break condition will be           CRB – Channel B Command Register
+     delayed up to two bit times. If the transmitter is active the
+                                                                             CRB is a register used to supply commands to Channel B. Multiple
+     break begins when transmission of the character is
+                                                                             commands can be specified in a single write to CRB as long as the
+     completed. If a character is in the TxFIFO, the start of the
+     break will be delayed until that character, or any other loaded         commands are non-conflicting, e.g., the ‘enable transmitter’ and
+     subsequently are transmitted. The transmitter must be                   ‘reset transmitter’ commands cannot be specified in a single
+     enabled for this command to be accepted.                                command word.
+0111 Stop break. The TxDA line will go High (marking) within two             The bit definitions for this register are identical to the bit definitions
+     bit times. TxDA will remain High for one bit time before the
+                                                                             for CRA, with the exception of commands “Ex” and “Fx” which are
+     next character, if any, is transmitted.
+1000 Assert RTSN. Causes the RTSN output to be asserted                      used for power downmode. These two commands are not used in
+     (Low).                                                                  CRB. All other control actions that apply to CRA also apply to CRB.
+1001 Negate RTSN. Causes the RTSN output to be negated
+     (High).                                                                 SRA – Channel A Status Register
+1010 Set Timeout Mode On. The receiver in this channel will                  SRA[7] – Channel A Received Break
+     restart the C/T as each receive character is transferred from           This bit indicates that an all zero character of the programmed
+     the shift register to the RxFIFO. The C/T is placed in the              length has been received without a stop bit. Only a single FIFO
+     counter mode, the START/STOP counter commands are                       position is occupied when a break is received: further entries to the
+     disabled, the counter is stopped, and the Counter Ready Bit,            FIFO are inhibited until the RxDA line returns to the marking state
+     ISR[3], is reset. (See also Watchdog timer description in the           for at least one-half a bit time two successive edges of the internal
+     receiver section.)                                                      or external 1X clock. This will usually require a high time of one
+1011 Set MR pointer to ‘0’                                                   X1 clock period or 3 X1 edges since the clock of the controller
+1100 Disable Timeout Mode. This command returns control of the
+                                                                             is not synchronous to the X1 clock.
+     C/T to the regular START/STOP counter commands. It does
+     not stop the counter, or clear any pending interrupts. After            When this bit is set, the Channel A ‘change in break’ bit in the ISR
+     disabling the timeout mode, a ‘Stop Counter’ command                    (ISR[2]) is set. ISR[2] is also set when the end of the break
+     should be issued to force a reset of the ISR(3) bit.                    condition, as defined above, is detected.
+1101 Not used.
+1110 Power Down Mode On. In this mode, the DUART oscillator is               The break detect circuitry can detect breaks that originate in the
+     stopped and all functions requiring this clock are suspended.           middle of a received character. However, if a break begins in the
+     The execution of commands other than disable power down                 middle of a character, it must persist until at least the end of the next
+     mode (1111) requires a X1/CLK. While in the power down                  character time in order for it to be detected.
+     mode, do not issue any commands to the CR except the
+     disable power down mode command. The contents of all                    This bit is reset by command 4 (0100) written to the command
+     registers will be saved while in this mode. . It is                     register or by receiver reset.
+     recommended that the transmitter and receiver be disabled
+
+
+
+
+2000 Jan 31                                                             19
+Philips Semiconductors                                                                                                              Product specification
+
+
+   Dual universal asynchronous receiver/transmitter (DUART)                                                                          SC26C92
+
+
+SRA[6] – Channel A Framing Error                                                  OPCR – Output Port Configuration Register
+This bit, when set, indicates that a stop bit was not detected (not a             OPCR[7] – OP7 Output Select
+logical 1) when the corresponding data character in the FIFO was                  This bit programs the OP7 output to provide one of the following:
+received. The stop bit check is made in the middle of the first stop              0 The complement of OPR[7].
+bit position.                                                                     1 The Channel B transmitter interrupt output which is the comple-
+SRA[5] – Channel A Parity Error                                                      ment of ISR[4]. When in this mode OP7 acts as an open- drain
+This bit is set when the ‘with parity’ or ‘force parity’ mode is                     output. Note that this output is not masked by the contents of the
+programmed and the corresponding character in the FIFO was                           IMR.
+received with incorrect parity.
+                                                                                  OPCR[6] – OP6 Output Select
+In the special multidrop mode the parity error bit stores the receive             This bit programs the OP6 output to provide one of the following:
+A/D (Address/Data) bit.                                                           0 The complement of OPR[6].
+                                                                                  1 The Channel A transmitter interrupt output which is the comple-
+SRA[4] – Channel A Overrun Error
+                                                                                     ment of ISR[0]. When in this mode OP6 acts as an open- drain
+This bit, when set, indicates that one or more characters in the
+                                                                                     output. Note that this output is not masked by the contents of the
+received data stream have been lost. It is set upon receipt of a new
+                                                                                     IMR.
+character when the FIFO is full and a character is already in the
+receive shift register waiting for an empty FIFO position. When this
+                                                                                  OPCR[5] – OP5 Output Select
+occurs, the character in the receive shift register (and its break
+                                                                                  This bit programs the OP5 output to provide one of the following:
+detect, parity error and framing error status, if any) is lost.
+                                                                                  0 The complement of OPR[5].
+This bit is cleared by a ‘reset error status’ command.                            1 The Channel B receiver interrupt output which is the complement
+                                                                                    of ISR[5]. When in this mode OP5 acts as an open-drain output.
+SRA[3] – Channel A Transmitter Empty (TxEMTA)                                       Note that this output is not masked by the contents of the IMR.
+This bit will be set when the transmitter underruns, i.e., both the
+TxEMT and TxRDY bits are set. This bit and TxRDY are set when                     OPCR[4] – OP4 Output Select
+the transmitter is first enabled and at any time it is re-enabled after           This field programs the OP4 output to provide one of the following:
+either (a) reset, or (b) the transmitter has assumed the disabled                 0 The complement of OPR[4].
+state. It is always set after transmission of the last stop bit of a
+                                                                                  1 The Channel A receiver interrupt output which is the complement
+character if no character is in the THR awaiting transmission.
+                                                                                     of ISR[1]. When in this mode OP4 acts as an open-drain output.
+It is reset when the THR is loaded by the CPU, a pending                             Note that this output is not masked by the contents of the IMR.
+transmitter disable is executed, the transmitter is reset, or the
+transmitter is disabled while in the underrun condition.                          OPCR[3:2] – OP3 Output Select
+                                                                                  This bit programs the OP3 output to provide one of the following:
+SRA[2] – Channel A Transmitter Ready (TxRDYA)                                     00 The complement of OPR[3].
+This bit, when set, indicates that the transmit FIFO is not full and              01 The counter/timer output, in which case OP3 acts as an open-
+ready to be loaded with another character. This bit is cleared when                  drain output. In the timer mode, this output is a square wave at
+the transmit FIFO is loaded by the CPU and there are (after this                     the programmed frequency. In the counter mode, the output
+load) no more empty locations in the FIFO. It is set when a                          remains High until terminal count is reached, at which time it
+character is transferred to the transmit shift register. TxRDYA is                   goes Low. The output returns to the High state when the counter
+reset when the transmitter is disabled and is set when the                           is stopped by a stop counter command. Note that this output is
+transmitter is first enabled. Characters loaded to the TxFIFO while                  not masked by the contents of the IMR.
+this bit is 0 will be lost. This bit has different meaning from ISR[0].
+                                                                                  10 The 1X clock for the Channel B transmitter, which is the clock
+SRA[1] – Channel A FIFO Full (FFULLA)                                                that shifts the transmitted data. If data is not being transmitted, a
+This bit is set when a character is transferred from the receive shift               free running 1X clock is output.
+register to the receive FIFO and the transfer causes the FIFO to                  11 The 1X clock for the Channel B receiver, which is the clock that
+become full, i.e., all eight FIFO positions are occupied. It is reset                samples the received data. If data is not being received, a free
+when the CPU reads the receive FIFO. If a character is waiting in                    running 1X clock is output.
+the receive shift register because the FIFO is full, FFULLA will not
+be reset when the CPU reads the receive FIFO. This bit has                        OPCR[1:0] – OP2 Output Select
+different meaning from ISR1 when MR1 6 is programmed to a ‘1’.                    This field programs the OP2 output to provide one of the following:
+                                                                                  00 The complement of OPR[2].
+SRA[0] – Channel A Receiver Ready (RxRDYA)                                        01 The 16X clock for the Channel A transmitter. This is the clock
+This bit indicates that a character has been received and is waiting                 selected by CSRA[3:0], and will be a 1X clock if CSRA[3:0] =
+in the FIFO to be read by the CPU. It is set when the character is                   1111.
+transferred from the receive shift register to the FIFO and reset
+                                                                                  10 The 1X clock for the Channel A transmitter, which is the clock
+when the CPU reads the receive FIFO, only if (after this read) there
+                                                                                     that shifts the transmitted data. If data is not being transmitted, a
+are no more characters in the FIFO. The RxFIFO becomes empty.
+                                                                                     free running 1X clock is output.
+SRB – Channel B Status Register                                                   11 The 1X clock for the Channel A receiver, which is the clock that
+The bit definitions for this register are identical to the bit definitions           samples the received data. If data is not being received, a free
+for SRA, except that all status applies to the Channel B receiver and                running 1X clock is output.
+transmitter and the corresponding inputs and outputs.
+
+
+
+
+2000 Jan 31                                                                  20
+Philips Semiconductors                                                                                                               Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                            SC26C92
+
+
+SOPR – Set the Output Port Bits (OPR)                                            Table 7. ACR 6:4 Field Definition
+SOPR[7:0] – Ones in the byte written to this register will cause the               ACR
+                                                                                                      MODE                     CLOCK SOURCE
+corresponding bit positions in the OPR to set to 1. Zeros have no                   6:4
+effect.                                                                           000       Counter                      External (IP2)
+                                                                                  001       Counter                      TxCA – 1X clock of Channel A
+ROPR – Reset Output Port Bits (OPR)                                                                                      transmitter
+                                                                                  010       Counter                      TxCB – 1X clock of Channel B
+ROPR[7:0] – Ones in the byte written to the ROPR will cause the                                                          transmitter
+corresponding bit positions in the OPR to set to 0. Zeros have no effect.         011       Counter                      Crystal or external clock
+                                                                                                                         (X1/CLK) divided by 16
+Table 6. Bit Rate Generator Characteristics                                       100       Timer (square wave)          External (IP2)
+Crystal or Clock = 3.6864MHz                                                      101       Timer (square wave)          External (IP2) divided by 16
+  NORMAL RATE           ACTUAL 16X                    ERROR (%)                   110       Timer (square wave)          Crystal or external clock
+     (BAUD)             CLOCK (kHz)                                                                                      (X1/CLK)
+    50                     0.8                                 0                  111       Timer (square wave)          Crystal or external clock
+    75                     1.2                                 0                                                         (X1/CLK) divided by 16
+   110                     1.759                          -0.069                  NOTE: The timer mode generates a squarewave.
+   134.5                   2.153                           0.059
+   150                     2.4                                 0                 ACR[6:4] – Counter/Timer Mode And Clock Source Select
+                                                                                 This field selects the operating mode of the counter/timer and its
+   200                     3.2                                 0
+                                                                                 clock source as shown in Table 7.
+   300                     4.8                                 0
+   600                     9.6                                 0                 ACR[3:0] – IP3, IP2, IP1, IP0 Change-of-State Interrupt Enable
+  1050                   16.756                           -0.260                 This field selects which bits of the input port change register (IPCR)
+  1200                   19.2                                  0                 cause the input change bit in the interrupt status register (ISR[7]) to
+  1800                   28.8                                  0                 be set. If a bit is in the ‘on’ state the setting of the corresponding bit
+  2000                   32.056                            0.175                 in the IPCR will also result in the setting of ISR[7], which results in
+  2400                   38.4                                  0                 the generation of an interrupt output if IMR[7] = 1. If a bit is in the
+  4800                   76.8                                  0                 ‘off’ state, the setting of that bit in the IPCR has no effect on ISR[7].
+  7200                  115.2                                  0
+  9600                  153.6                                  0
+                                                                                 IPCR – Input Port Change Register
+    14.4K               230.4                                  0                 IPCR[7:4] – IP3, IP2, IP1, IP0 Change-of-State
+    19.2K               307.2                                  0                 These bits are set when a change-of-state, as defined in the input
+    28.8K               460.8                                  0                 port section of this data sheet, occurs at the respective input pins.
+    38.4K               614.4                                  0                 They are cleared when the IPCR is read by the CPU. A read of the
+    57.6K               921.6                                  0                 IPCR also clears ISR[7], the input change bit in the interrupt status
+   115.2K               1843.2K                                0                 register. The setting of these bits can be programmed to generate
+   230.4K               3686.4K                                0                 an interrupt to the CPU.
+ NOTE: Duty cycle of 16X clock is 50% ± 1%.
+                                                                                 IPCR[3:0] – IP3, IP2, IP1, IP0 Change-of-State
+Asynchronous UART communications can tolerate frequency error                    These bits provide the current state of the respective inputs. The
+of 4.1% to 6.7% in a “clean” communications channel. The percent                 information is unlatched and reflects the state of the input pins at the
+of error changes as the character length changes. The above                      time the IPCR is read.
+percentages range from 5 bits not parity to 8 bits with parity and one
+stop bit. The error with 8 bits no parity and one stop bit is 4.6%. If a         ISR – Interrupt Status Register
+stop bit length of 9/16 is used, the error tolerance will approach 0             This register provides the status of all potential interrupt sources.
+due to a variable error of up to 1/16 bit time in receiver clock phase           The contents of this register are masked by the Interrupt Mask
+alignment to the start bit.                                                      Register (IMR). If a bit in the ISR is a ‘1’ and the corresponding bit
+                                                                                 in the IMR is also a ‘1’, the INTRN output will be asserted (Low). If
+ACR – Auxiliary Control Register                                                 the corresponding bit in the IMR is a zero, the state of the bit in the
+ACR[7] – Baud Rate Generator Set Select                                          ISR has no effect on the INTRN output. Note that the IMR does not
+This bit selects one of two sets of baud rates to be generated by the            mask the reading of the ISR – the true status will be provided
+BRG (see Table 5).                                                               regardless of the contents of the IMR. The contents of this register
+The selected set of rates is available for use by the Channel A and              are initialized to H‘00’ when the DUART is reset.
+B receivers and transmitters as described in CSRA and CSRB.
+Baud rate generator characteristics are given in Table 6.
+
+
+
+
+2000 Jan 31                                                                 21
+Philips Semiconductors                                                                                                          Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                      SC26C92
+
+
+ISR[7] – Input Port Change Status                                             CTPU and CTPL – Counter/Timer Registers
+This bit is a ‘1’ when a change-of-state has occurred at the IP0, IP1,        The CTPU and CTPL hold the eight MSBs and eight LSBs,
+IP2, or IP3 inputs and that event has been selected to cause an               respectively, of the value to be used by the counter/timer in either
+interrupt by the programming of ACR[3:0]. The bit is cleared when             the counter or timer modes of operation. The minimum value which
+the CPU reads the IPCR.                                                       may be loaded into the CTPU/CTPL registers is H‘0002’. Note that
+                                                                              these registers are write-only and cannot be read by the CPU.
+ISR[6] – Channel B Change In Break
+This bit, when set, indicates that the Channel B receiver has                 In the timer mode, the C/T generates a square wave whose period is
+detected the beginning or the end of a received break. It is reset            twice the value (in C/T clock periods) of the CTPU and CTPL. The
+when the CPU issues a Channel B ‘reset break change interrupt’                waveform so generated is often used for a data clock. The formula
+command.                                                                      for calculating the divisor n to load to the CTPU and CTPL for a
+                                                                              particular 1X data clock is shown below.
+ISR[5] – RxB Interrupt
+This bit indicates that the channel B receiver is interrupting                              counter clock frequency
+                                                                                     n +
+according to the fill level programmed by the MR0 and MR1                                  16 x 2 x baud rate desired
+registers. This bit has a different meaning than the receiver
+ready/full bit in the status register.                                        Often this division will result in a non-integer number; 26.3, for
+                                                                              example. One can only program integer numbers in a digital divider.
+ISR[4] – TxB Interrupt                                                        Therefore, 26 would be chosen. This gives a baud rate error of
+This bit indicates that the channel B transmitter is interrupting             0.3/26.3 which is 1.14%; well within the ability asynchronous mode
+according to the interrupt level programmed in the MR0[5:4] bits.             of operation.
+This bit has a different meaning than the Tx RDY bit in the status
+                                                                              If the value in CTPU and CTPL is changed, the current half-period
+register.
+                                                                              will not be affected, but subsequent half periods will be. The C/T will
+ISR[3] – Counter Ready.                                                       not be running until it receives an initial ‘Start Counter’ command
+In the counter mode, this bit is set when the counter reaches                 (read at address A3-A0 = 1110). After this, while in timer mode, the
+terminal count and is reset when the counter is stopped by a stop             C/T will run continuously. Receipt of a start counter command (read
+counter command.                                                              with A3-A0 = 1110) causes the counter to terminate the current
+                                                                              timing cycle and to begin a new cycle using the values in CTPU and
+In the timer mode, this bit is set once each cycle of the generated           CTPL.
+square wave (every other time that the counter/timer reaches zero
+count). The bit is reset by a stop counter command. The command,              The counter ready status bit (ISR[3]) is set once each cycle of the
+however, does not stop the counter/timer.                                     square wave. The bit is reset by a stop counter command (read
+                                                                              with A3-A0 = H’F’). The command however, does not stop the C/T.
+ISR[2] – Channel A Change in Break                                            The generated square wave is output on OP3 if it is programmed
+This bit, when set, indicates that the Channel A receiver has                 to be the C/T output.
+detected the beginning or the end of a received break. It is reset
+                                                                              In the counter mode, the value C/T loaded into CTPU and CTPL by
+when the CPU issues a Channel A ‘reset break change interrupt’
+                                                                              the CPU is counted down to 0.. Counting begins upon receipt of a
+command.
+                                                                              start counter command. Upon reaching terminal count H‘0000’, the
+ISR[1] – RxA Interrupt                                                        counter ready interrupt bit (ISR[3]) is set. The counter continues
+This bit indicates that the channel A receiver is interrupting                counting past the terminal count until stopped by the CPU. If OP3 is
+according to the fill level programmed by the MR0 and MR1                     programmed to be the output of the C/T, the output remains High
+registers. This bit has a different meaning than the receiver                 until terminal count is reached, at which time it goes Low. The
+ready/full bit in the status register.                                        output returns to the High state and ISR[3] is cleared when the
+                                                                              counter is stopped by a stop counter command. The CPU may
+ISR[0] – TxA Interrupt                                                        change the values of CTPU and CTPL at any time, but the new
+This bit indicates that the channel A transmitter is interrupting             count becomes effective only on the next start counter commands.
+according to the interrupt level programmed in the MR0[5:4] bits.             If new values have not been loaded, the previous count values are
+This bit has a different meaning than the Tx RDY bit in the status            preserved and used for the next count cycle
+register.
+                                                                              In the counter mode, the current value of the upper and lower 8 bits
+IMR – Interrupt Mask Register                                                 of the counter (CTU, CTL) may be read by the CPU. It is
+The programming of this register selects which bits in the ISR                recommended that the counter be stopped when reading to prevent
+causes an interrupt output. If a bit in the ISR is a ‘1’ and the              potential problems which may occur if a carry from the lower 8 bits
+corresponding bit in the IMR is also a ‘1’ the INTRN output will be           to the upper 8 bits occurs between the times that both halves of the
+asserted. If the corresponding bit in the IMR is a zero, the state of         counter are read. However, note that a subsequent start counter
+the bit in the ISR has no effect on the INTRN output. Note that the           command will cause the counter to begin a new count cycle using
+IMR does not mask the programmable interrupt outputs OP3-OP7 or               the values in CTPU and CTPL.
+the reading of the ISR.                                                       When the C/T clock divided by 16 is selected, the maximum divisor
+                                                                              becomes 1,048,575.
+
+
+
+
+2000 Jan 31                                                              22
+Philips Semiconductors                                                                                                                  Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                              SC26C92
+
+
+
+                                              RESETN
+
+
+
+
+                                                                            tRES
+                                                                                                SD00133
+
+                                                                 Figure 3. Reset Timing
+
+
+
+                         A0–A3
+
+
+                                            tAS
+
+                                                       tAH
+                          CEN
+
+
+                                            tCS                                     tCH
+
+                                                              tRW                                tRWD
+
+
+                          RDN
+
+
+
+                                                        tDD                          tDF
+
+
+                      D0–D7                               NOT
+                                     FLOAT               VALID              VALID                       FLOAT
+                     (READ)
+
+                                                                                                 tRWD
+
+
+                          WDN
+
+
+
+                                                                    tDS
+
+                                                                                           tDH
+
+
+                      D0–D7                                           VALID
+                     (WRITE)
+                                                                                                                                     SD00087
+
+                                                                  Figure 4. Bus Timing
+
+
+
+
+                                     RDN
+
+
+                                                   tPS                                    tPH
+
+
+
+                                  IP0–IP6
+
+
+
+                           (a) INPUT PINS
+
+
+
+
+                                     WRN
+
+
+                                                                                                tPD
+
+
+
+                                 OP0–OP7                         OLD DATA                                       NEW DATA
+
+
+
+                           (b) OUTPUT PINS
+                                                                                                                           SD00135
+
+                                                                  Figure 5. Port Timing
+
+
+2000 Jan 31                                                                   23
+Philips Semiconductors                                                                                                                                           Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                                                        SC26C92
+
+
+
+
+                                                       WRN                                                    VM
+
+
+
+                                                                                                                tIR
+                                              INTERRUPT 1
+                                                                                                                            VOL +0.5V
+                                                  OUTPUT
+                                                                                                                                        VOL
+
+
+
+
+                                                                                        VM
+                                                         RDN
+
+
+
+                                                                                                        tIR
+                                              INTERRUPT 1
+                                                                                                                         VOL +0.5V
+                                                  OUTPUT
+                                                                                                                                    VOL
+
+      NOTES:
+      1. INTRN or OP3-OP7 when used as interrupt outputs.
+      2. The test for open-drain outputs is intended to guarantee switching of the output transistor. Measurement of this response is referenced from the midpoint of the switching
+         signal, VM, to a point 0.5V above VOL. This point represents noise margin that assures true switching has occurred. Beyond this level, the effects of external circuitry and
+         test environment are pronounced and can greatly affect the resultant measurement.
+                                                                                                                                                                          SD00136
+
+                                                                          Figure 6. Interrupt Timing
+
+
+                                                tCLK                                                                                   +5V
+                                                tCTC
+                                                tRx
+                                                                                                              NOTE:
+                                                tTx                                                           RESISTOR REQUIRED            470Ω
+                X1/CLK                                                                                        FOR TTL INPUT.
+                CTCLK
+                   RxC                                                                                        CLK                                                 X1
+                   TxC
+                                                                            tCLK
+                                                                            tCTC
+                                                                            tRx
+                                                                                                              *NOTE: X2 MUST BE LEFT OPEN.                        X2*
+                                                                            tTx
+
+
+
+
+                                                                                                               SC26C92
+
+                                                                                        X1
+
+                                                   3pF                                               2pF
+
+
+                                                       C1
+
+                                                                                                               50kΩ
+                                                                                                               to
+                                                                                                               100kΩ
+
+                                                       C2
+
+
+                                                                                        X2           4pF
+                                                                                                                                                                  TO UART
+                                                                                                                                                                  CIRCUIT
+                                                                        3.6864MHz
+                                                   3pF
+
+
+            C1 = C2 ∼ 24pF FOR CL = 20pF
+            C1 and C2 should be chosen according to the crystal manufacturer’s specification.
+            C1 and C2 values will include any parasitic capacitance of the wiring and X1 X2 pins.
+            Gain at 3.6864MHz: 9 to 13 dB
+            Phase at 3.6864MHz: 272 to 276 degrees.
+            Package capacitance approximately 4pF.
+                                                                                                                                                                   SD00697
+
+                                                                            Figure 7. Clock Timing
+
+
+
+
+2000 Jan 31                                                                                  24
+Philips Semiconductors                                                                                                   Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                   SC26C92
+
+
+
+                                                                 1 BIT TIME
+                                                             (1 OR 16 CLOCKS)
+
+
+                                              TxC
+                                          (INPUT)
+
+
+
+                                                            tTXD
+
+
+
+                                              TxD
+
+
+
+
+                                                                    tTCS
+
+
+
+                                              TxC
+                                      (1X OUTPUT)
+
+                                                                                                    SD00138
+
+                                                    Figure 8. Transmitter External Clocks
+
+
+
+
+                                            RxC
+                                      (1X INPUT)
+
+
+                                                             tRXS                tRXH
+
+
+                                            RxD
+
+
+                                                                                                   SD00139
+
+                                                     Figure 9. Receiver External Clock
+
+
+
+
+                       TxD                   D1             D2              D3          BREAK       D4                       D6
+
+
+             TRANSMITTER
+                ENABLED
+
+
+                    TxRDY
+                     (SR2)
+
+
+                      WRN
+
+                                 D1         D8               D9     START           D10    STOP     D11 WILL       D12
+                                                                    BREAK                  BREAK     NOT BE
+                    CTSN1                                                                          WRITTEN TO
+                       (IP0)                                                                       THE TxFIFO
+
+
+
+                    RTSN2
+                     (OP0)
+
+                                OPR(0) = 1                                                                      OPR(0) = 1
+    NOTES:
+    1. Timing shown for MR2(4) = 1.
+    2. Timing shown for MR2(5) = 1.                                                                                               SD00155
+
+                                                       Figure 10. Transmitter Timing
+
+
+
+
+2000 Jan 31                                                            25
+Philips Semiconductors                                                                                                                                      Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)                                                                                                   SC26C92
+
+
+
+                     RxD                     D1              D2             D8                    D9           D10             D11          D12               D13
+                                                                                                                                     D12, D13 WILL BE LOST
+                                                                                                                                     DUE TO RECEIVER DISABLE.
+             RECEIVER
+             ENABLED
+
+                RxRDY
+                 (SR0)
+
+                FFULL
+                 (SR1)
+
+
+               RxRDY/
+                FFULL
+                (OP5)2
+
+                    RDN
+
+                                                  STATUS DATA                                                   STATUS DATA STATUS DATA STATUS DATA
+
+                                                      D1                                     D11 WILL BE LOST        D2              D3            D10
+             OVERRUN                                                                         DUE TO OVERRUN
+                (SR4)                                                                                                                                     RESET BY COMMAND
+
+
+                     RTS1
+                    (OP0)
+
+                                    OPR(0) = 1
+    NOTES:
+    1. Timing shown for MR1(7) = 1.
+    2. Shown for OPCR(4) = 1 and MR(6) = 0.                                                                                                                         SD00156
+
+                                                                      Figure 11. Receiver Timing
+
+
+
+
+                     MASTER STATION
+                                                           BIT 9              BIT 9                                                               BIT 9
+
+              TxD                                 ADD#1 1              D0        0                                                        ADD#2 1
+
+
+
+   TRANSMITTER
+      ENABLED
+
+
+          TxRDY
+           (SR2)
+
+
+             WRN
+
+                      MR1(4–3) = 11     ADD#1 MR1(2) = 0 D0                                                 MR1(2) = 1 ADD#2
+                       MR1(2) = 1
+
+
+
+                     PERIPHERAL STATION
+                                      BIT 9                   BIT 9                  BIT 9                                                         BIT 9              BIT 9
+              RxD                           0        ADD#1 1                D0        0                                                    ADD#2 1                      0
+
+       RECEIVER
+       ENABLED
+
+          RxRDY
+           (SR0)
+
+
+       RDN/WRN
+
+                    MR1(4–3) = 11                                     ADD#1                   STATUS DATA                                                    STATUS DATA
+
+                                                                                                   D0                                                           ADD#2
+
+
+                                                                                                                                                                        SD00096
+                                                                      Figure 12. Wake-Up Mode
+
+
+
+
+2000 Jan 31                                                                                  26
+Philips Semiconductors                                                 Product specification
+
+
+  Dual universal asynchronous receiver/transmitter (DUART)             SC26C92
+
+
+
+                                            2.7K
+     INTRN                                                  +5V
+
+
+                           50pF
+
+                                      +5V
+
+                                        I = 2.4mA VOL
+                                        I = 400µA VOH
+    D0–D7
+   TxDA/B
+  OP0–OP7
+
+                              150pF
+
+
+
+                                                        SD00157
+
+              Figure 13. Test Conditions on Outputs
+
+
+
+
+2000 Jan 31                                                       27
+Philips Semiconductors                                    Product specification
+
+  Dual universal asynchronous receiver/transmitter
+                                                          SC26C92
+  (DUART)
+
+
+DIP40: plastic dual in-line package; 40 leads (600 mil)          SOT129-1
+
+
+
+
+2000 Jan 31                                         28
+Philips Semiconductors                               Product specification
+
+  Dual universal asynchronous receiver/transmitter
+                                                     SC26C92
+  (DUART)
+
+
+PLCC44: plastic leaded chip carrier; 44 leads               SOT187-2
+
+
+
+
+2000 Jan 31                                     29
+Philips Semiconductors                                                                    Product specification
+
+  Dual universal asynchronous receiver/transmitter
+                                                                                          SC26C92
+  (DUART)
+
+
+QFP44: plastic quad flat package; 44 leads (lead length 1.3 mm); body 10 x 10 x 1.75 mm          SOT307-2
+
+
+
+
+2000 Jan 31                                       30
+Philips Semiconductors                                                                                                            Product specification
+
+  Dual universal asynchronous receiver/transmitter
+                                                                                                                                  SC26C92
+  (DUART)
+
+
+
+
+Data sheet status
+Data sheet           Product            Definition [1]
+status               status
+
+Objective            Development        This data sheet contains the design target or goal specifications for product development.
+specification                           Specification may change in any manner without notice.
+
+Preliminary          Qualification      This data sheet contains preliminary data, and supplementary data will be published at a later date.
+specification                           Philips Semiconductors reserves the right to make changes at any time without notice in order to
+                                        improve design and supply the best possible product.
+Product              Production         This data sheet contains final specifications. Philips Semiconductors reserves the right to make
+specification                           changes at any time without notice in order to improve design and supply the best possible product.
+
+[1] Please consult the most recently issued datasheet before initiating or completing a design.
+
+Definitions
+Short-form specification — The data in a short-form specification is extracted from a full data sheet with the same type number and title. For
+detailed information see the relevant data sheet or data handbook.
+Limiting values definition — Limiting values given are in accordance with the Absolute Maximum Rating System (IEC 134). Stress above one
+or more of the limiting values may cause permanent damage to the device. These are stress ratings only and operation of the device at these or
+at any other conditions above those given in the Characteristics sections of the specification is not implied. Exposure to limiting values for extended
+periods may affect device reliability.
+Application information — Applications that are described herein for any of these products are for illustrative purposes only. Philips
+Semiconductors make no representation or warranty that such applications will be suitable for the specified use without further testing or
+modification.
+
+Disclaimers
+Life support — These products are not designed for use in life support appliances, devices or systems where malfunction of these products can
+reasonably be expected to result in personal injury. Philips Semiconductors customers using or selling these products for use in such applications
+do so at their own risk and agree to fully indemnify Philips Semiconductors for any damages resulting from such application.
+Right to make changes — Philips Semiconductors reserves the right to make changes, without notice, in the products, including circuits, standard
+cells, and/or software, described or contained herein in order to improve design and/or performance. Philips Semiconductors assumes no
+responsibility or liability for the use of any of these products, conveys no license or title under any patent, copyright, or mask work right to these
+products, and makes no representations or warranties that these products are free from patent, copyright, or mask work right infringement, unless
+otherwise specified.
+
+ Philips Semiconductors                                                             Copyright Philips Electronics North America Corporation 2000
+ 811 East Arques Avenue                                                                                        All rights reserved. Printed in U.S.A.
+ P.O. Box 3409
+ Sunnyvale, California 94088–3409                                                                                                   Date of release: 01-00
+ Telephone 800-234-7381
+                                                                                      Document order number:                             9397 750 06829
+
+
+
+
+ 
+         
+2000 Jan 31                                                               31
+

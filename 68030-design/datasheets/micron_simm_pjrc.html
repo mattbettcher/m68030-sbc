@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>72 Pin SIMM Datasheet (Obsolete, From Micron)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000D0" vlink="#202080">
+
+<!--nav begin-->
+<table width="100%" cellspacing=2 cellpadding=0>
+<tr><td align=left rowspan=2>
+<table cellspacing=0  cellpadding=0 width=312>
+<tr><td align=right>
+<a href="#navend"><img src="/img/1x1.gif" width=1 height=10
+alt="skip navigational links" border=0
+hspace=0 vspace=0></a><a href="/"><img src="/img/logo.gif" alt="PJRC"
+width=276 height=31 border=0></a></td></tr>
+</table>
+</td><td align=right valign=top>
+</td></tr>
+<tr><td align=right valign=bottom>
+<small>
+<a href="https://www.pjrc.com/cart/cart.php">Shopping&nbsp;Cart</a>
+<img src="/img/a.gif" width=10 height=10 alt="" align=middle>
+<a href="/cgi-bin/archive/summary">Download&nbsp;Website</a>
+</small>
+</td></tr></table>
+<table cellspacing=0 cellpadding=6 border=0 width="100%">
+<tr bgcolor="#D0E0FF">
+<td align=center><a href="/">Home</a></td>
+<td align=center><a href="/store/">Products</a></td>
+<td align=center><a href="/teensy/">Teensy</a></td>
+<td align=center><a href="/blog/">Blog</a></td>
+<td align=center><a href="https://forum.pjrc.com/">Forum</a></td>
+</tr></table>
+<table cellspacing=0 cellpadding=2 width="100%">
+<tr bgcolor="#F0F0F0"><td align=left>
+<small>You are here:
+<a href="/tech/mp3/">MP3 Player</a>
+<img src="/img/b.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/tech_docs.html">Technical Docs</a>
+<img src="/img/b.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/simm/simm.html">72 Pin SIMM</a>
+<img src="/img/b.gif" width=10 height=10 alt="">
+<span style="background-color: #B0E4A8">Datasheet</span>
+</small></td><td align=right>
+<!-- <small><a href="/search/">Search PJRC</a></small>
+ -->
+</td></tr></table>
+<p>
+<table width="100%" border=0 cellspacing=0 cellpadding=0>
+<tr><td width=172 valign=top>
+<table width=172 border=0 cellspacing=0 cellpadding=6>
+<tr><td bgcolor="#D0E0FF" align=center>
+<big><b>PJRC Store</b></big>
+</td></tr>
+<tr><td bgcolor="#F0F0F0">
+<small>
+<img src="/img/a.gif" width=10 height=10 alt="" align=middle>
+<a href="/store/mp3_pcb_assem.html">Main Board, $150</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="" align=middle>
+<a href="/store/mp3_display.html">LCD &amp; Pushbuttons, $42</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="" align=middle>
+<a href="/store/tman_lcd.html">LCD/Backlight/PB, $77</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="" align=middle>
+<a href="/store/cable_ide_laptop.html">IDE Cable, $9</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="" align=middle>
+<a href="/store/index.html">Complete Parts List</a><br>
+</small></td></tr>
+<tr><td height=15></td></tr>
+<tr><td bgcolor="#D0E0FF" align=center>
+<big><b>MP3 Player</b></big>
+</td></tr>
+<tr><td bgcolor="#F0F0F0" style="line-height: 96%">
+<small>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/index.html">Main Page</a><br>
+<a href="/tech/mp3/info.html"><img src="/img/c.gif" width=10 height=10 alt="" border=0>
+<b>Detailed Info</b></a><br>
+<a href="/tech/mp3/gallery/index.html"><img src="/img/c.gif" width=10 height=10 alt="" border=0>
+<b>User Photo Gallery</b></a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/power.html">Connecting The Board</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/firmware.html">Firmware Download</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/sideprojects/index.html">Side Projects</a><br>
+<img src="/img/b.gif" width=10 height=10 alt="">
+<b>Technical Docs</b><br>
+</small>
+<div style="padding-left: 1.2em">
+<small>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/tech_docs.html">Document Index</a><br>
+<a href="/tech/mp3/step01_revc.html"><img src="/img/c.gif" width=10 height=10 alt="" border=0>
+<b>Kit Assembly, Rev C</b></a><br>
+<a href="/tech/mp3/errata.html"><img src="/img/c.gif" width=10 height=10 alt="" border=0>
+<b>Kit Assembly, Rev A</b></a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/win32_setup.html">Win32 Compiler</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/library.html">Firmware Library Calls</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/mem_map.html">Memory Map</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/datasheets.html">Data Sheets</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/ircontroller/index.html">IR Remote Control</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/schematic_revc.html">Schematic, Rev C</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/schematic_reva.html">Schematic, Rev A</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/fpga/index.html">Schematic, FPGA</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/pcb_layout_revc.html">PCB Layout, Rev C</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/pcb_layout_reva.html">PCB Layout, Rev A</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/lcd_fonts.html">LCD Fonts</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/lcd_protocol.html">LCD Protocol</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/pushbutton_info.html">LCD Pushbuttons</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/sta013.html">Using The STA013</a><br>
+<img src="/img/b.gif" width=10 height=10 alt="">
+<b>72 Pin SIMM</b><br>
+</small>
+<div style="padding-left: 1.2em">
+<small>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/simm/simm.html">How To Interface</a><br>
+<img src="/img/b.gif" width=10 height=10 alt="selected">
+<span style="background-color: #B0E4A8">Datasheet</span><br>
+</small>
+</div>
+<small>
+<a href="/tech/mp3/old_player.html"><img src="/img/c.gif" width=10 height=10 alt="" border=0>
+<b>Old MP3 Player Design</b></a><br>
+</small>
+</div>
+<small>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/faq.html">Freq. Asked Questions</a><br>
+<img src="/img/a.gif" width=10 height=10 alt="">
+<a href="/tech/mp3/less_faq.html">FAQ #2</a><br>
+<a href="/tech/mp3/plans.html"><img src="/img/c.gif" width=10 height=10 alt="" border=0>
+<b>News And Updates</b></a><br>
+</small></td></tr>
+<tr><td height=60></td></tr>
+</table><br>
+<a name="navend"> </a>
+</td>
+<td width=18></td>
+<td valign=top>
+<!--nav end-->
+
+
+<h1>4, 8 MEG x 32 DRAM SIMMs (OBSOLETE)</h1>
+<p>
+<img src="micron_logo.gif">
+
+<p>
+DRAM MODULE
+<p>
+MT8D432(X)<br>
+MT16D832(X)
+<p>
+<small>For the latest data sheet revisions, please refer to the Micron
+Web site:
+<a href="http://www.micron.com/mti/msp/html/datasheet.html">www.micron.com/mti/msp/html/datasheet.html</a>
+</small>
+
+<p>
+
+
+<h2>FEATURES</h2>
+<ul>
+<li>JEDEC- and industry-standard pinout in a 72-pin,
+    single in-line memory module (SIMM)
+<li>16MB (4 Meg x 32) and 32MB (8 Meg x 32)
+<li>High-performance CMOS silicon-gate process
+<li>Single 5V ±10% power supply
+<li>All inputs, outputs and clocks are TTL-compatible
+<li>Refresh modes: RAS#-ONLY, CAS#-BEFORE-RAS#
+    (CBR) and HIDDEN
+<li>2,048-cycle refresh distributed across 32ms
+<li>FAST PAGE MODE (FPM) access or
+    Extended Data-Out (EDO) PAGE MODE access
+</ul>
+
+<h2>OPTIONS</h2>
+
+<table border>
+<tr><th>OPTIONS</th><th>MARKING</th></tr>
+<tr><td>Timing</td><td>&nbsp;</td></tr>
+<tr><td>50ns access</td><td>-5*</td></tr>
+<tr><td>60ns access</td><td>-6</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Packages</td><td>&nbsp;</td></tr>
+<tr><td>72-pin SIMM</td><td>M</td></tr>
+<tr><td>72-pin SIMM (Gold)</td><td>G</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Operating Modes</td><td>&nbsp;</td></tr>
+<tr><td>FAST PAGE MODE</td><td>None</td></tr>
+<tr><td>EDO PAGE MODE</td><td>X</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>*EDO version only</td><td>&nbsp;</td></tr>
+</table>
+
+<h2>PART NUMBERS</h2>
+
+<h3>EDO Operating Mode</h3>
+<table border>
+<tr><th>PART NUMBER</th><th>              CONFIGURATION</th><th>     PLATING</th></tr>
+<tr><td>MT8D432G- x X</td><td>            4 Meg x 32</td><td>        Gold</td></tr>
+<tr><td>MT8D432M- x X</td><td>            4 Meg x 32</td><td>        Tin/Lead </td></tr>
+<tr><td>MT16D832G-x X</td><td>            8 Meg x 32</td><td>        Gold</td></tr>
+<tr><td>MT16D832M-x X</td><td>            8 Meg x 32</td><td>        Tin/Lead</td></tr>
+</table>
+   x = speed
+
+<h3>FPM Operating Mode</h3>
+
+<table border>
+<tr><th>PART NUMBER</th><th>CONFIGURATION</th><th>PLATING</th></tr>
+<tr><td>MT8D432G-x</td><td>4 Meg x 32</td><td>Gold</td></tr>
+<tr><td>MT8D432M-x</td><td>4 Meg x 32</td><td>Tin/Lead</td></tr>
+<tr><td>MT16D832G-x</td><td>8 Meg x 32</td><td>Gold</td></tr>
+<tr><td>MT16D832M-x</td><td>8 Meg x 32</td><td>Tin/Lead</td></tr>
+</table>
+   x = speed
+
+<h2>PIN ASSIGNMENT (Front View)</h2>
+
+72-Pin SIMM
+<p>
+4 Meg x 32<br>
+8 Meg x 32<br>
+<p>
+<img src="simm_outline.gif">
+<p>
+<table border>
+<tr><th>PIN</td><td>SYMBOL</td><td>PIN </td><td>SYMBOL</td><td>PIN</td><td>SYMBOL</td><td>PIN</td><td>SYMBOL</td></tr>
+<tr><td>1</td><td>Vss</td><td>19</td><td>A10</td><td>37</td><td>NC</td><td>55</td><td>DQ12</td></tr>
+<tr><td>2</td><td>DQ1</td><td>20</td><td>DQ5</td><td>38</td><td>NC</td><td>56</td><td>DQ28</td></tr>
+<tr><td>3</td><td>DQ17</td><td>21</td><td>DQ21</td><td>39</td><td>Vss</td><td>57</td><td>DQ13</td></tr>
+<tr><td>4</td><td>DQ2</td><td>22</td><td>DQ6</td><td>40</td><td>CAS0#</td><td>58</td><td>DQ29</td></tr>
+<tr><td>5</td><td>DQ18</td><td>23</td><td>DQ22</td><td>41</td><td>CAS2#</td><td>59</td><td>Vdd</td></tr>
+<tr><td>6</td><td>DQ3</td><td>24</td><td>DQ7</td><td>42</td><td>CAS3#</td><td>60</td><td>DQ30</td></tr>
+<tr><td>7</td><td>DQ19</td><td>25</td><td>DQ23</td><td>43</td><td>CAS1#</td><td>61</td><td>DQ14</td></tr>
+<tr><td>8</td><td>DQ4</td><td>26</td><td>DQ8</td><td>44</td><td>RAS0#</td><td>62</td><td>DQ31</td></tr>
+<tr><td>9</td><td>DQ20</td><td>27</td><td>DQ24</td><td>45</td><td>NC/RAS1#*</td><td>63</td><td>DQ15</td></tr>
+<tr><td>10</td><td>VDD</td><td>28</td><td>A7</td><td>46</td><td>NC</td><td>64</td><td>DQ32</td></tr>
+<tr><td>11</td><td>NC</td><td>29</td><td>NC (A11)</td><td>47</td><td>WE#</td><td>65</td><td>DQ16</td></tr>
+<tr><td>12</td><td>A0</td><td>30</td><td>VDD</td><td>48</td><td>NC</td><td>66</td><td>NC</td></tr>
+<tr><td>13</td><td>A1</td><td>31</td><td>A8</td><td>49</td><td>DQ9</td><td>67</td><td>PRD1</td></tr>
+<tr><td>14</td><td>A2</td><td>32</td><td>A9</td><td>50</td><td>DQ25</td><td>68</td><td>PRD2</td></tr>
+<tr><td>15</td><td>A3</td><td>33</td><td>NC/RAS3#*</td><td>51</td><td>DQ10</td><td>69</td><td>PRD3</td></tr>
+<tr><td>16</td><td>A4</td><td>34</td><td>RAS2#</td><td>52</td><td>DQ26</td><td>70</td><td>PRD4</td></tr>
+<tr><td>17</td><td>A5</td><td>35</td><td>NC</td><td>53</td><td>DQ11</td><td>71</td><td>NC</td></tr>
+<tr><td>18</td><td>A6</td><td>36</td><td>NC</td><td>54</td><td>DQ27</td><td>72</td><td>Vss</td></tr>
+</table>
+*32MB version only
+<p>
+NOTE: Symbols in parentheses are not used on these modules but may be used
+for other modules in this product family. They are for reference only.
+<p>
+
+<h2>KEY TIMING PARAMETERS</h2>
+
+<h3>EDO Operating Mode</h3>
+
+<pre>
+    SPEED          tRC               tRAC            tPC             tAA            tCAC             tCAS
+       -5         84ns            50ns               20ns          25ns            13ns             8ns
+       -6        104ns            60ns               25ns          30ns            15ns             10ns
+</pre>
+
+<h3>FPM Operating Mode</h3>
+
+<pre>
+    SPEED          tRC               tRAC            tPC             tAA            tCAC             tRP
+       -6        110ns            60ns               35ns          30ns            15ns             40ns
+</pre>
+
+
+
+
+<h2>GENERAL DESCRIPTION</h2>
+    The MT8D432(X) and MT16D832(X) are randomly ac
+cessed, 16MB and 32MB solid-state memories organized in
+a x32 configuration. During READ or WRITE cycles, each
+bit is uniquely addressed through 22 address bits that are
+entered 11 bits (A0-A10) at a time. RAS# is used to latch the
+first 11 bits and CAS# the latter 11 bits. READ and WRITE
+cycles are selected with the WE# input. A logic HIGH on
+WE# dictates read mode, while a logic LOW on WE#
+dictates write mode. During a WRITE cycle, data-in (D) is
+latched by the falling edge of CAS#. Since WE# goes LOW
+prior to CAS# going LOW, the output pin(s) remain open
+(High-Z) until the next CAS# cycle.
+
+<h2>FAST PAGE MODE</h2>
+    FAST-PAGE-MODE operations allow faster data
+operations (READ or WRITE) within a row-address-
+defined page boundary. The FAST-PAGE-MODE cycle is       
+always initiated with a row address strobed in by RAS#,
+followed by a column address strobed in by CAS#. Additional
+columns may be accessed by providing valid column
+addresses, strobing CAS# and holding RAS# LOW, thus
+executing faster memory cycles. Returning RAS# HIGH
+terminates the FAST-PAGE-MODE operation.
+
+<h2>EDO PAGE MODE</h2>
+    EDO PAGE MODE, designated by the "X" version, is an
+accelerated FAST-PAGE-MODE cycle. The primary advantage
+of EDO is the availability of data-out even after CAS#
+goes back HIGH. EDO provides for CAS# precharge time
+(tCP) to occur without the output data going invalid. This
+elimination of CAS# output control provides for pipelined
+READs.
+<p>
+  FAST-PAGE-MODE modules have traditionally turned
+the output buffers off (High-Z) with the rising edge of
+CAS#. EDO operates like FAST-PAGE-MODE READs, ex-
+cept data will be held valid or become valid after CAS# goes
+HIGH, as long as RAS# and OE# are held LOW. (Refer to the
+MT4C4M4E8 DRAM data sheet for additional information
+on EDO functionality.)
+
+<h2>REFRESH</h2>
+  Returning RAS# and CAS# HIGH terminates a memory
+cycle and decreases chip current to a reduced standby level.
+Also, the chip is preconditioned for the next cycle during
+the RAS# HIGH time. Memory cell data is retained in its
+correct state by maintaining power and executing any
+RAS# cycle (READ, WRITE) or RAS# REFRESH cycle (RAS#-
+ONLY, CBR or HIDDEN) so that all 2,048 combinations of
+RAS# addresses are executed at least every 32ms, regard-
+less of sequence. The CBR REFRESH cycle will invoke the
+refresh counter for automatic RAS# addressing.
+terminates the FAST-PAGE-MODE operation.
+
+<h2>x16 CONFIGURATION</h2>
+  For x16 applications, the corresponding DQ and CAS#
+pins must be connected together (DQ1 to DQ17, DQ2 to
+DQ18 and so forth, and CAS0# to CAS2# and CAS1# to
+CAS3#). Each RAS# is then a bank select for the x16 memory
+organization.
+<p>
+
+
+
+<pre>
+JEDEC-DEFINED                                     
+PRESENCE-DETECT ­                               
+MT8D432(X) (16MB)                                
+   SYMBOL                   PIN    -5*    -6   
+   PRD1                     67     VSS    VSS 
+   PRD2                     68     NC     NC 
+   PRD3                     69     VSS    NC
+   PRD4                     70     VSS    NC
+
+
+JEDEC-DEFINED
+PRESENCE-DETECT ­
+MT16D832(X) (32MB)
+ SYMBOL               PIN              -5*                -6
+ PRD1                  67              NC               NC
+ PRD2                  68              VSS              VSS
+ PRD3                  69              VSS              NC
+ PRD4                  70              VSS              NC
+
+*EDO version only
+</pre>
+
+
+
+<h2>FUNCTIONAL BLOCK DIAGRAM, MT8D432(X) (16MB)</h2>
+
+<img src="blk_diag_16.gif">
+
+
+
+<h2>FUNCTIONAL BLOCK DIAGRAM, MT16D832(X) (32MB)</h2>
+
+<img src="blk_diag_32.gif">
+
+
+
+<h2>ABSOLUTE MAXIMUM RATINGS*</h2>
+
+<pre>
+Voltage on Any Pin Relative to VSS .................. -1V to +7V
+Operating Temperature, T<sub>A</sub> (ambient) ............... 0°C to +70°C
+Storage Temperature (plastic)................... -55°C to +125°C
+Power Dissipation ........................................... 8W
+Short Circuit Output Current .............................. 50mA
+</pre>
+
+<small>
+*Stresses greater than those listed under "Absolute Maximum Ratings" may cause permanent damage to the device.
+This is a stress rating only and functional operation of the
+device at these or any other conditions above those indicated in the operational sections of this specification is not
+implied. Exposure to absolute maximum rating conditions
+for extended periods may affect reliability.
+</small>
+
+
+
+
+<h2>DC ELECTRICAL CHARACTERISTICS AND OPERATING CONDITIONS</h2>
+
+(Notes: 1) (VDD = +5V ±10%)
+<p>
+<pre>
+PARAMETER/CONDITION                                      SYMBOL    MIN     MAX      UNITS        NOTES
+
+SUPPLY VOLTAGE                                            VDD      4.5     5.5           V
+INPUT HIGH VOLTAGE: Logic 1; All inputs                   VIH      2.4   VDD + 1         V
+INPUT LOW VOLTAGE: Logic 0; All inputs                    VIL     -1.0     0.8           V
+INPUT LEAKAGE CURRENT:                    RAS0#-RAS3#     II1       -8       8          µA
+Any input 0V   VIN   5.5V                 A0-A10, WE#     II2      -32      32          µA         23
+(All other pins not under test = 0V)      CAS0#-CAS3#     II3       -8       8          µA         23
+OUTPUT LEAKAGE CURRENT:                      DQ1-DQ32     IOZ      -10      10          µA         23
+(DQ is disabled; 0V   VOUT   5.5V)
+OUTPUT LEVELS:                                            VOH      2.4       ­           V
+Output High Voltage (IOUT = -5mA)
+Output Low Voltage (IOUT = 4.2mA)                         VOL        ­     0.4           V
+</pre>
+
+
+<h2>ICC SPECIFICATIONS AND CONDITIONS</h2>
+<p>
+(Notes: 1, 5, 6) (VDD = +5V ±10%)
+
+
+<pre>
+                                                                                                MAX
+PARAMETER/CONDITION                                          SYMBOL         SIZE           -5*       -6      UNITS    NOTES
+STANDBY CURRENT: FAST PAGE MODE (TTL)                          ICC1         16MB           ­         16        mA
+(RAS# = CAS# = VIH)                                                         32MB           ­         32
+STANDBY CURRENT: EDO PAGE MODE (TTL)                           ICC2         16MB             8        8        mA
+(RAS# = CAS# = VIH)                                                         32MB            16       16
+STANDBY CURRENT: (CMOS)                                        ICC3         16MB             4        4        mA
+(RAS# = CAS# = other inputs = VDD - 0.2V)                                   32MB             8        8
+OPERATING CURRENT: Random READ/WRITE                                        16MB          1120     1040        mA     3, 22
+Average power supply current                                   ICC4
+(RAS#, CAS#, address cycling: tRC = tRC [MIN])                              32MB          1128     1048
+OPERATING CURRENT: FAST PAGE MODE                                           16MB           ­        800        mA     3, 22
+Average power supply current                                   ICC5
+(RAS# = VIL, CAS#, address cycling: tPC = tPC [MIN]                         32MB           ­        816
+OPERATING CURRENT: EDO PAGE MODE                               ICC6         16MB           880      800        mA     3, 22
+Average power supply current                                 (X only)
+(RAS# = VIL, CAS#, address cycling: tPC = tPC [MIN])                        32MB           888      808
+REFRESH CURRENT: RAS#-ONLY                                                  16MB          1120     1040
+Average power supply current                                   ICC7                                            mA     3, 22
+(RAS# cycling, CAS# = VIH: tRC = tRC [MIN])                                 32MB          1128     1048
+REFRESH CURRENT: CBR                                                        16MB          1120     1040
+Average power supply current                                   ICC8                                            mA     3, 4
+(RAS#, CAS#, address cycling: tRC = tRC [MIN])                              32MB          1128     1048
+</pre>
+
+*EDO version only
+
+
+
+<h2>CAPACITANCE</h2>
+
+<pre>
+                                                       MAX
+PARAMETER                               SYMBOL     16MB   32MB    UNITS    NOTES
+Input Capacitance: A0-A10                 CI1       48     95       pF       2
+Input Capacitance: WE#                    CI2       64    127       pF       2
+Input Capacitance: RAS0#-RAS3#            CI3       32     32       pF       2
+Input Capacitance: CAS0#-CAS3#            CI4       16     32       pF       2
+Input/Output Capacitance: DQ1-DQ32        CIO       10     16       pF       2
+</pre>
+
+
+<h2>AC ELECTRICAL CHARACTERISTICS, FAST PAGE MODE</h2>
+
+(Notes: 5, 6, 7, 8, 9, 10, 11, 12) (VDD = +5V ±10%)
+<p>
+<pre>
+   AC CHARACTERISTICS - FAST PAGE MODE OPTION                                                  -6
+   PARAMETER                                                 SYMBOL                 MIN               MAX               UNITS               NOTES
+   Access time from column address                              tAA                                    30                  ns
+   Column-address hold time (referenced to RAS#)                tAR                  45                                    ns
+   Column-address setup time                                   tASC                   0                                    ns
+   Row-address setup time                                      tASR                   0                                    ns
+   Access time from CAS#                                       tCAC                                    15                  ns
+   Column-address hold time                                    tCAH                  10                                    ns
+   CAS# pulse width                                            tCAS                  15              10,000                ns
+   CAS# hold time (CBR Refresh)                                tCHR                  10                                    ns                   4
+   CAS# to output in Low-Z                                     tCLZ                   3                                    ns                  21
+   CAS# precharge time                                          tCP                  10                                    ns                  13
+   Access time from CAS# precharge                             tCPA                                     35                 ns
+   CAS# to RAS# precharge time                                 tCRP                   5                                    ns
+   CAS# hold time                                              tCSH                  60                                    ns
+   CAS# setup time (CBR Refresh)                               tCSR                   5                                    ns                   4
+   WRITE command to CAS# lead time                             tCWL                  15                                    ns
+   Data-in hold time                                            tDH                  10                                    ns                  18
+   Data-in setup time                                           tDS                   0                                    ns                  18
+   Output buffer turn-off delay                                tOFF                   3                 15                 ns              17, 21
+   FAST-PAGE-MODE READ or WRITE cycle time                      tPC                  35                                    ns
+   Access time from RAS#                                       tRAC                                     60                 ns
+   RAS# to column-address delay time                           tRAD                  15                                    ns                  15
+   Row-address hold time                                       tRAH                  10                                    ns
+   RAS# pulse width                                            tRAS                  60              10,000                ns
+   RAS# pulse width (FAST PAGE MODE)                          tRASP                  60              125,000               ns
+   Random READ or WRITE cycle time                              tRC                 110                                    ns
+   RAS# to CAS# delay time                                     tRCD                  20                                    ns                  14
+   READ command hold time (referenced to CAS#)                 tRCH                   0                                    ns                  16
+   READ command setup time                                     tRCS                   0                                    ns
+   Refresh period (2,048 cycles)                               tREF                                     32                 ms
+   RAS# precharge time                                          tRP                  40                                    ns
+   RAS# to CAS# precharge time                                 tRPC                   0                                    ns
+   READ command hold time (referenced to RAS#)                 tRRH                   0                                    ns                  16
+   RAS# hold time                                              tRSH                  15                                    ns
+   WRITE command to RAS# lead time                             tRWL                  15                                    ns
+   Transition time (rise or fall)                                tT                  2                 50                  ns
+   WRITE command hold time                                     tWCH                  10                                    ns
+   WRITE command hold time (referenced to RAS#)                tWCR                  45                                    ns
+   WE# command setup time                                      tWCS                   0                                    ns
+   WRITE command pulse width                                    tWP                  10                                    ns
+   WE# hold time (CBR Refresh)                                 tWRH                  10                                    ns
+   WE# setup time (CBR Refresh)                                tWRP                  10                                    ns
+</pre>
+
+
+
+<h2>AC ELECTRICAL CHARACTERISTICS, EDO PAGE MODE</h2>
+
+(Notes: 5, 6, 7, 8, 9, 10, 11, 12) (VDD = +5V ±10%)
+<p>
+<pre>
+
+   AC CHARACTERISTICS - EDO PAGE MODE OPTION                               -5                                  -6
+   PARAMETER                                           SYMBOL       MIN           MAX               MIN               MAX               UNITS               NOTES
+   Access time from column address                      tAA                        25                                   30                 ns
+   Column-address set-up to CAS# precharge              tACH        12                               15                                    ns
+   Column-address hold time (referenced to RAS#)        tAR         38                               45                                    ns
+   Column-address setup time                            tASC        0                                 0                                    ns
+   Row-address setup time                               tASR        0                                 0                                    ns
+   Access time from CAS#                                tCAC                       13                                   15                 ns
+   Column-address hold time                             tCAH         8                               10                                    ns
+   CAS# pulse width                                     tCAS        8            10,000              10              10,000                ns
+   CAS# hold time (CBR Refresh)                        tCHR         8                                10                                    ns                   4
+   CAS# to output in Low-Z                              tCLZ         0                                0                                    ns
+   Data output hold after next CAS# LOW                tCOH          3                                3                                    ns
+   CAS# precharge time                                  tCP          8                               10                                    ns                  13
+   Access time from CAS# precharge                      tCPA                       28                                   35                 ns
+   CAS# to RAS# precharge time                          tCRP         5                                5                                    ns
+   CAS# hold time                                       tCSH        38                               45                                    ns
+   CAS# setup time (CBR Refresh)                        tCSR         5                                5                                    ns                   4
+   WRITE command to CAS# lead time                     tCWL          8                               10                                    ns
+   Data-in hold time                                    tDH         8                                10                                    ns                  18
+   Data-in setup time                                   tDS          0                                0                                    ns                  18
+   Output buffer turn-off delay                         tOFF         0             12                 0                 15                 ns               17, 21
+   EDO-PAGE-MODE READ or WRITE cycle time               tPC         20                               25                                    ns
+   Access time from RAS#                                tRAC                       50                                   60                 ns
+   RAS# to column-address delay time                    tRAD         9                               12                                    ns                  15
+   Row-address hold time                                tRAH         9                               10                                    ns
+   RAS# pulse width                                     tRAS        50           10,000              60              10,000                ns
+   RAS# pulse width (EDO PAGE MODE)                    tRASP        50           125,000             60              125,000               ns
+   Random READ or WRITE cycle time                      tRC         84                              104                                    ns
+   RAS# to CAS# delay time                             tRCD         11                               14                                    ns                  14
+   READ command hold time (referenced to CAS#)         tRCH          0                                0                                    ns                  16
+   READ command setup time                              tRCS         0                                0                                    ns
+   Refresh period (2,048 cycles)                        tREF                       32                                   32                 ms
+   RAS# precharge time                                  tRP         30                               40                                    ns
+   RAS# to CAS# precharge time                          tRPC         5                                5                                    ns
+   READ command hold time (referenced to RAS#)         tRRH          0                                0                                    ns                  16
+   RAS# hold time                                       tRSH        13                               15                                    ns
+   WRITE command to RAS# lead time                     tRWL         13                               15                                    ns
+   Transition time (rise or fall)                        tT          2             50                 2                 50                 ns
+   WRITE command hold time                             tWCH         8                                10                                    ns
+   WRITE command hold time (referenced to RAS#)        tWCR         38                               45                                    ns
+   WE# command setup time                              tWCS          0                                0                                    ns
+   Output disable delay from WE#                       tWHZ          0             12                 0                 15                 ns
+   WRITE command pulse width                            tWP          5                                5                                    ns
+   WE# pulse to disable at CAS# HIGH                   tWPZ         10                               10                                    ns
+   WE# hold time (CBR Refresh)                         tWRH         8                                10                                    ns
+   WE# setup time (CBR Refresh)                        tWRP          8                               10                                    ns
+</pre>
+
+
+
+
+
+<h2>NOTES</h2>
+
+<ol>
+<li>All voltages referenced to VSS.                        
+<li>This parameter is sampled. Capacitance is measured     
+      using MIL-STD-883C, Method 3012.1 (1 MHz AC,       
+      VDD = 4.5V, DC bias = 2.4V at 15mV RMS).          
+<li>ICC is dependent on output loading and cycle rates. 
+      Specified values are obtained with minimum cycle   
+      time and the outputs open.                        
+<li>Enables on-chip refresh and address counters.       
+<li>The minimum specifications are used only to indicate 
+      cycle time at which proper operation over the full
+      temperature range is ensured.                    
+<li>An initial pause of 100µs is required after power-up, 
+      followed by eight RAS# refresh cycles (RAS#-ONLY  
+      or CBR with WE# HIGH), before proper device      
+      operation is ensured. The eight RAS# cycle wake-ups 
+      should be repeated any time the tREF refresh       
+      requirement is exceeded.                          
+<li>AC characteristics assume tT = 5ns for FPM and tT = 2.5ns for EDO.
+<li>VIH (MIN) and VIL (MAX) are reference levels for 
+      measuring timing of input signals. Transition times  
+      are measured between VIH and VIL (or between VIL    
+      and VIH).  
+<li>In addition to meeting the transition rate specification, all input signals must transit between VIH and
+     VIL (or between VIL and VIH) in a monotonic manner.
+<li>If CAS# = VIH, data output is High-Z.
+<li>If CAS# = VIL, data output may contain data from the 
+      last valid READ cycle. 
+<li>Measured with a load equivalent to two TTL gates 
+      and 100pF, VOL = 0.8V and VOH = 2V.
+<li>If CAS# is LOW at the falling edge of RAS#, Q will be
+     maintained from the previous cycle. To initiate a new 
+     cycle and clear the data-out buffer, CAS# must be 
+     pulsed HIGH for tCP.
+<li>The tRCD (MAX) limit is no longer specified. tRCD
+      (MAX) was specified as a reference point only. If
+     tRCD was greater than the specified tRCD (MAX)
+     limit, then access time was controlled exclusively by
+     tCAC (tRAC [MIN] no longer applied). With or
+     without the tRCD (MAX) limit, tAA and tCAC must
+     always be met.
+  <li>The tRAD (MAX) limit is no longer specified. tRAD
+     (MAX) was specified as a reference point only. If
+     tRAD was greater than the specified tRAD (MAX)
+     limit, then access time was controlled exclusively by
+     tAA (tRAC and tCAC no longer applied). With or
+     without the tRAD (MAX) limit, tAA, tRAC and tCAC
+     must always be met.
+  <li>Either tRCH or tRRH must be satisfied for a READ
+     cycle.
+  <li>tOFF (MAX) defines the time at which the output
+     achieves the open circuit condition and is not
+     referenced to VOH or VOL.
+  <li>These parameters are referenced to CAS# leading
+     edge in EARLY WRITE cycles.
+  <li>OE# is tied permanently LOW; LATE WRITE or
+     READ-MODIFY-WRITE operations are not permissible and should not be attempted.
+  <li>A HIDDEN REFRESH may also be performed after
+     a WRITE cycle. In this case, WE# = LOW and OE# = HIGH.
+  <li>The 3ns minimum is a parameter guaranteed by
+     design.
+  <li>Column address changed once each cycle.
+  <li>16MB module values will be half of those shown.
+  <li>For the FPM option, tOFF is determined by the first
+     RAS# or CAS# signal to transition HIGH. In comparison, tOFF on an EDO option is determined by the
+     latter of the RAS# and CAS# signals to transition
+     HIGH.
+  <li>Applies to both EDO and FPM modules.
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>
+READ CYCLE
+(FAST PAGE MODE Module)</h2>
+
+<img src="read_fpm.gif"><p>
+
+
+FAST PAGE MODE
+TIMING PARAMETERS
+
+<pre>
+                                                                -6                                                                                                                       -6
+   SYMBOL                                           MIN                MAX      UNITS                       SYMBOL                                                             MIN                MAX           UNITS
+   t                                                                                                        t
+   AA                                                                  30        ns                              RAC                                                                               60              ns
+   t                                                                                                        t
+   AR                                               45                           ns                              RAD                                                            15                                 ns
+   t                                                                                                        t
+   ASC                                                   0                       ns                              RAH                                                            10                                 ns
+   t                                                                                                        t
+   ASR                                                   0                       ns                              RAS                                                            60              10,000             ns
+   t                                                                                                        t
+   CAC                                                                 15        ns                              RC                                                            110                                 ns
+   t                                                                                                        t
+   CAH                                              10                           ns                              RCD                                                            20                                 ns
+   t                                                                                                        t
+   CAS                                              15                10,000     ns                              RCH                                                            0                                  ns
+   t                                                                                                        t
+   CLZ                                                   3                       ns                              RCS                                                            0                                  ns
+   t                                                                                                        t
+   CRP                                                   5                       ns                              RP                                                             40                                 ns
+   t                                                                                                        t
+   CSH                                              60                           ns                              RRH                                                            0                                  ns
+   t                                                                                                        t
+   OFF                                                   3             15        ns                              RSH                                                            15                                 ns
+</pre>
+
+
+
+
+<h2>READ CYCLE (EDO PAGE MODE Module)</h2>
+
+<img src="read_edo.gif"><p>
+
+
+EDO PAGE MODE
+TIMING PARAMETERS
+
+<pre>
+                                     -5                                       -6                                                                               -5                                 -6
+   SYMBOL                     MIN                MAX             MIN                 MAX      UNITS                       SYMBOL                     MIN                   MAX          MIN                MAX           UNITS
+   tAA                                           25                                  30        ns                         tRAC                                              50                              60              ns
+   tAR                        38                                 45                            ns                         tRAD                         9                                 12                                 ns
+   tASC                       0                                  0                             ns                         tRAH                         9                                 10                                 ns
+   tASR                       0                                  0                             ns                         tRAS                        50                  10,000         60              10,000             ns
+   tCAC                                          13                                  15        ns                         tRC                         84                                104                                 ns
+   tCAH                       8                                  10                            ns                         tRCD                        11                                 14                                 ns
+   tCAS                       8                 10,000           10                 10,000     ns                         tRCH                         0                                 0                                  ns
+   tCLZ                       0                                  0                             ns                         tRCS                         0                                 0                                  ns
+   tCRP                       5                                   5                            ns                         tRP                         30                                 40                                 ns
+   tCSH                       38                                 45                            ns                         tRRH                         0                                 0                                  ns
+   tOFF                       0                  12              0                   15        ns                         tRSH                        13                                 15                                 ns
+
+</pre>
+
+NOTE: 1. tOFF is referenced from rising edge of RAS# or CAS#, whichever occurs last.
+
+
+
+
+
+
+
+<h2>EARLY WRITE CYCLE<sup>25</sup></h2>
+
+
+<img src="early_write.gif"><p>
+
+
+FAST PAGE MODE AND EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                           -5*                                     -6                                                                                               -5*                                 -6
+   SYMBOL                           MIN            MAX                 MIN                 MAX      UNITS                             SYMBOL                               MIN              MAX               MIN                MAX           UNITS
+   t                                                                                                                                  t
+   ACH (EDO)                        12                                 15                            ns                                    RAD (EDO)                         9                                 12                                 ns
+   t                                                                                                                                  t
+   AR                               38                                 45                            ns                                    RAH                               9                                 10                                 ns
+   t                                                                                                                                  t
+   ASC                              0                                  0                             ns                                    RAS                              50             10,000              60              10,000             ns
+   t                                                                                                                                  t
+   ASR                              0                                  0                             ns                                    RC (FPM)                          ­                                110                                 ns
+   t                                                                                                                                  t
+   CAH                              8                                  10                            ns                                    RC (EDO)                         84                                104                                 ns
+   t                                                                                                                                  t
+   CAS (FPM)                        ­               ­                  15                 10,000     ns                                    RCD (FPM)                         ­                                 20                                 ns
+   t                                                                                                                                  t
+   CAS (EDO)                        8             10,000               10                 10,000     ns                                    RCD (EDO)                        11                                 14                                 ns
+   t                                                                                                                                  t
+   CRP                              5                                   5                            ns                                    RP                               30                                 40                                 ns
+   t                                                                                                                                  t
+   CSH (FPM)                        ­                                  60                            ns                                    RSH                              13                                 15                                 ns
+   t                                                                                                                                  t
+   CSH (EDO)                        38                                 45                            ns                                    RWL                              13                                 15                                 ns
+   t                                                                                                                                  t
+   CWL (FPM)                        ­                                  15                            ns                                    WCH                               8                                 10                                 ns
+   t                                                                                                                                  t
+   CWL (EDO)                        8                                  10                            ns                                    WCR                              38                                 45                                 ns
+   t                                                                                                                                  t
+   DH                               8                                  10                            ns                                    WCS                               0                                 0                                  ns
+   t                                                                                                                                  t
+   DS                               0                                  0                             ns                                    WP (FPM)                          ­                                 10                                 ns
+   t                                                                                                                                  t
+   RAD (FPM)                        ­                                  15                            ns                                    WP (EDO)                          5                                 5                                  ns
+</pre>
+*EDO version only
+
+
+
+<h2>FAST-PAGE-MODE READ CYCLE</h2>
+
+<img src="fast_page_read.gif"><p>
+
+
+FAST PAGE MODE
+TIMING PARAMETERS
+
+<pre>
+                                                                                               -6                                                                                                                                                                             -6
+   SYMBOL                                                                    MIN                      MAX                    UNITS                                           SYMBOL                                                                                  MIN               MAX                  UNITS
+   t                                                                                                                                                                         t
+   AA                                                                                                 30                           ns                                             OFF                                                                                 3                 15                   ns
+   t                                                                                                                                                                         t
+   AR                                                                        45                                                    ns                                             PC                                                                                 35                                      ns
+   t                                                                                                                                                                         t
+   ASC                                                                        0                                                    ns                                             RAC                                                                                                   60                   ns
+   t                                                                                                                                                                         t
+   ASR                                                                        0                                                    ns                                             RAD                                                                                15                                      ns
+   t                                                                                                                                                                         t
+   CAC                                                                                                15                           ns                                             RAH                                                                                10                                      ns
+   t                                                                                                                                                                         t
+   CAH                                                                       10                                                    ns                                             RASP                                                                               60             125,000                  ns
+   t                                                                                                                                                                         t
+   CAS                                                                       15                      10,000                        ns                                             RCD                                                                                20                                      ns
+   t                                                                                                                                                                         t
+   CLZ                                                                        3                                                    ns                                             RCH                                                                                 0                                      ns
+   t                                                                                                                                                                         t
+   CP                                                                        10                                                    ns                                             RCS                                                                                 0                                      ns
+   t                                                                                                                                                                         t
+   CPA                                                                                                35                           ns                                             RP                                                                                 40                                      ns
+   t                                                                                                                                                                         t
+   CRP                                                                        5                                                    ns                                             RRH                                                                                 0                                      ns
+   t                                                                                                                                                                         t
+   CSH                                                                       60                                                    ns                                             RSH                                                                                15                                      ns
+</pre>
+
+
+
+
+<h2>EDO-PAGE-MODE READ CYCLE</h2>
+
+<img src="edo_page_read.gif"><p>
+
+
+EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                                    -5                                             -6                                                                                                                     -5                              -6
+   SYMBOL                              MIN                 MAX                    MIN                      MAX                     UNITS                      SYMBOL                                     MIN                     MAX               MIN             MAX                     UNITS
+   t                                                                                                                                                          t
+   AA                                                           25                                         30                       ns                             CSH                                       38                                    45                                       ns
+   t                                                                                                                                                          t
+   ACH                                  12                                        15                                                ns                             OFF                                       0                    12               0                15                      ns
+   t                                                                                                                                                          t
+   AR                                   38                                        45                                                ns                             PC                                        20                                    25                                       ns
+   t                                                                                                                                                          t
+   ASC                                  0                                         0                                                 ns                             RAC                                                            50                                60                      ns
+   t                                                                                                                                                          t
+   ASR                                  0                                         0                                                 ns                             RAD                                       9                                     12                                       ns
+   t                                                                                                                                                          t
+   CAC                                                          13                                         15                       ns                             RAH                                       9                                     10                                       ns
+   t                                                                                                                                                          t
+   CAH                                  8                                         10                                                ns                             RASP                                      50                 125,000            60           125,000                     ns
+   t                                                                                                                                                          t
+   CAS                                  8                 10,000                  10                      10,000                    ns                             RCD                                       11                                    14                                       ns
+   t                                                                                                                                                          t
+   CLZ                                  0                                         0                                                 ns                             RCH                                       0                                     0                                        ns
+   t                                                                                                                                                          t
+   COH                                  3                                         3                                                 ns                             RCS                                       0                                      0                                       ns
+   t                                                                                                                                                          t
+   CP                                   8                                         10                                                ns                             RP                                        30                                    40                                       ns
+   t                                                                                                                                                          t
+   CPA                                                          28                                         35                       ns                             RRH                                       0                                     0                                        ns
+   t                                                                                                                                                          t
+   CRP                                  5                                          5                                                ns                             RSH                                       13                                    15                                       ns
+</pre>
+
+
+
+
+<h2>FAST-PAGE-MODE EARLY-WRITE CYCLE</h2>
+
+<img src="fast_page_early_write.gif"><p>
+
+
+FAST PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                                                                                     -6                                                                                                                                                            -6
+   SYMBOL                                                                          MIN                      MAX                  UNITS                           SYMBOL                                                                                     MIN             MAX               UNITS
+   t                                                                                                                                                             t
+   AR                                                                               45                                            ns                                  RAD                                                                                   15                                 ns
+   t                                                                                                                                                             t
+   ASC                                                                              0                                             ns                                  RAH                                                                                   10                                 ns
+   t                                                                                                                                                             t
+   ASR                                                                              0                                             ns                                  RASP                                                                                  60           125,000               ns
+   t                                                                                                                                                             t
+   CAH                                                                              10                                            ns                                  RCD                                                                                   20                                 ns
+   t                                                                                                                                                             t
+   CAS                                                                              15                     10,000                 ns                                  RP                                                                                    40                                 ns
+   t                                                                                                                                                             t
+   CP                                                                               10                                            ns                                  RSH                                                                                   15                                 ns
+   t                                                                                                                                                             t
+   CRP                                                                              5                                             ns                                  RWL                                                                                   15                                 ns
+   t                                                                                                                                                             t
+   CSH                                                                              60                                            ns                                  WCH                                                                                   10                                 ns
+   t                                                                                                                                                             t
+   CWL                                                                              15                                            ns                                  WCR                                                                                   45                                 ns
+   t                                                                                                                                                             t
+   DH                                                                               10                                            ns                                  WCS                                                                                   0                                  ns
+   t                                                                                                                                                             t
+   DS                                                                               0                                             ns                                  WP                                                                                    10                                 ns
+   tPC                                                                              35                                            ns
+
+</pre>
+
+
+
+
+<h2>EDO-PAGE-MODE EARLY-WRITE CYCLE</h2>
+
+<img src="edo_page_early_write.gif"><p>
+
+
+EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                               -5                                                         -6                                                                                                                        -5                                         -6
+   SYMBOL                             MIN                 MAX                           MIN                      MAX                  UNITS                           SYMBOL                                     MIN                            MAX                     MIN             MAX               UNITS
+   t                                                                                                                                                                  t
+   ACH                                 12                                               15                                             ns                                  PC                                     20                                                    25                                 ns
+   t                                                                                                                                                                  t
+   AR                                  38                                               45                                             ns                                  RAD                                     9                                                    12                                 ns
+   t                                                                                                                                                                  t
+   ASC                                 0                                                 0                                             ns                                  RAH                                     9                                                    10                                 ns
+   t                                                                                                                                                                  t
+   ASR                                 0                                                 0                                             ns                                  RASP                                   50                      125,000                       60           125,000               ns
+   t                                                                                                                                                                  t
+   CAH                                 8                                                10                                             ns                                  RCD                                    11                                                    14                                 ns
+   t                                                                                                                                                                  t
+   CAS                                 8                 10,000                         10                      10,000                 ns                                  RP                                     30                                                    40                                 ns
+   t                                                                                                                                                                  t
+   CP                                  8                                                10                                             ns                                  RSH                                    13                                                    15                                 ns
+   t                                                                                                                                                                  t
+   CRP                                 5                                                 5                                             ns                                  RWL                                    13                                                    15                                 ns
+   t                                                                                                                                                                  t
+   CSH                                 38                                               45                                             ns                                  WCH                                     8                                                    10                                 ns
+   t                                                                                                                                                                  t
+   CWL                                 8                                                10                                             ns                                  WCR                                    38                                                    45                                 ns
+   t                                                                                                                                                                  t
+   DH                                  8                                                10                                             ns                                  WCS                                     0                                                      0                                ns
+   t                                                                                                                                                                  t
+   DS                                  0                                                 0                                             ns                                  WP                                      5                                                      5                                ns
+
+</pre>
+
+
+
+
+<h2>EDO-PAGE-MODE READ-EARLY-WRITE CYCLE (Pseudo READ-MODIFY-WRITE)</h2>
+
+<img src="edo_page_read_early_write.gif"><p>
+                                                                                                                                                                                                                                                                     
+EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                      -5                                       -6                                                                                                                                       -5                                          -6
+   SYMBOL                     MIN             MAX                 MIN                  MAX                         UNITS                                SYMBOL                                             MIN                  MAX                     MIN                  MAX            UNITS
+   t                                                                                                                                                    t
+   AA                                         25                                            30                           ns                                  DS                                             0                                                0                                ns
+   t                                                                                                                                                    t
+   ACH                         12                                 15                                                     ns                                  PC                                             20                                               25                               ns
+   t                                                                                                                                                    t
+   AR                          38                                 45                                                     ns                                  RAC                                                                50                                            60              ns
+   t                                                                                                                                                    t
+   ASC                         0                                   0                                                     ns                                  RAD                                            9                                                12                               ns
+   t                                                                                                                                                    t
+   ASR                         0                                   0                                                     ns                                  RAH                                            9                                                10                               ns
+   t                                                                                                                                                    t
+   CAC                                        13                                            15                           ns                                  RASP                                           50                125,000                        60           125,000             ns
+   t                                                                                                                                                    t
+   CAH                         8                                  10                                                     ns                                  RCD                                            11                                               14                               ns
+   t                                                                                                                                                    t
+   CAS                         8            10,000                10                  10,000                             ns                                  RCH                                            0                                                0                                ns
+   t                                                                                                                                                    t
+   COH                         3                                   3                                                     ns                                  RCS                                            0                                                0                                ns
+   t                                                                                                                                                    t
+   CP                          8                                  10                                                     ns                                  RP                                             30                                               40                               ns
+   t                                                                                                                                                    t
+   CPA                                        28                                            35                           ns                                  RSH                                            13                                               15                               ns
+   t                                                                                                                                                    t
+   CRP                         5                                   5                                                     ns                                  WCH                                            8                                                10                               ns
+   t                                                                                                                                                    t
+   CSH                         38                                 45                                                     ns                                  WCS                                            0                                                0                                ns
+   t                                                                                                                                                    t
+   DH                          8                                  10                                                     ns                                  WHZ                                            0                   12                           0                15              ns
+
+</pre>
+
+
+
+
+<h2>FAST-PAGE-MODE READ-EARLY-WRITE CYCLE (Pseudo READ-MODIFY-WRITE)</h2>
+
+<img src="fast_page_read_early_write.gif"><p>
+
+
+FAST PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                                                      -6                                                                                                                                                           -6
+   SYMBOL                                                MIN                 MAX                 UNITS                                  SYMBOL                                                                   MIN                        MAX           UNITS
+   t                                                                                                                                    t
+   AA                                                                         30                      ns                                     OFF                                                                  3                          15              ns
+   t                                                                                                                                    t
+   AR                                                    45                                           ns                                     PC                                                                   35                                         ns
+   t                                                                                                                                    t
+   ASC                                                    0                                           ns                                     RAC                                                                                             60              ns
+   t                                                                                                                                    t
+   ASR                                                    0                                           ns                                     RAD                                                                  15                                         ns
+   t                                                                                                                                    t
+   CAC                                                                        15                      ns                                     RAH                                                                  10                                         ns
+   t                                                                                                                                    t
+   CAH                                                   10                                           ns                                     RASP                                                                 60                     125,000             ns
+   t                                                                                                                                    t
+   CAS                                                   15                 10,000                    ns                                     RCD                                                                  20                                         ns
+   t                                                                                                                                    t
+   CLZ                                                   3                                            ns                                     RCS                                                                  0                                          ns
+   t                                                                                                                                    t
+   CP                                                    10                                           ns                                     RP                                                                   40                                         ns
+   t                                                                                                                                    t
+   CRP                                                   5                                            ns                                     RSH                                                                  15                                         ns
+   t                                                                                                                                    t
+   CSH                                                   60                                           ns                                     RWL                                                                  15                                         ns
+   t                                                                                                                                    t
+   CWL                                                   15                                           ns                                     WCH                                                                  10                                         ns
+   t                                                                                                                                    t
+   DH                                                    10                                           ns                                     WCS                                                                  0                                          ns
+   t                                                                                                                                    t
+   DS                                                    0                                            ns                                     WP                                                                   10                                         ns
+
+</pre>
+
+
+<h2>EDO READ CYCLE (with WE#-controlled disable)</h2>
+
+<img src="edo_read_we_control.gif"><p>
+
+
+EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                           -5                                  -6                                                                                        -5                              -6
+   SYMBOL                           MIN           MAX              MIN                MAX       UNITS                       SYMBOL                          MIN                MAX             MIN                MAX           UNITS
+   tAA                                            25                                   30        ns                         tCSH                             38                                 45                                 ns
+   tAR                              38                              45                           ns                         tRAC                                               50                                  60              ns
+   tASC                             0                               0                            ns                         tRAD                              9                                 12                                 ns
+   tASR                             0                               0                            ns                         tRAH                              9                                 10                                 ns
+   tCAC                                           13                                   15        ns                         tRCD                             11                                 14                                 ns
+   tCAH                             8                               10                           ns                         tRCH                              0                                 0                                  ns
+   tCAS                             8            10,000             10               10,000      ns                         tRCS                              0                                 0                                  ns
+   tCLZ                             0                               0                            ns                         tWHZ                              0                12               0                  15              ns
+   tCP                              8                               10                           ns                         tWPZ                             10                                 10                                 ns
+   tCRP                             5                               5                            ns
+
+</pre>
+
+
+
+
+
+
+<h2>RAS#-ONLY REFRESH CYCLE 25 </h2>
+
+<img src="refresh_ras_only.gif"><p>
+
+<h2>CBR REFRESH CYCLE 25 (Addresses = DON'T CARE)</h2>
+
+<img src="refresh_cas_before_ras.gif"><p>
+
+
+
+FAST PAGE MODE AND EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                                    -5*                                      -6                                                                                   -5*                                 -6
+   SYMBOL                                  MIN              MAX                      MIN            MAX        UNITS               SYMBOL                                MIN              MAX               MIN                MAX           UNITS
+   t                                                                                                                               t
+   ASR                                         0                                      0                          ns                     RC (FPM)                           ­                                110                                 ns
+   t                                                                                                                               t
+   CHR (FPM)                                   ­                                      10                         ns                     RC (EDO)                          84                                104                                 ns
+   t                                                                                                                               t
+   CHR (EDO)                                   8                                      10                         ns                     RP                                30                                 40                                 ns
+   t                                                                                                                               t
+   CP                                          8                                      10                         ns                     RPC (FPM)                          ­                                 0                                  ns
+   t                                                                                                                               t
+   CRP                                         5                                      5                          ns                     RPC (EDO)                          5                                 5                                  ns
+   t                                                                                                                               t
+   CSR                                         5                                      5                          ns                     WRH                                8                                 10                                 ns
+   t                                                                                                                               t
+   RAH                                         9                                      10                         ns                     WRP                                8                                 10                                 ns
+   tRAS                                    50              10,000                     60           10,000        ns
+
+</pre>
+
+*EDO version only
+
+<h2>HIDDEN REFRESH CYCLE 20, 25 (WE# = HIGH)</h2>
+
+<img src="refresh_hidden.gif"><p>
+
+
+FAST PAGE MODE AND EDO PAGE MODE
+TIMING PARAMETERS
+<pre>
+                                            -5*                                 -6                                                                                             -5*                                    -6
+   SYMBOL                       MIN                MAX                MIN               MAX                 UNITS                         SYMBOL                      MIN              MAX               MIN                   MAX           UNITS
+   t                                                                                                                                      t
+   AA                                               25                                  30                   ns                                OFF (EDO)                0               12                0                     15              ns
+   t                                                                                                                                      t
+   AR                           38                                     45                                    ns                                RAC                                      50                                      60              ns
+   t                                                                                                                                      t
+   ASC                          0                                       0                                    ns                                RAD (FPM)                ­                                 15                                    ns
+   t                                                                                                                                      t
+   ASR                          0                                       0                                    ns                                RAD (EDO)                9                                 12                                    ns
+   t                                                                                                                                      t
+   CAC                                              13                                  15                   ns                                RAH                      9                                 10                                    ns
+   t                                                                                                                                      t
+   CAH                          8                                      10                                    ns                                RAS                     50             10,000              60                 10,000             ns
+   t                                                                                                                                      t
+   CHR                          8                                      10                                    ns                                RCD (FPM)                ­                                 20                                    ns
+   t                                                                                                                                      t
+   CLZ (FPM)                    ­                                       3                                    ns                                RCD (EDO)               11                                 14                                    ns
+   t                                                                                                                                      t
+   CLZ (EDO)                    0                                       0                                    ns                                RP                      30                                 40                                    ns
+   t                                                                                                                                      t
+   CRP                          5                                       5                                    ns                                RSH                     13                                 15                                    ns
+   tOFF (FPM)                   ­                   ­                   3               15                   ns
+
+</pre>
+
+*EDO version only
+
+
+
+
+
+
+<h2>72-Pin SIMM (16MB)</h2>
+
+<img src="mechanical_16.gif"><p>
+
+
+<h2>72-Pin SIMM (32MB)</h2>
+
+<img src="mechanical_32.gif"><p>
+
+
+
+NOTE:  1. All dimensions in inches (millimeters) MAX or typical where noted.
+
+
+
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>
+
+
+8000 S. Federal Way, P.O. Box 6, Boise, ID 83707-0006, Tel: 208-368-3900<br>
+E-mail: prodmktg@micron.com, Internet: http://www.micron.com, Customer Comment Line: 800-932-4992<br>
+Micron is a registered trademark of Micron Technology, Inc.<br>
+Micron Technology, Inc., reserves the right to change products or specifications without notice.<br>
+1998, Micron Technology, Inc.<br>
+
+
+
+</td></tr></table><p>
+</body>
+</html>

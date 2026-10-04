@@ -1,0 +1,1803 @@
+                                                                                                                                  LM2678
+                                                                                             SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+     LM2678 SIMPLE SWITCHER® Power Converter, High-Efficiency, 5A, Step-Down
+                              Voltage Regulator
+1 Features                                                             3 Description
+•   Efficiency up to 92%                                               The LM2678 series of regulators are monolithic,
+•   Simple and easy to design using off-the-shelf                      integrated circuits, which provide all of the active
+    external components                                                functions for a step-down (buck) switching regulator
+•   120mΩ DMOS output switch                                           capable of driving up to 5A loads with excellent line
+•   3.3V, 5V, and 12V fixed output and adjustable                      and load regulation characteristics. High efficiency
+    (1.2V to 37V) versions                                             (>90%) is obtained through the use of a low ON-
+•   50μA standby current when switched OFF                             resistance DMOS power switch. The series consists
+•   ±2% maximum output tolerance over full line and                    of fixed output voltages of 3.3V, 5V, and 12V and an
+    load conditions                                                    adjustable output version.
+•   8V to 40V wide input voltage range
+                                                                       The SIMPLE SWITCHER power converter concept
+•   260kHz fixed frequency internal oscillator
+                                                                       provides for a complete design using a minimum
+•   −40 to 125°C operating junction temperature range
+                                                                       number of external components. A high fixed
+•   Create a custom design using the LM2678 with the
+                                                                       frequency oscillator
+    WEBENCH® Power Designer
+                                                                       (260kHz) allows the use of physically smaller sized
+2 Applications                                                         components. A family of standard inductors for
+                                                                       use with the LM2678 are available from several
+•   Simple-to-design, high efficiency (> 90%) step-                    manufacturers to greatly simplify the design process.
+    down switching regulators
+•   Efficient system preregulator for linear voltage                   The LM2678 series also has built-in thermal
+    regulators                                                         shutdown, current limiting, and an ON and OFF
+•   Battery chargers                                                   control input that can power down the regulator to
+                                                                       a low 50μA quiescent current standby condition.
+                                                                       The output voltage is specified to a ±2% tolerance.
+                                                                       The clock frequency is controlled to within a ±11%
+                                                                       tolerance.
+                                                                                           Package Information
+                                                                         PART NUMBER           PACKAGE(1)           PACKAGE SIZE(2)
+                                                                                            KTW (TO-263, 7)      10.1mm × 15.24mm
+                                                                       LM2678               NDZ (TO-220, 7)      10.16mm × 8.13mm
+                                                                                            NHM (VSON, 14)       6mm × 5mm
+
+                                                                       (1)   For more information, see Section 10.
+                                                                       (2)   The package size (length × width) is a nominal value and
+                                                                             includes pins, where applicable.
+
+
+
+
+                                                       Typical Application
+
+
+
+     An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+     intellectual property matters and other important disclaimers. PRODUCTION DATA.
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                                                        www.ti.com
+
+
+                                                                        Table of Contents
+1 Features............................................................................1     6.3 Feature Description...................................................10
+2 Applications..................................................................... 1       6.4 Device Functional Modes..........................................11
+3 Description.......................................................................1     7 Application and Implementation.................................. 12
+4 Pin Configuration and Functions...................................3                       7.1 Application Information............................................. 12
+5 Specifications.................................................................. 4        7.2 Typical Application.................................................... 14
+  5.1 Absolute Maximum Ratings........................................ 4                    7.3 Power Supply Recommendations.............................25
+  5.2 ESD Ratings............................................................... 4          7.4 Layout....................................................................... 26
+  5.3 Recommended Operating Conditions.........................4                          8 Device and Documentation Support............................28
+  5.4 Thermal Information....................................................4              8.1 Device Support......................................................... 28
+  5.5 Electrical Characteristics – 3.3 V................................ 5                  8.2 Documentation Support............................................ 28
+  5.6 Electrical Characteristics – 5 V................................... 5                 8.3 Receiving Notification of Documentation Updates....28
+  5.7 Electrical Characteristics – 12 V................................. 5                  8.4 Support Resources................................................... 28
+  5.8 Electrical Characteristics – Adjustable........................6                      8.5 Trademarks............................................................... 28
+  5.9 Electrical Characteristics – All Output Voltage                                       8.6 Electrostatic Discharge Caution................................28
+    Versions.........................................................................6      8.7 Glossary....................................................................28
+  5.10 Typical Characteristics.............................................. 7            9 Revision History............................................................ 29
+6 Detailed Description......................................................10            10 Mechanical, Packaging, and Orderable
+  6.1 Overview................................................................... 10        Information.................................................................... 29
+  6.2 Functional Block Diagram......................................... 10                  10.1 VSON Package Devices......................................... 29
+
+
+
+
+2       Submit Document Feedback                                                                                         Copyright © 2025 Texas Instruments Incorporated
+
+                                                                      Product Folder Links: LM2678
+                                                                                                                                                    LM2678
+www.ti.com                                                                                                    SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+4 Pin Configuration and Functions
+                          Not to scale
+
+
+                                                                                                                  7                     ON/OFF
+                                                                                                                  6                     FB
+                                                                                                                  5                     NC
+                                                                                                                  4                     GND
+                                                                                                                  3                     CB
+                                                                                                                  2                     Input
+                                                                                                                  1                     Switch_output
+                                 1
+                                 2
+                                 3
+                                 4
+                                 5
+                                 6
+                                 7                                                           Not to scale
+
+                                                                                      Figure 4-2. NDZ Package, 7-Pin TO-220 (Top View)
+                                 Switch_output
+                                         Input
+                                           CB
+                                         GND
+                                           NC
+                                           FB
+                                      ON/OFF
+
+
+
+
+  Figure 4-1. KTW Package, 7-Pin TO-263 (Top View)
+
+
+                                                        NC            1               14     Switch_output
+                                                       Input          2               13     Switch_output
+                                                       Input          3               12     Switch_output
+                                                           CB         4        DAP    11     NC
+                                                        NC            5               10     NC
+                                                        NC            6                9     GND
+                                                           FB         7                8     ON/OFF
+
+                                                                Not to scale
+
+
+      DAP connect to pin 9
+
+
+                                         Figure 4-3. NHM Package, 14-Pin VSON (Top View)
+
+                                                                Table 4-1. Pin Functions
+                            PIN
+                                                                 TYPE(1)                                      DESCRIPTION
+ NAME               TO-263, TO-220          VSON
+                                                                                Source pin of the internal high-side FET. This is a switching node.
+ Switch output              1             12, 13, 14                   O
+                                                                                Attached this pin to an inductor and the cathode of the external diode.
+                                                                                Supply input pin to collector pin of high-side FET. Connect to power
+ Input                      2                 2, 3                      I       supply and input bypass capacitors CIN. Path from VIN pin to high
+                                                                                frequency bypass CIN and GND must be as short as possible.
+                                                                                Boot-strap capacitor connection for high-side driver. Connect a high-
+ CB                         3                     4                     I
+                                                                                quality 100-nF capacitor from CB to VSW Pin.
+                                                                                Power ground pins. Connect to system ground. Ground pins of CIN and
+ GND                        4                     9                   —
+                                                                                COUT. Path to CIN must be as short as possible.
+                                                                                Feedback sense input pin. Connect to the midpoint of feedback divider
+ FB                         6                     7                     I       to set VOUT for ADJ version or connect this pin directly to the output
+                                                                                capacitor for a fixed output version.
+                                                                                Enable input to the voltage regulator. High = ON and low = OFF. Pull this
+ ON/ OFF                    7                     8                     I
+                                                                                pin high or float to enable the regulator.
+ NC                         5            1, 5, 6, 10, 11              —         No connect pins
+ DAP                       —                   —                      —         All DAP, tab, and paddle connections are at ground potential and must
+                                                                                be connected to system ground to allow for correct thermal and electrical
+                                                                                performance.
+
+(1)      I = input, O = output
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                                         Submit Document Feedback            3
+                                                                  Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                                   www.ti.com
+
+5 Specifications
+5.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted)(1) (2)
+                                                                                                           MIN             MAX               UNIT
+    Input supply voltage                                                                                                     45               V
+    Soft-start pin voltage                                                                                 –0.1               6               V
+    Switch voltage to ground(3)                                                                             –1              VIN               V
+    Boost pin voltage                                                                                                     VSW + 8             V
+    Feedback pin voltage                                                                                   –0.3              14               V
+    Power dissipation                                                                                        Internally limited
+                                Wave (4 s)                                                                                  260
+    Soldering temperature       Infrared (10 s)                                                                             240               °C
+                                Vapor phase (75 s)                                                                          219
+    Storage temperature, Tstg                                                                              –65              150               °C
+
+(1)        Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress
+           ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under
+           Recommended Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device
+           reliability.
+(2)        If Military/Aerospace specified devices are required, please contact the Texas Instruments Sales Office/Distributors for availability and
+           specifications.
+(3)        The absolute maximum specification of the Switch Voltage to Ground applies to DC voltage. An extended negative voltage limit of –10
+           V applies to a pulse of up to 20 ns, –6 V of 60 ns and –3 V of up to 100 ns.
+
+5.2 ESD Ratings
+                                                                                                                             VALUE           UNIT
+                                                      Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001(1)
+    V(ESD)      Electrostatic discharge               (2)                                                                     ±2000            V
+
+
+(1)        JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2)        ESD was applied using the human-body model, a 100-pF capacitor discharged through a 1.5-kΩ resistor into each pin.
+
+5.3 Recommended Operating Conditions
+                                                                                                                   MIN             MAX       UNIT
+    Supply voltage                                                                                                   8               40       V
+    Junction temperature, TJ                                                                                       –40              125       °C
+
+
+
+5.4 Thermal Information
+                                                                                                         LM2678
+                               THERMAL METRIC(1)                                   NDZ (TO-220)        KTW (TO-263)         NHM (VSON)         UNIT
+                                                                                       7 PINS              7 PINS                 14 PINS
+                                                            See (2)                      65                   —                     —
+                                                            See (3)                      45                   —                     —
+                                                            See (4)                       —                   56                    —
+    RθJA       Junction-to-ambient thermal resistance       See (5)                       —                   35                    —          °C/W
+                                                            See (6)                       —                   26                    —
+                                                            See (7)                       —                   —                     55
+                                                            See (8)                       —                   —                     29
+
+
+
+
+4          Submit Document Feedback                                                                      Copyright © 2025 Texas Instruments Incorporated
+
+                                                               Product Folder Links: LM2678
+                                                                                                                                            LM2678
+www.ti.com                                                                                          SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+5.4 Thermal Information (continued)
+                                                                                                      LM2678
+                            THERMAL METRIC(1)                                        NDZ (TO-220)   KTW (TO-263)        NHM (VSON)              UNIT
+                                                                                        7 PINS          7 PINS             14 PINS
+ RθJC(top) Junction-to-case (top) thermal resistance                                          2           2                        —            °C/W
+
+(1)     For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+        note.
+(2)     Junction to ambient thermal resistance (no external heat sink) for the 7-lead TO-220 package mounted vertically, with ½ inch leads in a
+        socket, or on a PCB with minimum copper area.
+(3)     Junction to ambient thermal resistance (no external heat sink) for the 7-lead TO-220 package mounted vertically, with ½ inch leads
+        soldered to a PCB containing approximately 4 square inches of (1 oz.) copper area surrounding the leads.
+(4)     Junction to ambient thermal resistance for the 7-lead DDPAK mounted horizontally against a PCB area of 0.136 square inches (the
+        same size as the DDPAK package) of 1 oz. (0.0014 in. thick) copper.
+(5)     Junction to ambient thermal resistance for the 7-lead DDPAK mounted horizontally against a PCB area of 0.4896 square inches (3.6
+        times the area of the DDPAK package) of 1 oz. (0.0014 in. thick) copper.
+(6)     Junction to ambient thermal resistance for the 7-lead DDPAK mounted horizontally against a PCB copper area of 1.0064 square
+        inches (7.4 times the area of the DDPAK 3 package) of 1 oz. (0.0014 in. thick) copper. Additional copper area reduces thermal
+        resistance further.
+(7)     Junction to ambient thermal resistance for the 14-lead VSON mounted on a PCB copper area equal to the die attach paddle.
+(8)     Junction to ambient thermal resistance for the 14-lead VSON mounted on a PCB copper area using 12 vias to a second layer
+        of copper equal to die attach paddle. Additional copper area reduces thermal resistance further. For layout recommendations, see
+        AN-1187 Leadless Leadfram Package (LLP) application note.
+
+
+5.5 Electrical Characteristics – 3.3 V
+Specifications apply for TA = TJ = 25°C (unless otherwise noted).
+          PARAMETER                                         TEST CONDITIONS                             MIN(2)        TYP(1)           MAX(2) UNIT
+
+                                   VIN = 8 V to 40 V,                   TJ = 25°C                        3.234            3.3           3.366
+ VOUT      Output voltage                                                                                                                         V
+                                   100 mA ≤ IOUT ≤ 5 A                  TJ = –40°C to 125°C              3.201                          3.399
+ η         Efficiency              VIN = 12 V, ILOAD = 5 A                                                              82%
+
+(1)     Typical values are determined with TA = TJ = 25°C and represent the most likely norm.
+(2)     All room temperature limits are 100% tested during production with TA = TJ = 25°C. All limits at temperature extremes are specified
+        through correlation using standard Quality Control (SQC) methods. All limits are used to calculate Average Outgoing Quality Level
+        (AOQL).
+
+
+5.6 Electrical Characteristics – 5 V
+Specifications apply for TA = TJ = 25°C (unless otherwise noted).
+          PARAMETER                                         TEST CONDITIONS                             MIN(2)        TYP(1)           MAX(2) UNIT
+
+                                   VIN = 8 V to 40 V,                    TJ = 25°C                         4.9                 5          5.1
+ VOUT      Output voltage                                                                                                                         V
+                                   100 mA ≤ IOUT ≤ 5 A                   TJ = –40°C to 125°C              4.85                           5.15
+ η         Efficiency              VIN = 12 V, ILOAD = 5 A                                                              84%
+
+(1)     Typical values are determined with TA = TJ = 25°C and represent the most likely norm.
+(2)     All room temperature limits are 100% tested during production with TA = TJ = 25°C. All limits at temperature extremes are specified
+        through correlation using standard Quality Control (SQC) methods. All limits are used to calculate Average Outgoing Quality Level
+        (AOQL).
+
+
+5.7 Electrical Characteristics – 12 V
+Specifications apply for TA = TJ = 25°C (unless otherwise noted).
+            PARAMETER                                       TEST CONDITIONS                            MIN(2)         TYP(1)           MAX(2)    UNIT
+
+                                      VIN = 15 V to 40 V,               TJ = 25°C                       11.76            12             12.24
+ VOUT      Output voltage                                                                                                                         V
+                                      100 mA ≤ IOUT ≤ 5 A               TJ = –40°C to 125°C             11.64                           12.36
+ η         Efficiency                 VIN = 24 V, ILOAD = 5 A                                                          92%
+
+(1)     Typical values are determined with TA = TJ = 25°C and represent the most likely norm.
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                                 Submit Document Feedback                5
+                                                                Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                                       www.ti.com
+
+(2)         All room temperature limits are 100% tested during production with TA = TJ = 25°C. All limits at temperature extremes are specified
+            through correlation using standard Quality Control (SQC) methods. All limits are used to calculate Average Outgoing Quality Level
+            (AOQL).
+
+
+5.8 Electrical Characteristics – Adjustable
+Specifications apply for TA = TJ = 25°C (unless otherwise noted).
+              PARAMETER                                           TEST CONDITIONS                             MIN(2)          TYP(1)          MAX(2)   UNIT
+                                        VIN = 8 V to 40 V,                  TJ = 25°C                         1.186            1.21            1.234
+    VFB       Feedback voltage          100 mA ≤ IOUT ≤ 5 A                                                                                             V
+                                        VOUT programmed for 5 V             TJ = –40°C to 125°C               1.174                            1.246
+
+    η         Efficiency                VIN = 12 V, ILOAD = 5 A                                                                84%
+
+(1)         Typical values are determined with TA = TJ = 25°C and represent the most likely norm.
+(2)         All room temperature limits are 100% tested during production with TA = TJ = 25°C. All limits at temperature extremes are specified
+            through correlation using standard Quality Control (SQC) methods. All limits are used to calculate Average Outgoing Quality Level
+            (AOQL).
+
+
+5.9 Electrical Characteristics – All Output Voltage Versions
+Specifications are for TA = TJ = 25°C, VIN = 12 V for the 3.3-V, 5-V, and adjustable versions, and VIN = 24 V for the 12-V
+version (unless otherwise noted).
+                  PARAMETER                                               TEST CONDITIONS                              MIN             TYP     MAX     UNIT
+                                                 VFEEDBACK = 8 V for 3.3-V, 5-V, and adjustable versions,
+    IQ           Quiescent current                                                                                                      4.2       6    mA
+                                                 VFEEDBACK = 15 V for 12-V version
+                                                                                        TJ = 25°C                                       50      100
+    ISTBY        Standby quiescent current       ON/ OFF pin = 0 V                                                                                     µA
+                                                                                        TJ = –40°C to 125°C                                     150
+                                                                                        TJ = 25°C                       6.1              7       8.3
+    ICL          Current limit                                                                                                                          A
+                                                                                        TJ = –40°C to 125°C            5.75                     8.75
+                                                                                        VSWITCH = 0 V                                           200    µA
+    IL           Output leakage current          VIN = 40 V, ON/ OFF pin = 0 V
+                                                                                        VSWITCH = –1 V                                  16       15    mA
+                                                                                        TJ = 25°C                                      0.12     0.14
+    RDS(ON)      Switch ON-Resistance            ISWITCH = 5 A                                                                                          Ω
+                                                                                        TJ = –40°C to 125°C                                    0.225
+                                                                                        TJ = 25°C                                      260
+    fO           Oscillator frequency            Measured at switch pin                                                                                kHz
+                                                                                        TJ = –40°C to 125°C             225                     280
+                                                 Maximum duty cycle                                                                91%
+    D            Duty cycle
+                                                 Minimum duty cycle                                                                     0%
+                 Feedback bias
+    IBIAS                                        VFEEDBACK = 1.3 V (adjustable version only)                                            85             nA
+                 current
+                                                 TJ = 25°C                                                                              1.4
+    VON/OFF      ON/OFF threshold voltage                                                                                                               V
+                                                 TJ = –40°C to 125°C                                                    0.8                       2
+                                                                                        TJ = 25°C                                       20
+    ION/OFF      ON/OFF input current            ON/OFF input = 0 V                                                                                    μA
+                                                                                        TJ = –40°C to 125°C                                      45
+
+
+
+
+6           Submit Document Feedback                                                                          Copyright © 2025 Texas Instruments Incorporated
+
+                                                                      Product Folder Links: LM2678
+                                                                                                                            LM2678
+www.ti.com                                                                                  SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+5.10 Typical Characteristics
+
+
+
+
+                Figure 5-1. Normalized Output Voltage                                  Figure 5-2. Line Regulation
+
+
+
+
+                Figure 5-3. Efficiency vs Input Voltage                               Figure 5-4. Efficiency vs ILOAD
+
+
+
+
+                    Figure 5-5. Switch Current Limit                             Figure 5-6. Operating Quiescent Current
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                      Submit Document Feedback      7
+                                                       Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                  www.ti.com
+
+5.10 Typical Characteristics (continued)
+
+
+
+
+             Figure 5-7. Standby Quiescent Current                           Figure 5-8. ON/OFF Threshold Voltage
+
+
+
+
+           Figure 5-9. ON/OFF Pin Current (Sourcing)                             Figure 5-10. Switching Frequency
+
+
+
+
+                                                                      Continuous Mode Switching Waveforms, VIN = 20 V, VOUT = 5
+             Figure 5-11. Feedback Pin Bias Current
+                                                                      V, ILOAD = 5 A, L = 10 μH, COUT = 400 μF, COUTESR = 13 mΩ
+                                                                      A. VSW pin voltage = 10 V/div
+                                                                      B. Inductor current = 2 A/div
+                                                                      C. Output ripple voltage = 20 mV/div AC-coupled
+
+                                                                           Figure 5-12. Horizontal Time Base: 1 μs/div
+
+
+8     Submit Document Feedback                                                            Copyright © 2025 Texas Instruments Incorporated
+
+                                                  Product Folder Links: LM2678
+                                                                                                                                  LM2678
+www.ti.com                                                                                        SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+5.10 Typical Characteristics (continued)
+
+
+
+
+       Discontinuous Mode Switching Waveforms, VIN = 20 V, VOUT               Load Transient Response for Continuous Mode, VIN = 20 V,
+       = 5 V, ILOAD = 500 mA, L = 10 μH, COUT = 400 μF, COUTESR =             VOUT = 5 V, L = 10 μH, COUT = 400 μF, COUTESR = 13 mΩ
+       13 mΩ                                                                  A. Output voltage = 100 mV/div, AC-coupled
+       A. VSW pin voltage = 10 V/div                                          B. Load current = 500-mA to 5-A load pulse
+       B. Inductor current = 1 A/div
+       C. Output ripple voltage = 20 mV/div AC-coupled                            Figure 5-14. Horizontal Time Base: 100 μs/div
+
+             Figure 5-13. Horizontal Time Base: 1 μs/div
+
+
+
+
+       Load Transient Response for Discontinuous Mode, VIN = 20 V, VOUT = 5 V, vs L = 10 μH, COUT = 400 μF, COUTESR = 13 mΩ
+       A. Output voltage = 100 mV/div, AC-coupled
+       B. Load current = 200-mA to 3-A load pulse
+
+                                                  Figure 5-15. Horizontal Time Base: 200 μs/div
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                            Submit Document Feedback      9
+                                                          Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                      www.ti.com
+
+6 Detailed Description
+6.1 Overview
+The LM2678 provides all of the active functions required for a step-down (buck) switching regulator. The internal
+power switch is a DMOS power MOSFET to provide power supply designs with high current capability, up to 5A,
+and highly efficient operation.
+The LM2678 is part of the SIMPLE SWITCHER power converter family. The design support WEBENCH, can
+also be used to provide instant component selection, circuit performance calculations for evaluation, a bill of
+materials component list and a circuit schematic for LM2678.
+6.2 Functional Block Diagram
+
+
+
+
+6.3 Feature Description
+6.3.1 Switch Output
+This is the output of a power MOSFET switch connected directly to the input voltage. The switch provides energy
+to an inductor, an output capacitor and the load circuitry under control of an internal pulse-width-modulator
+(PWM). The PWM controller is internally clocked by a fixed 260-kHz oscillator. In a standard step-down
+application the duty cycle (Time ON/Time OFF) of the power switch is proportional to the ratio of the power
+supply output voltage to the input voltage. The voltage on pin 1 switches between Vin (switch ON) and below
+ground by the voltage drop of the external Schottky diode (switch OFF).
+
+
+
+
+10    Submit Document Feedback                                                Copyright © 2025 Texas Instruments Incorporated
+
+                                            Product Folder Links: LM2678
+                                                                                                                 LM2678
+www.ti.com                                                                       SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+6.3.2 Input
+The input voltage for the power supply is connected to pin 2. In addition to providing energy to the load the input
+voltage also provides bias for the internal circuitry of the LM2678. For ensured performance the input voltage
+must be in the range of 8 V to 40 V. For best performance of the power supply the input pin must always be
+bypassed with an input capacitor located close to pin 2.
+6.3.3 C Boost
+A capacitor must be connected from pin 3 to the switch output, pin 1. This capacitor boosts the gate drive to the
+internal MOSFET above VIN to fully turn it ON. This minimizes conduction losses in the power switch to maintain
+high efficiency. The recommended value for C Boost is 0.01 μF.
+6.3.4 Ground
+This is the ground reference connection for all components in the power supply. In fast-switching, high-current
+applications such as those implemented with the LM2678, TI recommends that a broad ground plane be used to
+minimize signal coupling throughout the circuit.
+6.3.5 Feedback
+This is the input to a two-stage high gain amplifier, which drives the PWM controller. It is necessary to connect
+pin 6 to the actual output of the power supply to set the DC output voltage. For the fixed output devices (3.3-V,
+5-V and 12-V outputs), a direct wire connection to the output is all that is required as internal gain setting
+resistors are provided inside the LM2678. For the adjustable output version two external resistors are required
+to set the DC output voltage. For stable operation of the power supply it is important to prevent coupling of any
+inductor flux to the feedback input.
+6.3.6 ON/OFF
+This input provides an electrical ON/OFF control of the power supply. Connecting this pin to ground or to any
+voltage less than 0.8 V is completely turn OFF the regulator. The current drain from the input supply when OFF
+is only 50 μA. Pin 7 has an internal pullup current source of approximately 20 μA and a protection clamp Zener
+diode of 7 V to ground. When electrically driving the ON/ OFF pin the high voltage level for the ON condition
+must not exceed the 6 V absolute maximum limit. When ON/OFF control is not required pin 7 must be left open
+circuited.
+6.4 Device Functional Modes
+6.4.1 Shutdown Mode
+The ON/ OFF pin provides electrical ON and OFF control for the LM2678. When the voltage of this pin is lower
+than 1.4 V, the device enters shutdown mode. The typical standby current in this mode is 45 μA.
+6.4.2 Active Mode
+When the voltage of the ON/ OFF pin is higher than 1.4 V, the device starts switching and the output voltage
+rises until it reaches a normal regulation voltage.
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                           Submit Document Feedback     11
+                                                  Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                        www.ti.com
+
+7 Application and Implementation
+                                                        Note
+      Information in the following applications sections is not part of the TI component specification,
+      and TI does not warrant its accuracy or completeness. TI’s customers are responsible for
+      determining suitability of components for their purposes, as well as validating and testing their design
+      implementation to confirm system functionality.
+
+7.1 Application Information
+7.1.1 Design Considerations
+Power supply design using the LM2678 is greatly simplified by using recommended external components. A
+wide range of inductors, capacitors, and Schottky diodes from several manufacturers have been evaluated for
+use in designs that cover the full range of capabilities (input voltage, output voltage, and load current) of the
+LM2678. A simple design procedure using nomographs and component tables provided in this data sheet leads
+to a working design with very little effort.
+The individual components from the various manufacturers called out for use are still just a small sample of
+the vast array of components available in the industry. While these components are recommended, they are
+not exclusively the only components for use in a design. After a close comparison of component specifications,
+equivalent devices from other manufacturers can be substituted for use in an application.
+Important considerations for each external component and an explanation of how the nomographs and selection
+tables were developed follows.
+7.1.2 Inductor
+The inductor is the key component in a switching regulator. For efficiency the inductor stores energy during the
+switch ON time and then transfers energy to the load while the switch is OFF.
+Nomographs are used to select the inductance value required for a given set of operating conditions. The
+nomographs assume that the circuit is operating in continuous mode (the current flowing through the inductor
+never falls to zero). The magnitude of inductance is selected to maintain a maximum ripple current of 30% of the
+maximum load current. If the ripple current exceeds this 30% limit the next larger value is selected.
+The inductors offered have been specifically manufactured to provide proper operation under all operating
+conditions of input and output voltage and load current. Several part types are offered for a given amount of
+inductance. Both surface mount and through-hole devices are available. The inductors from each of the three
+manufacturers have unique characteristics.
+• Renco: ferrite stick core inductors; benefits are typically lowest cost and can withstand ripple and transient
+   peak currents above the rated value. These inductors have an external magnetic field, which can generate
+   EMI.
+• Pulse Engineering: powdered iron toroid core inductors; these also can withstand higher than rated currents
+   and, being toroid inductors, have low EMI.
+• Coilcraft: ferrite drum core inductors; these are the smallest physical size inductors and are available only as
+   surface mount components. These inductors also generate EMI but less than stick inductors.
+7.1.3 Output Capacitor
+The output capacitor acts to smooth the DC output voltage and also provides energy storage. Selection of an
+output capacitor, with an associated equivalent series resistance (ESR), impacts both the amount of output ripple
+voltage and stability of the control loop.
+The output ripple voltage of the power supply is the product of the capacitor ESR and the inductor ripple current.
+The capacitor types recommended in the tables were selected for having low ESR ratings.
+In addition, both surface mount tantalum capacitors and through-hole aluminum electrolytic capacitors are
+offered as solutions.
+
+
+12    Submit Document Feedback                                                  Copyright © 2025 Texas Instruments Incorporated
+
+                                             Product Folder Links: LM2678
+                                                                                                                 LM2678
+www.ti.com                                                                       SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+Impacting frequency stability of the overall control loop, the output capacitance, in conjunction with the inductor,
+creates a double pole inside the feedback loop. In addition the capacitance and the ESR value create a zero.
+These frequency response effects together with the internal frequency compensation circuitry of the LM2678
+modify the gain and phase shift of the closed-loop system.
+As a general rule for stable switching regulator circuits it is desired to have the unity gain bandwidth of the circuit
+to be limited to no more than one-sixth of the controller switching frequency. With the fixed 260-kHz switching
+frequency of the LM2678, the output capacitor is selected to provide a unity gain bandwidth of 40 kHz maximum.
+Each recommended capacitor value has been chosen to achieve this result.
+In some cases multiple capacitors are required either to reduce the ESR of the output capacitor, to minimize
+output ripple (a ripple voltage of 1% of VOUT or less is the assumed performance condition), or to increase
+the output capacitance to reduce the closed loop unity gain bandwidth (to less than 40 kHz). When parallel
+combinations of capacitors are required it has been assumed that each capacitor is the exact same part type.
+The RMS current and working voltage (WV) ratings of the output capacitor are also important considerations. In
+a typical step-down switching regulator, the inductor ripple current (set to be no more than 30% of the maximum
+load current by the inductor selection) is the current that flows through the output capacitor. The capacitor
+RMS current rating must be greater than this ripple current. The voltage rating of the output capacitor must be
+greater than 1.3 times the maximum output voltage of the power supply. If operation of the system at elevated
+temperatures is required, the capacitor voltage rating can be de-rated to less than the nominal room temperature
+rating. Careful inspection of the manufacturer's specification for de-rating of working voltage with temperature is
+important.
+7.1.4 Input Capacitor
+Fast changing currents in high current switching regulators place a significant dynamic load on the unregulated
+power source. An input capacitor helps to provide additional current to the power supply as well as smooth out
+input voltage variations.
+Like the output capacitor, the key specifications for the input capacitor are RMS current rating and working
+voltage. The RMS current flowing through the input capacitor is equal to one-half of the maximum DC load
+current so the capacitor must be rated to handle this. Paralleling multiple capacitors proportionally increases the
+current rating of the total capacitance. The voltage rating must also be selected to be 1.3 times the maximum
+input voltage. Depending on the unregulated input power source, under light load conditions the maximum input
+voltage can be significantly higher than normal operation and must be considered when selecting an input
+capacitor.
+The input capacitor must be placed very close to the input pin of the LM2678. Due to relative high current
+operation with fast transient changes, the series inductance of input connecting wires or PCB traces can create
+ringing signals at the input terminal which can possibly propagate to the output or other parts of the circuitry. It
+can be necessary in some designs to add a small valued (0.1 μF to 0.47 μF) ceramic type capacitor in parallel
+with the input capacitor to prevent or minimize any ringing.
+7.1.5 Catch Diode
+When the power switch in the LM2678 turns OFF, the current through the inductor continues to flow. The path
+for this current is through the diode connected between the switch output and ground. This forward biased diode
+clamps the switch output to a voltage less than ground. This negative voltage must be greater than −1 V so a
+low voltage drop (particularly at high current levels) Schottky diode is recommended. Total efficiency of the entire
+power supply is significantly impacted by the power lost in the output catch diode. The average current through
+the catch diode is dependent on the switch duty cycle (D) and is equal to the load current times (1-D). Use of a
+diode rated for much higher current than is required by the actual application helps to minimize the voltage drop
+and power loss in the diode.
+During the switch ON time the diode will be reversed biased by the input voltage. The reverse voltage rating of
+the diode must be at least 1.3 times greater than the maximum input voltage.
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                           Submit Document Feedback     13
+                                                  Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                          www.ti.com
+
+7.1.6 Boost Capacitor
+The boost capacitor creates a voltage used to overdrive the gate of the internal power MOSFET. This improves
+efficiency by minimizing the ON-resistance of the switch and associated power loss. For all applications it is
+recommended to use a 0.01-μF, 50-V ceramic capacitor.
+7.1.7 Additional Application Information
+When the output voltage is greater than approximately 6 V, and the duty cycle at minimum input voltage is
+greater than approximately 50%, the designer must exercise caution in selection of the output filter components.
+When an application designed to these specific operating conditions is subjected to a current limit fault condition,
+it can be possible to observe a large hysteresis in the current limit. This can affect the output voltage of the
+device until the load current is reduced sufficiently to allow the current limit protection circuit to reset itself.
+Under current limiting conditions, the LM267x is designed to respond in the following manner:
+1. At the moment when the inductor current reaches the current limit threshold, the ON-pulse is immediately
+   terminated. This happens for any application condition.
+2. However, the current limit block is also designed to momentarily reduce the duty cycle to below 50% to avoid
+   subharmonic oscillations, which can cause the inductor to saturate.
+3. Thereafter, once the inductor current falls below the current limit threshold, there is a small relaxation time
+   during which the duty cycle progressively rises back above 50% to the value required to achieve regulation.
+
+If the output capacitance is sufficiently large, it can be possible that as the output tries to recover, the output
+capacitor charging current is large enough to repeatedly re-trigger the current limit circuit before the output has
+fully settled. This condition is exacerbated with higher output voltage settings because the energy requirement
+of the output capacitor varies as the square of the output voltage (½ CV2), thus requiring an increased charging
+current.
+A simple test to determine if this condition might exist for a suspect application is to apply a short circuit
+across the output of the converter, and then remove the shorted output condition. In an application with properly
+selected external components, the output will recover smoothly.
+Practical values of external components that have been experimentally found to work well under these specific
+operating conditions are COUT = 47 µF, L = 22 µH. It must be noted that even with these components, for a
+device’s current limit of ICLIM, the maximum load current under which the possibility of the large current limit
+hysteresis can be minimized is ICLIM/2. For example, if the input is 24 V and the set output voltage is 18 V, then
+for a desired maximum current of 1.5 A, the current limit of the chosen switcher must be confirmed to be at least
+3 A.
+Under extreme overcurrent or short circuit conditions, the LM267X employs frequency foldback in addition to the
+current limit. If the cycle-by-cycle inductor current increases above the current limit threshold (due to short circuit
+or inductor saturation for example) the switching frequency is automatically reduced to protect the IC. Frequency
+below 100 kHz is typical for an extreme short-circuit condition.
+7.2 Typical Application
+7.2.1 All Output Voltage Versions
+
+
+
+
+                          Figure 7-1. Typical Application for All Output Voltage Versions
+
+
+14    Submit Document Feedback                                                    Copyright © 2025 Texas Instruments Incorporated
+
+                                              Product Folder Links: LM2678
+                                                                                                                 LM2678
+www.ti.com                                                                       SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+7.2.1.1 Design Requirements
+Select the power supply operating conditions and the maximum output current and follow below procedures to
+find the external components for LM2678.
+7.2.1.2 Detailed Design Procedure
+7.2.1.2.1 Custom Design With WEBENCH® Tools
+Click here to create a custom design using the LM2678 device with the WEBENCH® Power Designer.
+1. Start by entering the input voltage (VIN), output voltage (VOUT), and output current (IOUT) requirements.
+2. Optimize the design for key parameters such as efficiency, footprint, and cost using the optimizer dial.
+3. Compare the generated design with other possible solutions from Texas Instruments.
+
+The WEBENCH Power Designer provides a customized schematic along with a list of materials with real-time
+pricing and component availability.
+In most cases, these actions are available:
+• Run electrical simulations to see important waveforms and circuit performance
+• Run thermal simulations to understand board thermal performance
+• Export customized schematic and layout into popular CAD formats
+• Print PDF reports for the design, and share the design with colleagues
+Get more information about WEBENCH tools at www.ti.com/WEBENCH.
+Using the nomographs and tables in this data sheet (or use the available design software at www.ti.com) a
+complete step-down regulator can be designed in a few simple steps.
+Step 1: Define the power supply operating conditions:
+• Required output voltage
+• Maximum DC input voltage
+• Maximum output load current
+Step 2: Set the output voltage by selecting a fixed output LM2678 (3.3-V, 5-V, or 12-V applications) or determine
+the required feedback resistors for use with the adjustable LM2678−ADJ
+Step 3: Determine the inductor required by using one of the four nomographs, Figure 7-2 through Figure 7-5.
+Table 7-3 provides a specific manufacturer and part number for the inductor.
+Step 4: Using Table 7-5 (fixed output voltage) or Table 7-9 (adjustable output voltage), determine the output
+capacitance required for stable operation. Table 7-1 provides the specific capacitor type from the manufacturer of
+choice.
+Step 5: Determine an input capacitor from Table 7-5 for fixed output voltage applications. Use Table 7-1 to find
+the specific capacitor type. For adjustable output circuits select a capacitor from Table 7-1 with a sufficient
+working voltage (WV) rating greater than VIN max, and an RMS current rating greater than one-half the
+maximum load current (2 or more capacitors in parallel can be required).
+Step 6: Select a diode from Table 7-4. The current rating of the diode must be greater than ILOAD max and the
+reverse voltage rating must be greater than VIN maximum.
+Step 7: Include a 0.01-μF, 50-V capacitor for CBOOST in the design.
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                           Submit Document Feedback     15
+                                                  Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                               www.ti.com
+
+7.2.1.2.2 Capacitor Selection Guides
+                           Table 7-1. Input and Output Capacitor Codes – Surface Mount
+                                                                       SURFACE MOUNT
+     CAPACITOR
+     REFERENCE             AVX TPS SERIES                            SPRAGUE 594D SERIES                            KEMET T495 SERIES
+       CODE
+                  C (µF)       WV (V)       Irms (A)        C (µF)         WV (V)          Irms (A)        C (µF)         WV (V)         Irms (A)
+        C1         330          6.3          1.15            120             6.3             1.1            100             6.3           0.82
+        C2         100           10           1.1            220             6.3             1.4            220             6.3            1.1
+        C3         220           10          1.15            68              10             1.05            330             6.3            1.1
+        C4         47            16          0.89            150             10             1.35            100             10             1.1
+        C5         100           16          1.15            47              16               1             150             10             1.1
+        C6         33            20          0.77            100             16              1.3            220             10             1.1
+        C7         68            20          0.94            180             16             1.95             33             20            0.78
+        C8         22            25          0.77            47              20             1.15             47             20            0.94
+        C9         10            35          0.63            33              25             1.05             68             20            0.94
+        C10        22            35          0.66            68              25              1.6             10             35            0.63
+        C11        —             —            —              15              35             0.75             22             35            0.63
+        C12        —             —            —              33              35               1              4.7            50            0.66
+        C13        —             —            —              15              50              0.9             —              —              —
+
+
+
+
+16      Submit Document Feedback                                                                      Copyright © 2025 Texas Instruments Incorporated
+
+                                                       Product Folder Links: LM2678
+                                                                                                                                                                  LM2678
+www.ti.com                                                                                                            SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+                                     Table 7-2. Input and Output Capacitor Codes – Through Hole
+                                                                                     THROUGH HOLE
+   CAPACITOR
+   REFERENCE         SANYO OS-CON SA SERIES                SANYO MV-GX SERIES                          NICHICON PL SERIES                   PANASONIC HFQ SERIES
+     CODE
+                   C (µF)         WV (V)   Irms (A)   C (µF)       WV (V)       Irms (A)       C (µF)        WV (V)      Irms (A)       C (µF)     WV (V)         Irms (A)
+        C1           47            6.3        1       1000          6.3           0.8            680           10           0.8            82        35             0.4
+        C2           150           6.3      1.95       270           16           0.6            820           10           0.98           120       35            0.44
+        C3           330           6.3      2.45       470           16          0.75            1000          10           1.06           220       35            0.76
+        C4           100           10       1.87       560           16          0.95            1200          10           1.28           330       35            1.01
+        C5           220           10       2.36       820           16          1.25            2200          10           1.71           560       35             1.4
+        C6           33            16       0.96      1000           16           1.3            3300          10           2.18           820       35            1.62
+        C7           100           16       1.92       150           35          0.65            3900          10           2.36        1000         35            1.73
+        C8           150           16       2.28       470           35           1.3            6800          10           2.68        2200         35             2.8
+        C9           100           20       2.25       680           35           1.4            180           16           0.41           56        50            0.36
+       C10           47            25       2.09      1000           35           1.7            270           16           0.55           100       50             0.5
+       C11           —              —        —         220           63          0.76            470           16           0.77           220       50            0.92
+       C12           —              —        —         470           63           1.2            680           16           1.02           470       50            1.44
+       C13           —              —        —         680           63           1.5            820           16           1.22           560       50            1.68
+       C14           —              —        —        1000           63          1.75            1800          16           1.88        1200         50            2.22
+       C15           —              —        —         —             —               —           220           25           0.63           330       63            1.42
+       C16           —              —        —         —             —               —           220           35           0.79        1500         63            2.51
+       C17           —              —        —         —             —               —           560           35           1.43           —         —              —
+       C18           —              —        —         —             —               —           2200          35           2.68           —         —              —
+       C19           —              —        —         —             —               —           150           50           0.82           —         —              —
+       C20           —              —        —         —             —               —           220           50           1.04           —         —              —
+       C21           —              —        —         —             —               —           330           50           1.3            —         —              —
+       C22           —              —        —         —             —               —           100           63           0.75           —         —              —
+       C23           —              —        —         —             —               —           390           63           1.62           —         —              —
+       C24           —              —        —         —             —               —           820           63           2.22           —         —              —
+       C25           —              —        —         —             —               —           1200          63           2.51           —         —              —
+
+
+                                             Table 7-3. Inductor Manufacturer Part Numbers
+     INDUCTOR                                                                RENCO                                  PULSE ENGINEERING                     COILCRAFT
+                     INDUCTANCE            CURRENT
+    REFERENCE
+                         (µH)                (A)           THROUGH HOLE          SURFACE MOUNT            THROUGH HOLE            SURFACE MOUNT     SURFACE MOUNT
+      NUMBER
+        L23                 33                1.35             RL-5471-7             RL1500-33               PE-53823               PE-53823S             DO3316-333
+        L24                 22                1.65           RL-1283-22-43           RL1500-22               PE-53824               PE-53824S             DO3316-223
+        L25                 15                    2          RL-1283-15-43           RL1500-15               PE-53825               PE-53825S             DO3316-153
+        L29                 100               1.41             RL-5471-4             RL-6050-100             PE-53829               PE-53829S         DO5022P-104
+        L30                 68                1.71             RL-5471-5             RL6050-68               PE-53830               PE-53830S         DO5022P-683
+        L31                 47                2.06             RL-5471-6             RL6050-47               PE-53831               PE-53831S         DO5022P-473
+        L32                 33                2.46             RL-5471-7             RL6050-33               PE-53932               PE-53932S         DO5022P-333
+        L33                 22                3.02           RL-1283-22-43           RL6050-22               PE-53933               PE-53933S         DO5022P-223
+        L34                 15                3.65           RL-1283-15-43                 —                 PE-53934               PE-53934S         DO5022P-153
+        L38                 68                2.97             RL-5472-2                   —                 PE-54038               PE-54038S                 —
+        L39                 47                3.57             RL-5472-3                   —                 PE-54039               PE-54039S                 —
+        L40                 33                4.26           RL-1283-33-43                 —                 PE-54040               PE-54040S                 —
+        L41                 22                5.22           RL-1283-22-43                 —                 PE-54041                 P0841                   —
+        L44                 68                3.45             RL-5473-3                   —                 PE-54044                  —                      —
+        L45                 10                4.47           RL-1283-10-43                 —                    —                     P0845          DO5022P-103HC
+        L46                 15                5.6            RL-1283-15-43                 —                    —                     P0846          DO5022P-153HC
+        L47                 10                5.66           RL-1283-10-43                 —                    —                     P0847          DO5022P-103HC
+        L48                 47                5.61           RL-1282-47-43                 —                    —                     P0848                   —
+        L49                 33                5.61           RL-1282-33-43                 —                    —                     P0849                   —
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                                                    Submit Document Feedback                  17
+                                                                Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                               www.ti.com
+
+                                       Table 7-4. Schottky Diode Selection Table
+                                              SURFACE MOUNT                                   THROUGH HOLE
+     REVERSE VOLTAGE (V)
+                                      3A                  5 A OR MORE                 3A                      5 A OR MORE
+                                                                                     1N5820
+             20                      SK32                        —                                                  —
+                                                                                     SR302
+                                     SK33                                            1N5821
+             30                                               MBRD835L                                              —
+                                   30WQ03F                                          31DQ03
+                                     SK34                  MBRD1545CT                1N5822                       1N5825
+                                    30BQ040                   6TQ045S               MBR340                       MBR745
+             40                    30WQ04F                       —                  31DQ04                       80SQ045
+                                   MBRS340                       —                   SR403                        6TQ045
+                                   MBRD340                       —                     —                            —
+                                     SK35                        —                  MBR350                          —
+          50 or more               30WQ05F                       —                  31DQ05                          —
+                                      —                          —                   SR305                          —
+
+
+7.2.1.3 Application Curves
+For continuous mode operation
+
+
+
+
+                       Figure 7-2. LM2678-3.3                                     Figure 7-3. LM2678-5
+
+
+
+
+                       Figure 7-4. LM2678-12                                  Figure 7-5. LM2678-Adjustable
+
+
+
+
+18     Submit Document Feedback                                                        Copyright © 2025 Texas Instruments Incorporated
+
+                                                   Product Folder Links: LM2678
+                                                                                                                  LM2678
+www.ti.com                                                                        SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+7.2.2 Fixed Output Voltage Design Example
+
+
+
+
+                               Figure 7-6. Basic Circuit for Fixed Output Voltage Applications
+
+7.2.2.1 Detailed Design Procedure
+A system logic power supply bus of 3.3 V is to be generated from a wall adapter which provides an unregulated
+DC voltage of 13 V to 16 V. The maximum load current is 4 A. Through-hole components are preferred.
+Step 1: Operating conditions are:
+• VOUT = 3.3 V
+• VIN max = 16 V
+• ILOAD max = 4 A
+Step 2: Select a LM2678 3.3-V. The output voltage has a tolerance of ±2% at room temperature and ±3% over
+the full operating temperature range.
+Step 3: Use the nomograph for the 3.3-V device, Figure 7-2. The intersection of the 16-V horizontal line (Vin
+max) and the 4-A vertical line (Iload max) indicates that L46, a 15-μH inductor, is required.
+From Table 7-3, L46 in a through-hole component is available from Renco with part number RL-1283-15-43.
+Step 4: Use Table 7-5 to determine an output capacitor. With a 3.3-V output and a 15-μH inductor there are
+four through-hole output capacitor solutions with the number of same type capacitors to be paralleled and an
+identifying capacitor code given. Table 7-1 provides the actual capacitor characteristics. Any of the following
+choices work in the circuit:
+• 2 × 220-μF, 10-V Sanyo OS-CON (code C5)
+• 2 × 820-μF, 16-V Sanyo MV-GX (code C5)
+• 1 × 3900-μF, 10-V Nichicon PL (code C7)
+• 2 × 560-μF, 35-V Panasonic HFQ (code C5)
+Step 5: Use Table 7-5 to select an input capacitor. With 3.3-V output and 15 μH there are three through-hole
+solutions. These capacitors provide a sufficient voltage rating and an RMS current rating greater than 2 A (1/2
+Iload max). Again using Table 7-1 for specific component characteristics the following choices are suitable:
+• 2 × 680-μF, 63-V Sanyo MV-GX (code C13)
+• 1 × 1200-μF, 63-V Nichicon PL (code C25)
+• 1 × 1500-μF, 63-V Panasonic HFQ (code C16)
+Step 6: From Table 7-4 a 5-A or more Schottky diode must be selected. For through-hole components only 40-V
+rated diodes are indicated and 4 part types are suitable:
+• 1N5825
+• MBR745
+• 80SQ045
+• 6TQ045
+Step 7: A 0.01-μF capacitor is used for CBOOST.
+
+Copyright © 2025 Texas Instruments Incorporated                                            Submit Document Feedback     19
+                                                   Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                           www.ti.com
+
+7.2.2.1.1 Capacitor Selection
+                 Table 7-5. Output Capacitors for Fixed Output Voltage Application—Surface Mount (1) (2)
+                                                                                   SURFACE MOUNT
+       OUTPUT          INDUCTANCE
+                                                  AVX TPS SERIES              SPRAGUE 594D SERIES                  KEMET T495 SERIES
+     VOLTAGE (V)           (µH)
+                                             NO.             C CODE            NO.              C CODE            NO.              C CODE
+                            10                5                C1               5                 C1                5                 C2
+                            15                4                C1               4                 C1                4                 C3
+         3.3
+                            22                3                C2               2                 C7                3                 C4
+                            33                1                C1               2                 C7                3                 C4
+                            10                4                C2               4                 C6                4                 C4
+                            15                3                C3               2                 C7                3                 C5
+            5               22                3                C2               2                 C7                3                 C4
+                            33                2                C2               2                 C3                2                 C4
+                            47                2                C2               1                 C7                2                 C4
+                            10                4                C5               3                 C6                5                 C9
+                            15                3                C5               2                 C7                4                 C9
+                            22                2                C5               2                 C6                3                 C8
+            12              33                2                C5               1                 C7                3                 C8
+                            47                2                C4               1                 C6                2                 C8
+                            68                1                C5               1                 C5                2                 C7
+                            100               1                C4               1                 C5                1                 C8
+
+(1)     No. represents the number of identical capacitor types to be connected in parallel.
+(2)     C Code indicates the Capacitor Reference number in Table 7-1 and Table 7-2 for identifying the specific component from the
+        manufacturer.
+
+                 Table 7-6. Output Capacitors for Fixed Output Voltage Application—Through Hole (1) (2)
+                                                                              THROUGH HOLE
+   OUTPUT          INDUCTANC
+                                  SANYO OS-CON SA SERIES      SANYO MV-GX SERIES          NICHICON PL SERIES        PANASONIC HFQ SERIES
+ VOLTAGE (V)          E (µH)
+                                     NO.          C CODE           NO.     C CODE          NO.           C CODE         NO.          C CODE
+                       10             2             C5              2         C6            1              C8            2              C6
+                       15             2             C5              2         C5            1              C7            2              C5
+       3.3
+                       22             1             C5              1        C10            1              C5            1              C7
+                       33             1             C5              1        C10            1              C5            1              C7
+                       10             2             C4              2         C5            1              C6            2              C5
+                       15             1             C5              1        C10            1              C5            1              C7
+        5              22             1             C5              1         C9            1              C5            1              C5
+                       33             1             C4              1         C5            1              C4            1              C4
+                       47             1             C4              1         C4            1              C2            2              C4
+                       10             2             C7              1        C10            1             C14            2              C4
+                       15             1             C8              1         C6            1             C17            1              C5
+                       22             1             C7              1         C5            1             C13            1              C5
+       12              33             1             C7              1         C4            1             C12            1              C4
+                       47             1             C7              1         C3            1             C11            1              C3
+                       68             1             C6              1         C2            1             C10            1              C3
+                      100             1             C6              1         C2            1              C9            1              C1
+
+(1)     No. represents the number of identical capacitor types to be connected in parallel.
+(2)     C Code indicates the Capacitor Reference number in Table 7-1 and Table 7-2 for identifying the specific component from the
+        manufacturer.
+
+
+
+
+20      Submit Document Feedback                                                                   Copyright © 2025 Texas Instruments Incorporated
+
+                                                           Product Folder Links: LM2678
+                                                                                                                                       LM2678
+www.ti.com                                                                                             SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+                Table 7-7. Input Capacitors for Fixed Output Voltage Application—Surface Mount (1) (2) (3)
+                                                                                        SURFACE MOUNT
+     OUTPUT           INDUCTANCE
+                                                      AVX TPS SERIES               SPRAGUE 594D SERIES                 KEMET T495 SERIES
+   VOLTAGE (V)            (µH)
+                                              NO.                 C CODE            NO.              C CODE            NO.         C CODE
+                            10                    3                 C7               2                C10               3             C9
+                            15               See(4)                See(4)            3                C13               4            C12
+        3.3
+                            22               See(4)                See(4)            2                C13               3            C12
+                            33               See(4)                See(4)            2                C13               3            C12
+                            10                    3                 C4               2                 C6               3             C9
+                            15                    4                 C9               3                C12               4            C10
+            5               22               See(4)                See(4)            3                C13               4            C12
+                            33               See(4)                See(4)            2                C13               3            C12
+                            47               See(4)                See(4)            1                C13               2            C12
+                            10                    4                 C9               2                C10               4            C10
+                            15                    4                 C8               2                C10               4            C10
+                            22                    4                 C9               3                C12               4            C10
+           12               33               See(4)                See(4)            3                C13               4            C12
+                            47               See(4)                See(4)            2                C13               3            C12
+                            68               See(4)                See(4)            2                C13               2            C12
+                            100              See(4)                See(4)            1                C13               2            C12
+
+(1)    No. represents the number of identical capacitor types to be connected in parallel.
+(2)    C Code indicates the Capacitor Reference number in Table 7-1 and Table 7-2 for identifying the specific component from the
+       manufacturer.
+(3)    Assumes worst case maximum input voltage and load current for a given inductance value.
+(4)    Check voltage rating of capacitors to be greater than application input voltage.
+
+                Table 7-8. Input Capacitors for Fixed Output Voltage Application—Through Hole (1) (2) (3)
+                                                                                   THROUGH HOLE
+   OUTPUT          INDUCTANC
+                                  SANYO OS-CON SA SERIES           SANYO MV-GX SERIES          NICHICON PL SERIES       PANASONIC HFQ SERIES
+ VOLTAGE (V)          E (µH)
+                                     NO.              C CODE           NO.      C CODE          NO.           C CODE         NO.     C CODE
+                      10              2                 C9              2          C8            1             C18            1        C8
+                      15            See(4)             See(4)           2         C13            1             C25            1        C16
+      3.3
+                      22            See(4)             See(4)           1         C14            1             C24            1        C16
+                      33            See(4)             See(4)           1         C14            1             C24            1        C16
+                      10              2                 C7              2          C8            1             C25            1        C8
+                      15            See(4)             See(4)           2          C8            1             C25            1        C8
+       5              22            See(4)             See(4)           2         C13            1             C25            1        C16
+                      33            See(4)             See(4)           1         C14            1             C23            1        C13
+                      47            See(4)             See(4)           1         C12            1             C19            1        C11
+                      10              2                 C10             2          C8            1             C18            1        C8
+                      15              2                 C10             2          C8            1             C18            1        C8
+                      22            See(4)             See(4)           2          C8            1             C18            1        C8
+       12             33            See(4)             See(4)           2         C12            1             C24            1        C14
+                      47            See(4)             See(4)           1         C14            1             C23            1        C13
+                      68            See(4)             See(4)           1         C13            1             C21            1        C15
+                      100           See(4)             See(4)           1         C11            1             C22            1        C11
+
+(1)    No. represents the number of identical capacitor types to be connected in parallel.
+(2)    C Code indicates the Capacitor Reference number in Table 7-1 and Table 7-2 for identifying the specific component from the
+       manufacturer.
+(3)    Assumes worst case maximum input voltage and load current for a given inductance value.
+(4)    Check voltage rating of capacitors to be greater than application input voltage.
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                                  Submit Document Feedback      21
+                                                                Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                       www.ti.com
+
+7.2.3 Adjustable Output Design Example
+
+
+
+
+                       Figure 7-7. Basic Circuit for Adjustable Output Voltage Applications
+
+7.2.3.1 Detailed Design Procedure
+In this example it is desired to convert the voltage from a two battery automotive power supply (voltage range
+of 20 V to 28 V, typical in large truck applications) to the 14.8-VDC alternator supply typically used to power
+electronic equipment from single battery 12-V vehicle systems. The load current required is 3.5 A maximum. It is
+also desired to implement the power supply with all surface mount components.
+Step 1: Operating conditions are:
+• VOUT = 14.8 V
+• VIN max = 28 V
+• ILOAD max = 3.5 A
+Step 2: Select an LM2678S-ADJ. To set the output voltage to 14.9-V two resistors need to be chosen (R1 and
+R2 in Figure 7-7). For the adjustable device the output voltage is set by Equation 1.
+
+
+                                                                                                                   (1)
+
+where
+•    VFB is the feedback voltage of typically 1.21 V
+A recommended value to use for R1 is 1k. In this example then R2 is determined with Equation 2.
+
+
+                                                                                                                   (2)
+
+where
+•    R2 = 11.23 kΩ
+The closest standard 1% tolerance value to use is 11.3 kΩ.
+This sets the nominal output voltage to 14.88 V which is within 0.5% of the target value.
+Step 3: To use the nomograph for the adjustable device, Figure 7-5, requires a calculation of the inductor Volt •
+microsecond constant (E • T expressed in V • μS) from Equation 3.
+
+
+
+
+22    Submit Document Feedback                                                 Copyright © 2025 Texas Instruments Incorporated
+
+                                               Product Folder Links: LM2678
+                                                                                                                                      LM2678
+www.ti.com                                                                                    SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+
+
+                                                                                                                                      (3)
+
+where
+•    VSAT is the voltage drop across the internal power switch which is Rds(ON) times Iload
+In this example this can be typically 0.12 Ω × 3.5 A or 0.42 V and VD is the voltage drop across the forward
+biased Schottky diode, typically 0.5 V. The switching frequency of 260 kHz is the nominal value to use to
+estimate the ON time of the switch during which energy is stored in the inductor.
+For this example, E • T is found with Equation 4 and Equation 5.
+
+                                                                                                                                      (4)
+
+                                                                                                                                      (5)
+
+Using Figure 7-5, the intersection of 27 V • μS horizontally and the 3.5 A vertical line (ILOAD max) indicates
+that L48 , a 47-μH inductor, or L49, a 33-μH inductor can be used. Either inductor will be suitable, but for this
+example selecting the larger inductance results in lower ripple current.
+From Table 7-3, L48 in a surface mount component is available from Pulse Engineering with part number P0848.
+Step 4: Use Table 7-9 to determine an output capacitor. With a 14.8-V output the 12.5 to 15 V row is used and
+with a 47-μH inductor there are three surface mount output capacitor solutions. Table 7-1 provides the actual
+capacitor characteristics based on the C Code number. Any of the following choices can be used:
+• 1 × 33-μF, 20-V AVX TPS (code C6)
+• 1 × 47-μF, 20-V Sprague 594 (code C8)
+• 1 × 47-μF, 20-V Kemet T495 (code C8)
+
+                                                                    Note
+       When using the adjustable device in low voltage applications (less than 3-V output), if the nomograph
+       Figure 7-5 selects an inductance of 22 μH or less Table 7-9 and Table 7-10 do not provide an
+       output capacitor solution. With these conditions the number of output capacitors required for stable
+       operation becomes impractical. TI recommends using either a 33-μH or 47-μH inductor and the output
+       capacitors from Table 7-9 and Table 7-10.
+
+Step 5: An input capacitor for this example requires at least a 35-V WV rating with an RMS current rating of
+1.75 A (1/2 IOUT max). Table 7-1 shows that C12, a 33-μF, 35-V capacitor from Sprague, has the highest voltage
+and current rating of the surface mount components and that two of these capacitor in parallel are adequate.
+Step 6: From Table 7-4 a 5-A or more Schottky diode must be selected. For surface mount diodes with a margin
+of safety on the voltage rating one of two diodes can be used:
+• MBRD1545CT
+• 6TQ045S
+Step 7: A 0.01-μF capacitor is used for CBOOST.
+7.2.3.1.1 Capacitor Selection
+        Table 7-9. Output Capacitors for Adjustable Output Voltage Applications—Surface Mount (1) (2)
+                                                                                         SURFACE MOUNT
+        OUTPUT VOLTAGE (V)             INDUCTANCE (µH)       AVX TPS SERIES       SPRAGUE 594D SERIES             KEMET T495 SERIES
+                                                            NO.       C CODE       NO.        C CODE        NO.             C CODE
+                                             33(3)           7          C1          6           C2           7                C3
+             1.21 to 2.5
+                                             47(3)           5          C1          4           C2           5                C3
+                                             33(3)           4          C1          3           C2           4                C3
+             2.5 to 3.75
+                                             47(3)           3          C1          2           C2           3                C3
+
+Copyright © 2025 Texas Instruments Incorporated                                                          Submit Document Feedback           23
+                                                         Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                        www.ti.com
+
+       Table 7-9. Output Capacitors for Adjustable Output Voltage Applications—Surface Mount (1) (2)
+                                                (continued)
+                                                                                         SURFACE MOUNT
+      OUTPUT VOLTAGE (V)           INDUCTANCE (µH)         AVX TPS SERIES        SPRAGUE 594D SERIES               KEMET T495 SERIES
+                                                          NO.          C CODE     NO.         C CODE         NO.              C CODE
+                                          22               4              C1       3            C2            4                 C3
+            3.75 to 5                     33               3              C1       2            C2            3                 C3
+                                          47               2              C1       2            C2            2                 C3
+                                          22               3              C2       3            C3            3                 C4
+                                          33               2              C2       2            C3            2                 C4
+            5 to 6.25
+                                          47               2              C2       2            C3            2                 C4
+                                          68               1              C2       1            C3            1                 C4
+                                          22               3              C2       1            C4            3                 C4
+                                          33               2              C2       1            C3            2                 C4
+           6.25 to 7.5
+                                          47               1              C3       1            C4            1                 C6
+                                          68               1              C2       1            C3            1                 C4
+                                          33               2              C5       1            C6            2                 C8
+                                          47               1              C5       1            C6            2                 C8
+            7.5 to 10
+                                          68               1              C5       1            C6            1                 C8
+                                         100               1              C4       1            C5            1                 C8
+                                          33               1              C5       1            C6            2                 C8
+                                          47               1              C5       1            C6            2                 C8
+           10 to 12.5
+                                          68               1              C5       1            C6            1                 C8
+                                         100               1              C5       1            C6            1                 C8
+                                          33               1              C6       1            C8            1                 C8
+                                          47               1              C6       1            C8            1                 C8
+           12.5 to 15
+                                          68               1              C6       1            C8            1                 C8
+                                         100               1              C6       1            C8            1                 C8
+                                          33               1              C8       1            C10           2                C10
+                                          47               1              C8       1            C9            2                C10
+            15 to 20
+                                          68               1              C8       1            C9            2                C10
+                                         100               1              C8       1            C9            1                C10
+                                          33               2              C9       2            C11           2                 C11
+                                          47               1             C10       1            C12           1                 C11
+            20 to 30
+                                          68               1              C9       1            C12           1                 C11
+                                         100               1              C9       1            C12           1                 C11
+                                          10                                       4            C13           8                C12
+                                          15                                       3            C13           5                C12
+                                          22                                       2            C13           4                C12
+            30 to 37                                       No values available
+                                          33                                       1            C13           3                C12
+                                          47                                       1            C13           2                C12
+                                          68                                       1            C13           2                C12
+
+
+(1)   No. represents the number of identical capacitor types to be connected in parallel.
+(2)   C Code indicates the Capacitor Reference number in Table 7-1 and Table 7-2 for identifying the specific component from the
+      manufacturer.
+(3)   Set to a higher value for a practical design solution.
+
+
+
+
+24    Submit Document Feedback                                                                  Copyright © 2025 Texas Instruments Incorporated
+
+                                                      Product Folder Links: LM2678
+                                                                                                                                    LM2678
+www.ti.com                                                                                       SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+        Table 7-10. Output Capacitors for Adjustable Output Voltage Applications—Through Hole (1) (2)
+                                                                                        THROUGH HOLE
+                                                   SANYO OS-CON SA SERIES                                                PANASONIC HFQ
+      OUTPUT VOLTAGE (V)         INDUCTANCE (µH)                              SANYO MV-GX SERIES   NICHICON PL SERIES
+                                                                                                                            SERIES
+                                                      NO.            C CODE     NO.     C CODE      NO.      C CODE      NO.        C CODE
+                                       33(3)           2                C3       5        C1         5          C3        3           C
+           1.21 to 2.5
+                                       47(3)           2                C2       4        C1         3          C3        2           C5
+                                       33(3)           1                C3       3        C1         3          C1        2           C5
+           2.5 to 3.75
+                                       47(3)           1                C2       2        C1         2          C3        1           C5
+                                        22             1                C3       3        C1         3          C1        2           C5
+            3.75 to 5                   33             1                C2       2        C1         2          C1        1           C5
+                                        47             1                C2       2        C1         1          C3        1           C5
+                                        22             1                C5       2        C6         2          C3        2           C5
+                                        33             1                C4       1        C6         2          C1        1           C5
+            5 to 6.25
+                                        47             1                C4       1        C6         1          C3        1           C5
+                                        68             1                C4       1        C6         1          C1        1           C5
+                                        22             1                C5       1        C6         2          C1        1           C5
+                                        33             1                C4       1        C6         1          C3        1           C5
+           6.25 to 7.5
+                                        47             1                C4       1        C6         1          C1        1           C5
+                                        68             1                C4       1        C2         1          C1        1           C5
+                                        33             1                C7       1        C6         1         C14        1           C5
+                                        47             1                C7       1        C6         1         C14        1           C5
+            7.5 to 10
+                                        68             1                C7       1        C2         1         C14        1           C2
+                                        100            1                C7       1        C2         1         C14        1           C2
+                                        33             1                C7       1        C6         1         C14        1           C5
+                                        47             1                C7       1        C2         1         C14        1           C5
+           10 to 12.5
+                                        68             1                C7       1        C2         1          C9        1           C2
+                                        100            1                C7       1        C2         1          C9        1           C2
+                                        33             1                C9       1        C10        1         C15        1           C2
+                                        47             1                C9       1        C10        1         C15        1           C2
+           12.5 to 15
+                                        68             1                C9       1        C10        1         C15        1           C2
+                                        100            1                C9       1        C10        1         C15        1           C2
+                                        33             1               C10       1        C7         1         C15        1           C2
+                                        47             1               C10       1        C7         1         C15        1           C2
+            15 to 20
+                                        68             1               C10       1        C7         1         C15        1           C2
+                                        100            1               C10       1        C7         1         C15        1           C2
+                                        33                                       1        C7         1         C16        1           C2
+                                        47                                       1        C7         1         C16        1           C2
+            20 to 30                                   No values available
+                                        68                                       1        C7         1         C16        1           C2
+                                        100                                      1        C7         1         C16        1           C2
+                                        10                                       1        C12        1         C20        1          C10
+                                        15                                       1        C11        1         C20        1          C11
+                                        22                                       1        C11        1         C20        1          C10
+            30 to 37                                   No values available
+                                        33                                       1        C11        1         C20        1          C10
+                                        47                                       1        C11        1         C20        1          C10
+                                        68                                       1        C11        1         C20        1          C10
+
+
+(1)    No. represents the number of identical capacitor types to be connected in parallel.
+(2)    C Code indicates the Capacitor Reference number in Table 7-1 and Table 7-2 for identifying the specific component from the
+       manufacturer.
+(3)    Set to a higher value for a practical design solution.
+
+7.3 Power Supply Recommendations
+The LM2678 is designed to operate from an input voltage supply up to 40 V. This input supply must be well
+regulated and able to withstand maximum input current and maintain a stable voltage.
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                           Submit Document Feedback           25
+                                                       Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                      www.ti.com
+
+7.4 Layout
+7.4.1 Layout Guidelines
+Board layout is critical for the proper operation of switching power supplies. First, the ground plane area
+must be sufficient for thermal dissipation purposes. Second, appropriate guidelines must be followed to reduce
+the effects of switching noise. Switch mode converters are very fast switching devices. In such cases, the
+rapid increase of input current combined with the parasitic trace inductance generates unwanted L di/dt noise
+spikes. The magnitude of this noise tends to increase as the output current increases. This noise can turn into
+electromagnetic interference (EMI) and can also cause problems in device performance. Therefore, take care in
+layout to minimize the effect of this switching noise. The most important layout rule is to keep the AC current
+loops as small as possible. Figure 7-8 shows the current flow in a buck converter. The top schematic shows
+a dotted line which represents the current flow during the top switch ON-state. The middle schematic shows
+the current flow during the top switch OFF-state. The bottom schematic shows the currents referred to as AC
+currents. These AC currents are the most critical because they are changing in a very short time period. The
+dotted lines of the bottom schematic are the traces to keep as short and wide as possible. This will also yield a
+small loop area reducing the loop inductance. To avoid functional problems due to layout, review the PCB layout
+example. Best results are achieved if the placement of the LM2679 device, the bypass capacitor, the Schottky
+diode, RFBB, RFBT, and the inductor are placed as shown in the example. Note that, in the layout shown,
+R1 = RFBB and R2 = RFBT. It is also recommended to use 2-oz. copper boards or heavier to help thermal
+dissipation and to reduce the parasitic inductances of board traces. See AN-1229 SIMPLE SWITCHER® PCB
+Layout Guidelines for more information.
+
+
+
+
+                                 Figure 7-8. Typical Current Flow in Buck Regulator
+
+
+
+
+26    Submit Document Feedback                                                Copyright © 2025 Texas Instruments Incorporated
+
+                                              Product Folder Links: LM2678
+                                                                                                                   LM2678
+www.ti.com                                                                         SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+7.4.2 Layout Example
+
+
+
+
+                                  Figure 7-9. Top Layer Foil Pattern of Printed-Circuit Board
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                             Submit Document Feedback     27
+                                                    Product Folder Links: LM2678
+LM2678
+SNVS029L – MARCH 2000 – REVISED JUNE 2025                                                                                     www.ti.com
+
+8 Device and Documentation Support
+8.1 Device Support
+8.1.1 Development Support
+8.1.1.1 Custom Design With WEBENCH® Tools
+Click here to create a custom design using the LM2678 device with the WEBENCH® Power Designer.
+1. Start by entering the input voltage (VIN), output voltage (VOUT), and output current (IOUT) requirements.
+2. Optimize the design for key parameters such as efficiency, footprint, and cost using the optimizer dial.
+3. Compare the generated design with other possible solutions from Texas Instruments.
+
+The WEBENCH Power Designer provides a customized schematic along with a list of materials with real-time
+pricing and component availability.
+In most cases, these actions are available:
+• Run electrical simulations to see important waveforms and circuit performance
+• Run thermal simulations to understand board thermal performance
+• Export customized schematic and layout into popular CAD formats
+• Print PDF reports for the design, and share the design with colleagues
+Get more information about WEBENCH tools at www.ti.com/WEBENCH.
+8.2 Documentation Support
+8.2.1 Related Documentation
+For related documentation, see the following:
+•    Texas Instruments, AN-1187 Leadless Leadfram Package (LLP) application note
+•    Texas Instruments, AN-1229 SIMPLE SWITCHER® PCB Layout Guidelines application note
+8.3 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on
+Notifications to register and receive a weekly digest of any product information that has changed. For change
+details, review the revision history included in any revised document.
+8.4 Support Resources
+TI E2E™ support forums are an engineer's go-to source for fast, verified answers and design help — straight
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do
+not necessarily reflect TI's views; see TI's Terms of Use.
+8.5 Trademarks
+TI E2E™ is a trademark of Texas Instruments.
+SIMPLE SWITCHER® and WEBENCH® are registered trademarks of Texas Instruments.
+All trademarks are the property of their respective owners.
+8.6 Electrostatic Discharge Caution
+                This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled
+                with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+                ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may
+                be more susceptible to damage because very small parametric changes could cause the device not to meet its published
+                specifications.
+
+
+8.7 Glossary
+ TI Glossary         This glossary lists and explains terms, acronyms, and definitions.
+
+
+
+28    Submit Document Feedback                                                               Copyright © 2025 Texas Instruments Incorporated
+
+                                                    Product Folder Links: LM2678
+                                                                                                                                                     LM2678
+www.ti.com                                                                                                  SNVS029L – MARCH 2000 – REVISED JUNE 2025
+
+
+
+9 Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+Changes from Revision K (February 2017) to Revision L (June 2025)                                                                                     Page
+• Updated the numbering format for tables, figures, and cross-references throughout the document................. 1
+• Added approved noun following the SIMPLE SWITCHER trademark throughout the document.......................1
+• Added DAP connection recommendation...........................................................................................................3
+• Deleted RADJ specification................................................................................................................................ 5
+• Deleted RADJ specification................................................................................................................................ 5
+• Deleted RADJ specification................................................................................................................................ 5
+• Deleted RADJ specification................................................................................................................................ 6
+
+
+
+Changes from Revision J (June 2016) to Revision K (February 2017)                                                                                      Page
+• Deleted RADJ = 5.6 kΩ...................................................................................................................................... 6
+• Deleted and updated with new values for Min, Typ and Max ............................................................................ 6
+• Deleted and updated with new values for Min and Max ....................................................................................6
+• Changed soft-start pin to ON/OFF pin................................................................................................................6
+• Changed to 200 µA from 1.5 mA........................................................................................................................6
+• Changed typ and max values to 16 and 15 mA................................................................................................. 6
+
+
+10 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+10.1 VSON Package Devices
+The LM2678 is offered in the 14-pin VSON surface mount package to allow for a significantly decreased footprint
+with equivalent power dissipation compared to the DDPAK. For details on mounting and soldering specifications,
+refer to AN-1187 Leadless Leadfram Package (LLP).
+
+
+
+
+Copyright © 2025 Texas Instruments Incorporated                                                                        Submit Document Feedback              29
+                                                              Product Folder Links: LM2678
+                                                                                                                                   PACKAGE OPTION ADDENDUM
+
+  www.ti.com                                                                                                                                                       7-Nov-2025
+
+
+
+
+PACKAGING INFORMATION
+
+ Orderable part number   Status   Material type   Package | Pins    Package qty | Carrier      RoHS       Lead finish/       MSL rating/        Op temp (°C)   Part marking
+                           (1)         (2)                                                      (3)       Ball material      Peak reflow                            (6)
+                                                                                                               (4)                (5)
+
+    LM2678S-12/NOPB      Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-12
+  LM2678S-12/NOPB.B      Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-12
+   LM2678S-3.3/NOPB      Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-3.3
+  LM2678S-3.3/NOPB.B     Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-3.3
+   LM2678S-5.0/NOPB      Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-5.0
+  LM2678S-5.0/NOPB.B     Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-5.0
+   LM2678S-ADJ/NOPB      Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-ADJ
+  LM2678S-ADJ/NOPB.B     Active    Production     DDPAK/TO-263           45 | TUBE          ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                    (KTW) | 7                                                                                                     S-ADJ
+   LM2678SD-12/NOPB      Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003BB
+  LM2678SD-12/NOPB.B     Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003BB
+  LM2678SD-3.3/NOPB      Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003CB
+ LM2678SD-3.3/NOPB.B     Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003CB
+  LM2678SD-5.0/NOPB      Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003DB
+ LM2678SD-5.0/NOPB.B     Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003DB
+  LM2678SD-ADJ/NOPB      Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003EB
+ LM2678SD-ADJ/NOPB.B     Active    Production     VSON (NHM) | 14     250 | SMALL T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003EB
+  LM2678SDX-3.3/NOPB     Active    Production     VSON (NHM) | 14    2500 | LARGE T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003CB
+ LM2678SDX-3.3/NOPB.B    Active    Production     VSON (NHM) | 14    2500 | LARGE T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003CB
+  LM2678SDX-5.0/NOPB     Active    Production     VSON (NHM) | 14    2500 | LARGE T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003DB
+ LM2678SDX-5.0/NOPB.B    Active    Production     VSON (NHM) | 14    2500 | LARGE T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003DB
+ LM2678SDX-ADJ/NOPB      Active    Production     VSON (NHM) | 14    2500 | LARGE T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003EB
+ LM2678SDX-ADJ/NOPB.B    Active    Production     VSON (NHM) | 14    2500 | LARGE T&R           Yes           SN          Level-1-260C-UNLIM     -40 to 125     S0003EB
+
+
+
+
+                                                                                     Addendum-Page 1
+                                                                                                                                                     PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                    7-Nov-2025
+
+
+
+
+       Orderable part number          Status     Material type      Package | Pins    Package qty | Carrier      RoHS       Lead finish/       MSL rating/        Op temp (°C)   Part marking
+                                        (1)            (2)                                                        (3)       Ball material      Peak reflow                            (6)
+                                                                                                                                 (4)                (5)
+
+        LM2678SX-12/NOPB              Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-12
+       LM2678SX-12/NOPB.B             Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-12
+        LM2678SX-3.3/NOPB             Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-3.3
+       LM2678SX-3.3/NOPB.B            Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-3.3
+        LM2678SX-5.0/NOPB             Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-5.0
+       LM2678SX-5.0/NOPB.B            Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-5.0
+       LM2678SX-ADJ/NOPB              Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-ADJ
+      LM2678SX-ADJ/NOPB.B             Active      Production        DDPAK/TO-263       500 | LARGE T&R        ROHS Exempt       SN          Level-3-245C-168 HR    -40 to 125      LM2678
+                                                                      (KTW) | 7                                                                                                     S-ADJ
+         LM2678T-12/NOPB              Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-12
+        LM2678T-12/NOPB.B             Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-12
+         LM2678T-3.3/NOPB             Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-3.3
+        LM2678T-3.3/NOPB.B            Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-3.3
+         LM2678T-5.0/NOPB             Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-5.0
+        LM2678T-5.0/NOPB.B            Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-5.0
+        LM2678T-ADJ/NOPB              Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-ADJ
+       LM2678T-ADJ/NOPB.B             Active      Production       TO-220 (NDZ) | 7        45 | TUBE              Yes           SN           Level-1-NA-UNLIM      -40 to 125      LM2678
+                                                                                                                                                                                    T-ADJ
+
+(1)
+      Status: For more details on status, see our product life cycle.
+
+
+
+
+                                                                                                       Addendum-Page 2
+                                                                                                                                                                      PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                    7-Nov-2025
+
+
+
+
+(2)
+   Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3)
+      RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4)
+   Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5)
+  MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6)
+      Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+
+
+
+                                                                                                          Addendum-Page 3
+                                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                      10-Aug-2026
+
+
+
+TAPE AND REEL INFORMATION
+
+       REEL DIMENSIONS                                                                       TAPE DIMENSIONS
+                                                                                        K0       P1
+
+
+
+                                                                                                                        B0 W
+                                         Reel
+                                       Diameter
+                                                                                     Cavity            A0
+                                                                 A0   Dimension designed to accommodate the component width
+                                                                 B0   Dimension designed to accommodate the component length
+                                                                 K0   Dimension designed to accommodate the component thickness
+                                                                 W    Overall width of the carrier tape
+                                                                 P1   Pitch between successive cavity centers
+
+
+                                        Reel Width (W1)
+                              QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                       Sprocket Holes
+
+
+                                                  Q1        Q2          Q1    Q2
+
+                                                  Q3        Q4          Q3    Q4                  User Direction of Feed
+
+
+
+                                                             Pocket Quadrants
+
+
+*All dimensions are nominal
+             Device           Package Package Pins               SPQ        Reel   Reel   A0                   B0        K0     P1     W     Pin1
+                               Type Drawing                               Diameter Width (mm)                 (mm)      (mm)   (mm)   (mm) Quadrant
+                                                                            (mm) W1 (mm)
+   LM2678SD-12/NOPB            VSON      NHM           14         250        178.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+  LM2678SD-3.3/NOPB            VSON      NHM           14         250        178.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+  LM2678SD-5.0/NOPB            VSON      NHM           14         250        178.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+  LM2678SD-ADJ/NOPB            VSON      NHM           14         250        178.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+ LM2678SDX-3.3/NOPB            VSON      NHM           14        2500        330.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+ LM2678SDX-5.0/NOPB            VSON      NHM           14        2500        330.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+ LM2678SDX-ADJ/NOPB            VSON      NHM           14        2500        330.0        16.4         5.3     6.3      1.5    12.0   16.0    Q1
+   LM2678SX-12/NOPB           DDPAK/     KTW           7          500        330.0        24.4        10.75   14.85     5.0    16.0   24.0    Q2
+                              TO-263
+  LM2678SX-3.3/NOPB           DDPAK/     KTW           7          500        330.0        24.4        10.75   14.85     5.0    16.0   24.0    Q2
+                              TO-263
+  LM2678SX-5.0/NOPB           DDPAK/     KTW           7          500        330.0        24.4        10.75   14.85     5.0    16.0   24.0    Q2
+                              TO-263
+  LM2678SX-ADJ/NOPB           DDPAK/     KTW           7          500        330.0        24.4        10.75   14.85     5.0    16.0   24.0    Q2
+                              TO-263
+
+
+
+
+                                                                        Pack Materials-Page 1
+                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                              10-Aug-2026
+
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+                                                               Width (mm)
+                                                                              H
+                      W
+
+
+
+
+                                                          L
+
+
+
+
+*All dimensions are nominal
+             Device           Package Type   Package Drawing   Pins         SPQ    Length (mm)   Width (mm)   Height (mm)
+   LM2678SD-12/NOPB              VSON             NHM           14          250       210.0        185.0         35.0
+   LM2678SD-3.3/NOPB             VSON             NHM           14          250       208.0        191.0         35.0
+   LM2678SD-5.0/NOPB             VSON             NHM           14          250       208.0        191.0         35.0
+  LM2678SD-ADJ/NOPB              VSON             NHM           14          250       208.0        191.0         35.0
+  LM2678SDX-3.3/NOPB             VSON             NHM           14          2500      367.0        367.0         35.0
+  LM2678SDX-5.0/NOPB             VSON             NHM           14          2500      367.0        367.0         35.0
+ LM2678SDX-ADJ/NOPB              VSON             NHM           14          2500      367.0        367.0         35.0
+   LM2678SX-12/NOPB           DDPAK/TO-263        KTW           7           500       356.0        356.0         45.0
+   LM2678SX-3.3/NOPB          DDPAK/TO-263        KTW           7           500       356.0        356.0         45.0
+   LM2678SX-5.0/NOPB          DDPAK/TO-263        KTW           7           500       356.0        356.0         45.0
+  LM2678SX-ADJ/NOPB           DDPAK/TO-263        KTW           7           500       356.0        356.0         45.0
+
+
+
+
+                                                        Pack Materials-Page 2
+                                                                  PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                     10-Aug-2026
+
+
+
+TUBE
+
+       T - Tube
+        height                                                      L - Tube length
+
+
+                      W - Tube
+                       width
+
+
+         B - Alignment groove width
+
+*All dimensions are nominal
+             Device           Package Name   Package Type    Pins       SPQ     L (mm)   W (mm)   T (µm)    B (mm)
+    LM2678S-12/NOPB               KTW          TO-263         7          45      502       25     8204.2     9.19
+   LM2678S-12/NOPB.B              KTW          TO-263         7          45      502       25     8204.2     9.19
+   LM2678S-3.3/NOPB               KTW          TO-263         7          45      502       25     8204.2     9.19
+  LM2678S-3.3/NOPB.B              KTW          TO-263         7          45      502       25     8204.2     9.19
+   LM2678S-5.0/NOPB               KTW          TO-263         7          45      502       25     8204.2     9.19
+  LM2678S-5.0/NOPB.B              KTW          TO-263         7          45      502       25     8204.2     9.19
+   LM2678S-ADJ/NOPB               KTW          TO-263         7          45      502       25     8204.2     9.19
+  LM2678S-ADJ/NOPB.B              KTW          TO-263         7          45      502       25     8204.2     9.19
+    LM2678T-12/NOPB               NDZ          TO-220         7          45      502       30     30048.2   10.74
+   LM2678T-12/NOPB.B              NDZ          TO-220         7          45      502       30     30048.2   10.74
+    LM2678T-3.3/NOPB              NDZ          TO-220         7          45      502       30     30048.2   10.74
+  LM2678T-3.3/NOPB.B              NDZ          TO-220         7          45      502       30     30048.2   10.74
+    LM2678T-5.0/NOPB              NDZ          TO-220         7          45      502       30     30048.2   10.74
+  LM2678T-5.0/NOPB.B              NDZ          TO-220         7          45      502       30     30048.2   10.74
+   LM2678T-ADJ/NOPB               NDZ          TO-220         7          45      502       30     30048.2   10.74
+  LM2678T-ADJ/NOPB.B              NDZ          TO-220         7          45      502       30     30048.2   10.74
+
+
+
+
+                                                        Pack Materials-Page 3
+                                                 MECHANICAL DATA
+KTW0007B
+
+
+
+
+                                                         TS7B (Rev E)
+
+
+
+           BOTTOM SIDE OF PACKAGE
+
+
+
+
+                                    www.ti.com
+                        MECHANICAL DATA
+NHM0014A
+
+
+
+
+                               SRC14A (Rev A)
+
+
+
+
+           www.ti.com
+                        MECHANICAL DATA
+NDZ0007B
+
+
+
+
+                              TA07B (Rev E)
+
+
+
+
+           www.ti.com
+                                         IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+
+                                                Copyright © 2026, Texas Instruments Incorporated
+                                                                Last updated 10/2025
+
