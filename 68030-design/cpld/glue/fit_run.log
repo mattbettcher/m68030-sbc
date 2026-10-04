@@ -1,0 +1,84 @@
+Name = glue
+Device = ATF1508AS
+Package = PLCC84
+Speed = 7
+Options = -preassign keep -optimize off -tdi_pullup on -tms_pullup on -pin_keep on -verilog_sim sdf
+Atmel ATF1508 Fitter Version 1918 (3-21-07)
+Copyright 1999,2000 Atmel Corporation
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+ Design fits successfully
+ 
+                                                   P                                
+                        D  D                       W                                
+                        S  S                       R           R                    
+                     B  A  A                       _           E  I  I     I  C  A  
+                     E  C  C                       R           S  P  P     P  I  V  
+                     R  K  K                    D  S  A        E  L  L     L  I  E  
+                     R  1  0  R  G  F  F  F  V  S  T  S  C  G  T  2  1  V  0  N  C  
+                     _  _  _  _  N  C  C  C  C  _  _  _  L  N  _  _  _  C  _  _  _  
+                     n  n  n  W  D  0  1  2  C  n  n  n  K  D  n  n  n  C  n  n  n  
+                 +------------------------------------------------------------------+
+                 |  11 10  9  8  7  6  5  4  3  2  1 84 83 82 81 80 79 78 77 76 75  |
+              A31| 12                                                            74 |IDE_IORDY
+              VCC| 13                                                            73 |IDE_INTRQ
+              TDI| 14                                                            72 |GND
+              A30| 15                                                            71 |TDO
+              A29| 16                                                            70 |EXP_BUF_EN_n
+              A28| 17                                                            69 |EXP_SEL_n
+              A27| 18                                                            68 |IDE_BUF_EN_n
+              GND| 19                                                            67 |IDE_DIOW_n
+              A19| 20                                                            66 |VCC
+              A18| 21                                                            65 |IDE_DIOR_n
+              A17| 22                           ATF1508                          64 |IDE_CS1_n
+              TMS| 23                         84-Lead PLCC                       63 |IDE_CS0_n
+              A16| 24                                                            62 |TCK
+              A15| 25                                                            61 |DUART_CS_n
+              VCC| 26                                                            60 |BUS_WR_n
+              A14| 27                                                            59 |GND
+              A13| 28                                                            58 |BUS_RD_n
+               A3| 29                                                            57 |ROM_CE_n
+               A2| 30                                                            56 |FPU_CS_n
+               A1| 31                                                            55 |DRAM_SEL_n
+              GND| 32                                                            54 |HALT_n
+                 |  33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53  |
+                 +------------------------------------------------------------------+
+                     D  N  E  N  P  V  D  L  W  G  V  S  H     G        I  I  I  V  
+                     U  I  X  M  E  C  U  E  A  N  C  T  A     N        D  D  D  C  
+                     A  C  P  I  R  C  A  D  R  D  C  A  L     D        E  E  E  C  
+                     R  _  _  _  I     R  _  M        T  T              _  _  _     
+                     T  I  I  B  P     T  n  _        U  _              D  D  D     
+                     _  N  N  T  H     _     R        S  L              A  A  A     
+                     I  T  T  N  _     R     S        _  E              0  1  2     
+                     N  _  _  _  R     S     T        n  D                          
+                     T  n  n  n  S     T     _           _                          
+                     _           T           B           n                          
+                     n           _           T                                      
+                                 n           N                                      
+                                             _                                      
+                                             n                                      
+
+Logic Array Block       Macro Cells     I/O Pins        Foldbacks       TotalPT         FanIN           Cascades
+A: MC1	- MC16		12/16(75%)	8/16(50%)	0/16(0%)	55/80(68%)	33/40(82%)	4
+B: MC17	- MC32		13/16(81%)	8/16(50%)	0/16(0%)	47/80(58%)	33/40(82%)	3
+C: MC33	- MC48		13/16(81%)	8/16(50%)	0/16(0%)	44/80(55%)	33/40(82%)	1
+D: MC49	- MC64		13/16(81%)	8/16(50%)	0/16(0%)	49/80(61%)	33/40(82%)	3
+E: MC65	- MC80		15/16(93%)	5/16(31%)	0/16(0%)	43/80(53%)	33/40(82%)	1
+F: MC81	- MC96		15/16(93%)	8/16(50%)	0/16(0%)	27/80(33%)	33/40(82%)	0
+G: MC97	- MC112		13/16(81%)	8/16(50%)	0/16(0%)	28/80(35%)	33/40(82%)	1
+H: MC113- MC128		14/16(87%)	8/16(50%)	0/16(0%)	29/80(36%)	28/40(70%)	0
+
+Total dedicated input used:	4/4 	(100%)
+Total I/O pins used		61/64 	(95%)
+Total Macro cells used 		121/128 	(94%)
+Total Flip-Flop used 		62/128 	(48%)
+Total Foldback logic used 	0/128 	(0%)
+Total Nodes+FB/MCells 		108/128 	(84%)
+Total cascade used 		13
+Total input pins		34
+Total output pins 		31
+Total Pts			322
+
+$Device PLCC84 fits; JTAG ON; Secure OFF
+

@@ -1,0 +1,2478 @@
+// Rev A netlist (glue.v before 2026-09-27, as fitted then) under the same timed testbench: iverilog -DOLD, 
+// census of all errors (the log below shows the first 40):
+//       556 BUS_RD_n asserted in a wrong cycle (runt/stale select)
+//       224 BUS_WR_n asserted in a wrong cycle (runt/stale select)
+//        10 FPU_CS_n asserted in a wrong cycle (runt/stale select)
+//       263 IDE CS/DA changed during DIOR/DIOW
+//       626 IDE_DIOR_n asserted in a wrong cycle (runt/stale select)
+//       428 IDE_DIOW_n asserted in a wrong cycle (runt/stale select)
+//         7 MC68882 START (CS.AS) in a non-FPU cycle
+//      3008 glue termination < 45 ns after AS fell (carried-over cycle state)
+//       727 termination too early
+//      1604 wrong termination
+              662500 TIMING HOLD tb.dut.DFFEARS_790 (D changed 1.00 ns after CLK)
+              662500 TIMING HOLD tb.dut.DFFEARS_712 (D changed 1.00 ns after CLK)
+              662500 TIMING HOLD tb.dut.DFFEARS_655 (D changed 1.00 ns after CLK)
+              662500 TIMING HOLD tb.dut.DFFEARS_39 (D changed 1.00 ns after CLK)
+              662500 TIMING HOLD tb.dut.DFFEARS_15 (D changed 1.00 ns after CLK)
+              778000 ERR wrong termination
+    kind 5 addr f0020006: term 0001 want 0010 after 1
+              782500 TIMING HOLD tb.dut.DFFEARS_790 (D changed 1.00 ns after CLK)
+              782500 TIMING HOLD tb.dut.DFFEARS_712 (D changed 1.00 ns after CLK)
+              782500 TIMING HOLD tb.dut.DFFEARS_655 (D changed 1.00 ns after CLK)
+              782500 TIMING HOLD tb.dut.DFFEARS_122 (D changed 1.00 ns after CLK)
+              782500 TIMING HOLD tb.dut.DFFEARS_39 (D changed 1.00 ns after CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_15 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_39 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_122 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_655 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_712 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_790 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              821500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1007 (D 2.53 / AR,AS release 620.00 ns before CLK)
+              880750 ERR wrong termination
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+              941500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_655 (D 1.85 / AR,AS release 740.00 ns before CLK)
+             1501500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_15 (D 2.61 / AR,AS release 1300.00 ns before CLK)
+             1501500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_122 (D 2.61 / AR,AS release 1300.00 ns before CLK)
+             1501500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_338 (D 2.61 / AR,AS release 1300.00 ns before CLK)
+             1501500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_655 (D 2.61 / AR,AS release 1300.00 ns before CLK)
+             1531890 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             1618000 ERR termination too early
+    kind 4: 1 < 11 clocks
+             1622500 TIMING HOLD tb.dut.DFFEARS_655 (D changed 1.00 ns after CLK)
+             1622500 TIMING HOLD tb.dut.DFFEARS_39 (D changed 1.00 ns after CLK)
+             1622500 TIMING HOLD tb.dut.DFFEARS_1007 (D changed 1.00 ns after CLK)
+             1622500 TIMING HOLD tb.dut.DFFEARS_75 (D changed 1.00 ns after CLK)
+             1661500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_15 (D 0.71 / AR,AS release 1460.00 ns before CLK)
+             1661500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_39 (D 0.71 / AR,AS release 1460.00 ns before CLK)
+             1661500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 0.71 / AR,AS release 1460.00 ns before CLK)
+             1661500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1007 (D 0.71 / AR,AS release 1460.00 ns before CLK)
+             1663790 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             1733440 ERR termination too early
+    kind 4: 1 < 11 clocks
+             3022500 TIMING HOLD tb.dut.DFFEARS_338 (D changed 1.00 ns after CLK)
+             3022500 TIMING HOLD tb.dut.DFFEARS_122 (D changed 1.00 ns after CLK)
+             3022500 TIMING HOLD tb.dut.DFFEARS_15 (D changed 1.00 ns after CLK)
+             3055500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             3125640 ERR termination too early
+    kind 4: 1 < 11 clocks
+             3861500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_39 (D 2.81 / AR,AS release 3660.00 ns before CLK)
+             3861500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_304 (D 2.81 / AR,AS release 3660.00 ns before CLK)
+             4101570 TIMING HOLD tb.dut.DFFEARS_122 (D changed 0.07 ns after CLK)
+             4141500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1007 (D 2.43 / AR,AS release 3940.00 ns before CLK)
+             4458000 ERR termination too early
+    kind 4: 7 < 11 clocks
+             4462500 TIMING HOLD tb.dut.DFFEARS_338 (D changed 1.00 ns after CLK)
+             4462500 TIMING HOLD tb.dut.DFFEARS_15 (D changed 1.00 ns after CLK)
+             4495500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             4578000 ERR termination too early
+    kind 4: 1 < 11 clocks
+             4582500 TIMING HOLD tb.dut.DFFEARS_174 (D changed 1.00 ns after CLK)
+             4615500 ERR IDE_DIOR_n asserted in a wrong cycle (runt/stale select)
+             4615500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             4698000 ERR wrong termination
+    kind 10 addr fc1d5a38: term 0010 want 0011 after 1
+             4702500 TIMING HOLD tb.dut.DFFEARS_1007 (D changed 1.00 ns after CLK)
+             4702500 TIMING HOLD tb.dut.DFFEARS_174 (D changed 1.00 ns after CLK)
+             4702500 TIMING HOLD tb.dut.DFFEARS_75 (D changed 1.00 ns after CLK)
+             4735500 ERR IDE_DIOW_n asserted in a wrong cycle (runt/stale select)
+             4735500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             4751000 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             4818000 ERR wrong termination
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+             4822500 TIMING HOLD tb.dut.DFFEARS_790 (D changed 1.00 ns after CLK)
+             4822500 TIMING HOLD tb.dut.DFFEARS_1007 (D changed 1.00 ns after CLK)
+             4822500 TIMING HOLD tb.dut.DFFEARS_174 (D changed 1.00 ns after CLK)
+             4822500 TIMING HOLD tb.dut.DFFEARS_75 (D changed 1.00 ns after CLK)
+             4855500 ERR IDE_DIOW_n asserted in a wrong cycle (runt/stale select)
+             4855500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             4942500 TIMING HOLD tb.dut.DFFEARS_338 (D changed 1.00 ns after CLK)
+             4945500 DSACK0 contention: glue 1 U4 2 FPU 0 EXP 2, kind 9, 97.50 ns after AS fell / 7.50 after previous AS rose
+             4977890 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             4983390 ERR IDE CS/DA changed during DIOR/DIOW
+             5052700 ERR wrong termination
+    kind 5 addr f0020008: term 0011 want 0010 after 1
+             5090500 ERR IDE_DIOR_n asserted in a wrong cycle (runt/stale select)
+             5090500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             5178000 ERR wrong termination
+    kind 1 addr e002a5f2: term 0010 want 0001 after 1
+             5182500 TIMING HOLD tb.dut.DFFEARS_712 (D changed 1.00 ns after CLK)
+             5185000 ERR IDE CS/DA changed during DIOR/DIOW
+             5215500 ERR BUS_RD_n asserted in a wrong cycle (runt/stale select)
+             5215500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             5286500 ERR wrong termination
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+             5895500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             5969180 ERR termination too early
+    kind 4: 1 < 11 clocks
+             5981500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 0.32 / AR,AS release 5780.00 ns before CLK)
+             6735010 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             6818000 ERR termination too early
+    kind 4: 1 < 11 clocks
+             6855500 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             6938000 ERR termination too early
+    kind 4: 1 < 11 clocks
+             6975520 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+             7051290 ERR termination too early
+    kind 4: 1 < 11 clocks
+             7095510 ERR IDE_DIOW_n asserted in a wrong cycle (runt/stale select)
+             7095510 ERR glue termination < 45 ns after AS fell (carried-over cycle state)
+    kind 2 addr f0000006: term 0010 want 0001 after 1
+             7942500 TIMING HOLD tb.dut.DFFEARS_304 (D changed 1.00 ns after CLK)
+    kind 5 addr f0020008: term 1000 want 0010 after 1
+             8062500 TIMING HOLD tb.dut.DFFEARS_304 (D changed 1.00 ns after CLK)
+    kind 1 addr e007178e: term 1001 want 0001 after 1
+             8182500 TIMING HOLD tb.dut.DFFEARS_304 (D changed 1.00 ns after CLK)
+    kind 9 addr 00022010: term 1001 want 0011 after 1
+             8294390 DSACK0 contention: glue 1 U4 2 FPU 0 EXP 2, kind 9, 86.39 ns after AS fell / 7.50 after previous AS rose
+    kind 4: 6 < 11 clocks
+             9141500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 0.77 / AR,AS release 8940.00 ns before CLK)
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000008: term 0010 want 0001 after 1
+            12021500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_122 (D 0.91 / AR,AS release 11820.00 ns before CLK)
+    kind 4 addr f001000a: term 1000 want 0010 after 1
+    kind 6 addr 000f0002: term 1100 want 0100 after 1
+    kind 9 addr 00022008: term 1111 want 0011 after 1
+            13462500 TIMING HOLD tb.dut.DFFEARS_1343 (D changed 1.00 ns after CLK)
+    kind 2 addr f0000002: term 1101 want 0001 after 1
+    kind 6 addr 000f0002: term 0101 want 0100 after 1
+    kind 4 addr f0010006: term 0101 want 0010 after 1
+            15141500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_338 (D 0.12 / AR,AS release 14940.00 ns before CLK)
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000004: term 1001 want 0001 after 1
+    kind 2 addr f000000f: term 1001 want 0001 after 1
+    kind 6 addr 000f0002: term 1101 want 0100 after 1
+            15901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_304 (D 1.64 / AR,AS release 15700.00 ns before CLK)
+            15901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_338 (D 1.64 / AR,AS release 15700.00 ns before CLK)
+            15901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_712 (D 1.64 / AR,AS release 15700.00 ns before CLK)
+            15901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_790 (D 1.64 / AR,AS release 15700.00 ns before CLK)
+            15901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1343 (D 1.64 / AR,AS release 15700.00 ns before CLK)
+    kind 4 addr f001000c: term 1101 want 0010 after 1
+    kind 1 addr e0059d87: term 0011 want 0001 after 1
+    kind 4: 2 < 11 clocks
+    kind 4: 1 < 11 clocks
+            17741500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_712 (D 0.47 / AR,AS release 17540.00 ns before CLK)
+            17741500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_790 (D 0.47 / AR,AS release 17540.00 ns before CLK)
+            17751000 DSACK0 contention: glue 0 U4 1 FPU 2 EXP 2, kind 1, 14.47 ns after AS fell / 53.00 after previous AS rose
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 4 addr f001000a: term 0011 want 0010 after 1
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 4: 8 < 11 clocks
+    kind 4: 1 < 11 clocks
+            21461500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_174 (D 1.28 / AR,AS release 21260.00 ns before CLK)
+    kind 5: 1 < 11 clocks
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 9 addr 0002200a: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+            22461500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_174 (D 2.12 / AR,AS release 22260.00 ns before CLK)
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 8 addr 0490c9f8: term 0001 want 0011 after 1
+    kind 9 addr 0002201c: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 5: 1 < 11 clocks
+    kind 4: 9 < 11 clocks
+    kind 9 addr 00022012: term 0010 want 0011 after 1
+    kind 8 addr 03275ef4: term 0010 want 0011 after 1
+    kind 2 addr f000000b: term 0011 want 0001 after 1
+            26262500 TIMING HOLD tb.dut.DFFEARS_760 (D changed 1.00 ns after CLK)
+    kind 8: 1 < 2 clocks
+    kind 9 addr 0002200c: term 0001 want 0011 after 1
+    kind 5 addr f002000a: term 0001 want 0010 after 1
+    kind 9 addr 00022004: term 0001 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+            27542500 TIMING HOLD tb.dut.DFFEARS_760 (D changed 1.00 ns after CLK)
+    kind 9 addr 00022006: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 032aef54: term 0010 want 0011 after 1
+    kind 1 addr e004007f: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+            31902500 TIMING HOLD tb.dut.DFFEARS_760 (D changed 1.00 ns after CLK)
+    kind 6 addr 000f000e: term 0101 want 0100 after 1
+    kind 1 addr e006ea4b: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr f9c30f00: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 8 addr 02874614: term 0010 want 0011 after 1
+    kind 9 addr 00022006: term 0010 want 0011 after 1
+    kind 8 addr 011d66b0: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000001: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+            35901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_174 (D 0.73 / AR,AS release 35700.00 ns before CLK)
+    kind 2 addr f000000e: term 0010 want 0001 after 1
+    kind 1 addr e0031c08: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+            37461500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_760 (D 1.08 / AR,AS release 37260.00 ns before CLK)
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 4: 4 < 11 clocks
+    kind 8 addr 05281818: term 0010 want 0011 after 1
+    kind 8 addr 045732c8: term 0010 want 0011 after 1
+    kind 5: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002200c: term 1000 want 0011 after 1
+    kind 4 addr f001000a: term 1000 want 0010 after 1
+    kind 2 addr f0000006: term 1011 want 0001 after 1
+    kind 6 addr 000f0008: term 1111 want 0100 after 1
+            41062730 TIMING HOLD tb.dut.DFFEARS_1343 (D changed 1.23 ns after CLK)
+    kind 10 addr fac73224: term 0100 want 0011 after 1
+            41621910 TIMING HOLD tb.dut.DFFEARS_1343 (D changed 0.41 ns after CLK)
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002201c: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 1 addr e007753b: term 0011 want 0001 after 1
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 4 addr f0010004: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f001000c: term 0011 want 0010 after 1
+            43461500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_760 (D 1.15 / AR,AS release 43260.00 ns before CLK)
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 2 < 11 clocks
+    kind 9 addr 00022006: term 0100 want 0011 after 1
+            46221500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1343 (D 1.79 / AR,AS release 46020.00 ns before CLK)
+    kind 2 addr f0000001: term 0100 want 0001 after 1
+            46301500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1343 (D 0.21 / AR,AS release 46100.00 ns before CLK)
+    kind 4 addr f0010008: term 0101 want 0010 after 1
+    kind 6 addr 000f0004: term 0111 want 0100 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0010 want 0001 after 1
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 10 addr fc983ab8: term 0010 want 0011 after 1
+    kind 2 addr f0000001: term 0010 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 5 addr f0020008: term 0001 want 0010 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0774244c: term 0010 want 0011 after 1
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 9 addr 00022018: term 0001 want 0011 after 1
+    kind 1 addr e0049c22: term 1001 want 0001 after 1
+    kind 10 addr fce68fe8: term 1000 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e007ab2c: term 0010 want 0001 after 1
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 8 addr 041afc88: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 8 addr 06ceae5c: term 0001 want 0011 after 1
+    kind 6 addr 000f0002: term 0110 want 0100 after 1
+    kind 7 addr 08000000: term 1110 want 1000 after 1
+    kind 5 addr f0020008: term 1110 want 0010 after 1
+    kind 4 addr f0010000: term 1110 want 0010 after 1
+    kind 4 addr f0010000: term 1110 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 9 < 11 clocks
+    kind 10 addr fffe5dfc: term 0010 want 0011 after 1
+    kind 1 addr e0011279: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 8 addr 07b8e72c: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 1 addr e004312c: term 0011 want 0001 after 1
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e000fb95: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0030d23: term 0011 want 0001 after 1
+    kind 1 addr e00624fd: term 0011 want 0001 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 3 addr f0030008: term 0010 want 0001 after 1
+    kind 2 addr f000000a: term 0011 want 0001 after 1
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 1 addr e006fb48: term 0011 want 0001 after 1
+    kind 9 addr 0002201e: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 8 addr 018bdb00: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0101 want 0100 after 1
+    kind 8 addr 04638ed8: term 0101 want 0011 after 1
+    kind 8 addr 026607a4: term 0101 want 0011 after 1
+    kind 9 addr 0002201a: term 0101 want 0011 after 1
+    kind 8 addr 07a0df6c: term 0101 want 0011 after 1
+    kind 4 addr f0010006: term 0101 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0002: term 0010 want 0100 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 1 addr e0032fa5: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e006d931: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 1 addr e0013690: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+            78621500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_760 (D 1.04 / AR,AS release 78420.00 ns before CLK)
+    kind 2 addr f0000000: term 0100 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022008: term 0010 want 0011 after 1
+            80101500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1029 (D 0.79 / AR,AS release 79900.00 ns before CLK)
+    kind 3 addr f0030006: term 0101 want 0001 after 1
+    kind 4 addr f001000e: term 0101 want 0010 after 1
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 4 addr f001000e: term 0011 want 0010 after 1
+    kind 1 addr e0039316: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 6 addr 000f0004: term 0110 want 0100 after 1
+    kind 10 addr fbf5f7b4: term 0110 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 6 addr 000f0008: term 0101 want 0100 after 1
+    kind 9 addr 00022010: term 0101 want 0011 after 1
+    kind 9 addr 00022018: term 0101 want 0011 after 1
+    kind 1 addr e007bb39: term 0101 want 0001 after 1
+    kind 8 addr 0733e1fc: term 0101 want 0011 after 1
+    kind 8 addr 037c9f44: term 0101 want 0011 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 8 addr 01ab41b0: term 1011 want 0011 after 1
+            84581500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_304 (D 0.39 / AR,AS release 84380.00 ns before CLK)
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022004: term 0001 want 0011 after 1
+    kind 8 addr 00b4be40: term 0001 want 0011 after 1
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 9 addr 00022018: term 0001 want 0011 after 1
+    kind 10 addr fc596a58: term 0001 want 0011 after 1
+    kind 1 addr e003a279: term 1001 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 4 addr f0010008: term 1010 want 0010 after 1
+    kind 2 addr f0000006: term 1011 want 0001 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 9 addr 00022000: term 1011 want 0011 after 1
+    kind 5 addr f0020004: term 1011 want 0010 after 1
+    kind 10: 1 < 2 clocks
+    kind 6 addr 000f000a: term 0110 want 0100 after 1
+    kind 10 addr fb7cf3b4: term 0110 want 0011 after 1
+    kind 6 addr 000f000c: term 0110 want 0100 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 025976a4: term 0010 want 0011 after 1
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e006ecc8: term 0010 want 0001 after 1
+    kind 1 addr e00621dd: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000c: term 0110 want 0100 after 1
+    kind 2 addr f000000b: term 0111 want 0001 after 1
+    kind 8 addr 02476144: term 0111 want 0011 after 1
+    kind 8 addr 02f9efb4: term 0111 want 0011 after 1
+    kind 4 addr f001000e: term 0111 want 0010 after 1
+    kind 2 addr f000000a: term 0101 want 0001 after 1
+    kind 1 addr e001af6b: term 0101 want 0001 after 1
+    kind 8 addr 0773243c: term 0101 want 0011 after 1
+    kind 9 addr 00022006: term 0111 want 0011 after 1
+    kind 2 addr f000000b: term 0101 want 0001 after 1
+    kind 7 addr 08000000: term 1101 want 1000 after 1
+    kind 8 addr 05035548: term 1101 want 0011 after 1
+    kind 8 addr 0511fe38: term 0001 want 0011 after 1
+    kind 4: 5 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0014728: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 10 addr f91beeb0: term 1011 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 5 addr f0020008: term 0001 want 0010 after 1
+    kind 10 addr f837b8a0: term 0001 want 0011 after 1
+    kind 1 addr e000dfbb: term 0010 want 0001 after 1
+    kind 4: 2 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 047cc798: term 0010 want 0011 after 1
+    kind 8 addr 00d4c710: term 0001 want 0011 after 1
+    kind 9 addr 00022014: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 071ba4bc: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 1 addr e000ca81: term 0011 want 0001 after 1
+    kind 5 addr f0020004: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 1 addr e0066a38: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 5 addr f0020004: term 0011 want 0010 after 1
+    kind 1 addr e001029c: term 0011 want 0001 after 1
+    kind 8 addr 0475a138: term 0001 want 0011 after 1
+    kind 5 addr f0020000: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 0002201c: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002200c: term 0010 want 0011 after 1
+    kind 6 addr 000f000e: term 0101 want 0100 after 1
+    kind 4 addr f0010006: term 0101 want 0010 after 1
+    kind 9 addr 00022008: term 0101 want 0011 after 1
+    kind 5 addr f0020000: term 0001 want 0010 after 1
+    kind 9 addr 00022004: term 0001 want 0011 after 1
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 10 addr fe8eb42c: term 0001 want 0011 after 1
+    kind 5 addr f002000c: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 5: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 5 addr f0020002: term 0011 want 0010 after 1
+    kind 6 addr 000f0008: term 0011 want 0100 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 1 addr e0021cbd: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0070281: term 0011 want 0001 after 1
+    kind 4: 8 < 11 clocks
+    kind 8 addr 05ab9f28: term 0010 want 0011 after 1
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 8 addr 05361518: term 0010 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 9 addr 0002200a: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 8 addr 0332cdc4: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 1 addr e00647f9: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022004: term 0010 want 0011 after 1
+    kind 4 addr f001000c: term 0100 want 0010 after 1
+    kind 1 addr e0053f7b: term 0101 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022012: term 0111 want 0011 after 1
+    kind 4 addr f001000e: term 0100 want 0010 after 1
+    kind 10 addr ff09865c: term 0100 want 0011 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 10 addr fd1b7858: term 1100 want 0011 after 1
+    kind 8 addr 05edbb48: term 1100 want 0011 after 1
+    kind 3 addr f0030008: term 1101 want 0001 after 1
+    kind 8 addr 04ad62a8: term 1101 want 0011 after 1
+    kind 1 addr e0069802: term 1101 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 9 addr 00022012: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 066d3a1c: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0026e21: term 0010 want 0001 after 1
+    kind 2 addr f0000002: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 8 addr 0138f1c0: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 0001 want 1000 after 1
+    kind 4 addr f001000e: term 1001 want 0010 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 10 addr fc612878: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0023ef5: term 0011 want 0001 after 1
+    kind 4 addr f001000e: term 0011 want 0010 after 1
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 4 addr f001000c: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022008: term 0010 want 0011 after 1
+    kind 8 addr 04435398: term 0010 want 0011 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000006: term 0011 want 0001 after 1
+    kind 2 addr f000000b: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000005: term 0010 want 0001 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 1 addr e007ec50: term 0100 want 0001 after 1
+    kind 8 addr 00d13c70: term 0010 want 0011 after 1
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 6 addr 000f000c: term 1110 want 0100 after 1
+    kind 8 addr 033303d4: term 1110 want 0011 after 1
+    kind 1 addr e00736b8: term 1111 want 0001 after 1
+    kind 4 addr f0010006: term 1111 want 0010 after 1
+    kind 8 addr 01870b20: term 1111 want 0011 after 1
+    kind 9 addr 0002200e: term 1000 want 0011 after 1
+    kind 9 addr 00022004: term 1000 want 0011 after 1
+    kind 4 addr f0010000: term 1000 want 0010 after 1
+    kind 8 addr 066360ec: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0030c68: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 10 addr f8995990: term 0001 want 0011 after 1
+    kind 10 addr f9bdf8e0: term 0001 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 6 addr 000f000a: term 0011 want 0100 after 1
+    kind 4 addr f001000e: term 0111 want 0010 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 4 addr f001000c: term 1000 want 0010 after 1
+    kind 3 addr f0030008: term 1001 want 0001 after 1
+    kind 1 addr e0017738: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 03877d24: term 0010 want 0011 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 8 addr 07e7c91c: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 2 addr f000000c: term 0011 want 0001 after 1
+    kind 9 addr 0002200c: term 0010 want 0011 after 1
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 8 addr 018d6a70: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4 addr f001000e: term 1000 want 0010 after 1
+    kind 8 addr 03801dc4: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0008: term 1100 want 0100 after 1
+    kind 5 addr f002000a: term 1100 want 0010 after 1
+    kind 9 addr 0002200e: term 1111 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000001: term 0011 want 0001 after 1
+    kind 10: 1 < 2 clocks
+    kind 8: 1 < 2 clocks
+    kind 5: 8 < 11 clocks
+    kind 1 addr e0061020: term 0011 want 0001 after 1
+    kind 2 addr f0000001: term 0011 want 0001 after 1
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 8 addr 0784183c: term 0001 want 0011 after 1
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 10 addr fa1cd364: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 1 addr e001d3af: term 0011 want 0001 after 1
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 3 addr f0030006: term 0010 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0079b95: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr f9af7300: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 05fe2858: term 1000 want 0011 after 1
+    kind 8 addr 03335424: term 0001 want 0011 after 1
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 2 addr f0000000: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 9 addr 00022002: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 8 addr 0124c740: term 0001 want 0011 after 1
+    kind 6 addr 000f0006: term 0001 want 0100 after 1
+    kind 3 addr f0030008: term 0101 want 0001 after 1
+    kind 8 addr 03c1dbd4: term 0101 want 0011 after 1
+    kind 4 addr f001000e: term 0101 want 0010 after 1
+    kind 8 addr 031e80d4: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 6 addr 000f0006: term 0101 want 0100 after 1
+    kind 4 addr f0010000: term 0101 want 0010 after 1
+    kind 4 addr f0010000: term 0101 want 0010 after 1
+    kind 4 addr f001000e: term 0111 want 0010 after 1
+    kind 8 addr 01351de0: term 0111 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e003e4dc: term 0011 want 0001 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 2 addr f000000a: term 0010 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 8: 1 < 2 clocks
+    kind 10: 1 < 2 clocks
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 1 addr e0012782: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0010 want 0100 after 1
+    kind 3 addr f0030006: term 0111 want 0001 after 1
+    kind 1 addr e006ea22: term 0011 want 0001 after 1
+    kind 6 addr 000f0006: term 0111 want 0100 after 1
+    kind 2 addr f0000002: term 0111 want 0001 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 1 addr e0054081: term 0111 want 0001 after 1
+    kind 2 addr f0000004: term 0111 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 6 addr 000f000c: term 0001 want 0100 after 1
+    kind 8 addr 0586ac68: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 05eac158: term 0001 want 0011 after 1
+    kind 8 addr 070b595c: term 0001 want 0011 after 1
+    kind 9 addr 00022012: term 0100 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 00e2f220: term 0001 want 0011 after 1
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 4 addr f0010004: term 0011 want 0010 after 1
+    kind 5 addr f0020004: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5 addr f002000a: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0010 want 0001 after 1
+    kind 4: 2 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0008: term 0010 want 0100 after 1
+    kind 4 addr f001000c: term 0100 want 0010 after 1
+    kind 1 addr e0078b0e: term 0101 want 0001 after 1
+    kind 1 addr e0003141: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 9 addr 0002200c: term 0010 want 0011 after 1
+    kind 8 addr 05fdb118: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 07c95bdc: term 0010 want 0011 after 1
+    kind 8 addr 073607fc: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 03078774: term 0010 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000e: term 0011 want 0001 after 1
+    kind 4 addr f001000e: term 0011 want 0010 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 2 addr f0000000: term 0010 want 0001 after 1
+    kind 1 addr e002fc71: term 0011 want 0001 after 1
+    kind 2 addr f0000002: term 1000 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 5 addr f0020006: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 2 addr f0000002: term 0101 want 0001 after 1
+    kind 10 addr fe38482c: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 9 addr 00022016: term 1001 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f001000e: term 1001 want 0010 after 1
+    kind 6 addr 000f0004: term 0010 want 0100 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0433c118: term 0010 want 0011 after 1
+    kind 6 addr 000f0008: term 0110 want 0100 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 05f62338: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022004: term 1000 want 0011 after 1
+    kind 2 addr f000000e: term 1001 want 0001 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 4: 6 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 10 addr ffa3e98c: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 7 < 11 clocks
+    kind 1 addr e007d737: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 8 addr 06f9412c: term 0010 want 0011 after 1
+    kind 2 addr f000000a: term 0011 want 0001 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 9 addr 0002201e: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 0185b7f0: term 0010 want 0011 after 1
+    kind 8 addr 053ac828: term 0010 want 0011 after 1
+    kind 2 addr f0000008: term 0011 want 0001 after 1
+    kind 1 addr e006ec09: term 0010 want 0001 after 1
+    kind 4 addr f001000a: term 0100 want 0010 after 1
+    kind 8 addr 024442c4: term 0100 want 0011 after 1
+    kind 9 addr 00022016: term 0111 want 0011 after 1
+    kind 9 addr 0002201c: term 0111 want 0011 after 1
+    kind 4 addr f001000e: term 0100 want 0010 after 1
+    kind 4: 3 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 4: 7 < 11 clocks
+    kind 10 addr fa212424: term 0010 want 0011 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 1 addr e0062c24: term 0011 want 0001 after 1
+    kind 8 addr 07efcf3c: term 1000 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 032c23d4: term 0010 want 0011 after 1
+    kind 9 addr 00022004: term 0010 want 0011 after 1
+    kind 9 addr 00022006: term 0010 want 0011 after 1
+    kind 5: 9 < 11 clocks
+    kind 2 addr f0000008: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 6 addr 000f0004: term 0111 want 0100 after 1
+    kind 4 addr f0010002: term 1000 want 0010 after 1
+    kind 8 addr 05ab7348: term 1000 want 0011 after 1
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 8 addr 026849a4: term 0001 want 0011 after 1
+    kind 4 addr f001000c: term 0011 want 0010 after 1
+    kind 8 addr 01cf6bd0: term 0010 want 0011 after 1
+    kind 8 addr 03f78e44: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 01ed59e0: term 0010 want 0011 after 1
+    kind 8 addr 003f4dc0: term 0010 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 8 addr 067298cc: term 0010 want 0011 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 1 addr e002c3af: term 0011 want 0001 after 1
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 4 addr f0010004: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+           262102500 TIMING HOLD tb.dut.DFFEARS_223 (D changed 1.00 ns after CLK)
+           262141500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_223 (D 2.63 / AR,AS release 261940.00 ns before CLK)
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 8 addr 05d2c1d8: term 0001 want 0011 after 1
+    kind 6 addr 000f000a: term 0110 want 0100 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000f: term 0010 want 0001 after 1
+    kind 2 addr f000000e: term 0010 want 0001 after 1
+    kind 1 addr e004afa2: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 10 addr fc0340a8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 8 addr 04ecdbc8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 8 addr 032bd1f4: term 0010 want 0011 after 1
+    kind 9 addr 0002201e: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 5 addr f0020004: term 0001 want 0010 after 1
+    kind 4: 2 < 11 clocks
+    kind 1 addr e0005592: term 0010 want 0001 after 1
+    kind 10: 1 < 2 clocks
+    kind 10: 1 < 2 clocks
+    kind 9 addr 00022016: term 0010 want 0011 after 1
+    kind 6 addr 000f000a: term 0101 want 0100 after 1
+    kind 4 addr f0010000: term 0101 want 0010 after 1
+    kind 4 addr f0010000: term 0101 want 0010 after 1
+    kind 2 addr f0000005: term 0111 want 0001 after 1
+    kind 6 addr 000f0006: term 0111 want 0100 after 1
+    kind 1 addr e0032830: term 0111 want 0001 after 1
+    kind 4: 8 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 027e2444: term 0010 want 0011 after 1
+    kind 2 addr f0000000: term 0011 want 0001 after 1
+    kind 2 addr f0000000: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 8 addr 07c975cc: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 8 addr 04914bf8: term 1000 want 0011 after 1
+    kind 2 addr f000000c: term 1000 want 0001 after 1
+    kind 1 addr e0044836: term 1001 want 0001 after 1
+    kind 1 addr e0031fdd: term 1001 want 0001 after 1
+    kind 8 addr 0191ea80: term 1001 want 0011 after 1
+    kind 6 addr 000f0006: term 0010 want 0100 after 1
+    kind 3 addr f0030008: term 0010 want 0001 after 1
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 5 addr f0020008: term 0011 want 0010 after 1
+    kind 4: 2 < 11 clocks
+    kind 8 addr 009cf3d0: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 0001 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0181ce30: term 0001 want 0011 after 1
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 8 addr 037e73e4: term 0100 want 0011 after 1
+    kind 4 addr f001000a: term 0100 want 0010 after 1
+    kind 9 addr 0002201c: term 0111 want 0011 after 1
+    kind 6 addr 000f0006: term 0001 want 0100 after 1
+    kind 2 addr f0000009: term 0010 want 0001 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fe8c488c: term 0100 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 6 addr 000f0006: term 1101 want 0100 after 1
+    kind 1 addr e0037d4e: term 1101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 1 addr e0075c9a: term 0010 want 0001 after 1
+    kind 6 addr 000f0006: term 1100 want 0100 after 1
+    kind 8 addr 0475ebb8: term 1100 want 0011 after 1
+    kind 4 addr f0010000: term 1100 want 0010 after 1
+    kind 3 addr f0030008: term 1111 want 0001 after 1
+    kind 6 addr 000f0006: term 0010 want 0100 after 1
+    kind 10 addr f94a1ce0: term 0110 want 0011 after 1
+    kind 8 addr 058004e8: term 0110 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 5 addr f0020004: term 0001 want 0010 after 1
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 028954d4: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 6 addr 000f0006: term 0001 want 0100 after 1
+    kind 5 addr f0020000: term 0101 want 0010 after 1
+    kind 8 addr 03b89c24: term 0101 want 0011 after 1
+    kind 9 addr 0002200e: term 0001 want 0011 after 1
+    kind 10 addr fce539f8: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 4 addr f001000c: term 1010 want 0010 after 1
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 10 addr fc9439f8: term 0001 want 0011 after 1
+    kind 8 addr 02053be4: term 0001 want 0011 after 1
+    kind 9 addr 00022012: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 2 addr f000000b: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 8 addr 046f2418: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022012: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 9 addr 00022006: term 0001 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 1 addr e004ec13: term 0101 want 0001 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 3 addr f0030006: term 1011 want 0001 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 6 addr 000f000e: term 0111 want 0100 after 1
+    kind 7 addr 08000000: term 1111 want 1000 after 1
+    kind 4 addr f0010002: term 1111 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 1 addr e0001e49: term 0010 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0003b08: term 0010 want 0001 after 1
+    kind 5 addr f002000a: term 0011 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 4 addr f0010002: term 1000 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 6 addr 000f000a: term 0101 want 0100 after 1
+    kind 4 addr f0010006: term 0101 want 0010 after 1
+    kind 1 addr e002a6d3: term 0101 want 0001 after 1
+    kind 7 addr 08000000: term 0101 want 1000 after 1
+    kind 4: 7 < 11 clocks
+    kind 1 addr e005569c: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fdbb6558: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022014: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 04fa2b48: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 1 addr e0000a3e: term 0101 want 0001 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 1 addr e002fc58: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 5: 8 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0004: term 0110 want 0100 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 8 addr 055c2f38: term 0010 want 0011 after 1
+    kind 8 addr 0215e824: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e004918c: term 0011 want 0001 after 1
+    kind 8 addr 069d52bc: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e00333dc: term 0101 want 0001 after 1
+    kind 3 addr f0030008: term 0101 want 0001 after 1
+    kind 9 addr 00022006: term 0111 want 0011 after 1
+    kind 5 addr f0020006: term 0101 want 0010 after 1
+    kind 7 addr 08000000: term 1111 want 1000 after 1
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 2 addr f0000006: term 0011 want 0001 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 9 addr 00022004: term 0001 want 0011 after 1
+    kind 8 addr 06b1412c: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 07d8f22c: term 0010 want 0011 after 1
+    kind 10 addr fccc24b8: term 0010 want 0011 after 1
+    kind 8 addr 0010c820: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0008: term 0110 want 0100 after 1
+    kind 9 addr 00022000: term 0111 want 0011 after 1
+    kind 5 addr f002000e: term 0110 want 0010 after 1
+    kind 6 addr 000f0008: term 0010 want 0100 after 1
+    kind 10 addr fb42c574: term 0001 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 2 addr f000000b: term 0011 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 10 addr fd5416a8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0152b620: term 0001 want 0011 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4 addr f001000c: term 0011 want 0010 after 1
+    kind 5 addr f0020006: term 0011 want 0010 after 1
+    kind 1 addr e000e5a4: term 0010 want 0001 after 1
+    kind 6 addr 000f000c: term 0111 want 0100 after 1
+    kind 1 addr e00142fc: term 0111 want 0001 after 1
+    kind 10 addr f87b8a20: term 0111 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 02d737f4: term 0001 want 0011 after 1
+    kind 9 addr 00022018: term 0001 want 0011 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 5 addr f0020004: term 1011 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 02491934: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4: 8 < 11 clocks
+    kind 8 addr 05037498: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 2 addr f0000001: term 0010 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4 addr f0010002: term 0001 want 0010 after 1
+    kind 8 addr 02650d24: term 0100 want 0011 after 1
+    kind 4: 9 < 11 clocks
+    kind 8 addr 07980eec: term 0010 want 0011 after 1
+    kind 6 addr 000f000a: term 0010 want 0100 after 1
+    kind 10 addr fce6e048: term 0100 want 0011 after 1
+    kind 4 addr f0010004: term 0100 want 0010 after 1
+    kind 8 addr 01d91cb0: term 0100 want 0011 after 1
+    kind 1 addr e0022a7d: term 0101 want 0001 after 1
+    kind 9 addr 0002200c: term 0111 want 0011 after 1
+    kind 1 addr e00148ab: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0110 want 0100 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fa526444: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 2 addr f0000002: term 0011 want 0001 after 1
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 6 addr 000f000c: term 0111 want 0100 after 1
+    kind 1 addr e001af76: term 0111 want 0001 after 1
+    kind 9 addr 0002200e: term 0110 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 06a5bacc: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0629fd6c: term 0010 want 0011 after 1
+    kind 8 addr 0570cf98: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 007b6a00: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0010 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 1 addr e0077d53: term 0011 want 0001 after 1
+    kind 1 addr e003d30b: term 0011 want 0001 after 1
+    kind 1 addr e002d1c4: term 0010 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000a: term 0110 want 0100 after 1
+    kind 8 addr 0039cbe0: term 0100 want 0011 after 1
+    kind 10 addr fae34e84: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 029b8514: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr ff995f9c: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 9 addr 00022018: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 00022008: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 07c82f5c: term 0001 want 0011 after 1
+    kind 4 addr f001000c: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 9 addr 0002201c: term 0001 want 0011 after 1
+    kind 4: 3 < 11 clocks
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 8 addr 02990114: term 0001 want 0011 after 1
+    kind 8 addr 020ad7b4: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4: 6 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 10 addr fe80b0cc: term 0010 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 2 addr f0000004: term 0100 want 0001 after 1
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 4: 7 < 11 clocks
+    kind 1 addr e00521fb: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 2 addr f000000b: term 1011 want 0001 after 1
+    kind 9 addr 0002201e: term 1011 want 0011 after 1
+    kind 6 addr 000f0002: term 1111 want 0100 after 1
+    kind 8 addr 04f17c58: term 1111 want 0011 after 1
+    kind 4 addr f0010008: term 1111 want 0010 after 1
+    kind 5 addr f0020008: term 1000 want 0010 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 9 addr 00022002: term 1010 want 0011 after 1
+    kind 4 addr f001000a: term 1010 want 0010 after 1
+    kind 8 addr 043d5368: term 1010 want 0011 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 9 addr 00022002: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e00050e4: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr f9275280: term 0100 want 0011 after 1
+    kind 1 addr e00743cf: term 0101 want 0001 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 1 addr e00723d5: term 1001 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 07961f5c: term 0001 want 0011 after 1
+    kind 9 addr 00022006: term 0001 want 0011 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 10 addr fedeebfc: term 0001 want 0011 after 1
+    kind 6 addr 000f0004: term 1100 want 0100 after 1
+    kind 8 addr 0230bca4: term 1100 want 0011 after 1
+    kind 4 addr f0010000: term 1000 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 1 addr e0054b44: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 5 addr f0020002: term 0011 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0110 want 0100 after 1
+    kind 8 addr 075af7ac: term 0110 want 0011 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4: 2 < 11 clocks
+    kind 3 addr f0030008: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 02abff84: term 0001 want 0011 after 1
+    kind 10 addr fcaf0488: term 0001 want 0011 after 1
+    kind 10 addr fc183bd8: term 0001 want 0011 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 2 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 8 < 11 clocks
+    kind 9 addr 00022002: term 0010 want 0011 after 1
+    kind 5 addr f0020006: term 0001 want 0010 after 1
+    kind 8 addr 04bb5aa8: term 1000 want 0011 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022012: term 0010 want 0011 after 1
+    kind 8 addr 02069e14: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 8: 1 < 2 clocks
+    kind 4 addr f001000a: term 0011 want 0010 after 1
+           422342500 TIMING HOLD tb.dut.DFFEARS_223 (D changed 1.00 ns after CLK)
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+           422462500 TIMING HOLD tb.dut.DFFEARS_223 (D changed 1.00 ns after CLK)
+           422501500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_223 (D 1.92 / AR,AS release 422300.00 ns before CLK)
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 1 addr e007ccde: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 00022012: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 8 addr 06f1c19c: term 1010 want 0011 after 1
+    kind 2 addr f0000000: term 1011 want 0001 after 1
+    kind 2 addr f0000002: term 1011 want 0001 after 1
+    kind 6 addr 000f0002: term 0110 want 0100 after 1
+    kind 8 addr 03d0a554: term 0110 want 0011 after 1
+    kind 9 addr 0002200a: term 0110 want 0011 after 1
+    kind 8 addr 05bf7d38: term 0110 want 0011 after 1
+    kind 9 addr 00022012: term 0110 want 0011 after 1
+    kind 3 addr f0030008: term 0111 want 0001 after 1
+    kind 9 addr 0002200e: term 0010 want 0011 after 1
+    kind 4 addr f0010006: term 1000 want 0010 after 1
+    kind 4 addr f001000c: term 1000 want 0010 after 1
+    kind 8 addr 00485970: term 0010 want 0011 after 1
+    kind 8 addr 0684d0ac: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 05d53f78: term 0001 want 0011 after 1
+    kind 2 addr f0000000: term 0011 want 0001 after 1
+    kind 4 addr f001000c: term 0011 want 0010 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 1 addr e006bf62: term 0010 want 0001 after 1
+    kind 9 addr 00022002: term 1011 want 0011 after 1
+    kind 1 addr e0005ed7: term 0101 want 0001 after 1
+    kind 2 addr f0000009: term 0101 want 0001 after 1
+    kind 1 addr e001b2bf: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 4 addr f001000a: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 3 addr f0030006: term 1011 want 0001 after 1
+    kind 5: 1 < 11 clocks
+    kind 10 addr f89e2290: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 05f08a08: term 0010 want 0011 after 1
+    kind 9 addr 0002201c: term 0001 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 9 addr 0002201a: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 04f5c9d8: term 0010 want 0011 after 1
+    kind 1 addr e003abc4: term 0101 want 0001 after 1
+    kind 3 addr f0030008: term 0101 want 0001 after 1
+    kind 9 addr 00022002: term 0101 want 0011 after 1
+    kind 9 addr 00022014: term 0101 want 0011 after 1
+    kind 8 addr 029e02f4: term 0010 want 0011 after 1
+    kind 1 addr e004f75e: term 0011 want 0001 after 1
+    kind 1 addr e0066b1a: term 0011 want 0001 after 1
+    kind 1 addr e00312e8: term 0011 want 0001 after 1
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 1 addr e0028f6c: term 0010 want 0001 after 1
+    kind 6 addr 000f000a: term 0001 want 0100 after 1
+    kind 8 addr 0440fc88: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 046452d8: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 066977cc: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 8 addr 06b00f1c: term 1001 want 0011 after 1
+    kind 4 addr f0010008: term 1001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 2 addr f000000e: term 0010 want 0001 after 1
+    kind 8 addr 029cceb4: term 0001 want 0011 after 1
+    kind 4: 9 < 11 clocks
+    kind 8 addr 05ab9318: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 8 addr 005bf550: term 0100 want 0011 after 1
+    kind 8 addr 060fb3fc: term 0100 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4 addr f001000a: term 1001 want 0010 after 1
+    kind 4 addr f0010008: term 1011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000e: term 0110 want 0100 after 1
+    kind 9 addr 00022012: term 0110 want 0011 after 1
+    kind 9 addr 00022018: term 0110 want 0011 after 1
+    kind 2 addr f000000e: term 0011 want 0001 after 1
+    kind 1 addr e0060ce1: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e003af93: term 0010 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 03b999e4: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 0001 want 1000 after 1
+    kind 1 addr e006c110: term 1001 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e005022d: term 0011 want 0001 after 1
+    kind 10: 1 < 2 clocks
+    kind 8 addr 04e21028: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000003: term 0010 want 0001 after 1
+    kind 8 addr 00aa4e60: term 0001 want 0011 after 1
+    kind 8 addr 018f0130: term 0001 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 10: 1 < 2 clocks
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 1 addr e007281f: term 0011 want 0001 after 1
+    kind 2 addr f000000d: term 0101 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 8 addr 01afb060: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 6 addr 000f000c: term 0101 want 0100 after 1
+    kind 3 addr f0030006: term 0101 want 0001 after 1
+    kind 8 addr 03db44a4: term 0101 want 0011 after 1
+    kind 4 addr f0010004: term 0101 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 049aeed8: term 0010 want 0011 after 1
+    kind 10 addr fbf80cf4: term 0001 want 0011 after 1
+    kind 6 addr 000f0002: term 0101 want 0100 after 1
+    kind 4 addr f0010002: term 0101 want 0010 after 1
+    kind 4 addr f001000c: term 0111 want 0010 after 1
+    kind 8 addr 02b53d34: term 0001 want 0011 after 1
+    kind 8 addr 044728b8: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 9 addr 0002200c: term 1011 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 1 addr e00539ce: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e001771f: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 054d98e8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022016: term 0001 want 0011 after 1
+    kind 5 addr f002000a: term 0001 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 2 addr f0000001: term 1011 want 0001 after 1
+    kind 8 addr 0747857c: term 1011 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0685adbc: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 6 addr 000f0008: term 0101 want 0100 after 1
+    kind 10 addr f8ed4960: term 0010 want 0011 after 1
+    kind 9 addr 0002201c: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 4: 9 < 11 clocks
+    kind 8 addr 05c8f6d8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002201e: term 0010 want 0011 after 1
+    kind 10 addr f9f2dcd0: term 0100 want 0011 after 1
+    kind 1 addr e0079c93: term 0101 want 0001 after 1
+    kind 8 addr 02e42b84: term 0001 want 0011 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 9 addr 00022006: term 0001 want 0011 after 1
+    kind 8 addr 063938fc: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fc1f3a08: term 0010 want 0011 after 1
+    kind 4: 2 < 11 clocks
+    kind 8 addr 03f8f984: term 0010 want 0011 after 1
+    kind 2 addr f000000d: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 5 addr f002000c: term 0011 want 0010 after 1
+    kind 6 addr 000f0008: term 0111 want 0100 after 1
+    kind 2 addr f000000c: term 0111 want 0001 after 1
+    kind 4: 2 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 6 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e00046cd: term 0010 want 0001 after 1
+    kind 8 addr 03bf3bf4: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fb2a7674: term 0010 want 0011 after 1
+    kind 2 addr f000000b: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 9 addr 00022014: term 1010 want 0011 after 1
+    kind 5 addr f0020000: term 1010 want 0010 after 1
+    kind 9 addr 0002200c: term 1010 want 0011 after 1
+    kind 4 addr f0010008: term 1010 want 0010 after 1
+    kind 5 addr f0020000: term 1010 want 0010 after 1
+    kind 8 addr 06621e7c: term 1010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0100 want 0001 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022008: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 1 addr e0076465: term 0011 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 1 addr e0017322: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 06ecd05c: term 0010 want 0011 after 1
+    kind 1 addr e00344c6: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 2 addr f000000b: term 1001 want 0001 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 4 addr f0010002: term 0100 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000c: term 0011 want 0001 after 1
+    kind 1 addr e0037982: term 0101 want 0001 after 1
+    kind 8 addr 01a1d9d0: term 0101 want 0011 after 1
+    kind 2 addr f0000006: term 0100 want 0001 after 1
+    kind 4: 3 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5 addr f002000e: term 0001 want 0010 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 05ecdb68: term 0010 want 0011 after 1
+    kind 8 addr 00734420: term 0010 want 0011 after 1
+    kind 8 addr 0017c6b0: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 2 addr f0000003: term 0011 want 0001 after 1
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 1 addr e005bdad: term 0011 want 0001 after 1
+    kind 10: 1 < 2 clocks
+    kind 3 addr f0030008: term 0010 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0371d734: term 0010 want 0011 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 4 addr f0010006: term 0011 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 8 addr 01ad5980: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 1 addr e001e274: term 1001 want 0001 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 2 addr f0000006: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8 addr 00002a30: term 0100 want 0011 after 1
+    kind 8 addr 054181e8: term 0100 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 9 addr 0002200a: term 0010 want 0011 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 10 addr f95ebc80: term 0001 want 0011 after 1
+    kind 8 addr 00309fa0: term 0010 want 0011 after 1
+    kind 2 addr f0000000: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 00022000: term 0001 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0010 want 0100 after 1
+    kind 8 addr 07fe40bc: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 02bd2f34: term 0010 want 0011 after 1
+    kind 6 addr 000f000c: term 0110 want 0100 after 1
+    kind 6 addr 000f0008: term 0110 want 0100 after 1
+    kind 10 addr febd148c: term 0110 want 0011 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 1 addr e00451b3: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 5: 8 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 10 addr f828d320: term 0010 want 0011 after 1
+    kind 5: 3 < 11 clocks
+    kind 2 addr f000000f: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 5 addr f002000a: term 0011 want 0010 after 1
+    kind 10 addr fda03248: term 0010 want 0011 after 1
+    kind 6 addr 000f0008: term 0110 want 0100 after 1
+    kind 2 addr f0000001: term 0111 want 0001 after 1
+    kind 3 addr f0030008: term 0111 want 0001 after 1
+    kind 10 addr fa41d184: term 0111 want 0011 after 1
+    kind 8 addr 03dbffb4: term 1000 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 000f3c60: term 0001 want 0011 after 1
+    kind 9 addr 0002201c: term 0010 want 0011 after 1
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 8 addr 011eade0: term 0001 want 0011 after 1
+    kind 10 addr fe9192ec: term 0010 want 0011 after 1
+    kind 2 addr f000000e: term 0101 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 5 addr f0020006: term 0001 want 0010 after 1
+    kind 2 addr f000000a: term 0011 want 0001 after 1
+    kind 4 addr f001000e: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 1 addr e004c40e: term 0100 want 0001 after 1
+    kind 4 addr f0010006: term 0101 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 026e7944: term 0010 want 0011 after 1
+    kind 6 addr 000f0006: term 0110 want 0100 after 1
+    kind 5 addr f0020004: term 0110 want 0010 after 1
+    kind 1 addr e0025b3d: term 0110 want 0001 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002200e: term 0100 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 10 addr fbc54b34: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 0100 want 1000 after 1
+    kind 6 addr 000f0002: term 1100 want 0100 after 1
+    kind 4 addr f001000e: term 1100 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 078d9c1c: term 0010 want 0011 after 1
+    kind 8 addr 05d86928: term 0010 want 0011 after 1
+    kind 6 addr 000f0006: term 0110 want 0100 after 1
+    kind 2 addr f0000007: term 0111 want 0001 after 1
+    kind 8 addr 06f0420c: term 0111 want 0011 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022006: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 049ad7a8: term 0001 want 0011 after 1
+    kind 9 addr 00022004: term 0001 want 0011 after 1
+    kind 10 addr fc65c858: term 0001 want 0011 after 1
+    kind 9 addr 0002201a: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 8 < 11 clocks
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 10 addr fb1bc084: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000001: term 0011 want 0001 after 1
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 8 addr 0506cfd8: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fcadfe28: term 0100 want 0011 after 1
+    kind 8 addr 05dd1b58: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000d: term 0010 want 0001 after 1
+    kind 5: 2 < 11 clocks
+    kind 4: 8 < 11 clocks
+    kind 9 addr 00022014: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 03032a94: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 6 addr 000f000e: term 1100 want 0100 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010006: term 0100 want 0010 after 1
+    kind 8 addr 0308fe24: term 0100 want 0011 after 1
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4: 7 < 11 clocks
+    kind 9 addr 0002200c: term 0010 want 0011 after 1
+    kind 9 addr 0002200a: term 0010 want 0011 after 1
+    kind 10 addr f9c57600: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000001: term 0011 want 0001 after 1
+    kind 9 addr 00022004: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022014: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 0671f32c: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022014: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 0011cea0: term 0001 want 0011 after 1
+    kind 5 addr f0020002: term 0001 want 0010 after 1
+    kind 10 addr f84aa430: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 4 addr f0010000: term 1011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 9 addr 00022006: term 0001 want 0011 after 1
+    kind 5 addr f0020006: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 8 addr 02fd61c4: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 01a4fa60: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000c: term 0010 want 0100 after 1
+    kind 8 addr 03acef74: term 0110 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 9 addr 00022018: term 0001 want 0011 after 1
+    kind 9 addr 00022012: term 0001 want 0011 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000002: term 0011 want 0001 after 1
+    kind 5 addr f0020002: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010004: term 0011 want 0010 after 1
+    kind 6 addr 000f0006: term 0111 want 0100 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 8 addr 015d5250: term 0100 want 0011 after 1
+    kind 8 addr 001b9f20: term 0100 want 0011 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 1 addr e001c6a1: term 0010 want 0001 after 1
+    kind 8 addr 060c4f9c: term 0001 want 0011 after 1
+    kind 8 addr 02864a54: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022016: term 0010 want 0011 after 1
+    kind 8 addr 006398c0: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 1 addr e004c342: term 0101 want 0001 after 1
+    kind 4 addr f0010000: term 0101 want 0010 after 1
+    kind 4 addr f0010000: term 0101 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0110 want 0100 after 1
+    kind 5 addr f0020000: term 0110 want 0010 after 1
+    kind 1 addr e0042b02: term 0011 want 0001 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4 addr f001000e: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4: 7 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4 addr f001000c: term 1010 want 0010 after 1
+    kind 3 addr f0030006: term 1011 want 0001 after 1
+    kind 6 addr 000f0004: term 1111 want 0100 after 1
+    kind 1 addr e007103e: term 1110 want 0001 after 1
+    kind 8 addr 06a674cc: term 1111 want 0011 after 1
+    kind 4 addr f001000e: term 0100 want 0010 after 1
+    kind 2 addr f000000b: term 0101 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e002082a: term 0011 want 0001 after 1
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 4: 3 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0159c5b0: term 0010 want 0011 after 1
+    kind 6 addr 000f0004: term 0010 want 0100 after 1
+    kind 10 addr f832ea20: term 0100 want 0011 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 1 addr e0037d70: term 0011 want 0001 after 1
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 5 addr f0020008: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0436e2b8: term 1000 want 0011 after 1
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 10 addr f829eab0: term 0010 want 0011 after 1
+    kind 4: 10 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 10 addr f85946e0: term 0010 want 0011 after 1
+    kind 8 addr 07e2e11c: term 0010 want 0011 after 1
+    kind 9 addr 0002200c: term 0010 want 0011 after 1
+    kind 10 addr f9d58210: term 0010 want 0011 after 1
+    kind 9 addr 00022004: term 0010 want 0011 after 1
+    kind 8 addr 06282e3c: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 10 addr fef5274c: term 0001 want 0011 after 1
+    kind 10 addr ffd265bc: term 0001 want 0011 after 1
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 5 addr f0020000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e004e45c: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 9 addr 00022014: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 6 addr 000f000e: term 0011 want 0100 after 1
+    kind 4: 2 < 11 clocks
+    kind 6 addr 000f0002: term 0001 want 0100 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0042d07: term 0011 want 0001 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 8 addr 073c355c: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 07229dfc: term 0100 want 0011 after 1
+    kind 9 addr 0002201a: term 0100 want 0011 after 1
+    kind 8 addr 01c375b0: term 0100 want 0011 after 1
+    kind 8 addr 0496bda8: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 02d94144: term 1000 want 0011 after 1
+    kind 2 addr f0000004: term 0101 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 9 addr 00022018: term 1011 want 0011 after 1
+    kind 6 addr 000f000e: term 1101 want 0100 after 1
+    kind 9 addr 0002200c: term 1101 want 0011 after 1
+    kind 9 addr 00022004: term 1101 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 6 addr 000f0006: term 1110 want 0100 after 1
+    kind 2 addr f0000007: term 1111 want 0001 after 1
+    kind 6 addr 000f000a: term 1111 want 0100 after 1
+    kind 1 addr e002f261: term 1111 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 8 addr 04ac5fb8: term 0001 want 0011 after 1
+    kind 2 addr f0000009: term 0101 want 0001 after 1
+    kind 8 addr 0046c770: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4 addr f001000a: term 0001 want 0010 after 1
+    kind 10 addr f8d93680: term 1000 want 0011 after 1
+    kind 5 addr f0020008: term 1000 want 0010 after 1
+    kind 1 addr e0033b08: term 1001 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 072f902c: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 0614544c: term 0100 want 0011 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 8 addr 00010ce0: term 1000 want 0011 after 1
+    kind 8 addr 054771e8: term 0100 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 8 addr 05949438: term 0010 want 0011 after 1
+    kind 9 addr 0002201e: term 0010 want 0011 after 1
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 8 addr 043a8498: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 9 < 11 clocks
+    kind 8 addr 067c20ec: term 0010 want 0011 after 1
+    kind 9 addr 0002200c: term 1011 want 0011 after 1
+    kind 2 addr f0000004: term 0010 want 0001 after 1
+    kind 6 addr 000f0006: term 0101 want 0100 after 1
+    kind 4: 8 < 11 clocks
+    kind 6 addr 000f0002: term 0110 want 0100 after 1
+    kind 9 addr 00022018: term 0110 want 0011 after 1
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 8 addr 07a0b9cc: term 0001 want 0011 after 1
+    kind 4 addr f0010004: term 0001 want 0010 after 1
+    kind 9 addr 00022016: term 0100 want 0011 after 1
+    kind 9 addr 00022012: term 0111 want 0011 after 1
+    kind 1 addr e005a581: term 0101 want 0001 after 1
+    kind 4 addr f0010000: term 0111 want 0010 after 1
+    kind 8 addr 02ce4b64: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 2 addr f0000000: term 1001 want 0001 after 1
+    kind 1 addr e0000f50: term 1001 want 0001 after 1
+    kind 6 addr 000f000a: term 1001 want 0100 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022012: term 0010 want 0011 after 1
+    kind 8 addr 006ba3f0: term 0010 want 0011 after 1
+    kind 8 addr 02ca41a4: term 0010 want 0011 after 1
+    kind 1 addr e0073bf7: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8 addr 07a0521c: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 6 addr 000f000e: term 0110 want 0100 after 1
+    kind 1 addr e002d7ff: term 0111 want 0001 after 1
+    kind 5: 6 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 6 addr 000f0006: term 0010 want 0100 after 1
+    kind 2 addr f0000007: term 0111 want 0001 after 1
+    kind 6 addr 000f000c: term 0111 want 0100 after 1
+    kind 7 addr 08000000: term 0100 want 1000 after 1
+    kind 9 addr 00022016: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 9 addr 0002200c: term 0001 want 0011 after 1
+    kind 8 addr 0135c2e0: term 0010 want 0011 after 1
+    kind 5: 9 < 11 clocks
+    kind 10 addr f8dd3cb0: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 04ff9678: term 0010 want 0011 after 1
+    kind 8 addr 009ca540: term 0010 want 0011 after 1
+    kind 4: 8 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000e: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8 addr 01e42cb0: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0040d60: term 0011 want 0001 after 1
+    kind 1 addr e005327b: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4 addr f0010002: term 1010 want 0010 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 066e8dac: term 0010 want 0011 after 1
+    kind 8 addr 0071ede0: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr f9bce7c0: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fcf95e98: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 10 addr ff8335bc: term 1001 want 0011 after 1
+    kind 4 addr f0010008: term 1001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 1 addr e0054dc6: term 0010 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 6 addr 000f000c: term 0110 want 0100 after 1
+    kind 4 addr f001000c: term 0100 want 0010 after 1
+    kind 3 addr f0030006: term 0101 want 0001 after 1
+    kind 3 addr f0030006: term 0101 want 0001 after 1
+    kind 3 addr f0030008: term 0101 want 0001 after 1
+    kind 10 addr ffccf76c: term 0101 want 0011 after 1
+    kind 9 addr 00022018: term 0111 want 0011 after 1
+    kind 9 addr 00022008: term 1011 want 0011 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 10 addr faeee994: term 0010 want 0011 after 1
+    kind 7 addr 08000000: term 0001 want 1000 after 1
+    kind 10 addr fe3dc31c: term 1001 want 0011 after 1
+    kind 4 addr f0010002: term 1000 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 8 addr 05544ed8: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 5 addr f0020006: term 0001 want 0010 after 1
+    kind 8 addr 01aed500: term 0001 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 8 addr 0126ee70: term 1001 want 0011 after 1
+    kind 8 addr 001277a0: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 5 addr f0020002: term 0001 want 0010 after 1
+    kind 9 addr 00022000: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 01ee6c10: term 0010 want 0011 after 1
+    kind 8 addr 04ac39f8: term 1000 want 0011 after 1
+    kind 3 addr f0030006: term 1001 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 1 addr e0004c99: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 07637fdc: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 3 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4 addr f001000a: term 1010 want 0010 after 1
+    kind 4 addr f0010000: term 1010 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 3 < 11 clocks
+    kind 10 addr fd1749b8: term 0010 want 0011 after 1
+    kind 4 addr f001000a: term 0100 want 0010 after 1
+    kind 4 addr f001000a: term 0100 want 0010 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 8 addr 01d61880: term 0010 want 0011 after 1
+    kind 8 addr 023570e4: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000e: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 5 addr f0020004: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 4 addr f0010002: term 1100 want 0010 after 1
+    kind 8 addr 03d3dd34: term 1100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 8 addr 001247e0: term 1010 want 0011 after 1
+    kind 9 addr 00022016: term 0100 want 0011 after 1
+    kind 8 addr 065fddec: term 0100 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 042d43d8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002200a: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000a: term 0010 want 0001 after 1
+    kind 4 addr f001000c: term 0001 want 0010 after 1
+    kind 10 addr fa654b54: term 0001 want 0011 after 1
+    kind 4 addr f001000a: term 1000 want 0010 after 1
+    kind 4 addr f0010000: term 1000 want 0010 after 1
+    kind 4 addr f0010000: term 1000 want 0010 after 1
+    kind 1 addr e006d84a: term 0010 want 0001 after 1
+    kind 1 addr e004428b: term 0010 want 0001 after 1
+    kind 10: 1 < 2 clocks
+    kind 8: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 0002200e: term 0001 want 0011 after 1
+    kind 5: 7 < 11 clocks
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 5: 5 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 04d5f608: term 0010 want 0011 after 1
+    kind 5 addr f002000a: term 0001 want 0010 after 1
+    kind 8 addr 029235d4: term 0010 want 0011 after 1
+    kind 4 addr f001000e: term 0100 want 0010 after 1
+    kind 1 addr e0055bf8: term 0101 want 0001 after 1
+    kind 2 addr f0000007: term 0101 want 0001 after 1
+    kind 9 addr 0002201e: term 0100 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 00022010: term 0001 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 01bf17d0: term 0010 want 0011 after 1
+    kind 10 addr fc9eb9f8: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 8 addr 06a6cfec: term 0010 want 0011 after 1
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 2 addr f0000002: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022016: term 0010 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 1 addr e0053a5d: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022014: term 0001 want 0011 after 1
+    kind 9 addr 0002201e: term 0111 want 0011 after 1
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000a: term 1100 want 0100 after 1
+    kind 1 addr e007ef04: term 0100 want 0001 after 1
+    kind 8 addr 02656194: term 0101 want 0011 after 1
+    kind 1 addr e0037aa8: term 0101 want 0001 after 1
+    kind 4 addr f0010004: term 0101 want 0010 after 1
+    kind 1 addr e003904a: term 0101 want 0001 after 1
+    kind 9 addr 0002200e: term 1011 want 0011 after 1
+    kind 9 addr 00022008: term 1011 want 0011 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4: 7 < 11 clocks
+    kind 8 addr 01ec8860: term 1000 want 0011 after 1
+    kind 2 addr f0000004: term 1001 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 8 addr 00d19fd0: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4 addr f0010006: term 1010 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 6 addr 000f000e: term 0010 want 0100 after 1
+    kind 7 addr 08000000: term 1110 want 1000 after 1
+    kind 2 addr f0000005: term 1111 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 1 addr e00487a2: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000a: term 0110 want 0100 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 9 addr 00022006: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f000000b: term 0010 want 0001 after 1
+    kind 1 addr e007024f: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 9 addr 00022018: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022014: term 0001 want 0011 after 1
+    kind 10 addr ffb78eac: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 8 addr 0404e518: term 0001 want 0011 after 1
+    kind 8 addr 015514b0: term 0001 want 0011 after 1
+    kind 4: 7 < 11 clocks
+    kind 10 addr f989d9b0: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 8 addr 003573b0: term 1000 want 0011 after 1
+    kind 2 addr f0000006: term 1001 want 0001 after 1
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 2 addr f000000b: term 0101 want 0001 after 1
+    kind 8 addr 07c4143c: term 0101 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 2 addr f0000004: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000e: term 0110 want 0100 after 1
+    kind 7 addr 08000000: term 1110 want 1000 after 1
+    kind 4 addr f0010000: term 1110 want 0010 after 1
+    kind 4 addr f0010000: term 1110 want 0010 after 1
+    kind 5: 1 < 11 clocks
+    kind 2 addr f0000006: term 0010 want 0001 after 1
+    kind 5: 1 < 11 clocks
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 8 addr 0705378c: term 0100 want 0011 after 1
+    kind 8 addr 0698048c: term 0010 want 0011 after 1
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 8 addr 00bd8100: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 01658120: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 1 addr e007326a: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 9 addr 00022014: term 0111 want 0011 after 1
+    kind 1 addr e0064e0d: term 0101 want 0001 after 1
+    kind 3 addr f0030006: term 0101 want 0001 after 1
+    kind 2 addr f0000000: term 0101 want 0001 after 1
+    kind 5 addr f002000c: term 0101 want 0010 after 1
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 2 addr f0000005: term 0011 want 0001 after 1
+    kind 8 addr 063de7fc: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022016: term 0111 want 0011 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 10 addr fa6b30d4: term 0010 want 0011 after 1
+    kind 10 addr f90ee0d0: term 0001 want 0011 after 1
+    kind 5 addr f002000c: term 0001 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010004: term 0011 want 0010 after 1
+    kind 1 addr e0045c55: term 0011 want 0001 after 1
+    kind 10 addr f9fb72b0: term 1000 want 0011 after 1
+    kind 1 addr e000a422: term 1001 want 0001 after 1
+    kind 6 addr 000f0008: term 0010 want 0100 after 1
+    kind 4 addr f0010000: term 0110 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 076bbb4c: term 0010 want 0011 after 1
+    kind 10 addr faf68ce4: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010008: term 0011 want 0010 after 1
+    kind 6 addr 000f0002: term 0011 want 0100 after 1
+    kind 4: 7 < 11 clocks
+    kind 1 addr e00276c4: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 6 addr 000f0008: term 0101 want 0100 after 1
+    kind 8 addr 06c49ebc: term 0101 want 0011 after 1
+    kind 4: 9 < 11 clocks
+    kind 2 addr f0000001: term 0010 want 0001 after 1
+    kind 5 addr f0020000: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 2 addr f0000008: term 0011 want 0001 after 1
+    kind 3 addr f0030006: term 1001 want 0001 after 1
+    kind 4 addr f0010006: term 1001 want 0010 after 1
+    kind 6 addr 000f0002: term 1101 want 0100 after 1
+    kind 9 addr 00022008: term 1101 want 0011 after 1
+    kind 10 addr f88d87b0: term 1101 want 0011 after 1
+    kind 1 addr e004faac: term 1101 want 0001 after 1
+    kind 2 addr f0000007: term 0011 want 0001 after 1
+    kind 2 addr f000000e: term 1001 want 0001 after 1
+    kind 2 addr f0000002: term 1001 want 0001 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e006e97e: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8 addr 043147f8: term 0010 want 0011 after 1
+    kind 8 addr 057c0eb8: term 0010 want 0011 after 1
+    kind 2 addr f000000a: term 0011 want 0001 after 1
+    kind 5: 9 < 11 clocks
+    kind 9 addr 00022004: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000004: term 0010 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fc04fe68: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 3 addr f0030008: term 0011 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 1 addr e00777a7: term 0011 want 0001 after 1
+    kind 10 addr f96bba30: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 03fb9b24: term 0010 want 0011 after 1
+    kind 5: 7 < 11 clocks
+    kind 2 addr f000000b: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 2 addr f000000c: term 0100 want 0001 after 1
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010004: term 0100 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000006: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f0004: term 0110 want 0100 after 1
+    kind 3 addr f0030006: term 0111 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 2 addr f000000f: term 1001 want 0001 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4 addr f0010000: term 1001 want 0010 after 1
+    kind 4 addr f001000e: term 1011 want 0010 after 1
+    kind 8 addr 0651b7dc: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 05dc9b18: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+           819901500 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1029 (D 0.67 / AR,AS release 819700.00 ns before CLK)
+    kind 4: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0007bff: term 0010 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 5: 7 < 11 clocks
+    kind 6 addr 000f000e: term 0110 want 0100 after 1
+    kind 9 addr 00022018: term 0110 want 0011 after 1
+    kind 10 addr feead88c: term 0110 want 0011 after 1
+    kind 2 addr f000000a: term 0111 want 0001 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002201a: term 0010 want 0011 after 1
+    kind 2 addr f000000f: term 0010 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 1 addr e000b3a0: term 0011 want 0001 after 1
+    kind 9 addr 0002201a: term 0111 want 0011 after 1
+    kind 9 addr 00022002: term 0111 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 1010 want 1000 after 1
+    kind 8 addr 04834668: term 1010 want 0011 after 1
+    kind 9 addr 00022004: term 0010 want 0011 after 1
+    kind 2 addr f000000f: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 0001 want 1000 after 1
+    kind 5: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022000: term 0010 want 0011 after 1
+    kind 2 addr f000000a: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 4 addr f0010004: term 1011 want 0010 after 1
+    kind 4: 2 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 00022010: term 0010 want 0011 after 1
+    kind 10 addr fbe95884: term 0001 want 0011 after 1
+    kind 8 addr 05173608: term 0001 want 0011 after 1
+    kind 4 addr f0010006: term 0001 want 0010 after 1
+    kind 2 addr f000000d: term 0011 want 0001 after 1
+    kind 1 addr e005173f: term 0011 want 0001 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 8: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 050affa8: term 0010 want 0011 after 1
+    kind 1 addr e00700e7: term 0011 want 0001 after 1
+    kind 9 addr 0002200e: term 0001 want 0011 after 1
+    kind 8 addr 03f0b304: term 0001 want 0011 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0011 want 0010 after 1
+    kind 9 addr 0002201e: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 10 addr fc690ef8: term 0010 want 0011 after 1
+    kind 5: 1 < 11 clocks
+    kind 5: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000000: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e000d711: term 0011 want 0001 after 1
+    kind 4 addr f001000a: term 0011 want 0010 after 1
+    kind 1 addr e0050aa3: term 0011 want 0001 after 1
+    kind 6 addr 000f000e: term 0111 want 0100 after 1
+    kind 1 addr e007fc2c: term 0111 want 0001 after 1
+    kind 4 addr f001000e: term 0111 want 0010 after 1
+    kind 1 addr e0030cba: term 0010 want 0001 after 1
+    kind 1 addr e00675cf: term 1001 want 0001 after 1
+    kind 8 addr 00f2b860: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 07abde2c: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 8 addr 03bde114: term 0010 want 0011 after 1
+    kind 2: 1 < 2 clocks
+    kind 4 addr f0010002: term 0011 want 0010 after 1
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 8 addr 03bcda74: term 0010 want 0011 after 1
+    kind 8 addr 05994408: term 0100 want 0011 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 1 addr e0067765: term 0010 want 0001 after 1
+    kind 5 addr f002000a: term 0011 want 0010 after 1
+    kind 7 addr 08000000: term 0011 want 1000 after 1
+    kind 2 addr f0000009: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 1 addr e00201ab: term 0011 want 0001 after 1
+    kind 4 addr f0010008: term 0001 want 0010 after 1
+    kind 8 addr 04f51fe8: term 0010 want 0011 after 1
+    kind 10 addr fa1b1194: term 0010 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 6 addr 000f000c: term 0010 want 0100 after 1
+    kind 10 addr f872fb80: term 0110 want 0011 after 1
+    kind 9 addr 00022008: term 0110 want 0011 after 1
+    kind 9 addr 00022006: term 0110 want 0011 after 1
+    kind 3 addr f0030006: term 0011 want 0001 after 1
+    kind 5: 9 < 11 clocks
+    kind 1 addr e000bfe4: term 0011 want 0001 after 1
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 6 addr 000f0004: term 1101 want 0100 after 1
+    kind 7 addr 08000000: term 1101 want 1000 after 1
+    kind 1 addr e001e340: term 1101 want 0001 after 1
+    kind 9 addr 0002200a: term 1111 want 0011 after 1
+    kind 8 addr 0095bb40: term 0100 want 0011 after 1
+    kind 4 addr f0010000: term 0100 want 0010 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 2: 1 < 2 clocks
+    kind 9 addr 0002201c: term 0001 want 0011 after 1
+    kind 1 addr e006e9f3: term 0010 want 0001 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 7 addr 08000000: term 1011 want 1000 after 1
+    kind 5: 7 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 5 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4 addr f0010000: term 0001 want 0010 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 6 addr 000f000a: term 0001 want 0100 after 1
+    kind 1 addr e0025af5: term 0011 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 7 addr 08000000: term 0010 want 1000 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2: 1 < 2 clocks
+    kind 2: 1 < 2 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e006d9f0: term 0011 want 0001 after 1
+    kind 8: 1 < 2 clocks
+    kind 7 addr 08000000: term 1001 want 1000 after 1
+    kind 4 addr f0010004: term 1001 want 0010 after 1
+    kind 9 addr 0002200c: term 0001 want 0011 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002200a: term 0100 want 0011 after 1
+    kind 9 addr 0002200a: term 0100 want 0011 after 1
+    kind 7 addr 08000000: term 1100 want 1000 after 1
+    kind 4 addr f0010004: term 1100 want 0010 after 1
+    kind 9 addr 00022004: term 0110 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 2 addr f0000008: term 0011 want 0001 after 1
+    kind 8 addr 03149c74: term 0001 want 0011 after 1
+    kind 5 addr f0020000: term 0001 want 0010 after 1
+    kind 2 addr f000000a: term 1001 want 0001 after 1
+    kind 4: 1 < 11 clocks
+    kind 9 addr 0002200e: term 0001 want 0011 after 1
+    kind 4: 1 < 11 clocks
+    kind 1 addr e0056d11: term 0011 want 0001 after 1
+    kind 2 addr f0000001: term 0011 want 0001 after 1
+    kind 2 addr f0000002: term 0010 want 0001 after 1
+    kind 4: 9 < 11 clocks
+    kind 4: 1 < 11 clocks
+    kind 1 addr e004d25e: term 0011 want 0001 after 1
+    kind 4: 7 < 11 clocks
+    kind 8 addr 033487e4: term 0010 want 0011 after 1
+cycles 4389; harmless wrong-cycle runts on ROM_CE/DUART_CS/DRAM_SEL (no strobe): 0
+MC68882: #8 violations 0; #8B CS->DS(write) min 15.51 ns (>= 20); #9 AS->CS negated min 7.50 ns (>= 5)
+DSACK: glue releases all termination pins <= 30.99 ns after AS rises; contention events 360, longest 22.47 ns
+IDE PIO-0: t0 min 60.50 (>=600), t1 min 0.00 (>=70), t2 min 4.50 (>=290), t4 min 103.20 (>=30), t9 min 0.01 (>=20) ns
+DFF timing-check hits (setup/recovery 3887, hold 11134): expected on the asynchronous AS_n/IORDY capture edges
+done, errors=7453
+tb_timed.v:220: $finish called at 883418000 (1ps)

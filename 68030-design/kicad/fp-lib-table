@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "m68030-sbc")(type "KiCad")(uri "${KIPRJMOD}/lib/m68030-sbc.pretty")(options "")(descr "Project-local footprints (PGA-128 and SIMM-72 derived from Mackerel-68k, MIT)"))
+)

@@ -1,0 +1,1512 @@
++ dirname /opt/atf15xx_yosys/run_yosys.sh
++ export ROOT=/opt/atf15xx_yosys
++ NAME=glue
++ shift
++ yosys --version
++ cut -d  -f2
++ VERSION=0.52
++ [ 0.52 > 0.30+20 ]
++ LSBIDX=-lsbidx
++ yosys
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+
+yosys> read_liberty -lib /opt/atf15xx_yosys/cells.lib
+
+1. Executing Liberty frontend: /opt/atf15xx_yosys/cells.lib
+Imported 102 cell types from liberty file.
+
+yosys> read_verilog glue.v
+
+2. Executing Verilog-2005 frontend: glue.v
+Parsing Verilog input from `glue.v' to AST representation.
+Warning: Yosys has only limited support for tri-state logic at the moment. (glue.v:322)
+Warning: Yosys has only limited support for tri-state logic at the moment. (glue.v:323)
+Warning: Yosys has only limited support for tri-state logic at the moment. (glue.v:324)
+Warning: Yosys has only limited support for tri-state logic at the moment. (glue.v:325)
+Warning: Yosys has only limited support for tri-state logic at the moment. (glue.v:437)
+Warning: Yosys has only limited support for tri-state logic at the moment. (glue.v:438)
+Generating RTLIL representation for module `\glue'.
+Successfully finished Verilog frontend.
+
+yosys> stat
+
+3. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                411
+   Number of wire bits:            591
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:             10
+   Number of cells:                247
+     $add                            3
+     $and                           78
+     $eq                            33
+     $ge                            10
+     $logic_not                      8
+     $mux                           15
+     $ne                             2
+     $not                           48
+     $or                            15
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+
+yosys> tribuf
+4. Executing TRIBUF pass.
+
+yosys> stat
+
+5. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                411
+   Number of wire bits:            591
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:             10
+   Number of cells:                247
+     $add                            3
+     $and                           78
+     $eq                            33
+     $ge                            10
+     $logic_not                      8
+     $mux                            9
+     $ne                             2
+     $not                           48
+     $or                            15
+     $tribuf                         6
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+
+yosys> synth -flatten -noabc -auto-top
+6. Executing SYNTH pass.
+
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1.1. Finding top of design hierarchy..
+root of   1 design levels: glue                
+Automatically selected glue as design top module.
+
+6.1.2. Analyzing design hierarchy..
+Top module:  \glue
+
+6.1.3. Analyzing design hierarchy..
+Top module:  \glue
+Removed 0 unused modules.
+
+6.2. Executing PROC pass (convert processes to netlists).
+
+6.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$glue.v:445$216 in module glue.
+Marked 1 switch rules as full_case in process $proc$glue.v:422$196 in module glue.
+Marked 4 switch rules as full_case in process $proc$glue.v:397$170 in module glue.
+Marked 3 switch rules as full_case in process $proc$glue.v:386$161 in module glue.
+Marked 1 switch rules as full_case in process $proc$glue.v:374$153 in module glue.
+Marked 1 switch rules as full_case in process $proc$glue.v:367$149 in module glue.
+Marked 1 switch rules as full_case in process $proc$glue.v:356$142 in module glue.
+Marked 2 switch rules as full_case in process $proc$glue.v:345$140 in module glue.
+Marked 1 switch rules as full_case in process $proc$glue.v:312$113 in module glue.
+Marked 1 switch rules as full_case in process $proc$glue.v:287$88 in module glue.
+Removed a total of 0 dead cases.
+
+6.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 0 assignments to connections.
+
+6.2.4. Executing PROC_INIT pass (extract init attributes).
+
+6.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:445$216'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:422$196'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:397$170'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:386$161'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:374$153'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:367$149'.
+Found async reset \cyc_clr in `\glue.$proc$glue.v:356$142'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:345$140'.
+Found async reset \PWR_RST_n in `\glue.$proc$glue.v:312$113'.
+Found async reset \cyc_clr in `\glue.$proc$glue.v:287$88'.
+
+6.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~30 debug messages>
+
+6.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\glue.$proc$glue.v:445$216'.
+     1/1: $0\st_cnt[2:0]
+Creating decoders for process `\glue.$proc$glue.v:422$196'.
+     1/1: $0\ipl[2:0]
+Creating decoders for process `\glue.$proc$glue.v:397$170'.
+     1/6: $0\nmi_pend[0:0]
+     2/6: $0\flash_we[0:0]
+     3/6: $0\user_led[0:0]
+     4/6: $0\timer_pend[0:0]
+     5/6: $0\timer_en[0:0]
+     6/6: $0\overlay[0:0]
+Creating decoders for process `\glue.$proc$glue.v:386$161'.
+     1/2: $0\warm_armed[0:0]
+     2/2: $0\warm_rst[0:0]
+Creating decoders for process `\glue.$proc$glue.v:374$153'.
+     1/3: $0\nmi_prev[0:0]
+     2/3: $0\wrst_sh[1:0]
+     3/3: $0\nmi_sh[1:0]
+Creating decoders for process `\glue.$proc$glue.v:367$149'.
+     1/1: $0\div[17:0]
+Creating decoders for process `\glue.$proc$glue.v:356$142'.
+     1/2: $0\ld_q[0:0]
+     2/2: $0\ide_buf_q[0:0]
+Creating decoders for process `\glue.$proc$glue.v:345$140'.
+     1/4: $0\idle1[0:0]
+     2/4: $0\ide_da_q[2:0]
+     3/4: $0\ide_cs1_q[0:0]
+     4/4: $0\ide_cs0_q[0:0]
+Creating decoders for process `\glue.$proc$glue.v:312$113'.
+     1/1: $0\iordy_s[0:0]
+Creating decoders for process `\glue.$proc$glue.v:287$88'.
+     1/10: $0\iow_q[0:0]
+     2/10: $0\cnt[6:0]
+     3/10: $0\act[0:0]
+     4/10: $0\ior_q[0:0]
+     5/10: $0\wr_q[0:0]
+     6/10: $0\rd_q[0:0]
+     7/10: $0\berr_q[0:0]
+     8/10: $0\avec_q[0:0]
+     9/10: $0\dsack1_q[0:0]
+    10/10: $0\dsack0_q[0:0]
+
+6.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+6.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\glue.\st_cnt' using process `\glue.$proc$glue.v:445$216'.
+  created $adff cell `$procdff$320' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ipl' using process `\glue.$proc$glue.v:422$196'.
+  created $adff cell `$procdff$325' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\overlay' using process `\glue.$proc$glue.v:397$170'.
+  created $adff cell `$procdff$330' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\timer_en' using process `\glue.$proc$glue.v:397$170'.
+  created $adff cell `$procdff$335' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\timer_pend' using process `\glue.$proc$glue.v:397$170'.
+  created $adff cell `$procdff$340' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\user_led' using process `\glue.$proc$glue.v:397$170'.
+  created $adff cell `$procdff$345' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\flash_we' using process `\glue.$proc$glue.v:397$170'.
+  created $adff cell `$procdff$350' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\nmi_pend' using process `\glue.$proc$glue.v:397$170'.
+  created $adff cell `$procdff$355' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\warm_rst' using process `\glue.$proc$glue.v:386$161'.
+  created $adff cell `$procdff$360' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\warm_armed' using process `\glue.$proc$glue.v:386$161'.
+  created $adff cell `$procdff$365' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\nmi_sh' using process `\glue.$proc$glue.v:374$153'.
+  created $adff cell `$procdff$370' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\wrst_sh' using process `\glue.$proc$glue.v:374$153'.
+  created $adff cell `$procdff$375' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\nmi_prev' using process `\glue.$proc$glue.v:374$153'.
+  created $adff cell `$procdff$380' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\div' using process `\glue.$proc$glue.v:367$149'.
+  created $adff cell `$procdff$385' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ide_buf_q' using process `\glue.$proc$glue.v:356$142'.
+  created $adff cell `$procdff$388' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ld_q' using process `\glue.$proc$glue.v:356$142'.
+  created $adff cell `$procdff$391' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ide_cs0_q' using process `\glue.$proc$glue.v:345$140'.
+  created $adff cell `$procdff$396' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ide_cs1_q' using process `\glue.$proc$glue.v:345$140'.
+  created $adff cell `$procdff$401' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\idle1' using process `\glue.$proc$glue.v:345$140'.
+  created $adff cell `$procdff$406' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ide_da_q' using process `\glue.$proc$glue.v:345$140'.
+  created $adff cell `$procdff$411' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\iordy_s' using process `\glue.$proc$glue.v:312$113'.
+  created $adff cell `$procdff$416' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\act' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$419' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\cnt' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$422' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\dsack0_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$425' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\dsack1_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$428' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\avec_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$431' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\berr_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$434' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\rd_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$437' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\wr_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$440' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\ior_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$443' with positive edge clock and positive level reset.
+Creating register for signal `\glue.\iow_q' using process `\glue.$proc$glue.v:287$88'.
+  created $adff cell `$procdff$446' with positive edge clock and positive level reset.
+
+6.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\glue.$proc$glue.v:445$216'.
+Removing empty process `glue.$proc$glue.v:445$216'.
+Removing empty process `glue.$proc$glue.v:422$196'.
+Found and cleaned up 13 empty switches in `\glue.$proc$glue.v:397$170'.
+Removing empty process `glue.$proc$glue.v:397$170'.
+Found and cleaned up 4 empty switches in `\glue.$proc$glue.v:386$161'.
+Removing empty process `glue.$proc$glue.v:386$161'.
+Found and cleaned up 1 empty switch in `\glue.$proc$glue.v:374$153'.
+Removing empty process `glue.$proc$glue.v:374$153'.
+Removing empty process `glue.$proc$glue.v:367$149'.
+Removing empty process `glue.$proc$glue.v:356$142'.
+Found and cleaned up 3 empty switches in `\glue.$proc$glue.v:345$140'.
+Removing empty process `glue.$proc$glue.v:345$140'.
+Removing empty process `glue.$proc$glue.v:312$113'.
+Found and cleaned up 7 empty switches in `\glue.$proc$glue.v:287$88'.
+Removing empty process `glue.$proc$glue.v:287$88'.
+Cleaned up 30 empty switches.
+
+6.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~62 debug messages>
+
+6.3. Executing FLATTEN pass (flatten design).
+
+6.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 30 unused cells and 192 unused wires.
+<suppressed ~31 debug messages>
+
+6.6. Executing CHECK pass (checking for obvious problems).
+Checking module glue...
+Found and reported 0 problems.
+
+6.7. Executing OPT pass (performing simple optimizations).
+
+6.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+6.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$276: \warm_rst -> 1'0
+      Replacing known input bits on port B of cell $procmux$274: \warm_rst -> 1'1
+      Replacing known input bits on port A of cell $procmux$271: \warm_rst -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+6.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+6.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+6.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.7.16. Finished OPT passes. (There is nothing left to do.)
+
+6.8. Executing FSM pass (extract and optimize FSM).
+
+6.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking glue.ipl as FSM state register:
+    Users of register don't seem to benefit from recoding.
+
+6.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6.9. Executing OPT pass (performing simple optimizations).
+
+6.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+6.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$443 ($adff) from module glue (D = 1'1, Q = \ior_q).
+Adding EN signal on $procdff$440 ($adff) from module glue (D = 1'1, Q = \wr_q).
+Adding EN signal on $procdff$437 ($adff) from module glue (D = 1'1, Q = \rd_q).
+Adding EN signal on $procdff$434 ($adff) from module glue (D = 1'1, Q = \berr_q).
+Adding EN signal on $procdff$431 ($adff) from module glue (D = 1'1, Q = \avec_q).
+Adding EN signal on $procdff$428 ($adff) from module glue (D = 1'1, Q = \dsack1_q).
+Adding EN signal on $procdff$425 ($adff) from module glue (D = 1'1, Q = \dsack0_q).
+Adding EN signal on $procdff$411 ($adff) from module glue (D = { \A3 \A2 \A1 }, Q = \ide_da_q).
+Adding EN signal on $procdff$401 ($adff) from module glue (D = $0\ide_cs1_q[0:0], Q = \ide_cs1_q).
+Adding EN signal on $procdff$396 ($adff) from module glue (D = $0\ide_cs0_q[0:0], Q = \ide_cs0_q).
+Adding EN signal on $procdff$380 ($adff) from module glue (D = $eq$glue.v:379$155_Y, Q = \nmi_prev).
+Adding EN signal on $procdff$375 ($adff) from module glue (D = { \wrst_sh [0] \WARM_RST_BTN_n }, Q = \wrst_sh).
+Adding EN signal on $procdff$370 ($adff) from module glue (D = { \nmi_sh [0] \NMI_BTN_n }, Q = \nmi_sh).
+Adding EN signal on $procdff$365 ($adff) from module glue (D = $0\warm_armed[0:0], Q = \warm_armed).
+Adding EN signal on $procdff$355 ($adff) from module glue (D = $0\nmi_pend[0:0], Q = \nmi_pend).
+Adding EN signal on $procdff$350 ($adff) from module glue (D = $0\flash_we[0:0], Q = \flash_we).
+Adding EN signal on $procdff$345 ($adff) from module glue (D = $0\user_led[0:0], Q = \user_led).
+Adding EN signal on $procdff$340 ($adff) from module glue (D = $0\timer_pend[0:0], Q = \timer_pend).
+Adding EN signal on $procdff$335 ($adff) from module glue (D = $0\timer_en[0:0], Q = \timer_en).
+Adding EN signal on $procdff$330 ($adff) from module glue (D = $0\overlay[0:0], Q = \overlay).
+Adding EN signal on $procdff$320 ($adff) from module glue (D = $0\st_cnt[2:0], Q = \st_cnt).
+
+6.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 12 unused cells and 12 unused wires.
+<suppressed ~13 debug messages>
+
+6.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~10 debug messages>
+
+6.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~14 debug messages>
+
+6.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+6.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+6.9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.9.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.9.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+6.9.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.9.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.9.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.9.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.9.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.9.23. Finished OPT passes. (There is nothing left to do.)
+
+6.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 3 bits (of 4) from port B of cell glue.$eq$glue.v:186$17 ($eq).
+Removed top 2 bits (of 4) from port B of cell glue.$eq$glue.v:187$19 ($eq).
+Removed top 2 bits (of 4) from port B of cell glue.$eq$glue.v:188$21 ($eq).
+Removed top 2 bits (of 3) from port B of cell glue.$eq$glue.v:194$38 ($eq).
+Removed top 6 bits (of 7) from port B of cell glue.$add$glue.v:260$56 ($add).
+Removed top 31 bits (of 32) from port B of cell glue.$ge$glue.v:270$59 ($ge).
+Removed top 30 bits (of 32) from port B of cell glue.$ge$glue.v:271$61 ($ge).
+Removed top 28 bits (of 32) from port B of cell glue.$ge$glue.v:273$65 ($ge).
+Removed top 3 bits (of 4) from port B of cell glue.$auto$opt_dff.cc:195:make_patterns_logic$470 ($ne).
+Removed top 6 bits (of 7) from port B of cell glue.$eq$glue.v:281$81 ($eq).
+Removed top 31 bits (of 32) from port B of cell glue.$ge$glue.v:303$90 ($ge).
+Removed top 29 bits (of 32) from port B of cell glue.$ge$glue.v:308$103 ($ge).
+Removed top 13 bits (of 32) from port Y of cell glue.$add$glue.v:369$151 ($add).
+Removed top 14 bits (of 32) from mux cell glue.$ternary$glue.v:369$152 ($mux).
+Removed top 2 bits (of 3) from port B of cell glue.$eq$glue.v:404$174 ($eq).
+Removed top 1 bits (of 3) from port B of cell glue.$eq$glue.v:406$177 ($eq).
+Removed top 1 bits (of 3) from port B of cell glue.$eq$glue.v:407$182 ($eq).
+Removed top 1 bits (of 3) from mux cell glue.$ternary$glue.v:429$201 ($mux).
+Removed top 1 bits (of 3) from mux cell glue.$ternary$glue.v:428$202 ($mux).
+Removed top 2 bits (of 3) from port B of cell glue.$add$glue.v:448$219 ($add).
+Removed top 1 bits (of 19) from port Y of cell glue.$add$glue.v:369$151 ($add).
+Removed top 14 bits (of 32) from wire glue.$add$glue.v:369$151_Y.
+Removed top 1 bits (of 3) from wire glue.$ternary$glue.v:428$202_Y.
+Removed top 1 bits (of 3) from wire glue.$ternary$glue.v:429$201_Y.
+
+6.11. Executing PEEPOPT pass (run peephole optimizers).
+
+6.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+6.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module glue:
+  creating $macc model for $add$glue.v:260$56 ($add).
+  creating $macc model for $add$glue.v:369$151 ($add).
+  creating $macc model for $add$glue.v:448$219 ($add).
+  creating $alu model for $macc $add$glue.v:448$219.
+  creating $alu model for $macc $add$glue.v:369$151.
+  creating $alu model for $macc $add$glue.v:260$56.
+  creating $alu model for $ge$glue.v:270$59 ($ge): new $alu
+  creating $alu model for $ge$glue.v:271$61 ($ge): new $alu
+  creating $alu model for $ge$glue.v:273$65 ($ge): new $alu
+  creating $alu model for $ge$glue.v:303$90 ($ge): new $alu
+  creating $alu model for $ge$glue.v:308$103 ($ge): new $alu
+  creating $alu model for $eq$glue.v:281$81 ($eq): merged with $ge$glue.v:270$59.
+  creating $alu cell for $ge$glue.v:308$103: $auto$alumacc.cc:495:replace_alu$502
+  creating $alu cell for $ge$glue.v:303$90: $auto$alumacc.cc:495:replace_alu$515
+  creating $alu cell for $ge$glue.v:273$65: $auto$alumacc.cc:495:replace_alu$528
+  creating $alu cell for $ge$glue.v:271$61: $auto$alumacc.cc:495:replace_alu$541
+  creating $alu cell for $ge$glue.v:270$59, $eq$glue.v:281$81: $auto$alumacc.cc:495:replace_alu$554
+  creating $alu cell for $add$glue.v:260$56: $auto$alumacc.cc:495:replace_alu$567
+  creating $alu cell for $add$glue.v:369$151: $auto$alumacc.cc:495:replace_alu$570
+  creating $alu cell for $add$glue.v:448$219: $auto$alumacc.cc:495:replace_alu$573
+  created 8 $alu and 0 $macc cells.
+
+6.14. Executing SHARE pass (SAT-based resource sharing).
+
+6.15. Executing OPT pass (performing simple optimizations).
+
+6.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~5 debug messages>
+
+6.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+6.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 3 unused cells and 16 unused wires.
+<suppressed ~5 debug messages>
+
+6.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+6.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.15.16. Finished OPT passes. (There is nothing left to do.)
+
+6.16. Executing MEMORY pass.
+
+6.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.16.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+6.16.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.16.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.16.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.16.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.16.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.16.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.18. Executing OPT pass (performing simple optimizations).
+
+6.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~24 debug messages>
+
+6.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+6.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+6.18.5. Finished fast OPT passes.
+
+6.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6.20. Executing OPT pass (performing simple optimizations).
+
+6.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~5 debug messages>
+
+6.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+6.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+    Consolidated identical input bits for $mux cell $ternary$glue.v:429$201:
+      Old ports: A=2'10, B=2'00, Y=$auto$wreduce.cc:514:run$496 [1:0]
+      New ports: A=1'1, B=1'0, Y=$auto$wreduce.cc:514:run$496 [1]
+      New connections: $auto$wreduce.cc:514:run$496 [0] = 1'0
+  Optimizing cells in module \glue.
+Performed a total of 1 changes.
+
+6.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.20.6. Executing OPT_SHARE pass.
+
+6.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~1 debug messages>
+
+6.20.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.20.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \glue..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~8 debug messages>
+
+6.20.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \glue.
+Performed a total of 0 changes.
+
+6.20.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+Removed a total of 0 cells.
+
+6.20.14. Executing OPT_SHARE pass.
+
+6.20.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.20.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+
+6.20.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+
+6.20.18. Finished OPT passes. (There is nothing left to do.)
+
+6.21. Executing TECHMAP pass (map to technology primitives).
+
+6.21.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+6.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$ea402187f386206c0840504755479bf827f47707\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$10ed987432f06055e5279101f9ec60a49861b43c\_90_alu for cells of type $alu.
+Using template $paramod$a04dd9d4d8b430140c4ff94b50470fb380fda2a0\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$103b4016182df467cceab67bcf3e18e6361ec0fd\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adffe.
+Using template $paramod$dc04b7d98e503a7bab16fce2df70e6e2c5ca34d6\_90_alu for cells of type $alu.
+Using template $paramod$15a3b70ea5534c0cc298fa6d405a538b5f71cb9e\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $tribuf.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010010 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000111 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~1255 debug messages>
+
+6.22. Executing OPT pass (performing simple optimizations).
+
+6.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module glue.
+<suppressed ~405 debug messages>
+
+6.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\glue'.
+<suppressed ~348 debug messages>
+Removed a total of 116 cells.
+
+6.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \glue..
+Removed 41 unused cells and 397 unused wires.
+<suppressed ~42 debug messages>
+
+6.22.5. Finished fast OPT passes.
+
+6.23. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `glue'. Setting top module to glue.
+
+6.23.1. Analyzing design hierarchy..
+Top module:  \glue
+
+6.23.2. Analyzing design hierarchy..
+Top module:  \glue
+Removed 0 unused modules.
+
+6.24. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                476
+   Number of wire bits:            732
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                587
+     $_AND_                        148
+     $_DFFE_PN0N_                    1
+     $_DFFE_PN0P_                   14
+     $_DFFE_PN1N_                    4
+     $_DFFE_PN1P_                    1
+     $_DFFE_PP0P_                    7
+     $_DFF_PN0_                     22
+     $_DFF_PN1_                      2
+     $_DFF_PP0_                     11
+     $_MUX_                         51
+     $_NOT_                        124
+     $_OR_                         136
+     $_TBUF_                         6
+     $_XOR_                         25
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+6.25. Executing CHECK pass (checking for obvious problems).
+Checking module glue...
+Found and reported 0 problems.
+
+yosys> stat
+
+7. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                476
+   Number of wire bits:            732
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                587
+     $_AND_                        148
+     $_DFFE_PN0N_                    1
+     $_DFFE_PN0P_                   14
+     $_DFFE_PN1N_                    4
+     $_DFFE_PN1P_                    1
+     $_DFFE_PP0P_                    7
+     $_DFF_PN0_                     22
+     $_DFF_PN1_                      2
+     $_DFF_PP0_                     11
+     $_MUX_                         51
+     $_NOT_                        124
+     $_OR_                         136
+     $_TBUF_                         6
+     $_XOR_                         25
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+
+yosys> techmap -map /opt/atf15xx_yosys/techmap.v -D skip_DFFE_XX_
+8. Executing TECHMAP pass (map to technology primitives).
+
+8.1. Executing Verilog-2005 frontend: /opt/atf15xx_yosys/techmap.v
+Parsing Verilog input from `/opt/atf15xx_yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCHSR_NNN_'.
+Generating RTLIL representation for module `\$_DLATCHSR_NNP_'.
+Generating RTLIL representation for module `\$_DLATCHSR_NPN_'.
+Generating RTLIL representation for module `\$_DLATCHSR_NPP_'.
+Generating RTLIL representation for module `\$_DLATCHSR_PNN_'.
+Generating RTLIL representation for module `\$_DLATCHSR_PNP_'.
+Generating RTLIL representation for module `\$_DLATCHSR_PPN_'.
+Generating RTLIL representation for module `\$_DLATCHSR_PPP_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFSRE_PPPP_'.
+Successfully finished Verilog frontend.
+
+8.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~23 debug messages>
+
+yosys> stat
+
+9. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                476
+   Number of wire bits:            732
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                587
+     $_AND_                        148
+     $_DFFE_PN0N_                    1
+     $_DFFE_PN0P_                   14
+     $_DFFE_PN1N_                    4
+     $_DFFE_PN1P_                    1
+     $_DFFE_PP0P_                    7
+     $_DFF_PN0_                     22
+     $_DFF_PN1_                      2
+     $_DFF_PP0_                     11
+     $_MUX_                         51
+     $_NOT_                        124
+     $_OR_                         136
+     $_TBUF_                         6
+     $_XOR_                         25
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+
+yosys> simplemap
+10. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+yosys> stat
+
+11. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                476
+   Number of wire bits:            732
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                587
+     $_AND_                        148
+     $_DFFE_PN0N_                    1
+     $_DFFE_PN0P_                   14
+     $_DFFE_PN1N_                    4
+     $_DFFE_PN1P_                    1
+     $_DFFE_PP0P_                    7
+     $_DFF_PN0_                     22
+     $_DFF_PN1_                      2
+     $_DFF_PP0_                     11
+     $_MUX_                         51
+     $_NOT_                        124
+     $_OR_                         136
+     $_TBUF_                         6
+     $_XOR_                         25
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+
+yosys> dfflibmap -liberty /opt/atf15xx_yosys/cells.lib
+12. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell DFF (noninv, pins=4, area=600.00) is a direct match for cell type $_DFF_P_.
+  cell DFFAR (noninv, pins=5, area=600.00) is a direct match for cell type $_DFF_PP0_.
+  cell DFFAS (noninv, pins=5, area=600.00) is a direct match for cell type $_DFF_PP1_.
+  cell DFFARS (noninv, pins=6, area=600.00) is a direct match for cell type $_DFFSR_PPP_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \DFF _DFF_P_ (.CLK( C), .D( D), .Q( Q), .QN(~Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    unmapped dff cell: $_DFF_PN0_
+    unmapped dff cell: $_DFF_PN1_
+    \DFFAR _DFF_PP0_ (.AR( R), .CLK( C), .D( D), .Q( Q), .QN(~Q));
+    \DFFAS _DFF_PP1_ (.AS( R), .CLK( C), .D( D), .Q( Q), .QN(~Q));
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    \DFFARS _DFFSR_PPP_ (.AR( R), .AS( S), .CLK( C), .D( D), .Q( Q), .QN(~Q));
+
+12.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\glue':
+  mapped 55 $_DFF_PP0_ cells to \DFFAR cells.
+  mapped 7 $_DFF_PP1_ cells to \DFFAS cells.
+
+yosys> stat
+
+13. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                645
+   Number of wire bits:            901
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                658
+     $_AND_                        148
+     $_MUX_                         78
+     $_NOT_                        168
+     $_OR_                         136
+     $_TBUF_                         6
+     $_XOR_                         25
+     AND2                            6
+     AND5                            1
+     AND6                            7
+     DFFAR                          55
+     DFFAS                           7
+     INV                            18
+     NAND2                           1
+     NOR3                            2
+
+
+yosys> abc -liberty /opt/atf15xx_yosys/cells.lib
+14. Executing ABC pass (technology mapping using ABC).
+
+14.1. Extracting gate netlist of module `\glue' to `<abc-temp-dir>/input.blif'..
+Extracted 555 gates and 679 wires to a netlist network with 122 inputs and 121 outputs.
+
+14.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /opt/atf15xx_yosys/cells.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Warning: Templates are not defined.
+ABC: Liberty parser cannot read "time_unit".  Assuming   time_unit : "1ns".
+ABC: Liberty parser cannot read "capacitive_load_unit". Assuming   capacitive_load_unit(1, pf).
+ABC: Scl_LibertyReadGenlib() skipped cell "bibuf" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "TRI" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFEARS".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFF".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFE".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFAR".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFAS".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFARS".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LATCH".
+ABC: Library "atf15xx" from "/opt/atf15xx_yosys/cells.lib" has 93 cells (9 skipped: 7 seq; 0 tri-state; 2 no func; 0 dont_use).  Time =     0.00 sec
+ABC: Memory =    0.17 MB. Time =     0.00 sec
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+14.1.2. Re-integrating ABC results.
+ABC RESULTS:              AND2 cells:       39
+ABC RESULTS:            AND2I1 cells:       16
+ABC RESULTS:            AND2I2 cells:       16
+ABC RESULTS:              AND3 cells:        8
+ABC RESULTS:            AND3I1 cells:        3
+ABC RESULTS:            AND3I2 cells:        2
+ABC RESULTS:            AND3I3 cells:        3
+ABC RESULTS:              AND4 cells:        1
+ABC RESULTS:            AND4I1 cells:        2
+ABC RESULTS:            AND4I2 cells:        2
+ABC RESULTS:            AND4I3 cells:        2
+ABC RESULTS:            AND4I4 cells:        4
+ABC RESULTS:              AND5 cells:        2
+ABC RESULTS:              AND6 cells:        1
+ABC RESULTS:               BUF cells:        1
+ABC RESULTS:               INV cells:       54
+ABC RESULTS:             NAND2 cells:       47
+ABC RESULTS:           NAND2I1 cells:       28
+ABC RESULTS:           NAND2I2 cells:       20
+ABC RESULTS:             NAND3 cells:       10
+ABC RESULTS:           NAND3I1 cells:       14
+ABC RESULTS:           NAND3I3 cells:        2
+ABC RESULTS:             NAND4 cells:        3
+ABC RESULTS:           NAND4I1 cells:        1
+ABC RESULTS:           NAND4I3 cells:        1
+ABC RESULTS:             NAND6 cells:        1
+ABC RESULTS:            NOR3I1 cells:        1
+ABC RESULTS:              NOR5 cells:        1
+ABC RESULTS:              NOR6 cells:        2
+ABC RESULTS:             OR2I1 cells:        3
+ABC RESULTS:             OR3I2 cells:        1
+ABC RESULTS:             XNOR2 cells:       14
+ABC RESULTS:        internal signals:      436
+ABC RESULTS:           input signals:      122
+ABC RESULTS:          output signals:      121
+Removing temp directory.
+
+yosys> stat
+
+15. Printing statistics.
+
+=== glue ===
+
+   Number of wires:               1072
+   Number of wire bits:           1328
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                408
+     $_TBUF_                         6
+     AND2                           45
+     AND2I1                         16
+     AND2I2                         16
+     AND3                            8
+     AND3I1                          3
+     AND3I2                          2
+     AND3I3                          3
+     AND4                            1
+     AND4I1                          2
+     AND4I2                          2
+     AND4I3                          2
+     AND4I4                          4
+     AND5                            3
+     AND6                            8
+     BUF                             1
+     DFFAR                          55
+     DFFAS                           7
+     INV                            72
+     NAND2                          48
+     NAND2I1                        28
+     NAND2I2                        20
+     NAND3                          10
+     NAND3I1                        14
+     NAND3I3                         2
+     NAND4                           3
+     NAND4I1                         1
+     NAND4I3                         1
+     NAND6                           1
+     NOR3                            2
+     NOR3I1                          1
+     NOR5                            1
+     NOR6                            2
+     OR2I1                           3
+     OR3I2                           1
+     XNOR2                          14
+
+
+yosys> #hilomap -hicell VCC X -locell GND X
+
+yosys> #stat
+
+yosys> <:Q -toutpad TRI ENA:A:Q -tinoutpad bibuf EN:Q:A:PAD
+16. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Marking already mapped port: BUF.Q[0].
+Mapping port glue.AVEC_n[0] using TRI.
+Mapping port glue.BERR_n[0] using TRI.
+Mapping port glue.DSACK0_n[0] using TRI.
+Mapping port glue.DSACK1_n[0] using TRI.
+Mapping port glue.HALT_n[0] using TRI.
+Mapping port glue.RESET_n[0] using bibuf.
+Mapping port glue.A1 using INBUF.
+Mapping port glue.A13 using INBUF.
+Mapping port glue.A14 using INBUF.
+Mapping port glue.A15 using INBUF.
+Mapping port glue.A16 using INBUF.
+Mapping port glue.A17 using INBUF.
+Mapping port glue.A18 using INBUF.
+Mapping port glue.A19 using INBUF.
+Mapping port glue.A2 using INBUF.
+Mapping port glue.A27 using INBUF.
+Mapping port glue.A28 using INBUF.
+Mapping port glue.A29 using INBUF.
+Mapping port glue.A3 using INBUF.
+Mapping port glue.A30 using INBUF.
+Mapping port glue.A31 using INBUF.
+Mapping port glue.AS_n using INBUF.
+Mapping port glue.BUS_RD_n using BUF.
+Mapping port glue.BUS_WR_n using BUF.
+Mapping port glue.CIIN_n using BUF.
+Mapping port glue.CLK using INBUF.
+Mapping port glue.DRAM_SEL_n using BUF.
+Mapping port glue.DS_n using INBUF.
+Mapping port glue.DUART_CS_n using BUF.
+Mapping port glue.DUART_INT_n using INBUF.
+Mapping port glue.DUART_RST using BUF.
+Mapping port glue.EXP_BUF_EN_n using BUF.
+Mapping port glue.EXP_INT_n using INBUF.
+Mapping port glue.EXP_SEL_n using BUF.
+Mapping port glue.FC0 using INBUF.
+Mapping port glue.FC1 using INBUF.
+Mapping port glue.FC2 using INBUF.
+Mapping port glue.FPU_CS_n using BUF.
+Mapping port glue.HALT_LED_n using BUF.
+Mapping port glue.IDE_BUF_EN_n using BUF.
+Mapping port glue.IDE_CS0_n using BUF.
+Mapping port glue.IDE_CS1_n using BUF.
+Mapping port glue.IDE_DA0 using BUF.
+Mapping port glue.IDE_DA1 using BUF.
+Mapping port glue.IDE_DA2 using BUF.
+Mapping port glue.IDE_DIOR_n using BUF.
+Mapping port glue.IDE_DIOW_n using BUF.
+Mapping port glue.IDE_INTRQ using INBUF.
+Mapping port glue.IDE_IORDY using INBUF.
+Mapping port glue.IPL0_n using BUF.
+Mapping port glue.IPL1_n using BUF.
+Mapping port glue.IPL2_n using BUF.
+Mapping port glue.LED_n using BUF.
+Mapping port glue.NIC_INT_n using INBUF.
+Mapping port glue.NMI_BTN_n using INBUF.
+Mapping port glue.PERIPH_RST_n using BUF.
+Mapping port glue.PWR_RST_n using INBUF.
+Mapping port glue.ROM_CE_n using BUF.
+Mapping port glue.R_W using INBUF.
+Mapping port glue.STATUS_n using INBUF.
+Mapping port glue.WARM_RST_BTN_n using INBUF.
+
+yosys> stat
+
+17. Printing statistics.
+
+=== glue ===
+
+   Number of wires:               1133
+   Number of wire bits:           1389
+   Number of public wires:         168
+   Number of public wire bits:     221
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                463
+     AND2                           45
+     AND2I1                         16
+     AND2I2                         16
+     AND3                            8
+     AND3I1                          3
+     AND3I2                          2
+     AND3I3                          3
+     AND4                            1
+     AND4I1                          2
+     AND4I2                          2
+     AND4I3                          2
+     AND4I4                          4
+     AND5                            3
+     AND6                            8
+     BUF                            25
+     DFFAR                          55
+     DFFAS                           7
+     INBUF                          31
+     INV                            72
+     NAND2                          48
+     NAND2I1                        28
+     NAND2I2                        20
+     NAND3                          10
+     NAND3I1                        14
+     NAND3I3                         2
+     NAND4                           3
+     NAND4I1                         1
+     NAND4I3                         1
+     NAND6                           1
+     NOR3                            2
+     NOR3I1                          1
+     NOR5                            1
+     NOR6                            2
+     OR2I1                           3
+     OR3I2                           1
+     TRI                             5
+     XNOR2                          14
+     bibuf                           1
+
+
+yosys> clean
+Removed 0 unused cells and 645 unused wires.
+
+yosys> stat
+
+18. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                488
+   Number of wire bits:            585
+   Number of public wires:         134
+   Number of public wire bits:     187
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                463
+     AND2                           45
+     AND2I1                         16
+     AND2I2                         16
+     AND3                            8
+     AND3I1                          3
+     AND3I2                          2
+     AND3I3                          3
+     AND4                            1
+     AND4I1                          2
+     AND4I2                          2
+     AND4I3                          2
+     AND4I4                          4
+     AND5                            3
+     AND6                            8
+     BUF                            25
+     DFFAR                          55
+     DFFAS                           7
+     INBUF                          31
+     INV                            72
+     NAND2                          48
+     NAND2I1                        28
+     NAND2I2                        20
+     NAND3                          10
+     NAND3I1                        14
+     NAND3I3                         2
+     NAND4                           3
+     NAND4I1                         1
+     NAND4I3                         1
+     NAND6                           1
+     NOR3                            2
+     NOR3I1                          1
+     NOR5                            1
+     NOR6                            2
+     OR2I1                           3
+     OR3I2                           1
+     TRI                             5
+     XNOR2                          14
+     bibuf                           1
+
+
+yosys> hierarchy
+19. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `glue'. Setting top module to glue.
+
+19.1. Analyzing design hierarchy..
+Top module:  \glue
+
+19.2. Analyzing design hierarchy..
+Top module:  \glue
+Removed 0 unused modules.
+
+yosys> stat
+
+20. Printing statistics.
+
+=== glue ===
+
+   Number of wires:                488
+   Number of wire bits:            585
+   Number of public wires:         134
+   Number of public wire bits:     187
+   Number of ports:                 61
+   Number of port bits:             61
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                463
+     AND2                           45
+     AND2I1                         16
+     AND2I2                         16
+     AND3                            8
+     AND3I1                          3
+     AND3I2                          2
+     AND3I3                          3
+     AND4                            1
+     AND4I1                          2
+     AND4I2                          2
+     AND4I3                          2
+     AND4I4                          4
+     AND5                            3
+     AND6                            8
+     BUF                            25
+     DFFAR                          55
+     DFFAS                           7
+     INBUF                          31
+     INV                            72
+     NAND2                          48
+     NAND2I1                        28
+     NAND2I2                        20
+     NAND3                          10
+     NAND3I1                        14
+     NAND3I3                         2
+     NAND4                           3
+     NAND4I1                         1
+     NAND4I3                         1
+     NAND6                           1
+     NOR3                            2
+     NOR3I1                          1
+     NOR5                            1
+     NOR6                            2
+     OR2I1                           3
+     OR3I2                           1
+     TRI                             5
+     XNOR2                          14
+     bibuf                           1
+
+
+yosys> splitnets -format _
+21. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+yosys> rename -wire -suffix _reg t:*DFF*
+
+yosys> rename -wire -suffix _comb
+
+yosys> #write_edif -attrprop glue.edif
+
+yosys> delete t:$scopeinfo
+
+yosys> write_edif -lsbidx glue.edif
+
+22. Executing EDIF backend.
+
+yosys> exit
+
+Warnings: 6 unique messages, 6 total
+End of script. Logfile hash: c7d350f02d, CPU: user 0.23s system 0.01s, MEM: 21.92 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 40% 1x abc (0 sec), 15% 27x opt_expr (0 sec), ...
++ [ -lsbidx =  ]

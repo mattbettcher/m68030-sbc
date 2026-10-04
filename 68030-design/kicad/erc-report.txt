@@ -1,0 +1,29 @@
+ERC report (2026-10-03T17:50:00-0400, Encoding UTF8)
+
+***** Sheet /
+
+***** Sheet /power/
+
+***** Sheet /clock/
+
+***** Sheet /reset/
+
+***** Sheet /cpu/
+
+***** Sheet /fpu/
+
+***** Sheet /glue_cpld/
+
+***** Sheet /dram/
+
+***** Sheet /rom/
+
+***** Sheet /duart_spi_rtc/
+
+***** Sheet /ide/
+
+***** Sheet /expansion/
+
+***** Sheet /debug/
+
+ ** ERC messages: 0  Errors 0  Warnings 0

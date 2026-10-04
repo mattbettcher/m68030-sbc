@@ -1,0 +1,19 @@
+           123293109 lane test done, errors so far 0
+           136179325 misaligned test done, errors so far 0
+---- summary (RTL + nominal delays)
+SIMM model: 1420 reads, 578 writes (lane strobes), CBR side0 23 side1 23, timing errors 0
+  min tRAS 80.1 tRP 60.1 tRCD 40.0 tRAH 22.0 tASC 18.0 tCAH n/a(col held to CAS high) tCP 100.1 tCAS 54.2 tCSR 20.0 tCHR 80.1 tWCS 20.0 tWCH 54.2
+  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
+  max refresh gap per side (after init): side0 15175.2 ns side1 15135.1 ns (limit 15625)
+cycles 811 (DRAM 664, foreign 146, early-timeout 1)
+DRAM wait states @   25 MHz:
+   0:0 1:0 2:589 3:57 4:1 5:1 6+:16
+  max wait states observed: 7 
+SIMM bus release -> next driver on (CPU write data / foreign device): min 17.9 ns
+EC #31 (DSACK -> data valid <= 28 ns): min margin 4.8 ns, violations 0 (informational in RTL: assumed output delays)
+EC #28 (AS negated -> DSACK negated <= 40 ns): max 10.0 ns to driven-high, max 27.3 ns to released (Z)
+DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 31.4 ns, overlaps 0
+U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
+DFF timing-check hits (setup/recovery 0, hold 0): expected on the asynchronous AS_n synchroniser
+done, 0 errors
+tb_dram.v:315: $finish called at 330100010 (1ps)

@@ -1,0 +1,31 @@
+ok  overlay ROM read @0: term=0001 after 1 clk
+ok  ROM read @E0000000: term=0001 after 1 clk
+ok   unterminated -> timeout: term=1000 after 128 clk
+ok  DUART read: term=0001 after 2 clk
+ok  IDE CS0 read: term=0010 after 13 clk
+    IDE read: 13 clocks from S2 to DSACK1 sample
+ok  IDE data read #2: term=0010 after 13 clk
+ok  IDE status read (DA=7): term=0010 after 13 clk
+ok  IDE data write: term=0010 after 13 clk
+ok  IDE CS1 write (DA=6): term=0010 after 13 clk
+ok  IDE read after write: term=0010 after 13 clk
+    IDE (zero-delay, clock-quantised): t0 min 720 (>=600), t1 min 120 (>=70), t2 min 360 (>=290), t9 min 57 (>=20), t4 min 70 (>=30) ns
+ok  missed AS gap: next cycle terminated correctly (0010 after 14 clk)
+ok  unmapped 08000000: term=1000 after 1 clk
+ok  I/O slot 4: term=1000 after 1 clk
+ok  cpu-space (no glue term): term=0000 after 6 clk
+ok  CpID 2 -> BERR: term=1000 after 1 clk
+ok  BKPT ack -> BERR: term=1000 after 1 clk
+IPL with DUART_INT = 5
+ok  IACK level 5 -> AVEC: term=0100 after 1 clk
+ok  REG write LED on: term=0001 after 1 clk
+ok  flash write blocked
+ok  REG write timer en: term=0001 after 1 clk
+ok  timer IPL6 at 10000000 ns
+ok  IACK6 -> AVEC: term=0100 after 1 clk
+ok  NMI IPL7 at 40000000 ns
+ok  IACK7 -> AVEC: term=0100 after 1 clk
+ok  warm reset asserted at 60000000 ns
+ok  warm reset released at 70041000 ns
+done, errors=0
+tb_glue.v:163: $finish called at 70041140000 (1ps)

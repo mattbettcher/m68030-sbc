@@ -1,0 +1,80 @@
+Name = dram
+Device = ATF1508AS
+Package = PLCC84
+Speed = 7
+Options = -preassign keep -optimize on -tdi_pullup on -tms_pullup on -pin_keep on -verilog_sim sdf
+Atmel ATF1508 Fitter Version 1918 (3-21-07)
+Copyright 1999,2000 Atmel Corporation
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+ Design fits successfully
+ 
+                                                   P                                
+                                                   W     D                          
+                                                   R     R        M                 
+                     C  R  R  R     R              _     A        U        C  C  C  
+                     A  A  A  A     A              R     M        X        A  A  A  
+                     S  S  S  S     S  M  M        S  A  _        _  W     S  S  S  
+                     0  3  2  1  G  0  A  A  V     T  S  C  G     S  E  V  3  2  1  
+                     _  _  _  _  N  _  1  1  C     _  _  L  N     E  _  C  _  _  _  
+                     n  n  n  n  D  n  1  0  C     n  n  K  D     L  n  C  n  n  n  
+                 +------------------------------------------------------------------+
+                 |  11 10  9  8  7  6  5  4  3  2  1 84 83 82 81 80 79 78 77 76 75  |
+         DSACK0_n| 12                                                            74 |A11
+              VCC| 13                                                            73 |A12
+              TDI| 14                                                            72 |GND
+         DSACK1_n| 15                                                            71 |TDO
+                 | 16                                                            70 |A13
+                 | 17                                                            69 |A14
+                 | 18                                                            68 |A15
+              GND| 19                                                            67 |A16
+              MA0| 20                                                            66 |VCC
+              MA1| 21                                                            65 |A17
+              MA2| 22                           ATF1508                          64 |A18
+              TMS| 23                         84-Lead PLCC                       63 |A19
+              MA3| 24                                                            62 |TCK
+              MA4| 25                                                            61 |A20
+              VCC| 26                                                            60 |A21
+              MA5| 27                                                            59 |GND
+              MA6| 28                                                            58 |A22
+              MA7| 29                                                            57 |A23
+              MA8| 30                                                            56 |A24
+              MA9| 31                                                            55 |A25
+              GND| 32                                                            54 |A26
+                 |  33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53  |
+                 +------------------------------------------------------------------+
+                     A  A  A  A  A  V  A  A  A  G  V  A  A  A  G  S  S     R  D  V  
+                     1  9  8  7  6  C  5  4  3  N  C  2  1  0  N  I  I     _  R  C  
+                     0              C           D  C           D  Z  Z     W  A  C  
+                                                                  1  0        M     
+                                                                              _     
+                                                                              S     
+                                                                              E     
+                                                                              L     
+                                                                              _     
+                                                                              n     
+
+Logic Array Block       Macro Cells     I/O Pins        Foldbacks       TotalPT         FanIN           Cascades
+A: MC1	- MC16		11/16(68%)	8/16(50%)	1/16(6%)	32/80(40%)	25/40(62%)	1
+B: MC17	- MC32		14/16(87%)	5/16(31%)	2/16(12%)	47/80(58%)	22/40(55%)	2
+C: MC33	- MC48		12/16(75%)	8/16(50%)	1/16(6%)	28/80(35%)	25/40(62%)	1
+D: MC49	- MC64		13/16(81%)	8/16(50%)	0/16(0%)	51/80(63%)	25/40(62%)	3
+E: MC65	- MC80		13/16(81%)	7/16(43%)	0/16(0%)	19/80(23%)	19/40(47%)	0
+F: MC81	- MC96		0/16(0%)	8/16(50%)	0/16(0%)	0/80(0%)	19/40(47%)	0
+G: MC97	- MC112		1/16(6%)	8/16(50%)	0/16(0%)	0/80(0%)	19/40(47%)	0
+H: MC113- MC128		5/16(31%)	7/16(43%)	2/16(12%)	29/80(36%)	19/40(47%)	2
+
+Total dedicated input used:	3/4 	(75%)
+Total I/O pins used		59/64 	(92%)
+Total Macro cells used 		78/128 	(60%)
+Total Flip-Flop used 		50/128 	(39%)
+Total Foldback logic used 	6/128 	(4%)
+Total Nodes+FB/MCells 		75/128 	(58%)
+Total cascade used 		9
+Total input pins		37
+Total output pins 		25
+Total Pts			206
+
+$Device PLCC84 fits; JTAG ON; Secure OFF
+

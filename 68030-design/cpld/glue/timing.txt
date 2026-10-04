@@ -1,0 +1,146 @@
+NOTE (2026-10-03, not from the fitter): AS_n -> IDE_DIOR_n max 19.5 ns below is the async-clear
+path of id00356. The pin equation is one product term, !IDE_DIOR_n = (!AS_n & id00356.Q), and that
+arc is the 7.5 ns minimum reported here, equal to ATF1508AS-7 tPD1 max. The 19.5 ns number must not
+be used as the DIOR release delay. See spec.md §3.2.
+
+Static timing of the fitted glue CPLD from the fit1508 SDF timing model (glue.vo + glue.sdo).
+All values are the fitter's single (min=typ=max) SDF numbers for the ATF1508AS-7 model; board/PCB
+delays are NOT included. The ATF1508AS datasheet gives no minimum delays, so "min" paths below are
+the same single SDF numbers and are NOT guaranteed minima [VERIFY].
+1. Clock-to-pad (CLK pin -> output pad via registers), ns
+   AVEC_n          11.0
+   BERR_n          11.0
+   BUS_RD_n        10.0
+   BUS_WR_n        10.0
+   CIIN_n          10.0
+   DRAM_SEL_n      10.0
+   DSACK0_n        11.0
+   DSACK1_n        11.0
+   DUART_RST       24.0
+   HALT_LED_n      10.0
+   HALT_n          16.5
+   IDE_BUF_EN_n    10.0
+   IDE_CS0_n       10.0
+   IDE_CS1_n       10.0
+   IDE_DA0          4.5
+   IDE_DA1          4.5
+   IDE_DA2          4.5
+   IDE_DIOR_n      10.0
+   IDE_DIOW_n      10.0
+   IPL0_n          10.0
+   IPL1_n          10.0
+   IPL2_n          10.0
+   LED_n           10.0
+   PERIPH_RST_n    24.0
+   RESET_n         16.5
+   ROM_CE_n        10.0
+2. Input pin -> output pad (combinational; for AS_n/PWR_RST_n including async clear/preset paths), ns
+   A13        max   7.5 (to FPU_CS_n)
+   A14        max   7.5 (to FPU_CS_n)
+   A15        max   7.5 (to FPU_CS_n)
+   A16        max   7.5 (to FPU_CS_n, DUART_CS_n)
+   A17        max   7.5 (to FPU_CS_n, DUART_CS_n)
+   A18        max   7.5 (to FPU_CS_n, DUART_CS_n)
+   A19        max   7.5 (to FPU_CS_n, DUART_CS_n)
+   A27        max  13.0 (to ROM_CE_n, DRAM_SEL_n, CIIN_n, EXP_SEL_n, EXP_BUF_EN_n, DUART_CS_n)
+   A28        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, EXP_SEL_n, EXP_BUF_EN_n)
+   A29        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, EXP_SEL_n, EXP_BUF_EN_n)
+   A30        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, EXP_SEL_n, EXP_BUF_EN_n)
+   A31        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, EXP_SEL_n, EXP_BUF_EN_n)
+   AS_n       (max = slowest path incl. async clear -> register -> pad; min = fastest path):
+       -> DSACK1_n       max  20.5  min   7.5
+       -> DSACK0_n       max  20.5  min   7.5
+       -> BERR_n         max  20.5  min   7.5
+       -> AVEC_n         max  20.5  min   7.5
+       -> IDE_DIOW_n     max  19.5  min   7.5
+       -> IDE_DIOR_n     max  19.5  min   7.5
+       -> IDE_BUF_EN_n   max  19.5  min   7.5
+       -> BUS_WR_n       max  19.5  min  19.5
+       -> BUS_RD_n       max  19.5  min   7.5
+       -> ROM_CE_n       max   7.5  min   7.5
+       -> FPU_CS_n       max   7.5  min   7.5
+       -> EXP_SEL_n      max   7.5  min   7.5
+       -> EXP_BUF_EN_n   max   7.5  min   7.5
+       -> DUART_CS_n     max   7.5  min   7.5
+       -> DRAM_SEL_n     max   7.5  min   7.5
+       -> CIIN_n         max   7.5  min   7.5
+   DS_n       max   7.5 (to BUS_WR_n)
+   FC0        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, FPU_CS_n, EXP_SEL_n, EXP_BUF_EN_n)
+   FC1        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, FPU_CS_n, EXP_SEL_n, EXP_BUF_EN_n)
+   FC2        max  13.0 (to ROM_CE_n, DUART_CS_n, DRAM_SEL_n, CIIN_n, FPU_CS_n, EXP_SEL_n, EXP_BUF_EN_n)
+   PWR_RST_n  (max = slowest path incl. async clear -> register -> pad; min = fastest path):
+       -> PERIPH_RST_n   max  25.0  min  15.0
+       -> DUART_RST      max  25.0  min  15.0
+       -> DSACK1_n       max  20.5  min  19.5
+       -> DSACK0_n       max  20.5  min  19.5
+       -> BERR_n         max  20.5  min  19.5
+       -> AVEC_n         max  20.5  min  19.5
+       -> IDE_DIOW_n     max  19.5  min  19.5
+       -> IDE_DIOR_n     max  19.5  min  19.5
+       -> IDE_BUF_EN_n   max  19.5  min  19.5
+       -> BUS_WR_n       max  19.5  min  19.5
+       -> BUS_RD_n       max  19.5  min  19.5
+       -> RESET_n        max  17.5  min   7.5
+       -> HALT_n         max  17.5  min   7.5
+       -> ROM_CE_n       max  11.0  min  11.0
+       -> LED_n          max  11.0  min  11.0
+       -> IPL2_n         max  11.0  min  11.0
+       -> IPL1_n         max  11.0  min  11.0
+       -> IPL0_n         max  11.0  min  11.0
+       -> IDE_CS1_n      max  11.0  min  11.0
+       -> IDE_CS0_n      max  11.0  min  11.0
+       -> HALT_LED_n     max  11.0  min  11.0
+       -> DRAM_SEL_n     max  11.0  min  11.0
+       -> CIIN_n         max  11.0  min  11.0
+       -> IDE_DA2        max   5.5  min   5.5
+       -> IDE_DA1        max   5.5  min   5.5
+       -> IDE_DA0        max   5.5  min   5.5
+3. Combinational chip selects: address/FC decode vs AS_n (runt-select check).
+   An address/FC input changes >= 7 ns before AS_n falls (MC68030 EC #11, 25 MHz). A stale select
+   (previous cycle's decode) can appear when AS_n asserts if  max(addr path) - 7 > min(AS_n path).
+   FPU_CS_n       addr/FC max   7.5 (via FC2), AS_n min   7.5, single pass: no stale window (margin  7.0 ns)
+   EXP_SEL_n      addr/FC max   7.5 (via FC2), AS_n min   7.5, single pass: no stale window (margin  7.0 ns)
+   EXP_BUF_EN_n   addr/FC max   7.5 (via FC2), AS_n min   7.5, single pass: no stale window (margin  7.0 ns)
+   DRAM_SEL_n     addr/FC max  13.0 (via FC2), AS_n min   7.5, multi-level: no stale window (margin  1.5 ns)
+   ROM_CE_n       addr/FC max  13.0 (via FC2), AS_n min   7.5, multi-level: no stale window (margin  1.5 ns)
+   DUART_CS_n     addr/FC max  13.0 (via FC2), AS_n min   7.5, multi-level: no stale window (margin  1.5 ns)
+   CIIN_n         addr/FC max  13.0 (via FC2), AS_n min   7.5, multi-level: no stale window (margin  1.5 ns)
+   IDE_CS0_n      registered decode (no combinational address/FC path): glitch-free by construction
+   IDE_CS1_n      registered decode (no combinational address/FC path): glitch-free by construction
+   IDE_BUF_EN_n   registered decode (no combinational address/FC path): glitch-free by construction
+4. Input setup to CLK (pin -> register D/CE arrival + tSU - clock arrival at the register), ns
+   A1          11.5  (worst register id00307)
+   A13          6.8  (worst register id00352)
+   A14          6.8  (worst register id00352)
+   A15          6.8  (worst register id00352)
+   A16         17.0  (worst register id00305)
+   A17         17.0  (worst register id00305)
+   A18         17.0  (worst register id00305)
+   A19         17.0  (worst register id00305)
+   A2          11.5  (worst register id00307)
+   A27         17.0  (worst register id00305)
+   A28         22.5  (worst register id00305)
+   A29         22.5  (worst register id00305)
+   A3          11.5  (worst register id00307)
+   A30         22.5  (worst register id00305)
+   A31         22.5  (worst register id00305)
+   AS_n        17.0  (worst register id00305)
+   DUART_INT_n   6.0  (worst register id00297)
+   EXP_INT_n    6.0  (worst register id00296)
+   FC0         22.5  (worst register id00305)
+   FC1         22.5  (worst register id00305)
+   FC2         22.5  (worst register id00305)
+   IDE_INTRQ    6.0  (worst register id00003)
+   IDE_IORDY    6.0  (worst register id00337)
+   NIC_INT_n    6.0  (worst register id00297)
+   NMI_BTN_n    6.0  (worst register id00309)
+   R_W         17.0  (worst register id00305)
+   STATUS_n     6.0  (worst register id00299)
+   WARM_RST_BTN_n   6.0  (worst register id00311)
+5. Register -> register (clock-to-Q + logic + tSU - clock arrival at the capturing register), ns
+   id00352     20.3
+   id00349     20.3
+   id00351     19.5
+   id00330     19.5
+   id00329     19.5
+   -> worst 20.3 ns: fmax 49.3 MHz; 25 MHz (40 ns) MET, 33.33 MHz (30 ns) MET

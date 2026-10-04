@@ -1,0 +1,1210 @@
+Atmel ATF1508 Fitter Version 1918 ,running Sun Sep 27 09:19:10 2026
+
+
+
+
+fit1508
+-i dram.edif
+-ifmt edif
+-o dram.jed
+-lib Z:\opt\atf15xx_yosys\vendor\aprim.lib
+-tech ATF1508AS
+-device PLCC84
+-tpd 7
+-preassign keep
+-optimize on
+-tdi_pullup on
+-tms_pullup on
+-pin_keep on
+-verilog_sim sdf
+
+****** Initial fitting strategy and property ******
+ Netlist_in_file = dram.edif
+ Netlist_out_file = dram.tt3
+ Jedec_file = dram.jed
+ Time_file = dram.VO
+ Time_file = dram.SDO
+ Log_file = dram.fit
+ Device_name = PLCC84
+ Tech_name = ATF1508AS 
+ Package_type = PLCC
+ Preassignment = keep 
+ Security_mode = OFF
+ Pin-Keeper = ON
+ supporter = ABEL
+ optimize = ON
+ Xor_synthesis = OFF
+ Foldback_logic = OFF
+ Cascade_logic = OFF
+ Output_fast = ON
+ SSTL_input = off
+ *******************************
+ Power down pin 1 = OFF
+ Power down pin 2 = OFF
+ power_reset = OFF
+ JTAG = ON
+ TDI pullup = ON
+ TMS pullup = ON
+ MC_power = OFF
+ Open_collector = OFF
+ ITD0 = ON
+ ITD1 = ON
+ ITD2 = ON
+ Fast_inlatch = off
+ TPD = 7
+ Latch_synthesis = off 
+ Push_gate = on 
+ Verilog_sim = on 
+ VHDL_sim = off 
+ Out_Edif = off 
+ Logic Doubling = off 
+ ****** End of fitting strategy and property ******
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+
+Performing global Output Enable pin assignments ...
+
+Performing global pin assignments ...
+--------------------------------------
+
+
+
+Final global control pins assignment (if applicable)...
+-------------------------------------------------------
+DRAM_CLK assigned to pin  83
+PWR_RST_n assigned to pin  1
+
+
+
+Performing input pin pre-assignments ...
+------------------------------------
+DRAM_CLK assigned to pin  83
+PWR_RST_n assigned to pin  1
+AS_n assigned to pin  84
+
+Attempt to place floating signals ...
+------------------------------------
+DSACK0_n is placed at pin 12 (MC 3)
+CAS0_n is placed at pin 11 (MC 5)
+RAS3_n is placed at pin 10 (MC 6)
+RAS2_n is placed at pin 9 (MC 8)
+id00215 is placed at feedback node 610 (MC 10)
+RAS1_n is placed at pin 8 (MC 11)
+id00197 is placed at feedback node 612 (MC 12)
+RAS0_n is placed at pin 6 (MC 13)
+MA11 is placed at pin 5 (MC 14)
+id00196 is placed at feedback node 615 (MC 15)
+MA10 is placed at pin 4 (MC 16)
+Com_Ctrl_553 is placed at foldback expander node 316 (MC 16)
+MA2 is placed at pin 22 (MC 17)
+id00239 is placed at feedback node 618 (MC 18)
+MA1 is placed at pin 21 (MC 19)
+id00233 is placed at feedback node 620 (MC 20)
+MA0 is placed at pin 20 (MC 21)
+id00238 is placed at feedback node 622 (MC 22)
+id00200 is placed at feedback node 623 (MC 23)
+id00241 is placed at feedback node 624 (MC 24)
+id00232 is placed at feedback node 625 (MC 25)
+id00234 is placed at feedback node 626 (MC 26)
+id00236 is placed at feedback node 628 (MC 28)
+DSACK1_n is placed at pin 15 (MC 29)
+id00240 is placed at feedback node 630 (MC 30)
+FB_2_Com_Ctrl_553 is placed at foldback expander node 331 (MC 31)
+TDI is placed at pin 14 (MC 32)
+id00237 is placed at feedback node 632 (MC 32)
+id00048Q is placed at foldback expander node 332 (MC 32)
+MA9 is placed at pin 31 (MC 35)
+MA8 is placed at pin 30 (MC 37)
+MA7 is placed at pin 29 (MC 38)
+id00243 is placed at feedback node 639 (MC 39)
+MA6 is placed at pin 28 (MC 40)
+id00213 is placed at feedback node 641 (MC 41)
+id00210 is placed at feedback node 642 (MC 42)
+MA5 is placed at pin 27 (MC 43)
+id00231 is placed at feedback node 644 (MC 44)
+MA4 is placed at pin 25 (MC 45)
+MA3 is placed at pin 24 (MC 46)
+TMS is placed at pin 23 (MC 48)
+id00209 is placed at feedback node 648 (MC 48)
+id00096Q is placed at foldback expander node 348 (MC 48)
+A3 is placed at pin 41 (MC 49)
+id00101QN is placed at feedback node 649 (MC 49)
+id00229 is placed at feedback node 650 (MC 50)
+A4 is placed at pin 40 (MC 51)
+id00212 is placed at feedback node 651 (MC 51)
+id00003 is placed at feedback node 652 (MC 52)
+A5 is placed at pin 39 (MC 53)
+id00223 is placed at feedback node 653 (MC 53)
+id00099Q is placed at feedback node 654 (MC 54)
+id00222 is placed at feedback node 655 (MC 55)
+A6 is placed at pin 37 (MC 56)
+id00108Q is placed at feedback node 656 (MC 56)
+A7 is placed at pin 36 (MC 57)
+id00225 is placed at feedback node 658 (MC 58)
+A8 is placed at pin 35 (MC 59)
+id00226 is placed at feedback node 660 (MC 60)
+A9 is placed at pin 34 (MC 61)
+id00228 is placed at feedback node 661 (MC 61)
+id00227 is placed at feedback node 663 (MC 63)
+A10 is placed at pin 33 (MC 64)
+id00224 is placed at feedback node 664 (MC 64)
+A2 is placed at pin 44 (MC 65)
+A1 is placed at pin 45 (MC 67)
+id00242 is placed at feedback node 667 (MC 67)
+id00220 is placed at feedback node 668 (MC 68)
+A0 is placed at pin 46 (MC 69)
+id00221 is placed at feedback node 669 (MC 69)
+id00219 is placed at feedback node 670 (MC 70)
+id00218 is placed at feedback node 671 (MC 71)
+SIZ1 is placed at pin 48 (MC 72)
+id00216 is placed at feedback node 672 (MC 72)
+SIZ0 is placed at pin 49 (MC 73)
+id00217 is placed at feedback node 673 (MC 73)
+id00214 is placed at feedback node 674 (MC 74)
+id00211 is placed at feedback node 676 (MC 76)
+R_W is placed at pin 51 (MC 77)
+id00230 is placed at feedback node 677 (MC 77)
+id00244 is placed at feedback node 678 (MC 78)
+Com_Ctrl_554 is placed at feedback node 679 (MC 79)
+DRAM_SEL_n is placed at pin 52 (MC 80)
+id00235 is placed at feedback node 680 (MC 80)
+A26 is placed at pin 54 (MC 83)
+A25 is placed at pin 55 (MC 85)
+A24 is placed at pin 56 (MC 86)
+A23 is placed at pin 57 (MC 88)
+A22 is placed at pin 58 (MC 91)
+A21 is placed at pin 60 (MC 93)
+A20 is placed at pin 61 (MC 94)
+TCK is placed at pin 62 (MC 96)
+A19 is placed at pin 63 (MC 97)
+A18 is placed at pin 64 (MC 99)
+A17 is placed at pin 65 (MC 101)
+A16 is placed at pin 67 (MC 104)
+A15 is placed at pin 68 (MC 105)
+A14 is placed at pin 69 (MC 107)
+A13 is placed at pin 70 (MC 109)
+TDO is placed at pin 71 (MC 112)
+A12 is placed at pin 73 (MC 115)
+A11 is placed at pin 74 (MC 117)
+CAS1_n is placed at pin 75 (MC 118)
+CAS2_n is placed at pin 76 (MC 120)
+CAS3_n is placed at pin 77 (MC 123)
+WE_n is placed at pin 79 (MC 125)
+MUX_SEL is placed at pin 80 (MC 126)
+FB_555 is placed at foldback expander node 427 (MC 127)
+FB_8_Com_Ctrl_553 is placed at foldback expander node 428 (MC 128)
+
+                                                   P                                
+                                                   W     D                          
+                                                   R     R        M                 
+                     C  R  R  R     R              _     A        U        C  C  C  
+                     A  A  A  A     A              R     M        X        A  A  A  
+                     S  S  S  S     S  M  M        S  A  _        _  W     S  S  S  
+                     0  3  2  1  G  0  A  A  V     T  S  C  G     S  E  V  3  2  1  
+                     _  _  _  _  N  _  1  1  C     _  _  L  N     E  _  C  _  _  _  
+                     n  n  n  n  D  n  1  0  C     n  n  K  D     L  n  C  n  n  n  
+                 +------------------------------------------------------------------+
+                 |  11 10  9  8  7  6  5  4  3  2  1 84 83 82 81 80 79 78 77 76 75  |
+         DSACK0_n| 12                                                            74 |A11
+              VCC| 13                                                            73 |A12
+              TDI| 14                                                            72 |GND
+         DSACK1_n| 15                                                            71 |TDO
+                 | 16                                                            70 |A13
+                 | 17                                                            69 |A14
+                 | 18                                                            68 |A15
+              GND| 19                                                            67 |A16
+              MA0| 20                                                            66 |VCC
+              MA1| 21                                                            65 |A17
+              MA2| 22                           ATF1508                          64 |A18
+              TMS| 23                         84-Lead PLCC                       63 |A19
+              MA3| 24                                                            62 |TCK
+              MA4| 25                                                            61 |A20
+              VCC| 26                                                            60 |A21
+              MA5| 27                                                            59 |GND
+              MA6| 28                                                            58 |A22
+              MA7| 29                                                            57 |A23
+              MA8| 30                                                            56 |A24
+              MA9| 31                                                            55 |A25
+              GND| 32                                                            54 |A26
+                 |  33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53  |
+                 +------------------------------------------------------------------+
+                     A  A  A  A  A  V  A  A  A  G  V  A  A  A  G  S  S     R  D  V  
+                     1  9  8  7  6  C  5  4  3  N  C  2  1  0  N  I  I     _  R  C  
+                     0              C           D  C           D  Z  Z     W  A  C  
+                                                                  1  0        M     
+                                                                              _     
+                                                                              S     
+                                                                              E     
+                                                                              L     
+                                                                              _     
+                                                                              n     
+
+
+
+
+VCC = Supply Voltage pin for the device core
+
+GND = GND pin which must be connected to ground
+
+TMS,TDI,TDO,TDI = JTAG pins reserved for JTAG interface
+
+NC = Unused I/O pins which must be unconnected on the board
+
+Universal-Interconnect-Multiplexer assignments
+------------------------------------------------
+FanIn assignment for block A [25]
+{
+A22,A0,A24,A25,A1,A23,AS_n,
+CAS0_n,Com_Ctrl_554,
+PWR_RST_n,
+R_W,RAS2_n,RAS1_n,RAS3_n,RAS0_n,
+SIZ0,SIZ1,
+id00211,id00101QN,id00099Q,id00197,id00108Q,id00196,id00200,id00214,
+}
+Multiplexer assignment for block A
+R_W			(MC21	P)   : MUX 0		Ref (E77p)
+CAS0_n			(MC1	P)   : MUX 1		Ref (A5p)
+RAS2_n			(MC3	P)   : MUX 3		Ref (A8p)
+A22			(MC22	P)   : MUX 6		Ref (F91p)
+id00211			(MC13	FB)  : MUX 7		Ref (E76fb)
+id00101QN		(MC9	FB)  : MUX 8		Ref (D49fb)
+A0			(MC20	P)   : MUX 9		Ref (E69p)
+RAS1_n			(MC4	P)   : MUX 10		Ref (A11p)
+A24			(MC24	P)   : MUX 11		Ref (F86p)
+A25			(MC25	P)   : MUX 13		Ref (F85p)
+SIZ0			(MC17	P)   : MUX 14		Ref (E73p)
+A1			(MC19	P)   : MUX 15		Ref (E67p)
+A23			(MC23	P)   : MUX 17		Ref (F88p)
+SIZ1			(MC18	P)   : MUX 19		Ref (E72p)
+id00099Q		(MC10	FB)  : MUX 20		Ref (D54fb)
+id00197			(MC5	FB)  : MUX 21		Ref (A12fb)
+id00108Q		(MC11	FB)  : MUX 22		Ref (D56fb)
+id00196			(MC7	FB)  : MUX 23		Ref (A15fb)
+PWR_RST_n		(MC15	FB)  : MUX 24		Ref (GCLR)
+AS_n			(MC16	FB)  : MUX 25		Ref (OE1)
+RAS3_n			(MC2	P)   : MUX 27		Ref (A6p)
+RAS0_n			(MC6	P)   : MUX 28		Ref (A13p)
+id00200			(MC8	FB)  : MUX 32		Ref (B23fb)
+Com_Ctrl_554		(MC14	FB)  : MUX 33		Ref (E79fb)
+id00214			(MC12	FB)  : MUX 39		Ref (E74fb)
+
+FanIn assignment for block B [22]
+{
+A3,A13,A2,A12,A4,A14,AS_n,
+PWR_RST_n,
+id00239,id00234,id00212,id00210,id00243,id00232,id00200,id00240,id00233,id00235,id00196,id00237,id00238,id00236,
+}
+Multiplexer assignment for block B
+id00239			(MC2	FB)  : MUX 0		Ref (B18fb)
+PWR_RST_n		(MC15	FB)  : MUX 2		Ref (GCLR)
+id00234			(MC7	FB)  : MUX 3		Ref (B26fb)
+id00212			(MC13	FB)  : MUX 4		Ref (D51fb)
+A3			(MC20	P)   : MUX 5		Ref (D49p)
+A13			(MC19	P)   : MUX 6		Ref (G109p)
+A2			(MC18	P)   : MUX 7		Ref (E65p)
+A12			(MC17	P)   : MUX 9		Ref (H115p)
+id00210			(MC12	FB)  : MUX 11		Ref (C42fb)
+A4			(MC22	P)   : MUX 13		Ref (D51p)
+id00243			(MC11	FB)  : MUX 14		Ref (C39fb)
+id00232			(MC6	FB)  : MUX 17		Ref (B25fb)
+id00200			(MC5	FB)  : MUX 18		Ref (B23fb)
+id00240			(MC9	FB)  : MUX 19		Ref (B30fb)
+id00233			(MC3	FB)  : MUX 20		Ref (B20fb)
+id00235			(MC14	FB)  : MUX 23		Ref (E80fb)
+id00196			(MC1	FB)  : MUX 25		Ref (A15fb)
+A14			(MC21	P)   : MUX 28		Ref (G107p)
+id00237			(MC10	FB)  : MUX 29		Ref (B32fb)
+id00238			(MC4	FB)  : MUX 34		Ref (B22fb)
+AS_n			(MC16	FB)  : MUX 35		Ref (OE1)
+id00236			(MC8	FB)  : MUX 37		Ref (B28fb)
+
+FanIn assignment for block C [25]
+{
+A15,A5,A18,A7,A17,A8,A11,A20,A16,A21,A9,A6,A19,A10,
+DRAM_SEL_n,
+PWR_RST_n,
+id00242,id00243,id00228,id00212,id00221,id00209,id00223,id00200,id00231,
+}
+Multiplexer assignment for block C
+id00242			(MC8	FB)  : MUX 0		Ref (E67fb)
+A15			(MC12	P)   : MUX 2		Ref (G105p)
+A5			(MC13	P)   : MUX 3		Ref (D53p)
+DRAM_SEL_n		(MC11	P)   : MUX 4		Ref (E80p)
+A18			(MC18	P)   : MUX 5		Ref (G99p)
+A7			(MC17	P)   : MUX 6		Ref (D57p)
+A17			(MC16	P)   : MUX 7		Ref (G101p)
+id00243			(MC2	FB)  : MUX 10		Ref (C39fb)
+id00228			(MC7	FB)  : MUX 11		Ref (D61fb)
+A8			(MC19	P)   : MUX 12		Ref (D59p)
+A11			(MC25	P)   : MUX 13		Ref (H117p)
+A20			(MC22	P)   : MUX 14		Ref (F94p)
+id00212			(MC5	FB)  : MUX 16		Ref (D51fb)
+A16			(MC14	P)   : MUX 17		Ref (G104p)
+A21			(MC24	P)   : MUX 18		Ref (F93p)
+A9			(MC21	P)   : MUX 20		Ref (D61p)
+A6			(MC15	P)   : MUX 21		Ref (D56p)
+id00221			(MC9	FB)  : MUX 24		Ref (E69fb)
+A19			(MC20	P)   : MUX 25		Ref (G97p)
+id00209			(MC4	FB)  : MUX 27		Ref (C48fb)
+id00223			(MC6	FB)  : MUX 28		Ref (D53fb)
+id00200			(MC1	FB)  : MUX 32		Ref (B23fb)
+PWR_RST_n		(MC10	FB)  : MUX 36		Ref (GCLR)
+A10			(MC23	P)   : MUX 38		Ref (D64p)
+id00231			(MC3	FB)  : MUX 39		Ref (C44fb)
+
+FanIn assignment for block D [25]
+{
+A26,
+DRAM_SEL_n,
+PWR_RST_n,
+id00220,id00229,id00227,id00221,id00226,id00243,id00225,id00241,id00215,id00213,id00222,id00003,id00219,id00230,id00242,id00209,id00223,id00231,id00212,id00228,id00211,id00224,
+}
+Multiplexer assignment for block D
+A26			(MC25	P)   : MUX 1		Ref (F83p)
+id00220			(MC18	FB)  : MUX 2		Ref (E68fb)
+id00229			(MC7	FB)  : MUX 4		Ref (D50fb)
+id00227			(MC15	FB)  : MUX 5		Ref (D63fb)
+id00221			(MC19	FB)  : MUX 6		Ref (E69fb)
+id00226			(MC13	FB)  : MUX 7		Ref (D60fb)
+id00243			(MC3	FB)  : MUX 10		Ref (C39fb)
+id00225			(MC12	FB)  : MUX 11		Ref (D58fb)
+id00241			(MC2	FB)  : MUX 12		Ref (B24fb)
+id00215			(MC1	FB)  : MUX 13		Ref (A10fb)
+PWR_RST_n		(MC23	FB)  : MUX 14		Ref (GCLR)
+id00213			(MC4	FB)  : MUX 15		Ref (C41fb)
+id00222			(MC11	FB)  : MUX 16		Ref (D55fb)
+id00003			(MC9	FB)  : MUX 18		Ref (D52fb)
+id00219			(MC20	FB)  : MUX 20		Ref (E70fb)
+id00230			(MC22	FB)  : MUX 21		Ref (E77fb)
+DRAM_SEL_n		(MC24	P)   : MUX 22		Ref (E80p)
+id00242			(MC17	FB)  : MUX 26		Ref (E67fb)
+id00209			(MC6	FB)  : MUX 27		Ref (C48fb)
+id00223			(MC10	FB)  : MUX 28		Ref (D53fb)
+id00231			(MC5	FB)  : MUX 29		Ref (C44fb)
+id00212			(MC8	FB)  : MUX 30		Ref (D51fb)
+id00228			(MC14	FB)  : MUX 33		Ref (D61fb)
+id00211			(MC21	FB)  : MUX 35		Ref (E76fb)
+id00224			(MC16	FB)  : MUX 37		Ref (D64fb)
+
+FanIn assignment for block E [19]
+{
+AS_n,
+PWR_RST_n,
+id00003,id00216,id00221,id00232,id00218,id00210,id00235,id00244,id00233,id00219,id00217,id00230,id00242,id00234,id00220,id00213,id00215,
+}
+Multiplexer assignment for block E
+id00003			(MC7	FB)  : MUX 0		Ref (D52fb)
+PWR_RST_n		(MC18	FB)  : MUX 2		Ref (GCLR)
+id00216			(MC13	FB)  : MUX 4		Ref (E72fb)
+id00221			(MC10	FB)  : MUX 6		Ref (E69fb)
+id00232			(MC3	FB)  : MUX 7		Ref (B25fb)
+id00218			(MC12	FB)  : MUX 10		Ref (E71fb)
+id00210			(MC6	FB)  : MUX 11		Ref (C42fb)
+id00235			(MC17	FB)  : MUX 13		Ref (E80fb)
+id00244			(MC16	FB)  : MUX 17		Ref (E78fb)
+id00233			(MC2	FB)  : MUX 18		Ref (B20fb)
+id00219			(MC11	FB)  : MUX 20		Ref (E70fb)
+id00217			(MC14	FB)  : MUX 23		Ref (E73fb)
+id00230			(MC15	FB)  : MUX 25		Ref (E77fb)
+id00242			(MC8	FB)  : MUX 26		Ref (E67fb)
+id00234			(MC4	FB)  : MUX 29		Ref (B26fb)
+id00220			(MC9	FB)  : MUX 32		Ref (E68fb)
+id00213			(MC5	FB)  : MUX 35		Ref (C41fb)
+AS_n			(MC19	FB)  : MUX 37		Ref (OE1)
+id00215			(MC1	FB)  : MUX 39		Ref (A10fb)
+
+FanIn assignment for block H [19]
+{
+AS_n,A0,A1,
+CAS1_n,Com_Ctrl_554,CAS2_n,CAS3_n,
+MUX_SEL,
+PWR_RST_n,
+R_W,
+SIZ1,SIZ0,
+WE_n,
+id00212,id00243,id00101QN,id00210,id00211,id00214,
+}
+Multiplexer assignment for block H
+AS_n			(MC14	FB)  : MUX 3		Ref (OE1)
+id00212			(MC4	FB)  : MUX 4		Ref (D51fb)
+SIZ1			(MC16	P)   : MUX 5		Ref (E72p)
+CAS1_n			(MC8	P)   : MUX 7		Ref (H118p)
+WE_n			(MC11	P)   : MUX 8		Ref (H125p)
+A0			(MC18	P)   : MUX 9		Ref (E69p)
+id00243			(MC1	FB)  : MUX 10		Ref (C39fb)
+id00101QN		(MC3	FB)  : MUX 12		Ref (D49fb)
+SIZ0			(MC15	P)   : MUX 14		Ref (E73p)
+id00210			(MC2	FB)  : MUX 15		Ref (C42fb)
+Com_Ctrl_554		(MC7	FB)  : MUX 17		Ref (E79fb)
+CAS2_n			(MC9	P)   : MUX 19		Ref (H120p)
+A1			(MC17	P)   : MUX 29		Ref (E67p)
+MUX_SEL			(MC12	P)   : MUX 30		Ref (H126p)
+CAS3_n			(MC10	P)   : MUX 32		Ref (H123p)
+R_W			(MC19	P)   : MUX 34		Ref (E77p)
+id00211			(MC6	FB)  : MUX 35		Ref (E76fb)
+PWR_RST_n		(MC13	FB)  : MUX 36		Ref (GCLR)
+id00214			(MC5	FB)  : MUX 39		Ref (E74fb)
+
+Creating JEDEC file dram.jed ...
+
+PLCC84 programmed logic:
+-----------------------------------
+MA0 = ((!id00200.Q & A12)
+	# (id00200.Q & A2));
+
+MA11 = ((!id00200.Q & A24)
+	# (id00200.Q & A25));
+
+MA1 = ((!id00200.Q & A13)
+	# (id00200.Q & A3));
+
+MA10 = ((!id00200.Q & A22)
+	# (id00200.Q & A23));
+
+MA4 = ((!id00200.Q & A16)
+	# (id00200.Q & A6));
+
+MA7 = ((!id00200.Q & A19)
+	# (id00200.Q & A9));
+
+MA2 = ((!id00200.Q & A14)
+	# (id00200.Q & A4));
+
+MA3 = ((!id00200.Q & A15)
+	# (id00200.Q & A5));
+
+MA5 = ((!id00200.Q & A17)
+	# (id00200.Q & A7));
+
+MA6 = ((!id00200.Q & A18)
+	# (id00200.Q & A8));
+
+MA8 = ((!id00200.Q & A20)
+	# (id00200.Q & A10));
+
+MA9 = ((!id00200.Q & A21)
+	# (id00200.Q & A11));
+
+id00196.D = (id00196.Q & !id00211.Q);
+
+id00197.D = (id00197.Q & !id00211.Q);
+
+id00211.D = id00210.Q;
+
+id00214.D = id00213.Q;
+
+id00215.D = id00214.Q;
+
+id00217.D = id00216.Q;
+
+id00216.D = id00215.Q;
+
+id00218.D = id00217.Q;
+
+id00219.D = id00218.Q;
+
+id00220.D = id00219.Q;
+
+id00221.D = id00220.Q;
+
+id00242.D = id00244.Q;
+
+id00243.D = id00242.Q;
+
+!DSACK0_n = (!AS_n & !id00197.Q);
+
+!DSACK1_n = (!AS_n & !id00196.Q);
+
+id00213.D = (id00228.Q & id00209.Q);
+
+!id00096Q = (id00223.Q & id00209.Q & !id00228.Q);
+
+id00212.D = ((id00212.Q & !id00243.Q)
+	# id00211.Q);
+
+id00229.D = ((id00229.Q & !id00213.Q)
+	# (id00241.Q & !id00222.Q));
+
+id00230.D = ((id00230.Q & !id00221.Q)
+	# (!id00230.Q & id00221.Q));
+
+id00244.D = (id00244.Q & !id00242.Q);
+
+!id00048Q = (id00237.Q & id00232.Q & id00235.Q & id00233.Q & id00234.Q & id00236.Q);
+
+id00101QN = ((!id00219.Q & !id00243.Q)
+	# (!id00219.Q & !id00212.Q));
+
+id00003.D = ((id00228.Q & id00209.Q)
+	# (id00003.Q & !id00220.Q));
+
+!MUX_SEL.D = ((!id00210.Q & !MUX_SEL.Q)
+	# (!id00210.Q & id00212.Q & id00243.Q));
+
+!WE_n.D = ((!WE_n.Q & !id00243.Q)
+	# (!R_W & id00210.Q)
+	# (!WE_n.Q & !id00212.Q));
+
+!id00200.D = ((!id00210.Q & id00212.Q & id00243.Q)
+	# (!id00210.Q & !id00200.Q));
+
+id00228.D = ((!id00222.Q & !id00213.Q & id00229.Q & !id00209.Q)
+	# (!id00222.Q & !id00213.Q & !id00228.Q & !id00223.Q)
+	# (!id00222.Q & !id00213.Q & !id00209.Q & !id00223.Q)
+	# (!id00222.Q & !id00213.Q & !id00228.Q & id00229.Q));
+
+id00241.D = (id00240.Q & !id00239.Q & id00238.Q & !id00232.Q & id00233.Q & id00234.Q & !id00235.Q & id00236.Q & id00237.Q);
+
+id00099Q = ((id00215.Q & !id00230.Q)
+	# (!A26 & id00223.Q & id00209.Q & !id00228.Q & id00231.Q)
+	# (!A26 & !DRAM_SEL_n & !id00242.Q & id00243.Q & id00223.Q & id00209.Q & !id00228.Q));
+
+id00108Q = ((id00215.Q & id00230.Q)
+	# (A26 & id00223.Q & id00209.Q & !id00228.Q & id00231.Q)
+	# (A26 & !DRAM_SEL_n & !id00242.Q & id00243.Q & id00223.Q & id00209.Q & !id00228.Q));
+
+id00209.D = ((id00209.Q & !id00228.Q & id00096Q)
+	# id00221.Q
+	# (id00243.Q & id00212.Q)
+	# (id00209.Q & !id00231.Q & !id00228.Q & !id00243.Q)
+	# (id00209.Q & !id00231.Q & !id00228.Q & id00242.Q)
+	# (id00209.Q & !id00231.Q & !id00228.Q & DRAM_SEL_n));
+
+id00210.D = ((id00223.Q & id00209.Q & !id00228.Q & id00243.Q & !id00242.Q & !DRAM_SEL_n)
+	# (id00231.Q & id00223.Q & id00209.Q & !id00228.Q));
+
+!id00222.D = ((id00224.Q & !id00225.Q & id00226.Q & id00227.Q & id00241.Q)
+	# !id00222.Q);
+
+id00223.D = (id00223.Q
+	# (!id00222.Q & id00224.Q & id00226.Q & id00227.Q & id00225.Q & id00221.Q));
+
+id00224.D = ((!id00224.Q & !id00222.Q & !id00223.Q & id00221.Q)
+	# (!id00224.Q & id00222.Q & id00241.Q)
+	# (id00224.Q & id00222.Q & !id00241.Q)
+	# (id00224.Q & !id00222.Q & !id00221.Q)
+	# (id00224.Q & !id00222.Q & id00223.Q));
+
+id00231.D = ((!id00242.Q & id00096Q & id00231.Q)
+	# (!id00242.Q & id00096Q & id00243.Q & !DRAM_SEL_n));
+
+!id00234.D = ((!id00234.Q & !id00233.Q)
+	# (id00234.Q & id00232.Q & id00233.Q)
+	# (id00234.Q & id00233.Q & !id00235.Q & id00236.Q & id00237.Q & id00238.Q & !id00239.Q & id00240.Q)
+	# (!id00234.Q & !id00232.Q));
+
+!id00232.D = ((id00233.Q & id00234.Q & !id00235.Q & id00236.Q & id00237.Q & id00238.Q & !id00239.Q & id00240.Q)
+	# id00232.Q);
+
+!id00233.D = ((id00232.Q & id00233.Q)
+	# (!id00232.Q & id00234.Q & !id00235.Q & id00236.Q & id00237.Q & id00238.Q & !id00239.Q & id00240.Q)
+	# (!id00232.Q & !id00233.Q));
+
+!CAS3_n.D = ((id00211.Q & !A0 & !A1)
+	# id00214.Q
+	# (id00211.Q & R_W)
+	# (!CAS3_n.Q & id00101QN));
+
+!CAS0_n.D = ((id00211.Q & !SIZ0 & !SIZ1)
+	# (!CAS0_n.Q & id00101QN)
+	# (id00211.Q & A1 & A0)
+	# (id00211.Q & SIZ1 & A1)
+	# (id00211.Q & SIZ0 & SIZ1 & A0)
+	# (id00211.Q & R_W)
+	# id00214.Q);
+
+CAS2_n.D = ((!id00214.Q & !R_W & A1 & !id00101QN)
+	# (!id00214.Q & !R_W & !SIZ1 & SIZ0 & !A0 & !id00101QN)
+	# (!id00214.Q & CAS2_n.Q & !id00211.Q)
+	# (!id00214.Q & !id00101QN & !id00211.Q)
+	# (!id00214.Q & !R_W & CAS2_n.Q & A1)
+	# (!id00214.Q & !R_W & CAS2_n.Q & !SIZ1 & SIZ0 & !A0));
+
+!CAS1_n.D = ((id00211.Q & A0 & !A1 & !SIZ0)
+	# (id00211.Q & !A1 & !SIZ0 & !SIZ1)
+	# (!CAS1_n.Q & id00101QN)
+	# (id00211.Q & !A1 & SIZ0 & SIZ1)
+	# (id00211.Q & !A0 & A1)
+	# (id00211.Q & R_W)
+	# id00214.Q);
+
+id00235.D = ((!id00235.Q & id00232.Q & id00234.Q & id00233.Q)
+	# (id00235.Q & !id00233.Q)
+	# (id00235.Q & !id00234.Q)
+	# (id00235.Q & !id00232.Q));
+
+!id00236.D = ((!id00236.Q & !id00234.Q)
+	# (!id00236.Q & !id00235.Q)
+	# (id00233.Q & id00234.Q & !id00235.Q & !id00232.Q & id00237.Q & id00238.Q & !id00239.Q & id00240.Q)
+	# (id00236.Q & id00233.Q & id00234.Q & id00235.Q & id00232.Q)
+	# (!id00236.Q & !id00232.Q)
+	# (!id00236.Q & !id00233.Q));
+
+!id00237.D = ((!id00237.Q & !id00232.Q)
+	# (!id00237.Q & !id00235.Q)
+	# (id00236.Q & !id00232.Q & !id00235.Q & id00234.Q & id00233.Q & id00238.Q & !id00239.Q & id00240.Q)
+	# (id00237.Q & id00236.Q & id00232.Q & id00235.Q & id00234.Q & id00233.Q)
+	# (!id00237.Q & !id00233.Q)
+	# (!id00237.Q & !id00234.Q)
+	# (!id00237.Q & !id00236.Q));
+
+RAS3_n.D = ((!id00108Q & !id00101QN)
+	# (!id00108Q & RAS3_n.Q));
+
+RAS1_n.D = ((!id00108Q & !id00101QN)
+	# (!id00108Q & RAS1_n.Q));
+
+RAS2_n.D = ((!id00099Q & !id00101QN)
+	# (!id00099Q & RAS2_n.Q));
+
+RAS0_n.D = ((!id00099Q & !id00101QN)
+	# (!id00099Q & RAS0_n.Q));
+
+id00227.D = ((id00227.Q & !id00222.Q & id00223.Q)
+	# (id00227.Q & !id00226.Q)
+	# (id00227.Q & !id00222.Q & !id00225.Q)
+	# (!id00227.Q & id00222.Q & id00226.Q & id00225.Q & id00241.Q & id00224.Q)
+	# (!id00227.Q & !id00222.Q & id00221.Q & !id00223.Q & id00226.Q & id00225.Q & id00224.Q)
+	# (id00227.Q & !id00224.Q)
+	# (id00227.Q & id00222.Q & !id00241.Q)
+	# (id00227.Q & !id00222.Q & !id00221.Q));
+
+id00225.D = ((id00225.Q & id00222.Q & !id00241.Q)
+	# (!id00225.Q & id00224.Q & id00222.Q & id00241.Q & !id00226.Q)
+	# (!id00225.Q & id00224.Q & !id00222.Q & !id00223.Q & id00221.Q)
+	# (!id00225.Q & id00224.Q & id00222.Q & id00241.Q & !id00227.Q)
+	# (id00225.Q & !id00222.Q & !id00221.Q)
+	# (id00225.Q & !id00222.Q & id00223.Q)
+	# (id00225.Q & !id00224.Q));
+
+id00226.D = ((id00226.Q & !id00227.Q & !id00225.Q)
+	# (id00226.Q & !id00224.Q)
+	# (id00226.Q & !id00222.Q & !id00225.Q)
+	# (!id00226.Q & id00222.Q & id00225.Q & id00224.Q & id00241.Q)
+	# (!id00226.Q & !id00222.Q & !id00223.Q & id00225.Q & id00224.Q & id00221.Q)
+	# (id00226.Q & id00222.Q & !id00241.Q)
+	# (id00226.Q & !id00222.Q & !id00221.Q)
+	# (id00226.Q & !id00222.Q & id00223.Q));
+
+!id00238.D = ((!id00238.Q & id00048Q)
+	# (id00238.Q & id00237.Q & !id00232.Q & !id00235.Q & id00233.Q & id00234.Q & id00236.Q & !id00239.Q & id00240.Q)
+	# (id00238.Q & id00237.Q & id00232.Q & id00235.Q & id00233.Q & id00234.Q & id00236.Q));
+
+id00239.D = ((id00239.Q & !id00238.Q)
+	# (!id00239.Q & id00238.Q & id00237.Q & id00232.Q & id00235.Q & id00233.Q & id00234.Q & id00236.Q)
+	# (id00239.Q & id00048Q));
+
+!id00240.D = ((!id00239.Q & id00238.Q & !id00232.Q & id00233.Q & id00234.Q & !id00235.Q & id00236.Q & id00237.Q)
+	# (id00240.Q & id00239.Q & id00238.Q & id00232.Q & id00233.Q & id00234.Q & id00235.Q & id00236.Q & id00237.Q)
+	# (!id00240.Q & !id00238.Q)
+	# (!id00240.Q & !id00239.Q)
+	# (!id00240.Q & id00048Q));
+
+!Com_Ctrl_553 = (!AS_n & PWR_RST_n);
+
+Com_Ctrl_554 = ((AS_n & !id00003.Q)
+	# !PWR_RST_n);
+
+!FB_555 = (PWR_RST_n & !AS_n);
+
+id00196.C = DRAM_CLK;
+
+id00196.AP = Com_Ctrl_553;
+
+id00197.C = DRAM_CLK;
+
+id00197.AP = Com_Ctrl_553;
+
+id00211.C = DRAM_CLK;
+
+id00211.AR = !PWR_RST_n;
+
+id00214.C = DRAM_CLK;
+
+id00214.AR = !PWR_RST_n;
+
+id00215.C = DRAM_CLK;
+
+id00215.AR = !PWR_RST_n;
+
+id00217.C = DRAM_CLK;
+
+id00217.AR = !PWR_RST_n;
+
+id00216.C = DRAM_CLK;
+
+id00216.AR = !PWR_RST_n;
+
+id00218.C = DRAM_CLK;
+
+id00218.AR = !PWR_RST_n;
+
+id00219.C = DRAM_CLK;
+
+id00219.AR = !PWR_RST_n;
+
+id00220.C = DRAM_CLK;
+
+id00220.AR = !PWR_RST_n;
+
+id00221.C = DRAM_CLK;
+
+id00221.AR = !PWR_RST_n;
+
+id00242.C = DRAM_CLK;
+
+id00243.C = DRAM_CLK;
+
+DSACK0_n.OE = !id00197.Q;
+
+DSACK1_n.OE = !id00196.Q;
+
+id00213.C = DRAM_CLK;
+
+id00213.AR = !PWR_RST_n;
+
+id00212.C = DRAM_CLK;
+
+id00212.AR = !PWR_RST_n;
+
+id00229.C = DRAM_CLK;
+
+id00229.AR = !PWR_RST_n;
+
+id00230.C = DRAM_CLK;
+
+id00230.AR = !PWR_RST_n;
+
+id00244.C = DRAM_CLK;
+
+id00244.AP = AS_n;
+
+id00003.C = DRAM_CLK;
+
+id00003.AR = !PWR_RST_n;
+
+MUX_SEL.C = DRAM_CLK;
+
+MUX_SEL.AR = Com_Ctrl_553;
+
+WE_n.C = DRAM_CLK;
+
+WE_n.AP = FB_555;
+
+id00200.C = DRAM_CLK;
+
+id00200.AR = Com_Ctrl_553;
+
+id00228.C = DRAM_CLK;
+
+id00228.AR = !PWR_RST_n;
+
+id00241.C = DRAM_CLK;
+
+id00241.AR = !PWR_RST_n;
+
+id00209.C = DRAM_CLK;
+
+id00209.AP = !PWR_RST_n;
+
+id00210.C = DRAM_CLK;
+
+id00210.AR = !PWR_RST_n;
+
+id00222.C = DRAM_CLK;
+
+id00222.AP = !PWR_RST_n;
+
+id00223.C = DRAM_CLK;
+
+id00223.AR = !PWR_RST_n;
+
+id00224.C = DRAM_CLK;
+
+id00224.AR = !PWR_RST_n;
+
+id00231.C = DRAM_CLK;
+
+id00231.AR = !PWR_RST_n;
+
+id00234.C = DRAM_CLK;
+
+id00234.AR = !PWR_RST_n;
+
+id00232.C = DRAM_CLK;
+
+id00232.AR = !PWR_RST_n;
+
+id00233.C = DRAM_CLK;
+
+id00233.AR = !PWR_RST_n;
+
+CAS3_n.C = DRAM_CLK;
+
+CAS3_n.AP = Com_Ctrl_554;
+
+CAS0_n.C = DRAM_CLK;
+
+CAS0_n.AP = Com_Ctrl_554;
+
+CAS2_n.C = DRAM_CLK;
+
+CAS2_n.AP = Com_Ctrl_554;
+
+CAS1_n.C = DRAM_CLK;
+
+CAS1_n.AP = Com_Ctrl_554;
+
+id00235.C = DRAM_CLK;
+
+id00235.AR = !PWR_RST_n;
+
+id00236.C = DRAM_CLK;
+
+id00236.AR = !PWR_RST_n;
+
+id00237.C = DRAM_CLK;
+
+id00237.AR = !PWR_RST_n;
+
+RAS3_n.C = DRAM_CLK;
+
+RAS3_n.AP = Com_Ctrl_554;
+
+RAS1_n.C = DRAM_CLK;
+
+RAS1_n.AP = Com_Ctrl_554;
+
+RAS2_n.C = DRAM_CLK;
+
+RAS2_n.AP = Com_Ctrl_554;
+
+RAS0_n.C = DRAM_CLK;
+
+RAS0_n.AP = Com_Ctrl_554;
+
+id00227.C = DRAM_CLK;
+
+id00227.AR = !PWR_RST_n;
+
+id00225.C = DRAM_CLK;
+
+id00225.AR = !PWR_RST_n;
+
+id00226.C = DRAM_CLK;
+
+id00226.AR = !PWR_RST_n;
+
+id00238.C = DRAM_CLK;
+
+id00238.AR = !PWR_RST_n;
+
+id00239.C = DRAM_CLK;
+
+id00239.AR = !PWR_RST_n;
+
+id00240.C = DRAM_CLK;
+
+id00240.AR = !PWR_RST_n;
+
+
+PLCC84 Pin/Node Placement:
+------------------------------------
+Pin 1  = PWR_RST_n;
+Pin 4  = MA10; /* MC 16 */
+Pin 5  = MA11; /* MC 14 */
+Pin 6  = RAS0_n; /* MC 13 */
+Pin 8  = RAS1_n; /* MC 11 */
+Pin 9  = RAS2_n; /* MC 8 */
+Pin 10 = RAS3_n; /* MC  6 */
+Pin 11 = CAS0_n; /* MC  5 */
+Pin 12 = DSACK0_n; /* MC  3 */
+Pin 14 = TDI; /* MC 32 */ 
+Pin 15 = DSACK1_n; /* MC 29 */ 
+Pin 20 = MA0; /* MC 21 */ 
+Pin 21 = MA1; /* MC 19 */ 
+Pin 22 = MA2; /* MC 17 */ 
+Pin 23 = TMS; /* MC 48 */ 
+Pin 24 = MA3; /* MC 46 */ 
+Pin 25 = MA4; /* MC 45 */ 
+Pin 27 = MA5; /* MC 43 */ 
+Pin 28 = MA6; /* MC 40 */ 
+Pin 29 = MA7; /* MC 38 */ 
+Pin 30 = MA8; /* MC 37 */ 
+Pin 31 = MA9; /* MC 35 */ 
+Pin 33 = A10; /* MC 64 */ 
+Pin 34 = A9; /* MC 61 */ 
+Pin 35 = A8; /* MC 59 */ 
+Pin 36 = A7; /* MC 57 */ 
+Pin 37 = A6; /* MC 56 */ 
+Pin 39 = A5; /* MC 53 */ 
+Pin 40 = A4; /* MC 51 */ 
+Pin 41 = A3; /* MC 49 */ 
+Pin 44 = A2; /* MC 65 */ 
+Pin 45 = A1; /* MC 67 */ 
+Pin 46 = A0; /* MC 69 */ 
+Pin 48 = SIZ1; /* MC 72 */ 
+Pin 49 = SIZ0; /* MC 73 */ 
+Pin 51 = R_W; /* MC 77 */ 
+Pin 52 = DRAM_SEL_n; /* MC 80 */ 
+Pin 54 = A26; /* MC 83 */ 
+Pin 55 = A25; /* MC 85 */ 
+Pin 56 = A24; /* MC 86 */ 
+Pin 57 = A23; /* MC 88 */ 
+Pin 58 = A22; /* MC 91 */ 
+Pin 60 = A21; /* MC 93 */ 
+Pin 61 = A20; /* MC 94 */ 
+Pin 62 = TCK; /* MC 96 */ 
+Pin 63 = A19; /* MC 97 */ 
+Pin 64 = A18; /* MC 99 */ 
+Pin 65 = A17; /* MC 101 */ 
+Pin 67 = A16; /* MC 104 */ 
+Pin 68 = A15; /* MC 105 */ 
+Pin 69 = A14; /* MC 107 */ 
+Pin 70 = A13; /* MC 109 */ 
+Pin 71 = TDO; /* MC 112 */ 
+Pin 73 = A12; /* MC 115 */ 
+Pin 74 = A11; /* MC 117 */ 
+Pin 75 = CAS1_n; /* MC 118 */ 
+Pin 76 = CAS2_n; /* MC 120 */ 
+Pin 77 = CAS3_n; /* MC 123 */ 
+Pin 79 = WE_n; /* MC 125 */ 
+Pin 80 = MUX_SEL; /* MC 126 */ 
+Pin 83 = DRAM_CLK;
+Pin 84 = AS_n;
+PINNODE 316 = Com_Ctrl_553; /* MC 16 Foldback */
+PINNODE 331 = FB_2_Com_Ctrl_553; /* MC 31 Foldback */
+PINNODE 332 = id00048Q; /* MC 32 Foldback */
+PINNODE 348 = id00096Q; /* MC 48 Foldback */
+PINNODE 427 = FB_555; /* MC 127 Foldback */
+PINNODE 428 = FB_8_Com_Ctrl_553; /* MC 128 Foldback */
+PINNODE 610 = id00215; /* MC 10 Feedback */
+PINNODE 612 = id00197; /* MC 12 Feedback */
+PINNODE 615 = id00196; /* MC 15 Feedback */
+PINNODE 618 = id00239; /* MC 18 Feedback */
+PINNODE 620 = id00233; /* MC 20 Feedback */
+PINNODE 622 = id00238; /* MC 22 Feedback */
+PINNODE 623 = id00200; /* MC 23 Feedback */
+PINNODE 624 = id00241; /* MC 24 Feedback */
+PINNODE 625 = id00232; /* MC 25 Feedback */
+PINNODE 626 = id00234; /* MC 26 Feedback */
+PINNODE 628 = id00236; /* MC 28 Feedback */
+PINNODE 630 = id00240; /* MC 30 Feedback */
+PINNODE 632 = id00237; /* MC 32 Feedback */
+PINNODE 639 = id00243; /* MC 39 Feedback */
+PINNODE 641 = id00213; /* MC 41 Feedback */
+PINNODE 642 = id00210; /* MC 42 Feedback */
+PINNODE 644 = id00231; /* MC 44 Feedback */
+PINNODE 648 = id00209; /* MC 48 Feedback */
+PINNODE 649 = id00101QN; /* MC 49 Feedback */
+PINNODE 650 = id00229; /* MC 50 Feedback */
+PINNODE 651 = id00212; /* MC 51 Feedback */
+PINNODE 652 = id00003; /* MC 52 Feedback */
+PINNODE 653 = id00223; /* MC 53 Feedback */
+PINNODE 654 = id00099Q; /* MC 54 Feedback */
+PINNODE 655 = id00222; /* MC 55 Feedback */
+PINNODE 656 = id00108Q; /* MC 56 Feedback */
+PINNODE 658 = id00225; /* MC 58 Feedback */
+PINNODE 660 = id00226; /* MC 60 Feedback */
+PINNODE 661 = id00228; /* MC 61 Feedback */
+PINNODE 663 = id00227; /* MC 63 Feedback */
+PINNODE 664 = id00224; /* MC 64 Feedback */
+PINNODE 667 = id00242; /* MC 67 Feedback */
+PINNODE 668 = id00220; /* MC 68 Feedback */
+PINNODE 669 = id00221; /* MC 69 Feedback */
+PINNODE 670 = id00219; /* MC 70 Feedback */
+PINNODE 671 = id00218; /* MC 71 Feedback */
+PINNODE 672 = id00216; /* MC 72 Feedback */
+PINNODE 673 = id00217; /* MC 73 Feedback */
+PINNODE 674 = id00214; /* MC 74 Feedback */
+PINNODE 676 = id00211; /* MC 76 Feedback */
+PINNODE 677 = id00230; /* MC 77 Feedback */
+PINNODE 678 = id00244; /* MC 78 Feedback */
+PINNODE 679 = Com_Ctrl_554; /* MC 79 Feedback */
+PINNODE 680 = id00235; /* MC 80 Feedback */
+
+** Resource Usage **
+
+
+DCERP Field = Summary of Allocations.
+|||||
+|||||_Preset [p,-]       ==  p = PT preset, - No Preset.
+||||
+||||__Reset [g,r,-]      ==  g= Global AR, r = PT reset, - No reset.
+|||
+|||___Clock Enable [e,-] ==  e = Product Term, - always enabled.
+||
+||____Clock [c,g,-],     ==  c = Product term, g = Global term, - No Clock.
+|
+|_____Type [C,D,L,T],    ==  Register type C= combin, D=dff, L=latch, T=tff.
+
+For input only = INPUT.
+
+
+SO Pin Options Field = Summary of Allocations.
+||
+||_OpenCol [o,-]      ==  o = Open Collector enabled, - CMOS drive.
+|
+|__Slew [s,f]         ==  Output Slew/Drive rate, s = slow/low, f = fast/hi drive.
+
+
+MCell Pin# Oe   PinDrive   DCERP  FBDrive      DCERP  Foldback          CascadeOut     TotPT SO
+MC1   0         --                --                  --                --             0     f- 
+MC2   0         --                --                  --                --             0     f- 
+MC3   12   PT   DSACK0_n   C----  --                  --                --             2     f- 
+MC4   0         --                --                  --                -> CAS0_n      5     f- 
+MC5   11   on   CAS0_n     Dg--p  --                  --                --             3     f- 
+MC6   10   on   RAS3_n     Dg--p  --                  --                --             3     f- 
+MC7   0         --                --                  --                --             0     f- 
+MC8   9    on   RAS2_n     Dg--p  --                  --                --             3     f- 
+MC9   0         --                --                  --                --             0     f- 
+MC10  0         --                id00215      Dg-g-  --                --             1     f- 
+MC11  8    on   RAS1_n     Dg--p  --                  --                --             3     f- 
+MC12  0         --                id00197      Dg--p  --                --             2     f- 
+MC13  6    on   RAS0_n     Dg--p  --                  --                --             3     f- 
+MC14  5    on   MA11       C----  --                  --                --             2     f- 
+MC15  0         --                id00196      Dg--p  --                --             2     f- 
+MC16  4    on   MA10       C----  --                  Com_Ctrl_553      --             3     f- 
+MC17  22   on   MA2        C----  --                  --                --             2     f- 
+MC18  0         --                id00239      Dg-g-  --                --             3     f- 
+MC19  21   on   MA1        C----  --                  --                --             2     f- 
+MC20  0         --                id00233      Dg-g-  --                --             3     f- 
+MC21  20   on   MA0        C----  --                  --                --             2     f- 
+MC22  0         --                id00238      Dg-g-  --                --             3     f- 
+MC23  0         --                id00200      Dg-r-  --                --             3     f- 
+MC24  18        --                id00241      Dg-g-  --                --             1     f- 
+MC25  17        --                id00232      Dg-g-  --                --             2     f- 
+MC26  0         --                id00234      Dg-g-  --                --             4     f- 
+MC27  16        --                --                  --                -> id00236     5     f- 
+MC28  0         --                id00236      Dg-g-  --                --             1     f- 
+MC29  15   PT   DSACK1_n   C----  --                  --                --             2     f- 
+MC30  0         --                id00240      Dg-g-  NA                --             5     f- 
+MC31  0         --                --                  FB_2_Com_Ctrl_553 -> id00237     5     f- 
+MC32  14   --   TDI        INPUT  id00237      Dg-g-  id00048Q          --             4     f- 
+MC33  0         --                --                  --                --             0     f- 
+MC34  0         --                --                  --                --             0     f- 
+MC35  31   on   MA9        C----  --                  --                --             2     f- 
+MC36  0         --                --                  --                --             0     f- 
+MC37  30   on   MA8        C----  --                  --                --             2     f- 
+MC38  29   on   MA7        C----  --                  --                --             2     f- 
+MC39  0         --                id00243      Dg---  --                --             1     f- 
+MC40  28   on   MA6        C----  --                  --                --             2     f- 
+MC41  0         --                id00213      Dg-g-  --                --             1     f- 
+MC42  0         --                id00210      Dg-g-  --                --             2     f- 
+MC43  27   on   MA5        C----  --                  --                --             2     f- 
+MC44  0         --                id00231      Dg-g-  --                --             2     f- 
+MC45  25   on   MA4        C----  --                  --                --             2     f- 
+MC46  24   on   MA3        C----  --                  --                --             2     f- 
+MC47  0         --                --                  --                -> id00209     5     f- 
+MC48  23   --   TMS        INPUT  id00209      Dg--p  id00096Q          --             3     f- 
+MC49  41   --   A3         INPUT  id00101QN    C----  --                --             2     f- 
+MC50  0         --                id00229      Dg-g-  --                --             2     f- 
+MC51  40   --   A4         INPUT  id00212      Dg-g-  --                --             2     f- 
+MC52  0         --                id00003      Dg-g-  --                --             2     f- 
+MC53  39   --   A5         INPUT  id00223      Dg-g-  --                --             2     f- 
+MC54  0         --                id00099Q     C----  --                --             3     f- 
+MC55  0         --                id00222      Dg--p  --                --             3     f- 
+MC56  37   --   A6         INPUT  id00108Q     C----  --                --             3     f- 
+MC57  36   --   A7         INPUT  --                  --                -> id00225     5     f- 
+MC58  0         --                id00225      Dg-g-  --                --             2     f- 
+MC59  35   --   A8         INPUT  --                  --                -> id00226     5     f- 
+MC60  0         --                id00226      Dg-g-  --                --             3     f- 
+MC61  34   --   A9         INPUT  id00228      Dg-g-  --                --             4     f- 
+MC62  0         --                --                  --                -> id00227     5     f- 
+MC63  0         --                id00227      Dg-g-  --                --             3     f- 
+MC64  33   --   A10        INPUT  id00224      Dg-g-  NA                --             5     f- 
+MC65  44   --   A2         INPUT  --                  --                --             0     f- 
+MC66  0         --                --                  --                --             0     f- 
+MC67  45   --   A1         INPUT  id00242      Dg---  --                --             1     f- 
+MC68  0         --                id00220      Dg-g-  --                --             1     f- 
+MC69  46   --   A0         INPUT  id00221      Dg-g-  --                --             1     f- 
+MC70  0         --                id00219      Dg-g-  --                --             1     f- 
+MC71  0         --                id00218      Dg-g-  --                --             1     f- 
+MC72  48   --   SIZ1       INPUT  id00216      Dg-g-  --                --             1     f- 
+MC73  49   --   SIZ0       INPUT  id00217      Dg-g-  --                --             1     f- 
+MC74  0         --                id00214      Dg-g-  --                --             1     f- 
+MC75  50        --                --                  --                --             0     f- 
+MC76  0         --                id00211      Dg-g-  --                --             1     f- 
+MC77  51   --   R_W        INPUT  id00230      Dg-g-  --                --             2     f- 
+MC78  0         --                id00244      Dg--p  --                --             2     f- 
+MC79  0         --                Com_Ctrl_554 C----  --                --             2     f- 
+MC80  52   --   DRAM_SEL_n INPUT  id00235      Dg-g-  --                --             4     f- 
+MC81  0         --                --                  --                --             0     f- 
+MC82  0         --                --                  --                --             0     f- 
+MC83  54   --   A26        INPUT  --                  --                --             0     f- 
+MC84  0         --                --                  --                --             0     f- 
+MC85  55   --   A25        INPUT  --                  --                --             0     f- 
+MC86  56   --   A24        INPUT  --                  --                --             0     f- 
+MC87  0         --                --                  --                --             0     f- 
+MC88  57   --   A23        INPUT  --                  --                --             0     f- 
+MC89  0         --                --                  --                --             0     f- 
+MC90  0         --                --                  --                --             0     f- 
+MC91  58   --   A22        INPUT  --                  --                --             0     f- 
+MC92  0         --                --                  --                --             0     f- 
+MC93  60   --   A21        INPUT  --                  --                --             0     f- 
+MC94  61   --   A20        INPUT  --                  --                --             0     f- 
+MC95  0         --                --                  --                --             0     f- 
+MC96  62   --   TCK        INPUT  --                  --                --             0     f- 
+MC97  63   --   A19        INPUT  --                  --                --             0     f- 
+MC98  0         --                --                  --                --             0     f- 
+MC99  64   --   A18        INPUT  --                  --                --             0     f- 
+MC100 0         --                --                  --                --             0     f- 
+MC101 65   --   A17        INPUT  --                  --                --             0     f- 
+MC102 0         --                --                  --                --             0     f- 
+MC103 0         --                --                  --                --             0     f- 
+MC104 67   --   A16        INPUT  --                  --                --             0     f- 
+MC105 68   --   A15        INPUT  --                  --                --             0     f- 
+MC106 0         --                --                  --                --             0     f- 
+MC107 69   --   A14        INPUT  --                  --                --             0     f- 
+MC108 0         --                --                  --                --             0     f- 
+MC109 70   --   A13        INPUT  --                  --                --             0     f- 
+MC110 0         --                --                  --                --             0     f- 
+MC111 0         --                --                  --                --             0     f- 
+MC112 71   --   TDO        C----  --                  --                --             0     f- 
+MC113 0         --                --                  --                --             0     f- 
+MC114 0         --                --                  --                --             0     f- 
+MC115 73   --   A12        INPUT  --                  --                --             0     f- 
+MC116 0         --                --                  --                --             0     f- 
+MC117 74   --   A11        INPUT  --                  --                -> CAS1_n      5     f- 
+MC118 75   on   CAS1_n     Dg--p  --                  --                --             3     f- 
+MC119 0         --                --                  --                -> CAS2_n      5     f- 
+MC120 76   on   CAS2_n     Dg--p  --                  --                --             2     f- 
+MC121 0         --                --                  --                --             0     f- 
+MC122 0         --                --                  --                --             0     f- 
+MC123 77   on   CAS3_n     Dg--p  --                  NA                --             5     f- 
+MC124 0         --                --                  --                --             0     f- 
+MC125 79   on   WE_n       Dg--p  --                  --                --             4     f- 
+MC126 80   on   MUX_SEL    Dg-r-  --                  --                --             3     f- 
+MC127 0         --                --                  FB_555            --             1     f- 
+MC128 81        --                --                  FB_8_Com_Ctrl_553 --             1     f- 
+MC0   2         --                --                  --                --             0     f- 
+MC0   1         PWR_RST_n  INPUT  --                  --                --             0     f- 
+MC0   84        AS_n       INPUT  --                  --                --             0     f- 
+MC0   83        DRAM_CLK   INPUT  --                  --                --             0     f- 
+
+Logic Array Block			Macro Cells	I/O Pins	Foldbacks	TotalPT	FanIN		Cascades
+A: MC1	- MC16		11/16(68%)	8/16(50%)	1/16(6%)	32/80(40%)	25/40(62%)	1
+B: MC17	- MC32		14/16(87%)	5/16(31%)	2/16(12%)	47/80(58%)	22/40(55%)	2
+C: MC33	- MC48		12/16(75%)	8/16(50%)	1/16(6%)	28/80(35%)	25/40(62%)	1
+D: MC49	- MC64		13/16(81%)	8/16(50%)	0/16(0%)	51/80(63%)	25/40(62%)	3
+E: MC65	- MC80		13/16(81%)	7/16(43%)	0/16(0%)	19/80(23%)	19/40(47%)	0
+F: MC81	- MC96		0/16(0%)	8/16(50%)	0/16(0%)	0/80(0%)	19/40(47%)	0
+G: MC97	- MC112		1/16(6%)	8/16(50%)	0/16(0%)	0/80(0%)	19/40(47%)	0
+H: MC113- MC128		5/16(31%)	7/16(43%)	2/16(12%)	29/80(36%)	19/40(47%)	2
+
+Total dedicated input used:	3/4 	(75%)
+Total I/O pins used		59/64 	(92%)
+Total Macro cells used 		78/128 	(60%)
+Total Flip-Flop used 		50/128 	(39%)
+Total Foldback logic used 	6/128 	(4%)
+Total Nodes+FB/MCells 		75/128 	(58%)
+Total cascade used 		9
+Total input pins 			37
+Total output pins 		25
+Total Pts 				206
+Creating pla file dram.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
+
+----------------  End fitter, Design FITS
+$Device PLCC84 fits; JTAG ON; Secure OFF
+FIT1508 completed in 0.00 seconds
