@@ -64,3 +64,7 @@ Only GND, +5V, and +3V3 have tracks or vias (302 segments, 299 vias). Every othe
 - J10 is the stock `DIN41612_C_3x32_Female_Vertical_THT`, not a HARTING-specific model.
 - PGA-128 pin numbering still [VERIFY] against UM Fig. 14-1 (schematic issue, not changed here).
 - No 3D models on: PGA128_13x13_MC68030, SIMM-72_TE-5822021-4, MountingHole_3.2mm_M3_Pad, the solder jumpers, TestPoint_Pad_D1.5mm. Stock footprints point at `${KICAD9_3DMODEL_DIR}`, which is not installed, so the iso render is pads and silk only.
+
+## Silkscreen connector labels (2026-10-17)
+
+`tools/add_connector_labels.py` adds board-level F.SilkS function labels (1.0 mm, 0.15 mm stroke; a few use 0.85 mm width) next to every connector and jumper, plus pin names on J3, J7, J8, J9 and JP3. They are all in the group `connector_labels`. The script starts from `backup/m68030-sbc-prelabels-20261017.kicad_pcb` every time, so you can re-run it. JP801/JP802 had no room, so a two-line legend ("JP801 STERM / JP802 CBREQ") sits to the right of JP802. DRC is unchanged: 122 warnings (93 silk_overlap, 29 silk_over_copper), 0 errors, 499 unconnected.
