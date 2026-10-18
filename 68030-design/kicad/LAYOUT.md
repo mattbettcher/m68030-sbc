@@ -291,6 +291,78 @@ Backup of the pre-fix board and sheets: `kicad/backup/pre-sifix-20261018/` (pcb 
 - The JP801/JP802 legend was rotated 90° and placed between the jumpers at (78, 40).
 - **Note:** `build.py` / `sheet_debug.py` / `sheet_clock.py` do not contain these schematic edits. Re-running them would undo the J13 NC and the U10 swap.
 
+### 45° chamfer pass (2026-10-18)
+
+Backup of the board before this pass: `backup/pre-45deg-20261018/` (pcb sha1 2221a671…).
+Tool: `tools/route/chamfer45/` (`chamfer.py` → `write45.py` → `fill.py`; `angles.py` counts the bends).
+Placement, vias and layers are unchanged. Only signal tracks on F.Cu/B.Cu were edited; the power stubs were left as they were.
+
+- Method:
+  - At each 90° corner, cut both legs by the same amount c and join the cut points with a 45° segment.
+  - c is the largest value that fits the clearance check. The first try is the full length available. That is half a leg when the leg's other end is also a corner, otherwise the whole leg (stopping at T-junctions, vias and same-net pads). Then it falls back through 3.0 … 0.1 mm.
+  - Each try is checked at 0.16 mm against other-net tracks, pads, vias and footprint copper. Holes are checked at 0.21 mm and the board edge at 0.31 mm.
+  - It never makes an acute angle. It repeats until nothing changes, then merges collinear runs (6099 merges). Single-grid jogs and staircases became one diagonal.
+- Result:
+  - 14,403 chamfers. Sizes: 7477 at 0.21 mm (half-grid jog), 3174 at 0.22–0.42, 2380 at 0.43–1.0, 978 at 1–2 and 257 over 2 mm (up to 8.9).
+  - 90° bends went from 14,456 to 43:
+    - 14 sit on a via centre.
+    - 25 are inside the copper of a same-net pad.
+    - 4 had no room: DUART_X2 at (101.5, 118.4) on B.Cu, and J10_D3/D6/D12 at the J10 edge pins (x 7.55).
+  - Signal track 53.84 → 49.87 m (−7.4 %). Vias 2365, unchanged. No net got longer.
+- SI nets (mm, before → after; vias unchanged):
+
+  | Net | Before | After |
+  |---|---|---|
+  | CLK_CPU | 57.2 | 54.3 |
+  | CLK_GLUE | 21.6 | 21.1 |
+  | CLK_EXP | 56.3 | 53.9 |
+  | CLK_DRAMC | 61.8 | 59.4 |
+  | CLK_LA | 201.9 | 195.6 |
+  | CLK_FPU_CPU | 70.3 | 67.8 |
+  | CLK_FPU | 25.8 | 24.0 |
+  | DRAM_CLK | 59.3 | 57.7 |
+  | CLKB_X3 | 80.4 | 79.1 |
+  | OSC_CPU | 36.8 | 34.2 |
+  | RAS0_n | 27.5 | 24.5 |
+  | CAS3_n | 17.8 | 16.5 |
+  | WE_n | 17.4 | 16.6 |
+
+- DRC 0 errors, 0 unconnected, parity 0; 4 silk warnings (same as before). ERC 0/0. `.kicad_pro` unchanged.
+- Renders: `renders/m68030-sbc-45deg-{top,bottom,zoom}.png`. The zoom covers x 70–118, y 40–76 mm (U3 right edge, U1 top-left, U4 bottom).
+
+### De-hitch / pull-tight pass (2026-10-18)
+
+Backup of the 45° board: `backup/pre-dehitch-20261018/` (sha1 aae84342…). Tool: `tools/route/dehitch/`.
+Placement, vias and layers are unchanged; only signal tracks on F.Cu/B.Cu were edited.
+
+Method: each track path between fixed points (pads, vias, T-junctions; tracks split there first) is rebuilt in three steps:
+
+1. **Pull-tight.** A DP over the path's vertices finds the fewest octilinear segments, using straight or straight+45° links. Every bend must be ≤ 45°. A track end that sits alone in a pad may slide inside the pad.
+   - The first passes require ≥ 0.20 mm clearance on every new segment.
+   - Later passes allow min(0.20, the old gap), but only if the path gets no more sub-0.2 mm gaps and its worst gap does not get smaller.
+2. **Leg shift.** For jogs under 1 mm, a run is moved sideways to line up with the next run. The offset is absorbed by the nearest segment parallel to the offset, or by a pad end. This works on orthogonal and diagonal runs.
+3. Repeat until nothing improves.
+
+| Metric | 45° board | De-hitched |
+|---|---|---|
+| Signal segments | 18,293 | 13,407 |
+| Jogs (S offsets) total / under 1 mm | 8,400 / 5,694 | 4,457 / 2,217 |
+| Bends | 15,211 | 10,267 |
+| Signal length | 49.866 m | 49.628 m |
+| Vias | 2,365 | 2,365 |
+| Segments with nearest other-net gap < 0.20 mm | 799 (129 at 0.16–0.18) | 674 (112 at 0.16–0.18) |
+| Track-to-object pairs < 0.20 mm | 1,030 | 867 |
+
+- No SI net got longer: RAS0_n 24.54 → 24.15 mm, and every other SI net is unchanged. 19 non-SI nets grew by ≤ 0.5 mm from leg shifts.
+- About 2,175 jogs under 1 mm remain inside paths:
+  - **1,008** could only go by dropping below 0.20 mm. They were kept for margin. A test run at 0.16 mm removed just 78 more jogs and raised the < 0.2 mm pairs to 1,219.
+  - **703** can't be shifted without a > 45° bend, a reversed segment, or an odd-nm offset on a diagonal.
+  - **340** sit between a fixed via and the next bend. Removing them needs a via move.
+  - **124** end at a multi-track pad or T-junction.
+  - Most are real lane changes in the dense buses: the lane on the other side of the jog belongs to another net.
+- DRC 0 errors, 0 unconnected, parity 0; 4 silk warnings (same as before). ERC 0/0. `.kicad_pro` unchanged.
+- Renders: `renders/m68030-sbc-dehitch-{top,bottom,zoom}.png`. The zoom covers the same x 70–118, y 40–76 mm window as `-45deg-zoom`.
+
 ## Unverified, left as drawn
 
 - SIMM locating holes stay NPTH as drawn (1.63 mm pin-1 end and center, 2.41 mm far end). Plating vs TE 114-1061 is unverified. No extra holes were added.
