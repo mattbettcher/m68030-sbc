@@ -5495,7 +5495,18 @@
 			(uuid "d9f4a639-fe01-49b4-85bc-427868a57b9e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-84_THT-Socket.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-84_THT-Socket.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-84_Chip_InSocket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10043,6 +10054,28 @@
 			(uuid "a6b55f8e-cf52-410a-a53b-f19479e59643")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/SIMM-72_TE-5822021-4_Socket.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/SIMM-72_Module_8chip.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -23167,7 +23200,18 @@
 			(uuid "02f6a827-3f04-4082-8141-cd0a8c7b6218")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-68_THT-Socket.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-68_THT-Socket.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-68_Chip_InSocket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -39665,7 +39709,7 @@
 			(uuid "c1c2c176-9f4f-4a50-b2c0-5b7a5f0a824e")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Littelfuse-NANO2-451_453.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/Fuse_Littelfuse-NANO2-451_453.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -43544,6 +43588,28 @@
 			(uuid "7ebdea76-d49f-4d4c-9a0c-7ca896c9f3b9")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PGA-128_13x13_Socket_LowProfile.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PGA-128_13x13_MC68030.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
@@ -46355,7 +46421,18 @@
 			(uuid "bb4dde5a-436d-4561-bc5c-7c02ed7cc4ed")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-84_THT-Socket.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-84_THT-Socket.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-84_Chip_InSocket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -50240,7 +50317,18 @@
 			(uuid "61dd5403-a3f9-484d-b73c-a716e313bdaf")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-32_THT-Socket.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-32_THT-Socket.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-32_Chip_InSocket.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -62361,7 +62449,7 @@
 			(uuid "c7b6d426-8d88-4892-8ac6-e3df097065d6")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Bourns_SRP1770TA_16.9x16.9mm.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/L_Bourns_SRP1770TA_16.9x16.9mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -64385,7 +64473,18 @@
 			(uuid "3d0ae4ee-892e-4b11-854e-58f05b294110")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-44_THT-Socket.step"
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-44_THT-Socket.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/3dmodels/m68030-sbc.3dshapes/PLCC-44_Chip_InSocket.step"
 			(offset
 				(xyz 0 0 0)
 			)

@@ -393,5 +393,20 @@ Method: each track path between fixed points (pads, vias, T-junctions; tracks sp
 - SIMM locating holes stay NPTH as drawn (1.63 mm pin-1 end and center, 2.41 mm far end). Plating vs TE 114-1061 is unverified. No extra holes were added.
 - J10 is the stock `DIN41612_C_3x32_Female_Vertical_THT`, not a HARTING-specific model.
 - PGA-128 pin numbering still [VERIFY] against UM Fig. 14-1 (schematic issue, not changed here).
-- No 3D models on: PGA128_13x13_MC68030, SIMM-72_TE-5822021-4, MountingHole_3.2mm_M3_Pad, the solder jumpers, TestPoint_Pad_D1.5mm. Stock footprints point at `${KICAD9_3DMODEL_DIR}`, which is not installed, so the iso render is pads and silk only.
+- No 3D models on: PGA128_13x13_MC68030, SIMM-72_TE-5822021-4, MountingHole_3.2mm_M3_Pad, the solder jumpers, TestPoint_Pad_D1.5mm. Stock footprints point at `${KICAD9_3DMODEL_DIR}`, which is not installed, so the iso render is pads and silk only. (Superseded by "3D models" below.)
 
+## 3D models (2026-10-18)
+
+- Every chip and socket now has a 3D model. Only model references changed in the pcb: pads, routing, nets and zones are untouched, and `.kicad_pro` is unchanged.
+- Stock models (`${KICAD9_3DMODEL_DIR}`, kicad-packages3d 9.0.2) are used where they exist: SOIC buffers, SOT/TO regulators, crystal, oscillators (Abracon ASV 7x5 model on the ECS footprint), passives and connectors.
+- KiCad 9.0.2 (and upstream kicad-packages3D) has no files for PLCC THT sockets, the NANO2 fuse or the SRP1770TA inductor, although the stock footprints point at them.
+  These use simple generated STEP models in `3dmodels/m68030-sbc.3dshapes/`, referenced via `${KIPRJMOD}`:
+  - U1: low-profile PGA-128 socket plus the MC68030 ceramic PGA.
+  - U2-U6: PLCC-68/84/84/32/44 THT socket plus a PLCC chip in it.
+  - J1: SIMM-72 vertical socket plus an 8-chip module.
+  - F1, L1.
+  Pins come from the real pad positions. Bodies use typical dimensions, not vendor-exact ones.
+- Generator and assignment scripts are in `tools/3d/`.
+- Footprints without a model: test points, solder jumpers and mounting holes (PCB features).
+- DRC after the change: 0 errors, 0 unconnected, parity 0, 4 silkscreen warnings (unchanged).
+- Renders: `renders/m68030-sbc-3d-{top,bottom,iso}.png`.
