@@ -4992,7 +4992,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SN74ACT245N"
+		(property "Value" "SN74ACT245DW"
 			(at 70 119 0)
 			(effects
 				(font
@@ -5001,7 +5001,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
+		(property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
 			(at 90.17 95.25 0)
 			(effects
 				(font
@@ -5028,7 +5028,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "SN74ACT245N"
+		(property "MPN" "SN74ACT245DW"
 			(at 90.17 95.25 0)
 			(effects
 				(font
@@ -5037,7 +5037,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "TI SCAS452H, PDIP (N), active. Same 245 pinout; footprint stays DIP-20. Fig. 6-1 CL=50 pF only"
+		(property "Note" "TI SCAS452H SOIC (DW). Same 245 pinout as the N part. Reel: SN74ACT245DWR [VERIFY stock]"
 			(at 90.17 95.25 0)
 			(effects
 				(font
@@ -5263,7 +5263,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SN74ACT245N"
+		(property "Value" "SN74ACT245DW"
 			(at 70 209 0)
 			(effects
 				(font
@@ -5272,7 +5272,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
+		(property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
 			(at 90.17 185.42 0)
 			(effects
 				(font
@@ -5299,7 +5299,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "SN74ACT245N"
+		(property "MPN" "SN74ACT245DW"
 			(at 90.17 185.42 0)
 			(effects
 				(font
@@ -5308,7 +5308,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "TI SCAS452H, PDIP (N), active. Same 245 pinout; footprint stays DIP-20. Fig. 6-1 CL=50 pF only"
+		(property "Note" "TI SCAS452H SOIC (DW). Same 245 pinout as the N part. Reel: SN74ACT245DWR [VERIFY stock]"
 			(at 90.17 185.42 0)
 			(effects
 				(font
@@ -5534,7 +5534,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "SN74ACT245N"
+		(property "Value" "SN74ACT245DW"
 			(at 70 304 0)
 			(effects
 				(font
@@ -5543,7 +5543,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
+		(property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
 			(at 90.17 279.4 0)
 			(effects
 				(font
@@ -5570,7 +5570,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "SN74ACT245N"
+		(property "MPN" "SN74ACT245DW"
 			(at 90.17 279.4 0)
 			(effects
 				(font
@@ -5579,7 +5579,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "TI SCAS452H, PDIP (N), active. Same 245 pinout; footprint stays DIP-20. Fig. 6-1 CL=50 pF only"
+		(property "Note" "TI SCAS452H SOIC (DW). Same 245 pinout as the N part. Reel: SN74ACT245DWR [VERIFY stock]"
 			(at 90.17 279.4 0)
 			(effects
 				(font

@@ -2825,7 +2825,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_DIP-14"
+		(property "Footprint" "m68030-sbc:Oscillator_SMD_ECS-3951M_7.0x5.0mm_DIP14PinMap"
 			(at 68.58 76.2 0)
 			(effects
 				(font
@@ -2852,7 +2852,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "25.000 MHz 5 V CMOS full-can oscillator (socketed)"
+		(property "MPN" "ECS-3951M-250-BN-TR"
 			(at 68.58 76.2 0)
 			(effects
 				(font
@@ -4446,7 +4446,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_DIP-14"
+		(property "Footprint" "m68030-sbc:Oscillator_SMD_ECS-3951M_7.0x5.0mm_DIP14PinMap"
 			(at 264.16 101.6 0)
 			(effects
 				(font
@@ -4473,7 +4473,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "optional 5 V CMOS oscillator for a slower 68882"
+		(property "MPN" "ECS-3951M-200-BN-TR [VERIFY freq vs 68882 grade]"
 			(at 264.16 101.6 0)
 			(effects
 				(font
@@ -4991,7 +4991,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_DIP-14"
+		(property "Footprint" "m68030-sbc:Oscillator_SMD_ECS-3951M_7.0x5.0mm_DIP14PinMap"
 			(at 68.58 165.1 0)
 			(effects
 				(font
@@ -5018,7 +5018,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "50.000 MHz 5 V CMOS oscillator"
+		(property "MPN" "ECS-3951M-500-BN-TR"
 			(at 68.58 165.1 0)
 			(effects
 				(font

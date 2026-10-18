@@ -8,7 +8,7 @@ U4,1,ATF1508AS-7JX84,"CPLD 128 macrocell, PLCC-84: DRAM controller",Package_LCC:
 "XU3,XU4",2,PLCC-84 THT socket,Sockets for U3/U4,Package_LCC:PLCC-84_THT-Socket,TBD,,
 U5,1,SST39SF040-70-4C-NHE,"512K x 8 NOR flash, 70 ns, 5 V, PLCC-32 (boot ROM on D31-24)",Package_LCC:PLCC-32_THT-Socket,Microchip / distributors,2.79,Findchips 2026-09-26 listing; -70-4C-PHE (DIP-32) $4.13 at Newark
 XU5,1,PLCC-32 THT socket,Socket for U5,Package_LCC:PLCC-32_THT-Socket,TBD,,
-U6,1,SC26C92A1A,"DUART (SC26C92, Intel bus only), 8-byte FIFOs, PLCC-44",Package_LCC:PLCC-44_THT-Socket,Brokers only (Digi-Key/Mouser/Rochester stock 0 on 2026-10-03),11.68,"Kept 2026-10-03. XR68C681 is MaxLinear OBS (PDN 2024-01-23) and Motorola bus. TL16C552A misses td2/td4 >= 80 ns on 2 WS. Pin 12 NC. Linux sccnxp sc2692 id (38.4 kbaud). SC28L92A1A fits the same socket"
+U6,1,SC26C92A1A,"DUART (SC26C92, Intel bus only), 8-byte FIFOs, PLCC-44",Package_LCC:PLCC-44_THT-Socket,Brokers only (Digi-Key/Mouser/Rochester stock 0 on 2026-10-03),11.68,Kept 2026-10-03. XR68C681 is MaxLinear OBS (PDN 2024-01-23) and Motorola bus. TL16C552A misses td2/td4 >= 80 ns on 2 WS. Pin 12 NC. Linux sccnxp sc2692 id (38.4 kbaud). SC28L92A1A fits the same socket
 XU6,1,PLCC-44 THT socket,Socket for U6,Package_LCC:PLCC-44_THT-Socket,TBD,,
 U7,1,TPS3702CX50DDCR,"Window supervisor, 5 V: UV 4.80 V / OV 5.20 V (+/-0.9%), SET high; open-drain UV/OV",Package_TO_SOT_SMD:SOT-23-6,DigiKey,2.82,Findchips 2026-09-26: 2837 in stock. Feeds U27 MR (spec 7.2)
 U27,1,TPS3808G50DBVT,"Supervisor with delay + manual reset, 4.65 V, open-drain RESET, CT=100k to VDD -> 300 ms",Package_TO_SOT_SMD:SOT-23-6,DigiKey,2.36,Findchips 2026-09-26: DBVT 1381 in stock (DBVR 0). Output PWR_RST_n
@@ -19,31 +19,31 @@ D2,1,SMBJ28CA,"Bidirectional TVS, 28 V standoff, on VIN after Q1",Diode_SMD:D_SM
 D3,1,MMSZ5242B,"12 V zener, Q1 gate-source clamp",Diode_SMD:D_SOD-123,TBD,,[VERIFY stock]
 Q1,1,SUD50P04-08-GE3 (or -BE3),"P-channel MOSFET 40 V 8.1 mOhm, reverse-polarity protection",Package_TO_SOT_SMD:TO-252-2,Newark / TME,2.61,Findchips 2026-09-26: Newark 1851 pcs (-BE3) $2.61; TME 1622 pcs (-GE3). Vgs +/-20 V -> D3 clamp
 R201,1,10k 0603,Q1 gate pull-down,Resistor_SMD:R_0603_1608Metric,TBD,,
-F1,1,5x20 mm T5A time-lag glass fuse + Schurter 0031.8201 holder,Input fuse (holder footprint on F1),Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open,TBD,,Generic multi-source fuse; order the holder separately
+F1,1,Littelfuse 0454005.MR,"Input fuse, NANO2 454 Slo-Blo SMD, 5 A, 125 V AC/DC (replaces 5x20 T5A + Schurter holder)",Fuse:Fuse_Littelfuse-NANO2-451_453,DigiKey / Newark,2.71,"Same 5 A time-lag rating as the old T5A. 50 A @125 V / 300 A @32 VDC interrupt. KiCad 451/453 land pattern = 454 datasheet pad layout (1.96x3.15 mm, 2.95 mm gap). DigiKey 5,930 stock as listed by an aggregator 2026-10-09"
 J2,1,"DC barrel jack with switch pin, 2.1 or 2.5 mm, centre +",9-24 V DC input,Connector_BarrelJack:BarrelJack_Horizontal,TBD,,Symbol Connector:Barrel_Jack_Switch; pins 2+3 to GND. Verify footprint vs chosen jack [VERIFY]
 J3,1,1x2 2.54 mm header (DNP),Optional bench 5 V input (cut JP202 to isolate the buck),Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,TBD,,
 U9,1,AMS1117-3.3,3.3 V LDO for NIC module + U22,Package_TO_SOT_SMD:SOT-223-3_TabPin2,TBD,,"C209 10 uF in, C210 22 uF solid tantalum out (AMS1117 datasheet 'Stability')"
-X1,1,"25.000 MHz 5 V CMOS oscillator, full can",CPU/FPU/glue clock (swap to 33.333 MHz later),Oscillator:Oscillator_DIP-14 (socketed),TBD,,
-X2,1,50.000 MHz 5 V CMOS oscillator,DRAM controller clock,Oscillator:Oscillator_DIP-14,TBD,,
-X3,1,Oscillator (DNP),Optional separate FPU clock via JP3,Oscillator:Oscillator_DIP-14,TBD,,Only if slower 68882 is used
+X1,1,ECS-3951M-250-BN-TR,"25.000 MHz 5 V HCMOS XO, 7x5 mm SMD, +-50 ppm, -40..85 C",m68030-sbc:Oscillator_SMD_ECS-3951M_7.0x5.0mm_DIP14PinMap,DigiKey / Mouser (ECS authorized),,"Replaces DIP-14 can. Pad1 tri-state tied +5V (enabled >2.2 V); footprint pad numbers 1/7/8/14 map to ECS pads 1/2/3/4 so schematic is unchanged. Stock seen at several distributors; LCSC 0. Not socketed any more: to change CPU clock, rework the SMD part [VERIFY land pattern vs ECS Fig. 2]"
+X2,1,ECS-3951M-500-BN-TR,"50.000 MHz 5 V HCMOS XO, 7x5 mm SMD, +-50 ppm, 55 mA max",m68030-sbc:Oscillator_SMD_ECS-3951M_7.0x5.0mm_DIP14PinMap,Mouser 520-3951M-500-BN / DigiKey XC324CT-ND,,Pad1 tri-state tied +5V. DigiKey cut-tape stock was low (53) on Octopart; Mouser 653 [VERIFY stock]
+X3,1,ECS-3951M-200-BN-TR (DNP),"Optional FPU oscillator, 5 V HCMOS 7x5 SMD",m68030-sbc:Oscillator_SMD_ECS-3951M_7.0x5.0mm_DIP14PinMap,DigiKey / Mouser,,DNP. 20 MHz shown for MC68882FN20A; choose frequency to match the 68882 grade [VERIFY]
 Y1,1,3.6864 MHz crystal HC-49,DUART baud clock,Crystal:Crystal_HC49-4H_Vertical,TBD,,Load caps per crystal CL
 U10,1,74ACT244,"Clock fan-out buffer (8 outputs, 33 ohm series each)",Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,TBD,,
-"U11,U12,U13",3,SN74ACT245N,"IDE data (2) and control/address (1, fixed direction) buffers. Was SN74HCT245N",Package_DIP:DIP-20_W7.62mm,TI,,"SCAS452H PDIP (N), status Active. Same 245 pinout, footprint unchanged. Price not copied from the HCT line"
+"U11,U12,U13",3,SN74ACT245DW,"IDE data (2) and control/address (1, fixed direction) buffers, SOIC-20 (DW). Was SN74ACT245N",Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,TI / Mouser 595-SN74ACT245DW,,"Same 245 pinout. Mouser listed 5,580; DigiKey 0 and one aggregator marks the DW tube obsolete - use SN74ACT245DWR (reel/cut tape) if DW is unavailable [VERIFY]"
 U14-U17,4,SN74ACT244DW,"Expansion address/control buffers (A23:0, SIZ, FC, R/W, AS, DS), OE tied low",Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,TI,,
 U18-U21,4,SN74ACT245DW,"Expansion data buffers D31:0 (OE=EXP_BUF_EN_n, DIR=R/W, card on the A side)",Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,TI,,
 U22,1,SN74LVC125ADR,"Quad buffer, 5 V tolerant inputs, SPI 5 V to 3.3 V (SCK, MOSI, CS0, CS1). OE tied low",Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,TI,,Powered from +3V3. MISO is not shifted. C1003 100 nF
-U23,1,DS3234S#,"SPI RTC with TCXO. VCC is +3V3 (VIH = 0.7*VCC). NC pins 2 and 7-14 to GND",Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,DigiKey,16.63,"Maxim 19-5339. Both SCLK pins tied. No series diode on VBAT. C1004 100 nF. Linux rtc-ds3234 [VERIFY]"
-BT1,1,CR2032 holder (Keystone 103 style),RTC backup battery,Battery:BatteryHolder_Keystone_103_1x20mm,TBD,,Verify holder part matches footprint
+U23,1,DS3234S#,SPI RTC with TCXO. VCC is +3V3 (VIH = 0.7*VCC). NC pins 2 and 7-14 to GND,Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,DigiKey,16.63,Maxim 19-5339. Both SCLK pins tied. No series diode on VBAT. C1004 100 nF. Linux rtc-ds3234 [VERIFY]
+BT1,1,Keystone 3034,"CR2032 SMD coin-cell retainer (20 mm), RTC backup",Battery:BatteryHolder_Keystone_3034_1x20mm,DigiKey 36-3034-ND,0.52,"Pad 1 (+) = outer tabs, pad 2 (-) = centre pad (GND, 4 in-pad vias). DigiKey ~44k stock 2026-10"
 U801-U803,3,MC74ACT257DR2G (DNP),"Fallback B: external SIMM MA2-MA11 row/column muxes (S = MUX_SEL, OE = GND)",Package_SO:SOIC-16_3.9x9.9mm_P1.27mm,TBD,,"DNP; not needed for the fit. To use: fit U801-U803, R829-R838, C818-C820, remove R806-R815, new CPLD image"
 R829-R838,10,33 ohm 0603 (DNP),Fallback mux outputs -> MA2-MA11,Resistor_SMD:R_0603_1608Metric,TBD,,DNP
 C818-C820,3,0.1 uF X7R 0805 (DNP),Fallback mux decoupling,Capacitor_SMD:C_0805_2012Metric,TBD,,DNP
 J1,1,TE Connectivity 5822021-4,"72-pin SIMM socket, vertical, 1.27 mm pitch","m68030-sbc:SIMM-72_TE-5822021-4 (new, from TE customer drawing; drill 1.02 mm, NPTH 1.63/1.63/2.41 mm)",TBD,,Replaces the Mackerel footprint (0.762 mm drill was the hole-size bug); [VERIFY] locating-hole plating per TE 114-1061
 M1,1,"72-pin 5 V SIMM, 60 ns EDO or FPM, 16-128 MB",Main memory (start with known-good 16 or 64 MB),n/a (module),"Arch Memory (64 MB 60 ns EDO, new-old-stock)",55.95,"Price for 64 MB module; prefer 11/11, 12/11 or 12/12 geometries"
 "J4,J5",2,2x5 2.54 mm shrouded header,JTAG for U3 / U4: 1 TCK 2 GND 3 TDO 4 VCCT(+5V) 5 TMS 6-8 NC 9 TDI 10 GND,Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical,TBD,,Pinout verified vs ATDH1150USB UG (Atmel-8909A Table 1)
-J6,1,Wurth 61204021621,"40-pin shrouded IDC header, 2.54 mm, DIN 41651. Pin 20 removed (key). CF adapter plugs in here",Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical,Wurth,,"[VERIFY] the variant against Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical"
+J6,1,Wurth 61204021621,"40-pin shrouded IDC header, 2.54 mm, DIN 41651. Pin 20 removed (key). CF adapter plugs in here",Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical,Wurth,,[VERIFY] the variant against Connector_IDC:IDC-Header_2x20_P2.54mm_Vertical
 "J7,J8",2,1x6 2.54 mm header,"TTL-232 cable: 1 GND, 2 CTS<-RTS, 3 VCC from cable (no connect), 4 TXD->RX, 5 RXD<-TX, 6 RTS->CTS",Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,TBD,,No MAX232. 3.3 V or 5 V cable; DUART VIH is 2.5 V. Cable RXD must tolerate 5 V TX
-J9,1,2x5 2.54 mm header,"SPI NIC header pins 1-10: +3V3, +5V, GND, SCK, MOSI, MISO, CS, INT, RST, GND",Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical,TBD,,"W5500 or ENC28J60. SPI is 3.3 V. INT has R1004 10k to +3V3. RST is the R1005/R1006 divider"
-J10,1,HARTING 09032966821,"DIN 41612 type C female, 96 pin, vertical",Connector_DIN:DIN41612_C_3x32_Female_Vertical_THT,HARTING,,"[VERIFY] against the KiCad footprint (HARTING livebook is the footprint source). Pinout is on the expansion sheet"
+J9,1,2x5 2.54 mm header,"SPI NIC header pins 1-10: +3V3, +5V, GND, SCK, MOSI, MISO, CS, INT, RST, GND",Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical,TBD,,W5500 or ENC28J60. SPI is 3.3 V. INT has R1004 10k to +3V3. RST is the R1005/R1006 divider
+J10,1,HARTING 09032966821,"DIN 41612 type C female, 96 pin, vertical",Connector_DIN:DIN41612_C_3x32_Female_Vertical_THT,HARTING,,[VERIFY] against the KiCad footprint (HARTING livebook is the footprint source). Pinout is on the expansion sheet
 J11-J13,3,2x20 2.54 mm header,"Logic analyzer headers LA1 (A), LA2 (D), LA3 (control)",Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical,TBD,,May be left unpopulated after bring-up
 "JP1,JP2",2,1x2 header + jumper,CDIS_n / MMUDIS_n to GND,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,TBD,,
 JP3,1,1x3 header + jumper,FPU clock select (CPU clock / X3),Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,TBD,,
@@ -76,7 +76,7 @@ R-duart,4,4.7k / 10k 0603,"Still on the undrawn duart sheet: INTRN pull-up, NIC 
 "C801-C808,C810-C812",11,0.1 uF X7R 0805,U4 decoupling (one per VCC pin) + SIMM VDD pins 10/30/59,Capacitor_SMD:C_0805_2012Metric,TBD,,
 "C551,C911-C913,C1401-C1408",12,0.1 uF X7R 0805,"U5 (C551), U11-U13 (C911-C913), U14-U21 (C1401-C1408)",Capacitor_SMD:C_0805_2012Metric,TBD,,
 "C552,C1409",2,10 uF X7R 1206,U5 bulk and the expansion buffer group,Capacitor_SMD:C_1206_3216Metric,TBD,,
-C-decouple,59,0.1 uF X7R 0805,"Decoupling already counted above plus CPU/FPU/U3; this line is the older approximate bucket and does not add U5 or U11-U21 again",Capacitor_SMD:C_0805_2012Metric,TBD,,Quantity approximate; do not double-order C551/C911-C913/C1401-C1408
+C-decouple,59,0.1 uF X7R 0805,Decoupling already counted above plus CPU/FPU/U3; this line is the older approximate bucket and does not add U5 or U11-U21 again,Capacitor_SMD:C_0805_2012Metric,TBD,,Quantity approximate; do not double-order C551/C911-C913/C1401-C1408
 C-hf,4,330 pF C0G 0603,CPU HF decoupling (UM 12 recommendation),Capacitor_SMD:C_0603_1608Metric,TBD,,
 "C809,C813-C815",4,10 uF X7R 1206,U4 bulk + SIMM VDD pins,Capacitor_SMD:C_1206_3216Metric,TBD,,
 C-10u,10,10 uF X7R 1206,"Local bulk per IC cluster (incl. C515/C516 CPU, C609 FPU, C709 U3)",Capacitor_SMD:C_1206_3216Metric,TBD,,
@@ -98,7 +98,7 @@ R1007,1,1k 0603,D6 series (OP6 active-low),Resistor_SMD:R_0603_1608Metric,TBD,,
 R1008,1,10k 0603,DS3234 INT/SQW pull-up to +3V3 (not wired to an IRQ),Resistor_SMD:R_0603_1608Metric,TBD,,Pin may be left open; pull-up fitted so it is defined
 D6,1,LED 0805,OP6 spare indicator (off at reset; OP pins reset high),LED_SMD:LED_0805_2012Metric,TBD,,
 C1001,1,100 nF X7R 0805,U6 decoupling,Capacitor_SMD:C_0805_2012Metric,TBD,,One VCC pin (PLCC pin 44)
-"C1003,C1004",2,100 nF X7R 0603,"U22 and U23 decoupling (DS3234: 0.1 uF to 1.0 uF on VCC)",Capacitor_SMD:C_0603_1608Metric,TBD,,
+"C1003,C1004",2,100 nF X7R 0603,U22 and U23 decoupling (DS3234: 0.1 uF to 1.0 uF on VCC),Capacitor_SMD:C_0603_1608Metric,TBD,,
 C1002,1,10 uF X7R 1206,U6 bulk decoupling,Capacitor_SMD:C_1206_3216Metric,TBD,,
 TP,26,Test point,"TP201 VIN, TP202 +5V, TP203 +3V3, TP204 GND, TP501-503 CIOUT/DBEN/BG, TP701-706 BUS_RD/BUS_WR/ROM_CE/DUART_CS/IDE_DIOR/IDE_DIOW, TP801-802 RAS0/RAS1, TP803-806 CAS0-3, TP807 WE, TP808 MUX_SEL, TP809 U4 spare pin 81, TP1101 LED_n, TP1102 HALT_LED_n, TP1001 OP7, TP1002 RTC_INT",TestPoint:TestPoint_Pad_D1.5mm,TBD,,
 H1-H4,4,M3 mounting hole,Mounting,MountingHole:MountingHole_3.2mm_M3_Pad,n/a,,

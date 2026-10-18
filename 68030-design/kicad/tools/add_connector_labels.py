@@ -8,11 +8,15 @@ Each label is placed by a search: candidate positions around the anchor
 one whose text box stays clear of pads, vias, holes, other courtyards, all
 existing F.SilkS items, the board edge and labels already placed wins.
 """
+import os
 import sys
 import pcbnew
 
-PCB = "/workspace/68030-design/kicad/m68030-sbc.kicad_pcb"
-SRC = "/workspace/68030-design/kicad/backup/m68030-sbc-prelabels-20261017.kicad_pcb"
+# 220x175 board (2026-10-17 condense): SRC is the unlabeled output of
+# tools/condense_layout.py. The 275x215 pre-label board is
+# backup/m68030-sbc-prelabels-20261017.kicad_pcb. Override with env vars.
+PCB = os.environ.get("LABEL_PCB", "/workspace/68030-design/kicad/m68030-sbc.kicad_pcb")
+SRC = os.environ.get("LABEL_SRC", "/workspace/68030-design/kicad/backup/m68030-sbc-220x175-prelabels-20261017.kicad_pcb")
 GROUP = "connector_labels"
 H = 1.0      # text height/width mm
 T = 0.15     # stroke mm
@@ -51,7 +55,7 @@ LABELS = [
  ("JP801","STERM",               "JP801", ["left", "above", "right", "below"], 0),
  # fallback legend for the crowded U4 reserve jumpers (used only if needed)
  ("JP802","CBREQ",               "JP802", ["right", "above", "below", "left"], 0),
- ("JP801L","JP801 STERM\nJP802 CBREQ", "JP802", ["right", "below"], 0),
+ ("JP801L","JP801 STERM\nJP802 CBREQ", "JP802", ["right", "below", "above", "left"], 0),
  ("JP803","CBACK",               "JP803", ["left", "below", "right", "above"], 0),
  ("JP804","DS",                  "JP804", ["right", "left", "above", "below"], 0),
  # --- pin names -------------------------------------------------------
@@ -68,13 +72,15 @@ LABELS = [
  ("J9.2", "5V",  "J9.2", ["above"], 90), ("J9.4", "SCK", "J9.4", ["above"], 90),
  ("J9.6", "MISO","J9.6", ["above"], 90), ("J9.8", "INT", "J9.8", ["above"], 90),
  ("J9.10","GND", "J9.10",["above"], 90),
- ("JP3.1","CPU", "JP3.1", ["right", "left"], 0),
- ("JP3.3","X3",  "JP3.3", ["right", "left"], 0),
+ ("JP3.1","CPU", "JP3.1", ["right", "left", "above", "below"], 0),
+ ("JP3.3","X3",  "JP3.3", ["right", "left", "above", "below"], 0),
  ("J2.1", "+", "J2.1", ["above", "below", "right"], 0),
 ]
 
-LOOSE = {"JP202", "JP802", "JP804", "J9.1"}
-MAXGAP = {"JP801L": 9.0, "JP802L": 9.0}  # may touch the 0.25 mm courtyard margin of passives
+LOOSE = {"JP202", "JP802", "JP804", "J9.1", "JP3", "SJ201", "JP401", "JP803", "JP3.1", "JP3.3"}
+# 220x175: jumpers sit in denser passive fields, so their labels may sit further out.
+MAXGAP = {"JP801L": 9.0, "JP802L": 9.0, "JP3": 4.0, "JP202": 4.0, "SJ201": 4.0, "JP401": 4.0,
+          "JP803": 4.0, "JP804": 4.0, "JP3.1": 4.0, "JP3.3": 4.0}  # may touch the 0.25 mm courtyard margin of passives
 PAD_CLR = 0.30   # silk to pad / hole / via
 SILK_CLR = 0.20  # silk to silk
 CRT_CLR = 0.05   # text box to foreign courtyard

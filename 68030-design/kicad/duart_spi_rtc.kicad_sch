@@ -8502,7 +8502,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Battery:BatteryHolder_Keystone_103_1x20mm"
+		(property "Footprint" "Battery:BatteryHolder_Keystone_3034_1x20mm"
 			(at 309.88 193.04 0)
 			(effects
 				(font
@@ -8529,7 +8529,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "Keystone 103"
+		(property "MPN" "Keystone 3034"
 			(at 309.88 193.04 0)
 			(effects
 				(font

@@ -4746,7 +4746,7 @@
 				)
 			)
 		)
-		(property "Value" "T5A 5x20"
+		(property "Value" "T5A 0454005.MR"
 			(at 53.34 78.74 90)
 			(effects
 				(font
@@ -4754,7 +4754,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open"
+		(property "Footprint" "Fuse:Fuse_Littelfuse-NANO2-451_453"
 			(at 53.34 76.2 0)
 			(effects
 				(font
@@ -4781,7 +4781,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "5x20 mm time-lag 5 A glass fuse + Schurter 0031.8201 holder"
+		(property "MPN" "Littelfuse 0454005.MR"
 			(at 53.34 76.2 0)
 			(effects
 				(font
