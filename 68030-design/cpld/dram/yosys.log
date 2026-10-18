@@ -1407,7 +1407,7 @@ yosys> write_edif -lsbidx dram.edif
 yosys> exit
 
 Warnings: 2 unique messages, 2 total
-End of script. Logfile hash: af6f19b639, CPU: user 0.14s system 0.00s, MEM: 19.63 MB peak
+End of script. Logfile hash: af6f19b639, CPU: user 0.14s system 0.01s, MEM: 19.16 MB peak
 Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
-Time spent: 49% 1x abc (0 sec), 11% 20x opt_expr (0 sec), ...
+Time spent: 45% 1x abc (0 sec), 13% 20x opt_expr (0 sec), ...
 + [ -lsbidx =  ]

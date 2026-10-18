@@ -27,9 +27,50 @@ Differences from Mackerel are listed in the `dram.v` header and in spec §5.7.
 | `sim/sim_rtl.log`, `sim_rtl_33.log`, `sim_postfit.log`, `sim_postfit_33.log`, `sim_postfit_derate.log`, `sim_postfit_33_derate.log` | Logs from the last run (derated logs: seeds 11/22/33/44/55). |
 | `../sim_system/` | Whole-system timed sim: glue U3 + U4 netlists (both SDF-annotated) + SIMM + MC68882 + expansion-card models (`run.sh`, `tb_system.v`, `sim_system*.log`). |
 
+## Rev A.2 pin swap (2026-10-17) — pins re-assigned for the 220×175 placement
+
+Same `dram.v` logic; only the `//PIN:` locks changed. Fixed: dedicated inputs 1/83/84, pin 2 (CLK_DRAMC), JTAG, power, the
+jumpered pins 16/17/18/50 (JP801–804) and pin 81 (spare, TP809). MA0–11/RAS/CAS/WE now come out on U4's top and upper-left pins
+in SIMM pin order, and the address inputs moved to the bottom/right sides facing the CPU and the LA headers.
+
+- Cost model as for U3 (`../glue/README.md`), but the MA/RAS/CAS/WE nets are costed to their **SIMM pin** (looked through the 33R
+  series resistor), because R804–R824 were moved with the swap to a row on B.Cu under the SIMM pins (`kicad/LAYOUT.md`).
+- **The unconstrained optimum fits but loses timing:** 78/128 MC, but 0 cascades instead of 9, so the CAS byte-lane and column-mux
+  logic is split over two array passes: worst reg→reg **19.5 ns** (50 MHz met by 0.5 ns) and A0/A1/SIZ/R_W setup 11.5 ns
+  (was 14.0 / 6.0). The cause is the *order of the outputs*: inputs can go anywhere, but the cascade donors next to the CAS0
+  macrocell in LAB A disappear when the LAB A outputs are re-ordered freely.
+- Kept assignment: a fitter-in-the-loop search (`fit1508` takes ~2 s) starting from "outputs kept in their LAB, CAS0 fixed",
+  accepting only moves toward the optimum that still fit with **9 cascades, ≤ 14.0 ns reg→reg and ≤ 6.0 ns input setup**.
+  Straight-line model: **1598 → 1296 mm, 372 → 8 crossings** (free optimum 1191 mm / 0, rejected for timing).
+
+Fit (same options, `-optimize on -pin_keep on`): **`$Device PLCC84 fits`, 78/128 MC, 9 cascades, 6 foldbacks, `Pin-Keeper = ON`**,
+all 58 locks honoured. `timing.txt` is identical to Rev A.1 apart from internal node names (14.0 ns reg→reg, fmax 71.4 MHz;
+DSACK release 17.5 ns). Simulations re-run (`build.sh`): RTL and post-fit at 25/33.33 MHz and 2×5 derated seeds, **0 errors**.
+System sim (glue + U4 + 68882 + expansion, 6 runs): **0 errors, 0 DSACK contention events.**
+Rev A.1 files: `kicad/backup/pre-pinswap-20261017/cpld/dram/`.
+
+Pin moves (signal old→new):
+
+| | | | |
+|---|---|---|---|
+| MA10 4→10 | MA11 5→9 | RAS0_n 6→76 | RAS1_n 8→5 |
+| RAS2_n 9→6 | RAS3_n 10→8 | CAS0_n 11→4 | DSACK0_n 12→28 |
+| DSACK1_n 15→30 | MA0 20→22 | MA1 21→20 | MA2 22→25 |
+| MA3 24→21 | MA4 25→24 | MA5 27→15 | MA6 28→12 |
+| MA7 29→11 | MA8 30→27 | MA9 31→29 | A10 33→54 |
+| A9 34→63 | A8 35→57 | A7 36→56 | A6 37→61 |
+| A5 39→68 | A4 40→58 | A3 41→64 | A2 44→60 |
+| A1 45→37 | A0 46→34 | SIZ1 48→35 | SIZ0 49→36 |
+| R_W 51→31 | DRAM_SEL_n 52→33 | A26 54→39 | A25 55→40 |
+| A24 56→41 | A23 57→44 | A22 58→46 | A21 60→45 |
+| A20 61→80 | A19 63→49 | A18 64→48 | A17 65→52 |
+| A16 67→73 | A15 68→67 | A13 70→55 | A12 73→65 |
+| A11 74→51 | CAS1_n 75→77 | CAS2_n 76→70 | CAS3_n 77→79 |
+| WE_n 79→75 | MUX_SEL 80→74 |
+
 ## Fit result (Rev A.1, 2026-09-27, fit1508 v1918, `-preassign keep -optimize on -pin_keep on`, JTAG on)
 
-`$Device PLCC84 fits; JTAG ON; Secure OFF`, `Pin-Keeper = ON`. All 58 locked pins were placed as assigned; `pinout.csv` is identical to Rev A, so the dram sheet is unchanged.
+`$Device PLCC84 fits; JTAG ON; Secure OFF`, `Pin-Keeper = ON`. All 58 locked pins were placed as assigned; in Rev A.1 `pinout.csv` was identical to Rev A (the Rev A.2 swap above changed it).
 
 | Resource | Rev A | **Rev A.1** |
 |---|---|---|

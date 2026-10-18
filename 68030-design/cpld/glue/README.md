@@ -15,10 +15,50 @@ Spec: `../../spec.md` §2 (memory map), §2.4 (registers), §3 (bus cycles), §3
 | `sim/` | `tb_glue.v` functional testbench (RTL with `cells_rtl.v`; `-DPOSTFIT` on the fitted `glue.vo` with `prims.v`, zero delay). Timed post-fit: `sdf2v.py` back-annotates `glue.vo` with `glue.sdo` → `glue_timed.v`; `prims_timed.v` (transport delays, `+derate`/`+dmin`/`+seed=`, DFF setup/hold/recovery checks); `tb_timed.v` (worst-case 68030 bus model, U4/68882/expansion agents, monitors for wrong-cycle selects, false terminations, DSACK contention, 68882 #8/#8B/#9, IDE t0/t1/t2/t4/t9). Logs `sim_*.log`; `sim_timed_revA*.log` = the Rev A netlist under the same timed testbench. |
 | `yosys.log`, `fit_run.log` | Tool logs from the last run. |
 
+## Rev A.2 pin swap (2026-10-17) — pins re-assigned for the 220×175 placement
+
+Same `glue.v` logic; only the `//PIN:` locks changed. The user I/O pins were re-assigned so each signal leaves U3 on the side
+facing where its net goes on the condensed board (CPU PGA, FPU, SIMM, LA headers, DIN, IDE, DUART/ROM). Fixed: the dedicated
+inputs 1/2/83/84 (PWR_RST_n/GCLR, DS_n, CLK_GLUE/GCLK1, AS_n/OE1), JTAG 14/23/62/71, VCC/GND, and the reserved SPI pins 46/48/49
+(behind JP701–703). The owner overrode the earlier "don't move locked pins" rule for this change.
+
+How it was chosen (`kicad/tools/cpld_pinswap_*.py`; the optimiser itself is described in `kicad/LAYOUT.md`): cost = distance from
+each U3 pad to the nearest other pad of the net on the current PCB, Hungarian assignment, then pairwise swaps with a 4 mm penalty per
+crossing of the pin→target lines, iterated jointly with U4 (shared nets A1–3, A13–19, R_W, DSACK0/1, DRAM_SEL_n). Rotating U3 by
+90/180/270° gained < 1.5 % and would have moved the power pins and decoupling, so U3 stays at 0°.
+Straight-line model of the 57 movable nets: **2784 → 2369 mm, 254 → 0 crossings.**
+
+Fit (same options, `-pin_keep on`): **`$Device PLCC84 fits`, 121/128 MC, 62 FF, 13 cascades, `Pin-Keeper = ON`**, all 61 locks
+honoured. `timing.txt` is identical to Rev A.1 apart from internal node names (worst reg→reg 20.3 ns, FPU_CS 7.5 ns, terminations
+released ≤ 20.5 ns). Simulations re-run: RTL, post-fit, timed and timed-derated **0 errors**; 68882 #8 0 violations, #8B 19.57 ns,
+#9 7.50 ns, IDE t0 640 / t9 45.5 ns (unchanged). System sim (`../sim_system/`, 6 runs): **0 errors, 0 DSACK contention**.
+The toolchain was re-installed on the box from the steps below (fit1508/aprim.lib/atmel.std SHA1s match) and reproduced the Rev A.1
+JEDEC bit-for-bit before the change. The Rev A.1 files are in `kicad/backup/pre-pinswap-20261017/cpld/glue/`.
+
+Pin moves (signal old→new):
+
+| | | | |
+|---|---|---|---|
+| FC2 4→9 | FC1 5→10 | FC0 6→11 | R_W 8→18 |
+| DSACK0_n 9→8 | DSACK1_n 10→81 | BERR_n 11→65 | A31 12→76 |
+| A30 15→77 | A29 16→74 | A28 17→75 | A27 18→79 |
+| A19 20→17 | A18 21→33 | A17 22→35 | A16 24→22 |
+| A15 25→24 | A14 27→36 | A13 28→31 | A3 29→30 |
+| A2 30→28 | A1 31→80 | DUART_INT_n 33→37 | NIC_INT_n 34→41 |
+| EXP_INT_n 35→16 | NMI_BTN_n 36→25 | PERIPH_RST_n 37→15 | DUART_RST 39→45 |
+| LED_n 40→29 | WARM_RST_BTN_n 41→27 | STATUS_n 44→69 | HALT_LED_n 45→44 |
+| IDE_DA0 50→63 | IDE_DA1 51→60 | IDE_DA2 52→57 | HALT_n 54→64 |
+| DRAM_SEL_n 55→5 | FPU_CS_n 56→67 | ROM_CE_n 57→40 | BUS_RD_n 58→34 |
+| BUS_WR_n 60→39 | DUART_CS_n 61→51 | IDE_CS0_n 63→55 | IDE_CS1_n 64→52 |
+| IDE_DIOR_n 65→21 | IDE_DIOW_n 67→58 | IDE_BUF_EN_n 68→50 | EXP_SEL_n 69→12 |
+| EXP_BUF_EN_n 70→20 | IDE_INTRQ 73→54 | IDE_IORDY 74→56 | AVEC_n 75→6 |
+| CIIN_n 76→61 | IPL0_n 77→68 | IPL1_n 79→4 | IPL2_n 80→70 |
+| RESET_n 81→73 |
+
 ## Result — Rev A.1 (2026-09-27, fit1508 v1918)
 
-`$Device PLCC84 fits; JTAG ON; Secure OFF`, **`Pin-Keeper = ON`**. Pins are locked (`-preassign keep`); every Rev A pin kept its
-position. The only pinout change: pins 50/51/52 (Rev A spares, TP707–709) are now the new outputs **IDE_DA0/1/2**.
+`$Device PLCC84 fits; JTAG ON; Secure OFF`, **`Pin-Keeper = ON`**. Pins are locked (`-preassign keep`); in Rev A.1 every Rev A pin kept its
+position (the Rev A.2 pin swap above then moved them). The only pinout change: pins 50/51/52 (Rev A spares, TP707–709) are now the new outputs **IDE_DA0/1/2**.
 
 | Resource | Rev A (2026-09-26) | **Rev A.1** |
 |---|---|---|

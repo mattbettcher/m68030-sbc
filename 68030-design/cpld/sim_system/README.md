@@ -9,3 +9,8 @@ Monitors: DSACK/BERR/AVEC contention between all drivers (glue, U4, 68882, expan
 Result 2026-09-27 (glue Rev A.1, U4 Rev A.1): **0 errors in all 6 runs**, 0 DSACK contention events, U4 DSACK high ≤ 7.5 ns / Z ≤ 17.5 ns after AS↑, hand-over gap ≥ 21.0 ns, U4 DSACK skew ≤ 0.9 ns, SIMM timing errors 0, refresh gap ≤ 15 235 ns, 0 DRAM data mismatches. With the Rev A U4 netlist in the same bench: 7–22 contention events per run (≤ 15.3 ns) and 33–39 false U4 DSACK assertions per derated run.
 
 The DUART-access check is gated by PWR_RST_n: with random derating the netlist registers start at 0 and the reset preset takes a few ns to act (as in a real ATF15xx at power-up, when the DUART is held in reset anyway).
+
+
+## Re-run 2026-10-17 (Rev A.2 pin swap)
+
+Both netlists refitted with the new pinouts; `run.sh` (6 runs) gives 0 errors and 0 DSACK contention events in every log.

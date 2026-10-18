@@ -156,6 +156,67 @@ only; the main board has no signal tracks. Image: `renders/m68030-sbc-220x175-au
   escape and buses by hand. Re-run the same test on a 6-layer scratch copy before
   committing to that.
 
+### CPLD pin swap, Rev A.2 (2026-10-17)
+
+U3 (glue) and U4 (DRAM) user pins were re-assigned to match the bus order at the CPU, FPU,
+SIMM, LA headers and DIN in this placement (the owner allowed moving the locked pins).
+Details and the old-to-new pin tables are in `cpld/glue/README.md` and `cpld/dram/README.md`.
+
+- Method (`tools/cpld_pinswap_opt.py`, `_assign.py`, `_search_u4.py`): cost = straight
+  distance from each CPLD pad to the nearest other pad of the net. Hungarian assignment,
+  then pairwise swaps with a 4 mm penalty per crossing. Dedicated pins, JTAG, power, the
+  jumpered pins and TP pins stay fixed. Rotating either CPLD gained <= 1.5 %, so neither was rotated.
+- Result: U3 57 pins moved, 2784 -> 2369 mm, 254 -> 0 crossings. U4 54 pins moved,
+  1598 -> 1296 mm, 372 -> 8 crossings. The U4 optimum with no limits was 1191 mm / 0, but
+  fit1508 then lost all 9 cascades (19.5 ns instead of 14.0 ns), so a search with the fitter
+  in the loop kept the timing.
+- Fits: glue 121/128 MC, 20.3 ns. DRAM 78/128 MC, 14.0 ns. Both are the same as Rev A.1.
+  All CPLD and system sims: 0 errors, 0 DSACK contention.
+- Schematic: the label edits were made in place (`tools/cpld_pinswap_sch.py`, not build.py).
+  On the glue sheet the short bus stubs at U3 were replaced by plain labels. ERC 0 / 0.
+- PCB (`tools/cpld_pinswap_pcb.py`): 111 U3/U4 pad nets updated from the netlist.
+  R804-R824 (33R U4 series resistors) moved to B.Cu in one row at y 13.9 under the SIMM
+  pins, in SIMM pin order. Their refdes are hidden; a B.SilkS note marks the row.
+  DRC is unchanged: 0 errors, parity 0, 499 unconnected, 5 silk warnings.
+- Backup of everything before the swap: `backup/pre-pinswap-20261017/`.
+
+### Autoroute re-test after the pin swap (scratch only)
+
+Same flow and caps as before: FreeRouting 2.5.0, optimizer off, fanout + 2 passes (4L) /
++ 1 pass (6L, F/In1 sig, In2 GND, In3 +5V/+3V3, In4/B sig), run in parallel, about 29 min.
+Scratch boards are in `/tmp/autoroute_ps/{4L,6L}`. Images:
+`renders/m68030-sbc-220x175-pinswap-autoroute-4L.png` and `-6L.png`.
+Open-end counts use the same method as the earlier runs (pads still on the KiCad ratsnest).
+
+| | 4L before | 4L after | 6L before | 6L after |
+|---|---|---|---|---|
+| Fanout escaped | 410/805 | 445/805 | 669/805 | 670/805 |
+| Open connections (of 499) | 362 | 337 | 373 | 350 |
+| Completion | 27 % | 32.5 % | 25 % | 29.9 % |
+| U1 CPU | 138 | 89 | 135 | 115 |
+| U2 FPU | 55 | 44 | 44 | 50 |
+| U3 glue | 46 | 30 | 36 | 30 |
+| U4 DRAM | 44 | 18 | 47 | 14 |
+| J1 SIMM | 34 | 21 | 45 | 44 |
+| J10 DIN | 29 | 29 | 26 | 26 |
+| J11/J12/J13 LA | 26/31/21 | 28/21/23 | 30/28/20 | 27/30/26 |
+
+After the swap: 4L has 305 signal vias and 15.4 m of signal track; 6L has 420 vias and 13.4 m.
+Both still have router artefacts: 11 track_width errors each, and 78 (4L) / 127 (6L) dangling fanout vias.
+
+- The swap roughly halved the open ends at U4 and cut U3 by about a third. U1 also dropped
+  a lot on 4L, because fewer CPLD nets compete for its escape. Completion went up about
+  5 points on both stackups. The board is still far from routed: about 2/3 open.
+- The CPU PGA escape is still the main blocker (U1 89 / 115 open ends), then the FPU and LA headers.
+  A hand fanout would need, for the 13x13 PGA-128 on a 2.54 mm grid: a dogbone or via-in-channel
+  plan, with one 0.2 mm track between pins on each signal layer (0.6/0.3 vias fit in the
+  pin channels). Escape the outer two rings on F/B. Escape the inner rings on In1/In4 (6L)
+  through vias placed in the channel diagonals. Fix the bus order of D0-31 / A0-31 at the PGA
+  edge to match the new CPLD/FPU/LA order. The C501-C510 B.Cu decaps limit the B.Cu channels.
+  Then re-run the autoroute with the fanout locked. Not done.
+- The DNP fallback parts (U801-U803, R825-R838) still add routing load. Removing them
+  is a candidate cleanup.
+
 ## Unverified, left as drawn
 
 - SIMM locating holes stay NPTH as drawn (1.63 mm pin-1 end and center, 2.41 mm far end). Plating vs TE 114-1061 is unverified. No extra holes were added.

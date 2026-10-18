@@ -419,9 +419,9 @@ DUART is placed above IDE because the SC26C92's 8-byte RX FIFO fills in about 0.
 - The pin-controlled power-down option (PD1/PD2) and the GCLK3 function are **not enabled**, so pins 12, 45 and 81 are ordinary I/O.
 - Budget below: **JTAG enabled, 60 I/O + 4 inputs per chip.**
 
-### 4.2 U3 glue/system CPLD: **57 of 60 I/O used + 3 reserved (SPI), 0 spare; 4 of 4 dedicated inputs used. FITTED (Rev A.1).**
+### 4.2 U3 glue/system CPLD: **57 of 60 I/O used + 3 reserved (SPI), 0 spare; 4 of 4 dedicated inputs used. FITTED (Rev A.2 pinout, 2026-10-17).**
 
-**Fitted pinout (2026-09-26; Rev A.1 refit 2026-09-27 kept every pin and added IDE_DA0–2 on the former spares 50–52).** The logic in `cpld/glue/glue.v` was synthesized with Yosys 0.52 (hoglet67/atf15xx_yosys scripts) and fitted with Microchip **fit1508.exe v1918** (from ProChip 5.0.1, run under Wine 10) for ATF1508AS PLCC84, speed -7, **JTAG ON**, with every pin locked to the grouping below (`-preassign keep`, `-optimize off`, TDI/TMS internal pull-ups on, **`-pin_keep on`** since Rev A.1).
+**Fitted pinout (Rev A.2, 2026-10-17: the user I/O pins were re-assigned to follow the 220×175 placement, see `cpld/glue/README.md` "Rev A.2 pin swap"; dedicated inputs, JTAG, power and the reserved SPI pins 46/48/49 did not move. Rev A.1 2026-09-27 added IDE_DA0–2.)** The logic in `cpld/glue/glue.v` was synthesized with Yosys 0.52 (hoglet67/atf15xx_yosys scripts) and fitted with Microchip **fit1508.exe v1918** (from ProChip 5.0.1, run under Wine 10) for ATF1508AS PLCC84, speed -7, **JTAG ON**, with every pin locked to the grouping below (`-preassign keep`, `-optimize off`, TDI/TMS internal pull-ups on, **`-pin_keep on`** since Rev A.1).
 - Result (Rev A.1): `$Device PLCC84 fits`, `Pin-Keeper = ON`. **121/128 macrocells, 62 flip-flops, 322 product terms, 13 cascades, 0 foldbacks, no LAB above 100 %.** (Rev A: 111 MC, 53 FF, 263 PT.)
 - The table is generated from the fitter's pin report (`cpld/glue/pinout.md` / `pinout.csv`); the KiCad glue sheet reads `pinout.csv` directly.
 - The fitter's PLCC84 model gives the same VCC/GND/JTAG/dedicated-input pin numbers as doc0784 (§4.1).
@@ -433,66 +433,66 @@ DUART is placed above IDE because the SC26C92's 8-byte RX FIFO fills in about 0.
 |---|---|---|---|
 | 1 | GCLR (dedicated input) | PWR_RST_n | in |
 | 2 | OE2/GCLK2 (dedicated input) | DS_n | in |
-| 4 | I/O | FC2 | in |
-| 5 | I/O | FC1 | in |
-| 6 | I/O | FC0 | in |
-| 8 | I/O | R_W | in |
-| 9 | I/O | DSACK0_n | out, 3-state (driven only while terminating) |
-| 10 | I/O | DSACK1_n | out, 3-state |
-| 11 | I/O | BERR_n | out, 3-state |
-| 12 | I/O/PD1 | A31 | in |
-| 15 | I/O | A30 | in |
-| 16 | I/O | A29 | in |
-| 17 | I/O | A28 | in |
-| 18 | I/O | A27 | in |
-| 20 | I/O | A19 | in |
-| 21 | I/O | A18 | in |
-| 22 | I/O | A17 | in |
-| 24 | I/O | A16 | in |
-| 25 | I/O | A15 | in |
-| 27 | I/O | A14 | in |
-| 28 | I/O | A13 | in |
-| 29 | I/O | A3 | in |
-| 30 | I/O | A2 | in |
-| 31 | I/O | A1 | in |
-| 33 | I/O | DUART_INT_n | in |
-| 34 | I/O | NIC_INT_n | in |
-| 35 | I/O | EXP_INT_n | in |
-| 36 | I/O | NMI_BTN_n | in |
-| 37 | I/O | PERIPH_RST_n | out |
-| 39 | I/O | DUART_RST | out |
-| 40 | I/O | LED_n | out |
-| 41 | I/O | WARM_RST_BTN_n | in |
-| 44 | I/O | STATUS_n | in |
-| 45 | I/O/PD2 | HALT_LED_n | out |
+| 4 | I/O | IPL1_n | out |
+| 5 | I/O | DRAM_SEL_n | out |
+| 6 | I/O | AVEC_n | out, 3-state |
+| 8 | I/O | DSACK0_n | out, 3-state (driven only while terminating) |
+| 9 | I/O | FC2 | in |
+| 10 | I/O | FC1 | in |
+| 11 | I/O | FC0 | in |
+| 12 | I/O/PD1 | EXP_SEL_n | out |
+| 15 | I/O | PERIPH_RST_n | out |
+| 16 | I/O | EXP_INT_n | in |
+| 17 | I/O | A19 | in |
+| 18 | I/O | R_W | in |
+| 20 | I/O | EXP_BUF_EN_n | out |
+| 21 | I/O | IDE_DIOR_n | out |
+| 22 | I/O | A16 | in |
+| 24 | I/O | A15 | in |
+| 25 | I/O | NMI_BTN_n | in |
+| 27 | I/O | WARM_RST_BTN_n | in |
+| 28 | I/O | A2 | in |
+| 29 | I/O | LED_n | out |
+| 30 | I/O | A3 | in |
+| 31 | I/O | A13 | in |
+| 33 | I/O | A18 | in |
+| 34 | I/O | BUS_RD_n | out |
+| 35 | I/O | A17 | in |
+| 36 | I/O | A14 | in |
+| 37 | I/O | DUART_INT_n | in |
+| 39 | I/O | BUS_WR_n | out |
+| 40 | I/O | ROM_CE_n | out |
+| 41 | I/O | NIC_INT_n | in |
+| 44 | I/O | HALT_LED_n | out |
+| 45 | I/O/PD2 | DUART_RST | out |
 | 46 | I/O | reserved SPI_HW_SCK (jumper | - |
 | 48 | I/O | reserved SPI_HW_MOSI (jumper | - |
 | 49 | I/O | reserved SPI_HW_MISO (jumper | - |
-| 50 | I/O | IDE_DA0 | out (registered; Rev A.1, was spare) |
-| 51 | I/O | IDE_DA1 | out (registered; Rev A.1) |
-| 52 | I/O | IDE_DA2 | out (registered; Rev A.1) |
-| 54 | I/O | HALT_n | out, open-drain emulated (OE) |
-| 55 | I/O | DRAM_SEL_n | out |
-| 56 | I/O | FPU_CS_n | out |
-| 57 | I/O | ROM_CE_n | out |
-| 58 | I/O | BUS_RD_n | out |
-| 60 | I/O | BUS_WR_n | out |
-| 61 | I/O | DUART_CS_n | out |
-| 63 | I/O | IDE_CS0_n | out |
-| 64 | I/O | IDE_CS1_n | out |
-| 65 | I/O | IDE_DIOR_n | out |
-| 67 | I/O | IDE_DIOW_n | out |
-| 68 | I/O | IDE_BUF_EN_n | out |
-| 69 | I/O | EXP_SEL_n | out |
-| 70 | I/O | EXP_BUF_EN_n | out |
-| 73 | I/O | IDE_INTRQ | in |
-| 74 | I/O | IDE_IORDY | in |
-| 75 | I/O | AVEC_n | out, 3-state |
-| 76 | I/O | CIIN_n | out, push-pull |
-| 77 | I/O | IPL0_n | out |
-| 79 | I/O | IPL1_n | out |
-| 80 | I/O | IPL2_n | out |
-| 81 | I/O/GCLK3 | RESET_n | bidir, open-drain emulated (OE) + read back |
+| 50 | I/O | IDE_BUF_EN_n | out |
+| 51 | I/O | DUART_CS_n | out |
+| 52 | I/O | IDE_CS1_n | out |
+| 54 | I/O | IDE_INTRQ | in |
+| 55 | I/O | IDE_CS0_n | out |
+| 56 | I/O | IDE_IORDY | in |
+| 57 | I/O | IDE_DA2 | out (registered; Rev A.1) |
+| 58 | I/O | IDE_DIOW_n | out |
+| 60 | I/O | IDE_DA1 | out (registered; Rev A.1) |
+| 61 | I/O | CIIN_n | out, push-pull |
+| 63 | I/O | IDE_DA0 | out (registered; Rev A.1, was spare) |
+| 64 | I/O | HALT_n | out, open-drain emulated (OE) |
+| 65 | I/O | BERR_n | out, 3-state |
+| 67 | I/O | FPU_CS_n | out |
+| 68 | I/O | IPL0_n | out |
+| 69 | I/O | STATUS_n | in |
+| 70 | I/O | IPL2_n | out |
+| 73 | I/O | RESET_n | bidir, open-drain emulated (OE) + read back |
+| 74 | I/O | A29 | in |
+| 75 | I/O | A28 | in |
+| 76 | I/O | A31 | in |
+| 77 | I/O | A30 | in |
+| 79 | I/O | A27 | in |
+| 80 | I/O | A1 | in |
+| 81 | I/O/GCLK3 | DSACK1_n | out, 3-state |
 | 83 | GCLK1 (dedicated input) | CLK_GLUE | in |
 | 84 | OE1 (dedicated input) | AS_n | in |
 
@@ -502,12 +502,12 @@ Notes:
 - `DS_n` on the OE2/GCLK2 pin and `AS_n` on OE1 are used as ordinary logic inputs. Dedicated inputs can feed the array.
 - `RESET_n` is bidirectional open-drain. The glue drives it at power-on or warm reset, and reads it to detect the CPU `RESET` instruction, which generates `PERIPH_RST_n` / `DUART_RST`. Open-drain is emulated with the pin's output enable (driven low only when asserted); the fitter's `open_collector` option is not used.
 - `CIIN_n` is **push-pull** (the glue is its only driver). `DSACKx_n`, `AVEC_n` and `BERR_n` are three-state: each is driven only while its own termination flag is set, actively negated from AS_n rising (7.5 ns) and released by the async clear ≤ 20.5 ns after AS↑ to the 1k pull-ups.
-- Pins 46/48/49 (SPI master reserve) go through open solder jumpers JP701–JP703. Pins 50–52 (spares in Rev A, with TP707–709) now carry IDE_DA0–2 to U13 on the ide sheet; TP707–709 were deleted. With `-pin_keep on` the unused/reserved pins have keepers.
+- Pins 46/48/49 (SPI master reserve) go through open solder jumpers JP701–JP703. IDE_DA0–2 (Rev A.1, to U13 on the ide sheet) are on pins 63/60/57 since the Rev A.2 pin swap; TP707–709 were deleted in Rev A.1. With `-pin_keep on` the unused/reserved pins have keepers.
 - `DUART_RST` is active high because the SC26C92 RESET pin (38) is active high (SC26C92 datasheet pin table; the SC28L92 in Intel mode is the same).
 - IDE `DIR` is `R_W` directly on the SN74ACT245Ns, so it needs no CPLD pin. The same applies to the expansion 74ACT245s.
 - SIMM presence detect (PD1–4) goes to DUART inputs IP3–IP6, not to a CPLD.
 
-### 4.3 U4 DRAM controller CPLD: **FITTED** (fit1508 v1918, 2026-09-27): 55 of 60 I/O used by the logic, 4 reserved behind open solder jumpers, 1 spare; 3 of 4 dedicated inputs used by the logic (pin 2 wired but unused)
+### 4.3 U4 DRAM controller CPLD: **FITTED** (fit1508 v1918, 2026-09-27; Rev A.2 pinout 2026-10-17): 55 of 60 I/O used by the logic, 4 reserved behind open solder jumpers, 1 spare; 3 of 4 dedicated inputs used by the logic (pin 2 wired but unused)
 
 The authoritative pin list is `cpld/dram/pinout.csv` (extracted from `dram.fit`); the KiCad `dram` sheet reads it.
 
@@ -517,77 +517,77 @@ The authoritative pin list is `cpld/dram/pinout.csv` (extracted from `dram.fit`)
 | 2 | INPUT/OE2/GCLK2 | top | CLK_DRAMC (CPU-clock copy, for a future synchronous FSM; **unused** in the Rev A logic) | in |
 | 83 | INPUT/GCLK1 | top | DRAM_CLK 50 MHz (GCLK1) | in |
 | 84 | INPUT/OE1 | top | AS_n (OE1 used as input) | in |
-| 4 | I/O | top | MA10 | out |
-| 5 | I/O | top | MA11 | out |
-| 6 | I/O | top | RAS0_n | out |
-| 8 | I/O | top | RAS1_n | out |
-| 9 | I/O | top | RAS2_n | out |
-| 10 | I/O | top | RAS3_n | out |
-| 11 | I/O | top | CAS0_n | out |
-| 12 | I/O/PD1 | left | DSACK0_n | tri-state out |
-| 15 | I/O | left | DSACK1_n | tri-state out |
+| 4 | I/O | top | CAS0_n | out |
+| 5 | I/O | top | RAS1_n | out |
+| 6 | I/O | top | RAS2_n | out |
+| 8 | I/O | top | RAS3_n | out |
+| 9 | I/O | top | MA11 | out |
+| 10 | I/O | top | MA10 | out |
+| 11 | I/O | top | MA7 | out |
+| 12 | I/O/PD1 | left | MA6 | out |
+| 15 | I/O | left | MA5 | out |
 | 16 | I/O | left | STERM_n via JP801 (open) | reserved; unused pin held by the pin keeper |
 | 17 | I/O | left | CBREQ_n via JP802 (open) | reserved |
 | 18 | I/O | left | CBACK_n via JP803 (open) | reserved |
-| 20 | I/O | left | MA0 | out |
-| 21 | I/O | left | MA1 | out |
-| 22 | I/O | left | MA2 | out |
-| 24 | I/O | left | MA3 | out |
-| 25 | I/O | left | MA4 | out |
-| 27 | I/O | left | MA5 | out |
-| 28 | I/O | left | MA6 | out |
-| 29 | I/O | left | MA7 | out |
-| 30 | I/O | left | MA8 | out |
-| 31 | I/O | left | MA9 | out |
-| 33 | I/O | bottom | A10 | in |
-| 34 | I/O | bottom | A9 | in |
-| 35 | I/O | bottom | A8 | in |
-| 36 | I/O | bottom | A7 | in |
-| 37 | I/O | bottom | A6 | in |
-| 39 | I/O | bottom | A5 | in |
-| 40 | I/O | bottom | A4 | in |
-| 41 | I/O | bottom | A3 | in |
-| 44 | I/O | bottom | A2 | in |
-| 45 | I/O/PD2 | bottom | A1 | in |
-| 46 | I/O | bottom | A0 | in |
-| 48 | I/O | bottom | SIZ1 | in |
-| 49 | I/O | bottom | SIZ0 | in |
+| 20 | I/O | left | MA1 | out |
+| 21 | I/O | left | MA3 | out |
+| 22 | I/O | left | MA0 | out |
+| 24 | I/O | left | MA4 | out |
+| 25 | I/O | left | MA2 | out |
+| 27 | I/O | left | MA8 | out |
+| 28 | I/O | left | DSACK0_n | tri-state out |
+| 29 | I/O | left | MA9 | out |
+| 30 | I/O | left | DSACK1_n | tri-state out |
+| 31 | I/O | left | R_W | in |
+| 33 | I/O | bottom | DRAM_SEL_n | in |
+| 34 | I/O | bottom | A0 | in |
+| 35 | I/O | bottom | SIZ1 | in |
+| 36 | I/O | bottom | SIZ0 | in |
+| 37 | I/O | bottom | A1 | in |
+| 39 | I/O | bottom | A26 | in |
+| 40 | I/O | bottom | A25 | in |
+| 41 | I/O | bottom | A24 | in |
+| 44 | I/O | bottom | A23 | in |
+| 45 | I/O/PD2 | bottom | A21 | in |
+| 46 | I/O | bottom | A22 | in |
+| 48 | I/O | bottom | A18 | in |
+| 49 | I/O | bottom | A19 | in |
 | 50 | I/O | bottom | DS_n via JP804 (open) | reserved (write CAS does not wait for DS) |
-| 51 | I/O | bottom | R_W | in |
-| 52 | I/O | bottom | DRAM_SEL_n | in |
-| 54 | I/O | right | A26 | in |
-| 55 | I/O | right | A25 | in |
-| 56 | I/O | right | A24 | in |
-| 57 | I/O | right | A23 | in |
-| 58 | I/O | right | A22 | in |
-| 60 | I/O | right | A21 | in |
-| 61 | I/O | right | A20 | in |
-| 63 | I/O | right | A19 | in |
-| 64 | I/O | right | A18 | in |
-| 65 | I/O | right | A17 | in |
-| 67 | I/O | right | A16 | in |
-| 68 | I/O | right | A15 | in |
+| 51 | I/O | bottom | A11 | in |
+| 52 | I/O | bottom | A17 | in |
+| 54 | I/O | right | A10 | in |
+| 55 | I/O | right | A13 | in |
+| 56 | I/O | right | A7 | in |
+| 57 | I/O | right | A8 | in |
+| 58 | I/O | right | A4 | in |
+| 60 | I/O | right | A2 | in |
+| 61 | I/O | right | A6 | in |
+| 63 | I/O | right | A9 | in |
+| 64 | I/O | right | A3 | in |
+| 65 | I/O | right | A12 | in |
+| 67 | I/O | right | A15 | in |
+| 68 | I/O | right | A5 | in |
 | 69 | I/O | right | A14 | in |
-| 70 | I/O | right | A13 | in |
-| 73 | I/O | right | A12 | in |
-| 74 | I/O | right | A11 | in |
-| 75 | I/O | top | CAS1_n | out |
-| 76 | I/O | top | CAS2_n | out |
-| 77 | I/O | top | CAS3_n | out |
-| 79 | I/O | top | WE_n | out |
-| 80 | I/O | top | MUX_SEL (row/column select for the DNP 74ACT257 fallback; TP808) | out |
+| 70 | I/O | right | CAS2_n | out |
+| 73 | I/O | right | A16 | in |
+| 74 | I/O | right | MUX_SEL (row/column select for the DNP 74ACT257 fallback; TP808) | out |
+| 75 | I/O | top | WE_n | out |
+| 76 | I/O | top | RAS0_n | out |
+| 77 | I/O | top | CAS1_n | out |
+| 79 | I/O | top | CAS3_n | out |
+| 80 | I/O | top | A20 | in |
 | 81 | I/O/GCLK3 | top | spare (TP809) | - |
 
 Notes:
 - **A26–A2 (25 lines)** carry the row/column/side mapping. **A1, A0, SIZ1, SIZ0** feed the CAS byte-lane table.
-- **`DRAM_SEL_n`** comes from the glue CPLD (U3 pin 55 → U4 pin 52), because the glue has FC2:0, A31:27 and the overlay state. Timing check: §3.2 (≥ 23 ns margin).
+- **`DRAM_SEL_n`** comes from the glue CPLD (U3 pin 5 → U4 pin 33 since Rev A.2), because the glue has FC2:0, A31:27 and the overlay state. Timing check: §3.2 (≥ 23 ns margin).
 - **STERM_n, CBACK_n, CBREQ_n, DS_n** reach U4 only through open solder jumpers JP801–JP804. The Rev A logic does not use them, and the fitter's pin keeper holds the unused pins. Close a jumper only with a matching CPLD image (future burst/DS-qualified write).
 - **Drive strength:**
   - ATF1508AS IOL is 12 mA at TTL level (doc0784 DC table).
   - SIMM input capacitance, Micron MT8D432/MT16D832 datasheet: A0–A10 are 48 pF (16 MB) / **95 pF (32 MB double-sided)**; WE_n 64/**127 pF**; RAS_n 32 pF; CAS_n 16/32 pF.
   - A 12 mA driver into ~100–130 pF plus the trace gives a slow edge of roughly 10 ns **[EST]**. That is acceptable at a 20 ns FSM tick, because MA changes a full tick before CAS.
-  - 33 Ω series resistors R804–R824 sit at the CPLD on MA0–11, RAS0–3, CAS0–3 and WE (justification in §5.8).
-- **Fallback B, footprints only (DNP; not needed for the fit).** U801–U803 are 74ACT257 (MC74ACT257DR2G, SOIC-16) with I0 = row (A12–A21), I1 = column (A2–A11) for MA2–MA11, S = MUX_SEL (U4 pin 80) and OE = GND. The DNP 33 Ω resistors R829–R838 connect their outputs to MA2–MA11. To switch to them: remove R806–R815, fit U801–U803, R829–R838 and C818–C820, and load a CPLD image with MA2–MA11 tri-stated. The 74ACT257 pinout was checked against the ST 74ACT257 and onsemi MC74ACT257 datasheets. With the muxes fitted, U4 would not need A4–A11/A14–A21 (a new pinout would free up to 20 pins, but it needs a refit and a board change). Keep these footprints only if board space allows. They exist for signal integrity, not for the fit.
+  - 33 Ω series resistors R804–R824 on MA0–11, RAS0–3, CAS0–3 and WE (justification in §5.8). Since the Rev A.2 pin swap they sit on B.Cu in a row between the SIMM pads and U4's top pad row, each under its SIMM pin (≤ ~9 mm from the U4 pin).
+- **Fallback B, footprints only (DNP; not needed for the fit).** U801–U803 are 74ACT257 (MC74ACT257DR2G, SOIC-16) with I0 = row (A12–A21), I1 = column (A2–A11) for MA2–MA11, S = MUX_SEL (U4 pin 74) and OE = GND. The DNP 33 Ω resistors R829–R838 connect their outputs to MA2–MA11. To switch to them: remove R806–R815, fit U801–U803, R829–R838 and C818–C820, and load a CPLD image with MA2–MA11 tri-stated. The 74ACT257 pinout was checked against the ST 74ACT257 and onsemi MC74ACT257 datasheets. With the muxes fitted, U4 would not need A4–A11/A14–A21 (a new pinout would free up to 20 pins, but it needs a refit and a board change). Keep these footprints only if board space allows. They exist for signal integrity, not for the fit.
 - A TQFP-100 ATF1508AS was not needed either. The suggested ATF1508AS-10AU100 is a -10 part. Per doc0784's AC table, -10 vs -7 is tPD1 10 vs 7.5 ns, tCOP 5 vs 4.5 ns and fCNT 100 vs 125 MHz. Scaling the fitted 14.0 ns register path by 10/7.5 gives ≈ 18.7 ns **[EST]**, so 50 MHz would be marginal. The ordering table also lists a green -7 TQFP-100 (ATF1508AS-7AX100).
 
 ### 4.4 Macrocell use (fitter results)

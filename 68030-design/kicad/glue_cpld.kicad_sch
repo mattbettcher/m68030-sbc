@@ -3122,141 +3122,6 @@
 		(at 58.42 226.06)
 		(uuid "d416288d-a2e0-5557-9801-bddad2cfedcb")
 	)
-	(bus_entry
-		(at 156.21 114.3)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c17f27d1-d706-5c71-bacc-97d36b39674d")
-	)
-	(bus_entry
-		(at 156.21 116.84)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5acaf356-3c90-5be6-bc71-eb43acec19e1")
-	)
-	(bus_entry
-		(at 156.21 119.38)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "625ee19a-6c45-516c-945f-19ebff2ac553")
-	)
-	(bus_entry
-		(at 156.21 121.92)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "168f813e-c585-5a00-b11a-e8b897aebe3b")
-	)
-	(bus_entry
-		(at 156.21 124.46)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "effb14c7-d357-5840-b57b-3a1715a495c7")
-	)
-	(bus_entry
-		(at 156.21 127)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17385a3c-b85b-5847-991e-c14b7c6e27af")
-	)
-	(bus_entry
-		(at 156.21 129.54)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b95af83d-0318-5481-b996-df019a324ad9")
-	)
-	(bus_entry
-		(at 156.21 132.08)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c725525c-4b7d-5045-8a04-b13c890de29f")
-	)
-	(bus_entry
-		(at 156.21 134.62)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25686166-0ce9-531e-8bc3-b71690424aea")
-	)
-	(bus_entry
-		(at 156.21 137.16)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9968fecf-d4d7-5004-afca-cd200c5a99e9")
-	)
-	(bus_entry
-		(at 156.21 139.7)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0e7c4fa-0018-5eef-8924-c1b1eb82b210")
-	)
-	(bus_entry
-		(at 156.21 142.24)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "383bc9cd-97e7-5930-b870-ce872ba78995")
-	)
-	(bus_entry
-		(at 156.21 144.78)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b3f841d4-53df-53e0-ae63-37a27820cfb4")
-	)
-	(bus_entry
-		(at 156.21 147.32)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0f392a2-29b5-543e-a4cb-c30835f7d9c9")
-	)
-	(bus_entry
-		(at 156.21 149.86)
-		(size -2.54 -2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d8ee872-51e9-50fc-ab4a-62acfb87297a")
-	)
 	(wire
 		(pts
 			(xy 166.37 114.3)
@@ -4932,17 +4797,6 @@
 	(bus
 		(pts
 			(xy 153.67 111.76)
-			(xy 153.67 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8dd88c9a-1cf0-5575-84f4-59a307004639")
-	)
-	(bus
-		(pts
-			(xy 153.67 111.76)
 			(xy 133.35 111.76)
 		)
 		(stroke
@@ -4951,37 +4805,40 @@
 		)
 		(uuid "afd6087a-952a-5481-863a-e1436e0d8f2f")
 	)
-	(label "A31"
-		(at 156.21 114.3 0)
+	(hierarchical_label "EXP_SEL_n"
+		(shape output)
+		(at 156.21 114.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "11857c95-d4f3-5318-a68b-1e41d71c84bf")
 	)
-	(label "A30"
-		(at 156.21 116.84 0)
+	(hierarchical_label "PERIPH_RST_n"
+		(shape output)
+		(at 156.21 116.84 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "a3cdd184-93ac-532e-afe1-ea68d7fdd058")
 	)
-	(label "A29"
-		(at 156.21 119.38 0)
+	(hierarchical_label "EXP_INT_n"
+		(shape input)
+		(at 156.21 119.38 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "bc5fb4ca-9f96-5809-a082-f3c4bdeb4198")
 	)
-	(label "A28"
+	(label "A19"
 		(at 156.21 121.92 0)
 		(effects
 			(font
@@ -4991,37 +4848,40 @@
 		)
 		(uuid "4f4473bd-5a37-5b39-837f-b2cc3c809d7f")
 	)
-	(label "A27"
-		(at 156.21 124.46 0)
+	(hierarchical_label "R_W"
+		(shape input)
+		(at 156.21 124.46 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "27984fbf-19b7-52ac-89e2-dcd1c4e996eb")
 	)
-	(label "A19"
-		(at 156.21 127 0)
+	(hierarchical_label "EXP_BUF_EN_n"
+		(shape output)
+		(at 156.21 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "78a5ba4d-51b9-5774-b1e2-35113c4f50ab")
 	)
-	(label "A18"
-		(at 156.21 129.54 0)
+	(hierarchical_label "IDE_DIOR_n"
+		(shape output)
+		(at 156.21 129.54 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "acd0c9ee-c1dc-55bb-8756-e7988899b2a4")
 	)
-	(label "A17"
+	(label "A16"
 		(at 156.21 132.08 0)
 		(effects
 			(font
@@ -5031,7 +4891,7 @@
 		)
 		(uuid "52d331af-88a8-5019-afe1-37d2e123a7f1")
 	)
-	(label "A16"
+	(label "A15"
 		(at 156.21 134.62 0)
 		(effects
 			(font
@@ -5041,27 +4901,29 @@
 		)
 		(uuid "15102c1d-7420-5f3a-94b4-b9ab754d494e")
 	)
-	(label "A15"
-		(at 156.21 137.16 0)
+	(hierarchical_label "NMI_BTN_n"
+		(shape input)
+		(at 156.21 137.16 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "6dc2c897-29c2-5970-aff2-e523a8bdbb4e")
 	)
-	(label "A14"
-		(at 156.21 139.7 0)
+	(hierarchical_label "WARM_RST_BTN_n"
+		(shape input)
+		(at 156.21 139.7 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "60d1e1cf-c37d-51d6-acb8-9cbd0efd254d")
 	)
-	(label "A13"
+	(label "A2"
 		(at 156.21 142.24 0)
 		(effects
 			(font
@@ -5071,17 +4933,18 @@
 		)
 		(uuid "297a908b-94f0-5fa8-b647-41e3892c46da")
 	)
-	(label "A3"
-		(at 156.21 144.78 0)
+	(hierarchical_label "LED_n"
+		(shape output)
+		(at 156.21 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
 		(uuid "dcdf4427-66b9-5115-b4aa-e64244e8b73c")
 	)
-	(label "A2"
+	(label "A3"
 		(at 156.21 147.32 0)
 		(effects
 			(font
@@ -5091,7 +4954,7 @@
 		)
 		(uuid "b5c83071-1f12-599b-b25f-91df8cb86434")
 	)
-	(label "A1"
+	(label "A13"
 		(at 156.21 149.86 0)
 		(effects
 			(font
@@ -5134,8 +4997,8 @@
 		)
 		(uuid "55dea0f0-e9a6-5f0c-a151-1398f8b27cd5")
 	)
-	(hierarchical_label "FC2"
-		(shape input)
+	(hierarchical_label "IPL1_n"
+		(shape output)
 		(at 130.81 101.6 180)
 		(effects
 			(font
@@ -5145,8 +5008,8 @@
 		)
 		(uuid "d659600a-a3ca-5991-b2ba-dc6714e8bde7")
 	)
-	(hierarchical_label "FC1"
-		(shape input)
+	(hierarchical_label "DRAM_SEL_n"
+		(shape output)
 		(at 130.81 104.14 180)
 		(effects
 			(font
@@ -5156,8 +5019,8 @@
 		)
 		(uuid "4fd1d4f8-4db1-56ff-8669-cfa093b572a6")
 	)
-	(hierarchical_label "FC0"
-		(shape input)
+	(hierarchical_label "AVEC_n"
+		(shape output)
 		(at 130.81 106.68 180)
 		(effects
 			(font
@@ -5167,8 +5030,8 @@
 		)
 		(uuid "d77b5c45-2d2d-5673-8f28-386e359f0266")
 	)
-	(hierarchical_label "R_W"
-		(shape input)
+	(hierarchical_label "DSACK0_n"
+		(shape tri_state)
 		(at 130.81 109.22 180)
 		(effects
 			(font
@@ -5178,8 +5041,8 @@
 		)
 		(uuid "b296cf53-5d0e-54fe-99a0-c2dd848809b9")
 	)
-	(hierarchical_label "DSACK0_n"
-		(shape tri_state)
+	(hierarchical_label "FC2"
+		(shape input)
 		(at 240.03 88.9 0)
 		(effects
 			(font
@@ -5189,8 +5052,8 @@
 		)
 		(uuid "60c24010-fb43-5b97-9168-70384589a1a3")
 	)
-	(hierarchical_label "DSACK1_n"
-		(shape tri_state)
+	(hierarchical_label "FC1"
+		(shape input)
 		(at 240.03 91.44 0)
 		(effects
 			(font
@@ -5200,8 +5063,8 @@
 		)
 		(uuid "74305c82-9030-51a0-a05c-cf7ecf5acbf5")
 	)
-	(hierarchical_label "BERR_n"
-		(shape output)
+	(hierarchical_label "FC0"
+		(shape input)
 		(at 240.03 93.98 0)
 		(effects
 			(font
@@ -5211,19 +5074,18 @@
 		)
 		(uuid "3f3fdd59-7e90-53a3-9b7f-f49a76c3baf7")
 	)
-	(hierarchical_label "DUART_INT_n"
-		(shape input)
-		(at 130.81 157.48 180)
+	(label "A18"
+		(at 130.81 157.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left bottom)
 		)
 		(uuid "46a9906e-8be5-5a8c-bf63-2cbf1ed11bf3")
 	)
-	(hierarchical_label "NIC_INT_n"
-		(shape input)
+	(hierarchical_label "BUS_RD_n"
+		(shape output)
 		(at 130.81 160.02 180)
 		(effects
 			(font
@@ -5233,30 +5095,28 @@
 		)
 		(uuid "32dd0c74-fd69-5fe8-b14f-25a17fdf8e93")
 	)
-	(hierarchical_label "EXP_INT_n"
-		(shape input)
-		(at 130.81 162.56 180)
+	(label "A17"
+		(at 130.81 162.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left bottom)
 		)
 		(uuid "ef371eec-9c9d-5e7e-bd00-6c06c4601020")
 	)
-	(hierarchical_label "NMI_BTN_n"
-		(shape input)
-		(at 130.81 170.18 180)
+	(label "A14"
+		(at 130.81 170.18 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left bottom)
 		)
 		(uuid "1149f5e9-4cbb-56ba-9a28-5a68160ca855")
 	)
-	(hierarchical_label "PERIPH_RST_n"
-		(shape output)
+	(hierarchical_label "DUART_INT_n"
+		(shape input)
 		(at 240.03 157.48 0)
 		(effects
 			(font
@@ -5266,7 +5126,7 @@
 		)
 		(uuid "51f885cd-e964-5ac9-8ae2-9581e577d795")
 	)
-	(hierarchical_label "DUART_RST"
+	(hierarchical_label "BUS_WR_n"
 		(shape output)
 		(at 240.03 160.02 0)
 		(effects
@@ -5277,7 +5137,7 @@
 		)
 		(uuid "cabd3261-ccb4-5bc9-a022-48c95ea54226")
 	)
-	(hierarchical_label "LED_n"
+	(hierarchical_label "ROM_CE_n"
 		(shape output)
 		(at 240.03 162.56 0)
 		(effects
@@ -5288,7 +5148,7 @@
 		)
 		(uuid "8baa9c35-bfc1-559c-9749-8eb43d4ddfc5")
 	)
-	(hierarchical_label "WARM_RST_BTN_n"
+	(hierarchical_label "NIC_INT_n"
 		(shape input)
 		(at 130.81 172.72 180)
 		(effects
@@ -5299,8 +5159,8 @@
 		)
 		(uuid "910e5356-aab5-5ae4-9e77-556fcf19104e")
 	)
-	(hierarchical_label "STATUS_n"
-		(shape input)
+	(hierarchical_label "HALT_LED_n"
+		(shape output)
 		(at 130.81 154.94 180)
 		(effects
 			(font
@@ -5310,7 +5170,7 @@
 		)
 		(uuid "6354c246-a640-59dd-8435-06cba0ded9f1")
 	)
-	(hierarchical_label "HALT_LED_n"
+	(hierarchical_label "DUART_RST"
 		(shape output)
 		(at 240.03 165.1 0)
 		(effects
@@ -5321,7 +5181,7 @@
 		)
 		(uuid "02d8ca27-5215-54ec-b64d-f4c44b3d15d6")
 	)
-	(hierarchical_label "IDE_DA0"
+	(hierarchical_label "IDE_BUF_EN_n"
 		(shape output)
 		(at 240.03 177.8 0)
 		(effects
@@ -5332,7 +5192,7 @@
 		)
 		(uuid "c325f80e-1d06-5d8f-a9cc-b322838e73fe")
 	)
-	(hierarchical_label "IDE_DA1"
+	(hierarchical_label "DUART_CS_n"
 		(shape output)
 		(at 240.03 180.34 0)
 		(effects
@@ -5343,7 +5203,7 @@
 		)
 		(uuid "0b648538-e450-564a-891b-6132c7639f83")
 	)
-	(hierarchical_label "IDE_DA2"
+	(hierarchical_label "IDE_CS1_n"
 		(shape output)
 		(at 240.03 182.88 0)
 		(effects
@@ -5354,8 +5214,8 @@
 		)
 		(uuid "8eb54a8d-c782-5f46-9daf-c58d9335d905")
 	)
-	(hierarchical_label "HALT_n"
-		(shape output)
+	(hierarchical_label "IDE_INTRQ"
+		(shape input)
 		(at 240.03 101.6 0)
 		(effects
 			(font
@@ -5365,7 +5225,7 @@
 		)
 		(uuid "e267b870-2dd1-5f66-a809-8fcc2b20bba7")
 	)
-	(hierarchical_label "DRAM_SEL_n"
+	(hierarchical_label "IDE_CS0_n"
 		(shape output)
 		(at 240.03 119.38 0)
 		(effects
@@ -5376,8 +5236,8 @@
 		)
 		(uuid "a88ddad3-c0b6-5b51-8095-657000425293")
 	)
-	(hierarchical_label "FPU_CS_n"
-		(shape output)
+	(hierarchical_label "IDE_IORDY"
+		(shape input)
 		(at 240.03 121.92 0)
 		(effects
 			(font
@@ -5387,7 +5247,7 @@
 		)
 		(uuid "ba89dea5-cb71-5b33-9909-649676837fd2")
 	)
-	(hierarchical_label "ROM_CE_n"
+	(hierarchical_label "IDE_DA2"
 		(shape output)
 		(at 240.03 124.46 0)
 		(effects
@@ -5398,7 +5258,7 @@
 		)
 		(uuid "14aba451-b25c-59f6-b9b1-277530152a39")
 	)
-	(hierarchical_label "BUS_RD_n"
+	(hierarchical_label "IDE_DIOW_n"
 		(shape output)
 		(at 240.03 127 0)
 		(effects
@@ -5409,7 +5269,7 @@
 		)
 		(uuid "c5710fcc-e81d-5d83-93c7-56a982717167")
 	)
-	(hierarchical_label "BUS_WR_n"
+	(hierarchical_label "IDE_DA1"
 		(shape output)
 		(at 240.03 129.54 0)
 		(effects
@@ -5420,7 +5280,7 @@
 		)
 		(uuid "eff103f3-72a6-5968-b907-1191db75b5b6")
 	)
-	(hierarchical_label "DUART_CS_n"
+	(hierarchical_label "CIIN_n"
 		(shape output)
 		(at 240.03 132.08 0)
 		(effects
@@ -5431,7 +5291,7 @@
 		)
 		(uuid "e49d1048-1f53-5715-b67a-420c5fe381e5")
 	)
-	(hierarchical_label "IDE_CS0_n"
+	(hierarchical_label "IDE_DA0"
 		(shape output)
 		(at 240.03 137.16 0)
 		(effects
@@ -5442,7 +5302,7 @@
 		)
 		(uuid "296ff77a-0c27-5a30-b152-da371943c9d5")
 	)
-	(hierarchical_label "IDE_CS1_n"
+	(hierarchical_label "HALT_n"
 		(shape output)
 		(at 240.03 139.7 0)
 		(effects
@@ -5453,7 +5313,7 @@
 		)
 		(uuid "bbf32067-a561-5098-9fe2-cf0d512f55e5")
 	)
-	(hierarchical_label "IDE_DIOR_n"
+	(hierarchical_label "BERR_n"
 		(shape output)
 		(at 240.03 142.24 0)
 		(effects
@@ -5464,7 +5324,7 @@
 		)
 		(uuid "162a0e30-e257-527b-9ca3-d9fecc2fbf2b")
 	)
-	(hierarchical_label "IDE_DIOW_n"
+	(hierarchical_label "FPU_CS_n"
 		(shape output)
 		(at 240.03 144.78 0)
 		(effects
@@ -5475,7 +5335,7 @@
 		)
 		(uuid "588eed61-5aea-575b-a288-5fbe274d703c")
 	)
-	(hierarchical_label "IDE_BUF_EN_n"
+	(hierarchical_label "IPL0_n"
 		(shape output)
 		(at 240.03 147.32 0)
 		(effects
@@ -5486,8 +5346,8 @@
 		)
 		(uuid "4900017a-a354-56f6-81fd-70db61e37956")
 	)
-	(hierarchical_label "EXP_SEL_n"
-		(shape output)
+	(hierarchical_label "STATUS_n"
+		(shape input)
 		(at 240.03 149.86 0)
 		(effects
 			(font
@@ -5497,7 +5357,7 @@
 		)
 		(uuid "d79dc672-0ff8-57eb-aefe-2bf35fdd64c4")
 	)
-	(hierarchical_label "EXP_BUF_EN_n"
+	(hierarchical_label "IPL2_n"
 		(shape output)
 		(at 240.03 152.4 0)
 		(effects
@@ -5508,8 +5368,8 @@
 		)
 		(uuid "2186c963-9c48-584e-9b28-952ca980a3ba")
 	)
-	(hierarchical_label "IDE_INTRQ"
-		(shape input)
+	(hierarchical_label "RESET_n"
+		(shape bidirectional)
 		(at 130.81 165.1 180)
 		(effects
 			(font
@@ -5519,74 +5379,68 @@
 		)
 		(uuid "c79de651-f551-5591-8ffd-5b80b61a5a68")
 	)
-	(hierarchical_label "IDE_IORDY"
-		(shape input)
-		(at 130.81 167.64 180)
+	(label "A29"
+		(at 130.81 167.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left bottom)
 		)
 		(uuid "5607d0d2-dd85-5b0b-b923-381c5923f469")
 	)
-	(hierarchical_label "AVEC_n"
-		(shape output)
-		(at 240.03 96.52 0)
+	(label "A28"
+		(at 240.03 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right bottom)
 		)
 		(uuid "4db0c292-cfb2-50ac-9bec-8ec7e41048a4")
 	)
-	(hierarchical_label "CIIN_n"
-		(shape output)
-		(at 240.03 99.06 0)
+	(label "A31"
+		(at 240.03 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right bottom)
 		)
 		(uuid "2b7c0578-a194-52eb-a3a3-5cd819d8e0fc")
 	)
-	(hierarchical_label "IPL0_n"
-		(shape output)
-		(at 240.03 109.22 0)
+	(label "A30"
+		(at 240.03 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right bottom)
 		)
 		(uuid "fdc6e3f2-de81-53a1-ab9d-16070a358e64")
 	)
-	(hierarchical_label "IPL1_n"
-		(shape output)
-		(at 240.03 111.76 0)
+	(label "A27"
+		(at 240.03 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right bottom)
 		)
 		(uuid "642fb6c5-030a-57db-96a2-ee79d30b8fe9")
 	)
-	(hierarchical_label "IPL2_n"
-		(shape output)
-		(at 240.03 114.3 0)
+	(label "A1"
+		(at 240.03 114.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right bottom)
 		)
 		(uuid "a12f0408-84b2-5ab0-a69f-b0c2aceee350")
 	)
-	(hierarchical_label "RESET_n"
-		(shape bidirectional)
+	(hierarchical_label "DSACK1_n"
+		(shape tri_state)
 		(at 240.03 104.14 0)
 		(effects
 			(font
@@ -5691,7 +5545,7 @@
 		)
 		(uuid "cc74524b-3152-51b1-b6fc-f6280ad11443")
 	)
-	(text "Pins 50-52: IDE_DA0-2, registered IDE address (Rev A.1, was spare/TP707-709) -> ide sheet (U13).\nPins 46/48/49: reserved CPLD SPI master (spec 1.4), behind open solder jumpers."
+	(text "Rev A.2 pin swap (2026-10-17): I/O pins re-assigned to the 220x175 placement (cpld/glue/pinout.md).\nIDE_DA0/1/2 (registered IDE address -> ide sheet U13) are now pins 63/60/57.\nPins 46/48/49: reserved CPLD SPI master (spec 1.4), behind open solder jumpers."
 		(exclude_from_sim no)
 		(at 207.01 186.69 0)
 		(effects
@@ -5944,7 +5798,7 @@
 		)
 		(uuid "81b075a3-a756-5150-89f7-aac3de2a5e1c")
 	)
-	(text "FITTED PINOUT: Yosys 0.52 + hoglet67/atf15xx_yosys -> Microchip fit1508.exe v1918 (Wine 10),\nATF1508AS PLCC84 -7, JTAG ON, pins locked (-preassign keep), -pin_keep on, -optimize off.\nRev A.1 (2026-09-27): 121/128 macrocells, 62 flip-flops, 322 product terms; 57/60 user I/O + 4 JTAG + 4/4 dedicated inputs.\nSources, reports, JEDEC: cpld/glue/ (glue.v, glue.fit, glue.jed, pinout.csv).\nNo series resistors on U3 outputs (spec calls for none; add after scope checks if needed).\nOpen-drain nets (RESET_n, HALT_n) are emulated with OE; DSACKx/AVEC/BERR are driven low, driven high\nwhen AS_n rises and released <= 20.5 ns later (async clear; pull-ups on CPU sheet).\nFPU_CS_n / EXP_SEL_n / EXP_BUF_EN_n: one product term incl. AS_n (no stale-decode runt, spec 3.2)."
+	(text "FITTED PINOUT: Yosys 0.52 + hoglet67/atf15xx_yosys -> Microchip fit1508.exe v1918 (Wine 10),\nATF1508AS PLCC84 -7, JTAG ON, pins locked (-preassign keep), -pin_keep on, -optimize off.\nRev A.1 (2026-09-27): 121/128 macrocells, 62 flip-flops, 322 product terms; 57/60 user I/O + 4 JTAG + 4/4 dedicated inputs.\nRev A.2 (2026-10-17): same logic, I/O pins re-assigned for the 220x175 layout; still 121/128 MC, timing unchanged.\nSources, reports, JEDEC: cpld/glue/ (glue.v, glue.fit, glue.jed, pinout.csv).\nNo series resistors on U3 outputs (spec calls for none; add after scope checks if needed).\nOpen-drain nets (RESET_n, HALT_n) are emulated with OE; DSACKx/AVEC/BERR are driven low, driven high\nwhen AS_n rises and released <= 20.5 ns later (async clear; pull-ups on CPU sheet).\nFPU_CS_n / EXP_SEL_n / EXP_BUF_EN_n: one product term incl. AS_n (no stale-decode runt, spec 3.2)."
 		(exclude_from_sim no)
 		(at 22.86 38.1 0)
 		(effects

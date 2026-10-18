@@ -2255,11 +2255,12 @@
               (portRef QN (instanceRef id00063))
             )
           )
-          (net tdiv_2 (joined
-              (portRef A (instanceRef id00040))
-              (portRef A (instanceRef id00041))
-              (portRef D (instanceRef id00045))
-              (portRef Q (instanceRef id00234))
+          (net ct_2 (joined
+              (portRef A (instanceRef id00116))
+              (portRef B (instanceRef id00114))
+              (portRef BN (instanceRef id00125))
+              (portRef CN (instanceRef id00122))
+              (portRef Q (instanceRef ct_2_comb))
             )
           )
           (net (rename id00288 "$abc$1208$new_n298") (joined
@@ -2365,30 +2366,33 @@
               (portRef Q (instanceRef id00217))
             )
           )
-          (net tdiv_3 (joined
-              (portRef A (instanceRef id00043))
-              (portRef A (instanceRef id00044))
-              (portRef B (instanceRef id00045))
-              (portRef D (instanceRef id00033))
-              (portRef Q (instanceRef id00235))
+          (net ct_3 (joined
+              (portRef A (instanceRef id00115))
+              (portRef AN (instanceRef id00113))
+              (portRef AN (instanceRef id00122))
+              (portRef BN (instanceRef id00116))
+              (portRef Q (instanceRef ct_3_comb))
             )
           )
-          (net (rename id00303 "$0tdiv[8:0]_8") (joined
-              (portRef D (instanceRef id00240))
-              (portRef Q (instanceRef id00057))
-            )
-          )
-          (net (rename id00304 "$abc$1208$auto$rtlil.cc:3016:NotGate$1115") (joined
+          (net (rename id00303 "$abc$1208$auto$rtlil.cc:3016:NotGate$1115") (joined
               (portRef AR (instanceRef id00234))
               (portRef QN (instanceRef id00188))
             )
           )
-          (net (rename id00305 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1179") (joined
+          (net tdiv_0 (joined
+              (portRef A (instanceRef id00033))
+              (portRef A (instanceRef id00037))
+              (portRef A (instanceRef id00038))
+              (portRef A (instanceRef id00045))
+              (portRef Q (instanceRef id00232))
+            )
+          )
+          (net (rename id00304 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1179") (joined
               (portRef A (instanceRef id00102))
               (portRef QN (instanceRef id00208))
             )
           )
-          (net (rename id00306 "$abc$1208$new_n285") (joined
+          (net (rename id00305 "$abc$1208$new_n285") (joined
               (portRef A (instanceRef id00090))
               (portRef QN (instanceRef id00088))
             )
@@ -2398,24 +2402,24 @@
               (portRef Q (instanceRef id00207))
             )
           )
-          (net (rename id00307 "$abc$1208$new_n313") (joined
+          (net (rename id00306 "$abc$1208$new_n313") (joined
               (portRef A (instanceRef id00117))
               (portRef A (instanceRef id00132))
               (portRef BN (instanceRef id00126))
               (portRef QN (instanceRef id00115))
             )
           )
-          (net (rename id00308 "$abc$1208$MA4") (joined
+          (net (rename id00307 "$abc$1208$MA4") (joined
               (portRef A (instanceRef MA4_comb))
               (portRef QN (instanceRef id00072))
             )
           )
-          (net (rename id00309 "$abc$1208$new_n230") (joined
+          (net (rename id00308 "$abc$1208$new_n230") (joined
               (portRef A (instanceRef id00034))
               (portRef QN (instanceRef id00033))
             )
           )
-          (net (rename id00310 "$abc$1208$A9") (joined
+          (net (rename id00309 "$abc$1208$A9") (joined
               (portRef B (instanceRef id00079))
               (portRef Q (instanceRef id00270))
             )
@@ -2425,15 +2429,19 @@
               (portRef A26)
             )
           )
-          (net tdiv_5 (joined
-              (portRef A (instanceRef id00048))
-              (portRef AN (instanceRef id00049))
-              (portRef Q (instanceRef id00237))
+          (net (rename id00310 "$0tdiv[8:0]_1") (joined
+              (portRef D (instanceRef id00233))
+              (portRef Q (instanceRef id00039))
             )
           )
           (net as2 (joined
               (portRef D (instanceRef id00243))
               (portRef Q (instanceRef id00242))
+            )
+          )
+          (net icnt_3 (joined
+              (portRef A (instanceRef id00019))
+              (portRef Q (instanceRef id00227))
             )
           )
           (net (rename id00311 "$abc$1208$MA10") (joined
@@ -2524,14 +2532,9 @@
               (portRef Q (instanceRef id00028))
             )
           )
-          (net ct_1 (joined
-              (portRef A (instanceRef id00124))
-              (portRef BN (instanceRef id00113))
-              (portRef BN (instanceRef id00115))
-              (portRef BN (instanceRef id00122))
-              (portRef BN (instanceRef id00131))
-              (portRef BN (instanceRef id00136))
-              (portRef Q (instanceRef ct_1_comb))
+          (net (rename id00326 "$0tdiv[8:0]_6") (joined
+              (portRef D (instanceRef id00238))
+              (portRef Q (instanceRef id00053))
             )
           )
           (net A12 (joined
@@ -2544,65 +2547,73 @@
               (portRef WE_n)
             )
           )
-          (net (rename id00326 "$abc$1208$A15") (joined
+          (net (rename id00327 "$abc$1208$A15") (joined
               (portRef A (instanceRef id00068))
               (portRef Q (instanceRef id00251))
             )
           )
-          (net (rename id00327 "$abc$1208$A11") (joined
+          (net (rename id00328 "$abc$1208$A11") (joined
               (portRef B (instanceRef id00085))
               (portRef Q (instanceRef id00247))
             )
           )
-          (net (rename id00328 "$0c0n[0:0]") (joined
+          (net (rename id00329 "$0c0n[0:0]") (joined
               (portRef D (instanceRef id00204))
               (portRef Q (instanceRef id00121))
             )
           )
-          (net (rename id00329 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1197") (joined
+          (net (rename id00330 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1197") (joined
               (portRef A (instanceRef id00111))
               (portRef QN (instanceRef id00205))
             )
           )
-          (net tdiv_0 (joined
-              (portRef A (instanceRef id00033))
-              (portRef A (instanceRef id00037))
-              (portRef A (instanceRef id00038))
-              (portRef A (instanceRef id00045))
-              (portRef Q (instanceRef id00232))
+          (net ct_0 (joined
+              (portRef A (instanceRef id00114))
+              (portRef A (instanceRef id00131))
+              (portRef AN (instanceRef id00125))
+              (portRef AN (instanceRef id00136))
+              (portRef BN (instanceRef id00124))
+              (portRef Q (instanceRef ct_0_comb))
             )
           )
-          (net (rename id00330 "$abc$1208$new_n255") (joined
+          (net (rename id00331 "$abc$1208$new_n255") (joined
               (portRef A (instanceRef id00060))
               (portRef QN (instanceRef id00058))
             )
           )
-          (net (rename id00331 "$abc$1208$new_n318") (joined
+          (net (rename id00332 "$abc$1208$new_n318") (joined
               (portRef CN (instanceRef id00121))
               (portRef Q (instanceRef id00120))
             )
           )
-          (net (rename id00332 "$0wen[0:0]") (joined
+          (net (rename id00333 "$0wen[0:0]") (joined
               (portRef D (instanceRef id00198))
               (portRef Q (instanceRef id00143))
             )
           )
-          (net (rename id00333 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1199") (joined
+          (net tdiv_1 (joined
+              (portRef B (instanceRef id00037))
+              (portRef B (instanceRef id00038))
+              (portRef C (instanceRef id00045))
+              (portRef Q (instanceRef id00233))
+            )
+          )
+          (net (rename id00334 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1199") (joined
               (portRef A (instanceRef id00109))
               (portRef QN (instanceRef id00206))
             )
           )
-          (net (rename id00334 "$abc$1208$auto$rtlil.cc:3016:NotGate$1129") (joined
+          (net (rename id00335 "$abc$1208$auto$rtlil.cc:3016:NotGate$1129") (joined
               (portRef AR (instanceRef id00241))
               (portRef QN (instanceRef id00195))
             )
           )
-          (net (rename id00335 "$abc$1208$new_n273") (joined
+          (net (rename id00336 "$abc$1208$new_n273") (joined
               (portRef A (instanceRef id00078))
               (portRef QN (instanceRef id00076))
             )
           )
-          (net (rename id00336 "$abc$1208$new_n212") (joined
+          (net (rename id00337 "$abc$1208$new_n212") (joined
               (portRef A (instanceRef id00017))
               (portRef C (instanceRef id00028))
               (portRef Q (instanceRef id00016))
@@ -2613,12 +2624,18 @@
               (portRef Q (instanceRef CAS3_n_comb))
             )
           )
-          (net (rename id00337 "$abc$1208$A4") (joined
+          (net icnt_2 (joined
+              (portRef A (instanceRef id00015))
+              (portRef A (instanceRef id00021))
+              (portRef Q (instanceRef id00226))
+            )
+          )
+          (net (rename id00338 "$abc$1208$A4") (joined
               (portRef B (instanceRef id00064))
               (portRef Q (instanceRef id00265))
             )
           )
-          (net (rename id00338 "$abc$1208$new_n332") (joined
+          (net (rename id00339 "$abc$1208$new_n332") (joined
               (portRef CN (instanceRef id00135))
               (portRef Q (instanceRef id00134))
             )
@@ -2628,7 +2645,7 @@
               (portRef Q (instanceRef id00208))
             )
           )
-          (net (rename id00339 "$abc$1208$new_n226") (joined
+          (net (rename id00340 "$abc$1208$new_n226") (joined
               (portRef A (instanceRef go_ref_comb))
               (portRef A (instanceRef id00032))
               (portRef C (instanceRef id00153))
@@ -2640,7 +2657,7 @@
               (portRef A24)
             )
           )
-          (net (rename id00340 "$auto$dfflibmap.cc:514:dfflibmap$1175") (joined
+          (net (rename id00341 "$auto$dfflibmap.cc:514:dfflibmap$1175") (joined
               (portRef QN (instanceRef id00212))
             )
           )
@@ -2649,23 +2666,26 @@
               (portRef PWR_RST_n)
             )
           )
-          (net (rename id00341 "$auto$dfflibmap.cc:514:dfflibmap$1178") (joined
+          (net (rename id00342 "$auto$dfflibmap.cc:514:dfflibmap$1178") (joined
               (portRef QN (instanceRef id00209))
             )
           )
-          (net tdiv_1 (joined
-              (portRef B (instanceRef id00037))
-              (portRef B (instanceRef id00038))
-              (portRef C (instanceRef id00045))
-              (portRef Q (instanceRef id00233))
+          (net ct_1 (joined
+              (portRef A (instanceRef id00124))
+              (portRef BN (instanceRef id00113))
+              (portRef BN (instanceRef id00115))
+              (portRef BN (instanceRef id00122))
+              (portRef BN (instanceRef id00131))
+              (portRef BN (instanceRef id00136))
+              (portRef Q (instanceRef ct_1_comb))
             )
           )
-          (net (rename id00342 "$abc$1208$new_n238") (joined
+          (net (rename id00343 "$abc$1208$new_n238") (joined
               (portRef BN (instanceRef id00042))
               (portRef QN (instanceRef id00041))
             )
           )
-          (net (rename id00343 "$abc$1208$auto$rtlil.cc:3016:NotGate$1127") (joined
+          (net (rename id00344 "$abc$1208$auto$rtlil.cc:3016:NotGate$1127") (joined
               (portRef AR (instanceRef id00240))
               (portRef QN (instanceRef id00194))
             )
@@ -2675,24 +2695,24 @@
               (portRef A4)
             )
           )
-          (net (rename id00344 "$abc$1208$auto$rtlil.cc:3016:NotGate$1075") (joined
+          (net (rename id00345 "$abc$1208$auto$rtlil.cc:3016:NotGate$1075") (joined
               (portRef AR (instanceRef id00221))
               (portRef QN (instanceRef id00175))
             )
           )
-          (net (rename id00345 "$0r2n[0:0]") (joined
+          (net (rename id00346 "$0r2n[0:0]") (joined
               (portRef D (instanceRef id00207))
               (portRef Q (instanceRef id00105))
             )
           )
-          (net (rename id00346 "$abc$1208$A16") (joined
+          (net (rename id00347 "$abc$1208$A16") (joined
               (portRef A (instanceRef id00071))
               (portRef Q (instanceRef id00252))
             )
           )
-          (net icnt_3 (joined
-              (portRef A (instanceRef id00019))
-              (portRef Q (instanceRef id00227))
+          (net tdiv_8 (joined
+              (portRef A (instanceRef id00056))
+              (portRef Q (instanceRef id00240))
             )
           )
           (net A23 (joined
@@ -2700,7 +2720,7 @@
               (portRef A23)
             )
           )
-          (net (rename id00347 "$abc$1208$new_n245") (joined
+          (net (rename id00348 "$abc$1208$new_n245") (joined
               (portRef B (instanceRef id00051))
               (portRef BN (instanceRef id00050))
               (portRef BN (instanceRef id00052))
@@ -2708,30 +2728,24 @@
               (portRef Q (instanceRef id00048))
             )
           )
-          (net (rename id00348 "$auto$dfflibmap.cc:514:dfflibmap$1133") (joined
+          (net (rename id00349 "$auto$dfflibmap.cc:514:dfflibmap$1133") (joined
               (portRef QN (instanceRef id00239))
             )
           )
-          (net (rename id00349 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1148") (joined
+          (net (rename id00350 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1148") (joined
               (portRef A (instanceRef id00098))
               (portRef A (instanceRef id00276))
               (portRef QN (instanceRef id00230))
             )
           )
-          (net (rename id00350 "$abc$1208$A5") (joined
+          (net (rename id00351 "$abc$1208$A5") (joined
               (portRef B (instanceRef id00067))
               (portRef Q (instanceRef id00266))
             )
           )
-          (net (rename id00351 "$0colp[0:0]") (joined
+          (net (rename id00352 "$0colp[0:0]") (joined
               (portRef D (instanceRef id00199))
               (portRef QN (instanceRef id00158))
-            )
-          )
-          (net (rename id00352 "$auto$alumacc.cc:495:replace_alu$395.X_0") (joined
-              (portRef A (instanceRef id00025))
-              (portRef AN (instanceRef id00016))
-              (portRef QN (instanceRef id00224))
             )
           )
           (net refq (joined
@@ -2788,10 +2802,9 @@
               (portRef QN (instanceRef id00185))
             )
           )
-          (net tdiv_4 (joined
-              (portRef AN (instanceRef id00046))
-              (portRef E (instanceRef id00045))
-              (portRef Q (instanceRef id00236))
+          (net (rename id00360 "$0tdiv[8:0]_0") (joined
+              (portRef D (instanceRef id00232))
+              (portRef Q (instanceRef id00036))
             )
           )
           (net sR8 (joined
@@ -2800,11 +2813,6 @@
               (portRef B (instanceRef id00276))
               (portRef BN (instanceRef id00004))
               (portRef Q (instanceRef id00221))
-            )
-          )
-          (net (rename id00360 "$0tdiv[8:0]_6") (joined
-              (portRef D (instanceRef id00238))
-              (portRef Q (instanceRef id00053))
             )
           )
           (net (rename id00361 "$abc$1208$auto$rtlil.cc:3016:NotGate$1119") (joined
@@ -2829,12 +2837,11 @@
               (portRef QN (instanceRef id00013))
             )
           )
-          (net icnt_1 (joined
-              (portRef A (instanceRef id00014))
-              (portRef A (instanceRef id00023))
-              (portRef B (instanceRef id00015))
-              (portRef BN (instanceRef id00017))
-              (portRef Q (instanceRef id00225))
+          (net tdiv_6 (joined
+              (portRef A (instanceRef id00051))
+              (portRef A (instanceRef id00054))
+              (portRef AN (instanceRef id00052))
+              (portRef Q (instanceRef id00238))
             )
           )
           (net (rename id00363 "$0c2n[0:0]") (joined
@@ -2976,18 +2983,13 @@
               (portRef QN (instanceRef id00189))
             )
           )
-          (net (rename id00383 "$0tdiv[8:0]_7") (joined
-              (portRef D (instanceRef id00239))
-              (portRef QN (instanceRef id00055))
-            )
-          )
           (net sR6 (joined
               (portRef A (instanceRef id00101))
               (portRef D (instanceRef id00220))
               (portRef Q (instanceRef id00219))
             )
           )
-          (net (rename id00384 "$abc$1208$auto$rtlil.cc:3016:NotGate$1111") (joined
+          (net (rename id00383 "$abc$1208$auto$rtlil.cc:3016:NotGate$1111") (joined
               (portRef AR (instanceRef id00232))
               (portRef QN (instanceRef id00186))
             )
@@ -2998,33 +3000,42 @@
               (portRef Q (instanceRef id00229))
             )
           )
-          (net (rename id00385 "$0pa[0:0]") (joined
+          (net icnt_1 (joined
+              (portRef A (instanceRef id00014))
+              (portRef A (instanceRef id00023))
+              (portRef B (instanceRef id00015))
+              (portRef BN (instanceRef id00017))
+              (portRef Q (instanceRef id00225))
+            )
+          )
+          (net (rename id00384 "$0pa[0:0]") (joined
               (portRef D (instanceRef id00222))
               (portRef Q (instanceRef id00162))
             )
           )
-          (net icnt_2 (joined
-              (portRef A (instanceRef id00015))
-              (portRef A (instanceRef id00021))
-              (portRef Q (instanceRef id00226))
+          (net tdiv_7 (joined
+              (portRef A (instanceRef id00055))
+              (portRef B (instanceRef id00054))
+              (portRef CN (instanceRef id00034))
+              (portRef Q (instanceRef id00239))
             )
           )
-          (net (rename id00386 "$auto$dfflibmap.cc:514:dfflibmap$1183") (joined
+          (net (rename id00385 "$auto$dfflibmap.cc:514:dfflibmap$1183") (joined
               (portRef QN (instanceRef id00196))
             )
           )
-          (net (rename id00387 "$abc$1208$new_n248") (joined
+          (net (rename id00386 "$abc$1208$new_n248") (joined
               (portRef B (instanceRef id00053))
               (portRef B (instanceRef id00055))
               (portRef QN (instanceRef id00051))
             )
           )
-          (net (rename id00388 "$abc$1208$new_n325") (joined
+          (net (rename id00387 "$abc$1208$new_n325") (joined
               (portRef B (instanceRef id00128))
               (portRef QN (instanceRef id00127))
             )
           )
-          (net (rename id00389 "$abc$1208$A3") (joined
+          (net (rename id00388 "$abc$1208$A3") (joined
               (portRef B (instanceRef id00061))
               (portRef Q (instanceRef id00264))
             )
@@ -3039,12 +3050,12 @@
               (portRef Q (instanceRef MA0_comb))
             )
           )
-          (net (rename id00390 "$abc$1208$new_n210") (joined
+          (net (rename id00389 "$abc$1208$new_n210") (joined
               (portRef B (instanceRef id00021))
               (portRef QN (instanceRef id00014))
             )
           )
-          (net (rename id00391 "$abc$1208$auto$rtlil.cc:3016:NotGate$1121") (joined
+          (net (rename id00390 "$abc$1208$auto$rtlil.cc:3016:NotGate$1121") (joined
               (portRef AR (instanceRef id00237))
               (portRef QN (instanceRef id00191))
             )
@@ -3056,17 +3067,12 @@
               (portRef Q (instanceRef id00222))
             )
           )
-          (net (rename id00392 "$0tdiv[8:0]_5") (joined
-              (portRef D (instanceRef id00237))
-              (portRef Q (instanceRef id00050))
-            )
-          )
-          (net (rename id00393 "$abc$1208$new_n217") (joined
+          (net (rename id00391 "$abc$1208$new_n217") (joined
               (portRef B (instanceRef id00022))
               (portRef QN (instanceRef id00021))
             )
           )
-          (net (rename id00394 "$abc$1208$new_n258") (joined
+          (net (rename id00392 "$abc$1208$new_n258") (joined
               (portRef A (instanceRef id00063))
               (portRef QN (instanceRef id00061))
             )
@@ -3082,41 +3088,44 @@
               (portRef A5)
             )
           )
-          (net (rename id00395 "$auto$alumacc.cc:495:replace_alu$392.X_0") (joined
-              (portRef A (instanceRef id00036))
-              (portRef QN (instanceRef id00232))
+          (net icnt_0 (joined
+              (portRef A (instanceRef id00013))
+              (portRef A (instanceRef id00026))
+              (portRef B (instanceRef id00014))
+              (portRef C (instanceRef id00015))
+              (portRef Q (instanceRef id00224))
             )
           )
-          (net (rename id00396 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1143") (joined
+          (net (rename id00393 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1143") (joined
               (portRef B (instanceRef id00033))
               (portRef QN (instanceRef id00233))
             )
           )
-          (net (rename id00397 "$abc$1208$new_n219") (joined
+          (net (rename id00394 "$abc$1208$new_n219") (joined
               (portRef B (instanceRef id00024))
               (portRef QN (instanceRef id00023))
             )
           )
-          (net (rename id00398 "$abc$1208$new_n357") (joined
+          (net (rename id00395 "$abc$1208$new_n357") (joined
               (portRef BN (instanceRef id00158))
               (portRef Q (instanceRef id00157))
             )
           )
-          (net (rename id00399 "$auto$dfflibmap.cc:514:dfflibmap$1147") (joined
+          (net (rename id00396 "$auto$dfflibmap.cc:514:dfflibmap$1147") (joined
               (portRef QN (instanceRef id00231))
             )
           )
-          (net (rename id00400 "$0as1[0:0]") (joined
+          (net (rename id00397 "$0as1[0:0]") (joined
               (portRef D (instanceRef id00244))
               (portRef Q (instanceRef id00146))
             )
           )
-          (net (rename id00401 "$abc$1208$A14") (joined
+          (net (rename id00398 "$abc$1208$A14") (joined
               (portRef A (instanceRef id00065))
               (portRef Q (instanceRef id00250))
             )
           )
-          (net (rename id00402 "$abc$1208$A23") (joined
+          (net (rename id00399 "$abc$1208$A23") (joined
               (portRef B (instanceRef id00088))
               (portRef Q (instanceRef id00260))
             )
@@ -3126,40 +3135,40 @@
               (portRef Q (instanceRef DSACK0_n_comb))
             )
           )
-          (net (rename id00403 "$abc$1208$auto$rtlil.cc:3016:NotGate$1067") (joined
+          (net (rename id00400 "$abc$1208$auto$rtlil.cc:3016:NotGate$1067") (joined
               (portRef AR (instanceRef id00217))
               (portRef QN (instanceRef id00171))
             )
           )
-          (net (rename id00404 "$auto$dfflibmap.cc:514:dfflibmap$1187") (joined
+          (net (rename id00401 "$auto$dfflibmap.cc:514:dfflibmap$1187") (joined
               (portRef QN (instanceRef id00199))
             )
           )
-          (net (rename id00405 "$0r3n[0:0]") (joined
+          (net (rename id00402 "$0r3n[0:0]") (joined
               (portRef D (instanceRef id00205))
               (portRef Q (instanceRef id00112))
             )
           )
-          (net (rename id00406 "$auto$dfflibmap.cc:514:dfflibmap$1169") (joined
+          (net (rename id00403 "$auto$dfflibmap.cc:514:dfflibmap$1169") (joined
               (portRef QN (instanceRef id00217))
             )
           )
-          (net (rename id00407 "$abc$1208$new_n302") (joined
+          (net (rename id00404 "$abc$1208$new_n302") (joined
               (portRef B (instanceRef id00105))
               (portRef QN (instanceRef id00104))
             )
           )
-          (net (rename id00408 "$abc$1208$new_n309") (joined
+          (net (rename id00405 "$abc$1208$new_n309") (joined
               (portRef B (instanceRef id00112))
               (portRef QN (instanceRef id00111))
             )
           )
-          (net (rename id00409 "$abc$1208$auto$rtlil.cc:3016:NotGate$1049") (joined
+          (net (rename id00406 "$abc$1208$auto$rtlil.cc:3016:NotGate$1049") (joined
               (portRef AR (instanceRef id00003))
               (portRef QN (instanceRef id00245))
             )
           )
-          (net (rename id00410 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1091") (joined
+          (net (rename id00407 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1091") (joined
               (portRef D (instanceRef id00226))
               (portRef Q (instanceRef id00022))
             )
@@ -3169,27 +3178,27 @@
               (portRef Q (instanceRef CAS0_n_comb))
             )
           )
-          (net (rename id00411 "$abc$1208$auto$rtlil.cc:3016:NotGate$1107") (joined
+          (net (rename id00408 "$abc$1208$auto$rtlil.cc:3016:NotGate$1107") (joined
               (portRef AR (instanceRef id00230))
               (portRef QN (instanceRef id00184))
             )
           )
-          (net (rename id00412 "$abc$1208$new_n361") (joined
+          (net (rename id00409 "$abc$1208$new_n361") (joined
               (portRef B (instanceRef id00162))
               (portRef QN (instanceRef id00161))
             )
           )
-          (net (rename id00413 "$abc$1208$auto$rtlil.cc:3016:NotGate$1055") (joined
+          (net (rename id00410 "$abc$1208$auto$rtlil.cc:3016:NotGate$1055") (joined
               (portRef AR (instanceRef id00211))
               (portRef QN (instanceRef id00165))
             )
           )
-          (net (rename id00414 "$abc$1208$new_n276") (joined
+          (net (rename id00411 "$abc$1208$new_n276") (joined
               (portRef A (instanceRef id00081))
               (portRef QN (instanceRef id00079))
             )
           )
-          (net (rename id00415 "$abc$1208$new_n326") (joined
+          (net (rename id00412 "$abc$1208$new_n326") (joined
               (portRef BN (instanceRef id00130))
               (portRef Q (instanceRef id00128))
             )
@@ -3204,33 +3213,29 @@
               (portRef A0)
             )
           )
-          (net icnt_0 (joined
-              (portRef A (instanceRef id00013))
-              (portRef A (instanceRef id00026))
-              (portRef B (instanceRef id00014))
-              (portRef C (instanceRef id00015))
-              (portRef Q (instanceRef id00224))
+          (net tdiv_5 (joined
+              (portRef A (instanceRef id00048))
+              (portRef AN (instanceRef id00049))
+              (portRef Q (instanceRef id00237))
             )
           )
-          (net tdiv_7 (joined
-              (portRef A (instanceRef id00055))
-              (portRef B (instanceRef id00054))
-              (portRef CN (instanceRef id00034))
-              (portRef Q (instanceRef id00239))
+          (net (rename id00413 "$0tdiv[8:0]_3") (joined
+              (portRef D (instanceRef id00235))
+              (portRef QN (instanceRef id00044))
             )
           )
-          (net (rename id00416 "$auto$dfflibmap.cc:514:dfflibmap$1172") (joined
+          (net (rename id00414 "$auto$dfflibmap.cc:514:dfflibmap$1172") (joined
               (portRef QN (instanceRef id00214))
             )
           )
-          (net (rename id00417 "$abc$1208$new_n312") (joined
+          (net (rename id00415 "$abc$1208$new_n312") (joined
               (portRef BN (instanceRef id00118))
               (portRef Q (instanceRef id00114))
             )
           )
-          (net tdiv_8 (joined
-              (portRef A (instanceRef id00056))
-              (portRef Q (instanceRef id00240))
+          (net (rename id00416 "$0tdiv[8:0]_4") (joined
+              (portRef D (instanceRef id00236))
+              (portRef Q (instanceRef id00047))
             )
           )
           (net A1 (joined
@@ -3238,17 +3243,17 @@
               (portRef A1)
             )
           )
-          (net (rename id00418 "$abc$1208$new_n289") (joined
+          (net (rename id00417 "$abc$1208$new_n289") (joined
               (portRef B (instanceRef id00093))
               (portRef QN (instanceRef id00092))
             )
           )
-          (net (rename id00419 "$0sAck[0:0]") (joined
+          (net (rename id00418 "$0sAck[0:0]") (joined
               (portRef D (instanceRef id00212))
               (portRef QN (instanceRef id00151))
             )
           )
-          (net (rename id00420 "$abc$1208$new_n352") (joined
+          (net (rename id00419 "$abc$1208$new_n352") (joined
               (portRef B (instanceRef cpu_clr_comb))
               (portRef QN (instanceRef id00154))
             )
@@ -3258,12 +3263,12 @@
               (portRef RAS3_n)
             )
           )
-          (net (rename id00421 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1185") (joined
+          (net (rename id00420 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1185") (joined
               (portRef A (instanceRef id00142))
               (portRef QN (instanceRef id00198))
             )
           )
-          (net (rename id00422 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1095") (joined
+          (net (rename id00421 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1095") (joined
               (portRef D (instanceRef id00227))
               (portRef Q (instanceRef id00020))
             )
@@ -3273,16 +3278,16 @@
               (portRef Q (instanceRef MA4_comb))
             )
           )
-          (net (rename id00423 "$abc$1208$A10") (joined
+          (net (rename id00422 "$abc$1208$A10") (joined
               (portRef B (instanceRef id00082))
               (portRef Q (instanceRef id00246))
             )
           )
-          (net (rename id00424 "$auto$dfflibmap.cc:514:dfflibmap$1165") (joined
+          (net (rename id00423 "$auto$dfflibmap.cc:514:dfflibmap$1165") (joined
               (portRef QN (instanceRef id00221))
             )
           )
-          (net (rename id00425 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1105") (joined
+          (net (rename id00424 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1105") (joined
               (portRef D (instanceRef id00230))
               (portRef QN (instanceRef id00005))
             )
@@ -3292,12 +3297,12 @@
               (portRef A3)
             )
           )
-          (net (rename id00426 "$abc$1208$new_n264") (joined
+          (net (rename id00425 "$abc$1208$new_n264") (joined
               (portRef A (instanceRef id00069))
               (portRef QN (instanceRef id00067))
             )
           )
-          (net (rename id00427 "$auto$dfflibmap.cc:514:dfflibmap$1168") (joined
+          (net (rename id00426 "$auto$dfflibmap.cc:514:dfflibmap$1168") (joined
               (portRef QN (instanceRef id00218))
             )
           )
@@ -3306,38 +3311,38 @@
               (portRef A9)
             )
           )
-          (net (rename id00428 "$abc$1208$new_n350") (joined
+          (net (rename id00427 "$abc$1208$new_n350") (joined
               (portRef D (instanceRef id00153))
               (portRef QN (instanceRef id00152))
             )
           )
-          (net (rename id00429 "$0k1[0:0]") (joined
+          (net (rename id00428 "$0k1[0:0]") (joined
               (portRef D (instanceRef id00196))
               (portRef QN (instanceRef id00160))
             )
           )
-          (net (rename id00430 "$auto$dfflibmap.cc:514:dfflibmap$1188") (joined
+          (net (rename id00429 "$auto$dfflibmap.cc:514:dfflibmap$1188") (joined
               (portRef QN (instanceRef id00200))
             )
           )
-          (net (rename id00431 "$abc$1208$auto$rtlil.cc:3016:NotGate$1093") (joined
+          (net (rename id00430 "$abc$1208$auto$rtlil.cc:3016:NotGate$1093") (joined
               (portRef AR (instanceRef id00226))
               (portRef QN (instanceRef id00180))
             )
           )
-          (net (rename id00432 "$abc$1208$new_n214") (joined
+          (net (rename id00431 "$abc$1208$new_n214") (joined
               (portRef A (instanceRef id00020))
               (portRef A (instanceRef id00022))
               (portRef A (instanceRef id00024))
               (portRef QN (instanceRef id00018))
             )
           )
-          (net (rename id00433 "$abc$1208$new_n300") (joined
+          (net (rename id00432 "$abc$1208$new_n300") (joined
               (portRef B (instanceRef id00103))
               (portRef QN (instanceRef id00102))
             )
           )
-          (net (rename id00434 "$auto$dfflibmap.cc:514:dfflibmap$1184") (joined
+          (net (rename id00433 "$auto$dfflibmap.cc:514:dfflibmap$1184") (joined
               (portRef QN (instanceRef id00197))
             )
           )
@@ -3365,36 +3370,36 @@
               (portRef Q (instanceRef MA2_comb))
             )
           )
-          (net (rename id00435 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1101") (joined
+          (net (rename id00434 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1101") (joined
               (portRef D (instanceRef id00229))
               (portRef QN (instanceRef id00008))
             )
           )
-          (net (rename id00436 "$abc$1208$auto$rtlil.cc:3016:NotGate$1059") (joined
+          (net (rename id00435 "$abc$1208$auto$rtlil.cc:3016:NotGate$1059") (joined
               (portRef AR (instanceRef id00213))
               (portRef QN (instanceRef id00167))
             )
           )
-          (net (rename id00437 "$auto$dfflibmap.cc:514:dfflibmap$1171") (joined
+          (net (rename id00436 "$auto$dfflibmap.cc:514:dfflibmap$1171") (joined
               (portRef QN (instanceRef id00215))
             )
           )
-          (net (rename id00438 "$abc$1208$new_n259") (joined
+          (net (rename id00437 "$abc$1208$new_n259") (joined
               (portRef B (instanceRef id00063))
               (portRef QN (instanceRef id00062))
             )
           )
-          (net (rename id00439 "$abc$1208$new_n329") (joined
+          (net (rename id00438 "$abc$1208$new_n329") (joined
               (portRef C (instanceRef id00132))
               (portRef QN (instanceRef id00131))
             )
           )
-          (net (rename id00440 "$abc$1208$MA0") (joined
+          (net (rename id00439 "$abc$1208$MA0") (joined
               (portRef A (instanceRef MA0_comb))
               (portRef QN (instanceRef id00060))
             )
           )
-          (net (rename id00441 "$abc$1208$new_n234") (joined
+          (net (rename id00440 "$abc$1208$new_n234") (joined
               (portRef B (instanceRef id00040))
               (portRef B (instanceRef id00041))
               (portRef Q (instanceRef id00037))
@@ -3417,12 +3422,12 @@
               (portRef QN (instanceRef cpu_clr_comb))
             )
           )
-          (net (rename id00442 "$abc$1208$A6") (joined
+          (net (rename id00441 "$abc$1208$A6") (joined
               (portRef B (instanceRef id00070))
               (portRef Q (instanceRef id00267))
             )
           )
-          (net (rename id00443 "$abc$1208$new_n215") (joined
+          (net (rename id00442 "$abc$1208$new_n215") (joined
               (portRef B (instanceRef id00020))
               (portRef QN (instanceRef id00019))
             )
@@ -3432,22 +3437,22 @@
               (portRef QN (instanceRef go_ref_comb))
             )
           )
-          (net (rename id00444 "$abc$1208$not$dram.v:254$155_Y") (joined
+          (net (rename id00443 "$abc$1208$not$dram.v:254$155_Y") (joined
               (portRef A (instanceRef DSACK0_n_comb))
               (portRef QN (instanceRef id00144))
             )
           )
-          (net (rename id00445 "$abc$1208$new_n267") (joined
+          (net (rename id00444 "$abc$1208$new_n267") (joined
               (portRef A (instanceRef id00072))
               (portRef QN (instanceRef id00070))
             )
           )
-          (net (rename id00446 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1189") (joined
+          (net (rename id00445 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1189") (joined
               (portRef A (instanceRef id00139))
               (portRef QN (instanceRef id00201))
             )
           )
-          (net (rename id00447 "$abc$1208$new_n299") (joined
+          (net (rename id00446 "$abc$1208$new_n299") (joined
               (portRef B (instanceRef id00102))
               (portRef B (instanceRef id00104))
               (portRef B (instanceRef id00109))
@@ -3459,7 +3464,7 @@
               (portRef QN (instanceRef id00101))
             )
           )
-          (net (rename id00448 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1083") (joined
+          (net (rename id00447 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1083") (joined
               (portRef D (instanceRef id00224))
               (portRef QN (instanceRef id00027))
             )
@@ -3469,17 +3474,12 @@
               (portRef Q (instanceRef id00003))
             )
           )
-          (net (rename id00449 "$0tdiv[8:0]_1") (joined
-              (portRef D (instanceRef id00233))
-              (portRef Q (instanceRef id00039))
-            )
-          )
-          (net (rename id00450 "$abc$1208$auto$rtlil.cc:3016:NotGate$1051") (joined
+          (net (rename id00448 "$abc$1208$auto$rtlil.cc:3016:NotGate$1051") (joined
               (portRef AS (instanceRef id00209))
               (portRef QN (instanceRef id00163))
             )
           )
-          (net (rename id00451 "$abc$1208$new_n337") (joined
+          (net (rename id00449 "$abc$1208$new_n337") (joined
               (portRef CN (instanceRef id00140))
               (portRef Q (instanceRef id00139))
             )
@@ -3489,22 +3489,22 @@
               (portRef Q (instanceRef MA8_comb))
             )
           )
-          (net (rename id00452 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1087") (joined
+          (net (rename id00450 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1087") (joined
               (portRef D (instanceRef id00225))
               (portRef Q (instanceRef id00024))
             )
           )
-          (net (rename id00453 "$abc$1208$new_n348") (joined
+          (net (rename id00451 "$abc$1208$new_n348") (joined
               (portRef BN (instanceRef id00151))
               (portRef Q (instanceRef id00150))
             )
           )
-          (net (rename id00454 "$abc$1208$A17") (joined
+          (net (rename id00452 "$abc$1208$A17") (joined
               (portRef A (instanceRef id00074))
               (portRef Q (instanceRef id00253))
             )
           )
-          (net (rename id00455 "$0k0[0:0]") (joined
+          (net (rename id00453 "$0k0[0:0]") (joined
               (portRef D (instanceRef id00197))
               (portRef QN (instanceRef id00159))
             )
@@ -3514,7 +3514,7 @@
               (portRef A8)
             )
           )
-          (net (rename id00456 "$abc$1208$new_n231") (joined
+          (net (rename id00454 "$abc$1208$new_n231") (joined
               (portRef A (instanceRef id00035))
               (portRef A (instanceRef id00039))
               (portRef A (instanceRef id00042))
@@ -3526,7 +3526,7 @@
               (portRef QN (instanceRef id00034))
             )
           )
-          (net (rename id00457 "$abc$1208$new_n340") (joined
+          (net (rename id00455 "$abc$1208$new_n340") (joined
               (portRef B (instanceRef id00143))
               (portRef QN (instanceRef id00142))
             )
@@ -3542,12 +3542,12 @@
               (portRef Q (instanceRef id00211))
             )
           )
-          (net (rename id00458 "$abc$1208$new_n203") (joined
+          (net (rename id00456 "$abc$1208$new_n203") (joined
               (portRef B (instanceRef id00008))
               (portRef QN (instanceRef id00007))
             )
           )
-          (net (rename id00459 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1138") (joined
+          (net (rename id00457 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1138") (joined
               (portRef E (instanceRef id00033))
               (portRef QN (instanceRef id00236))
             )
@@ -3557,22 +3557,22 @@
               (portRef A10)
             )
           )
-          (net (rename id00460 "$abc$1208$new_n240") (joined
+          (net (rename id00458 "$abc$1208$new_n240") (joined
               (portRef BN (instanceRef id00046))
               (portRef Q (instanceRef id00043))
             )
           )
-          (net (rename id00461 "$abc$1208$new_n235") (joined
+          (net (rename id00459 "$abc$1208$new_n235") (joined
               (portRef BN (instanceRef id00039))
               (portRef QN (instanceRef id00038))
             )
           )
-          (net (rename id00462 "$abc$1208$auto$rtlil.cc:3016:NotGate$1061") (joined
+          (net (rename id00460 "$abc$1208$auto$rtlil.cc:3016:NotGate$1061") (joined
               (portRef AR (instanceRef id00214))
               (portRef QN (instanceRef id00168))
             )
           )
-          (net (rename id00463 "$abc$1208$new_n293") (joined
+          (net (rename id00461 "$abc$1208$new_n293") (joined
               (portRef A (instanceRef id00097))
               (portRef B (instanceRef go_cpu_comb))
               (portRef C (instanceRef id00106))
@@ -3580,17 +3580,17 @@
               (portRef Q (instanceRef id00096))
             )
           )
-          (net (rename id00464 "$abc$1208$new_n311") (joined
+          (net (rename id00462 "$abc$1208$new_n311") (joined
               (portRef C (instanceRef id00114))
               (portRef QN (instanceRef id00113))
             )
           )
-          (net (rename id00465 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1079") (joined
+          (net (rename id00463 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1079") (joined
               (portRef D (instanceRef id00223))
               (portRef QN (instanceRef id00029))
             )
           )
-          (net (rename id00466 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1191") (joined
+          (net (rename id00464 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1191") (joined
               (portRef A (instanceRef id00134))
               (portRef QN (instanceRef id00202))
             )
@@ -3605,17 +3605,17 @@
               (portRef Q (instanceRef id00203))
             )
           )
-          (net (rename id00467 "$abc$1208$new_n251") (joined
+          (net (rename id00465 "$abc$1208$new_n251") (joined
               (portRef B (instanceRef id00056))
               (portRef QN (instanceRef id00054))
             )
           )
-          (net (rename id00468 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1193") (joined
+          (net (rename id00466 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1193") (joined
               (portRef A (instanceRef id00129))
               (portRef QN (instanceRef id00203))
             )
           )
-          (net (rename id00469 "$abc$1208$new_n271") (joined
+          (net (rename id00467 "$abc$1208$new_n271") (joined
               (portRef B (instanceRef id00075))
               (portRef QN (instanceRef id00074))
             )
@@ -3625,40 +3625,40 @@
               (portRef RAS0_n)
             )
           )
-          (net (rename id00470 "$abc$1208$new_n242") (joined
+          (net (rename id00468 "$abc$1208$new_n242") (joined
               (portRef B (instanceRef id00048))
               (portRef BN (instanceRef id00047))
               (portRef BN (instanceRef id00049))
               (portRef Q (instanceRef id00045))
             )
           )
-          (net (rename id00471 "$abc$1208$new_n327") (joined
+          (net (rename id00469 "$abc$1208$new_n327") (joined
               (portRef CN (instanceRef id00130))
               (portRef Q (instanceRef id00129))
             )
           )
-          (net (rename id00472 "$abc$1208$auto$rtlil.cc:3016:NotGate$1057") (joined
+          (net (rename id00470 "$abc$1208$auto$rtlil.cc:3016:NotGate$1057") (joined
               (portRef AR (instanceRef id00212))
               (portRef QN (instanceRef id00166))
             )
           )
-          (net (rename id00473 "$abc$1208$new_n283") (joined
+          (net (rename id00471 "$abc$1208$new_n283") (joined
               (portRef B (instanceRef id00087))
               (portRef QN (instanceRef id00086))
             )
           )
-          (net (rename id00474 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1047") (joined
+          (net (rename id00472 "$abc$1208$auto$rtlil.cc:3025:MuxGate$1047") (joined
               (portRef D (instanceRef id00003))
               (portRef QN (instanceRef id00032))
             )
           )
-          (net (rename id00475 "$abc$1208$new_n237") (joined
+          (net (rename id00473 "$abc$1208$new_n237") (joined
               (portRef B (instanceRef id00044))
               (portRef BN (instanceRef id00043))
               (portRef QN (instanceRef id00040))
             )
           )
-          (net (rename id00476 "$abc$1208$new_n262") (joined
+          (net (rename id00474 "$abc$1208$new_n262") (joined
               (portRef B (instanceRef id00066))
               (portRef QN (instanceRef id00065))
             )
@@ -3681,7 +3681,7 @@
               (portRef A17)
             )
           )
-          (net (rename id00477 "$abc$1208$new_n213") (joined
+          (net (rename id00475 "$abc$1208$new_n213") (joined
               (portRef B (instanceRef id00161))
               (portRef C (instanceRef id00018))
               (portRef Q (instanceRef id00017))
@@ -3692,12 +3692,19 @@
               (portRef Q (instanceRef id00231))
             )
           )
-          (net (rename id00478 "$abc$1208$new_n277") (joined
+          (net (rename id00476 "$abc$1208$new_n277") (joined
               (portRef B (instanceRef id00081))
               (portRef QN (instanceRef id00080))
             )
           )
-          (net (rename id00479 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1136") (joined
+          (net tdiv_2 (joined
+              (portRef A (instanceRef id00040))
+              (portRef A (instanceRef id00041))
+              (portRef D (instanceRef id00045))
+              (portRef Q (instanceRef id00234))
+            )
+          )
+          (net (rename id00477 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1136") (joined
               (portRef F (instanceRef id00033))
               (portRef QN (instanceRef id00237))
             )
@@ -3707,17 +3714,17 @@
               (portRef Q (instanceRef id00201))
             )
           )
-          (net (rename id00480 "$abc$1208$new_n339") (joined
+          (net (rename id00478 "$abc$1208$new_n339") (joined
               (portRef A (instanceRef id00143))
               (portRef QN (instanceRef id00141))
             )
           )
-          (net (rename id00481 "$abc$1208$auto$rtlil.cc:3016:NotGate$1077") (joined
+          (net (rename id00479 "$abc$1208$auto$rtlil.cc:3016:NotGate$1077") (joined
               (portRef AS (instanceRef id00222))
               (portRef QN (instanceRef id00176))
             )
           )
-          (net (rename id00482 "$abc$1208$MA11") (joined
+          (net (rename id00480 "$abc$1208$MA11") (joined
               (portRef A (instanceRef MA11_comb))
               (portRef QN (instanceRef id00093))
             )
@@ -3729,7 +3736,7 @@
               (portRef Q (instanceRef id00196))
             )
           )
-          (net (rename id00483 "$abc$1208$new_n321") (joined
+          (net (rename id00481 "$abc$1208$new_n321") (joined
               (portRef A (instanceRef id00127))
               (portRef B (instanceRef id00132))
               (portRef Q (instanceRef id00123))
@@ -3740,12 +3747,12 @@
               (portRef Q (instanceRef id00204))
             )
           )
-          (net (rename id00484 "$abc$1208$new_n330") (joined
+          (net (rename id00482 "$abc$1208$new_n330") (joined
               (portRef B (instanceRef id00133))
               (portRef QN (instanceRef id00132))
             )
           )
-          (net (rename id00485 "$abc$1208$new_n292") (joined
+          (net (rename id00483 "$abc$1208$new_n292") (joined
               (portRef A (instanceRef go_cpu_comb))
               (portRef B (instanceRef id00097))
               (portRef B (instanceRef id00106))
@@ -3758,17 +3765,17 @@
               (portRef DRAM_SEL_n)
             )
           )
-          (net (rename id00486 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1157") (joined
+          (net (rename id00484 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1157") (joined
               (portRef DN (instanceRef id00028))
               (portRef QN (instanceRef id00225))
             )
           )
-          (net (rename id00487 "$abc$1208$new_n202") (joined
+          (net (rename id00485 "$abc$1208$new_n202") (joined
               (portRef A (instanceRef id00008))
               (portRef QN (instanceRef id00006))
             )
           )
-          (net (rename id00488 "$abc$1208$new_n279") (joined
+          (net (rename id00486 "$abc$1208$new_n279") (joined
               (portRef A (instanceRef id00084))
               (portRef QN (instanceRef id00082))
             )
@@ -3780,19 +3787,17 @@
               (portRef Q (instanceRef id00209))
             )
           )
-          (net (rename id00489 "$abc$1208$auto$rtlil.cc:3016:NotGate$1089") (joined
+          (net (rename id00487 "$abc$1208$auto$rtlil.cc:3016:NotGate$1089") (joined
               (portRef AR (instanceRef id00225))
               (portRef QN (instanceRef id00179))
             )
           )
-          (net tdiv_6 (joined
-              (portRef A (instanceRef id00051))
-              (portRef A (instanceRef id00054))
-              (portRef AN (instanceRef id00052))
-              (portRef Q (instanceRef id00238))
+          (net (rename id00488 "$0tdiv[8:0]_2") (joined
+              (portRef D (instanceRef id00234))
+              (portRef Q (instanceRef id00042))
             )
           )
-          (net (rename id00490 "$abc$1208$new_n331") (joined
+          (net (rename id00489 "$abc$1208$new_n331") (joined
               (portRef BN (instanceRef id00135))
               (portRef Q (instanceRef id00133))
             )
@@ -3809,33 +3814,41 @@
               (portRef A19)
             )
           )
-          (net (rename id00491 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1153") (joined
+          (net (rename id00490 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1153") (joined
               (portRef CN (instanceRef id00016))
               (portRef QN (instanceRef id00227))
             )
           )
-          (net (rename id00492 "$0c1n[0:0]") (joined
+          (net (rename id00491 "$0c1n[0:0]") (joined
               (portRef D (instanceRef id00203))
               (portRef Q (instanceRef id00130))
             )
           )
-          (net (rename id00493 "$0r0n[0:0]") (joined
+          (net (rename id00492 "$0r0n[0:0]") (joined
               (portRef D (instanceRef id00208))
               (portRef Q (instanceRef id00103))
             )
           )
-          (net (rename id00494 "$abc$1208$new_n306") (joined
+          (net (rename id00493 "$abc$1208$new_n306") (joined
               (portRef A (instanceRef id00110))
               (portRef A (instanceRef id00112))
               (portRef Q (instanceRef id00108))
             )
           )
-          (net (rename id00495 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1206") (joined
+          (net tdiv_3 (joined
+              (portRef A (instanceRef id00043))
+              (portRef A (instanceRef id00044))
+              (portRef B (instanceRef id00045))
+              (portRef D (instanceRef id00033))
+              (portRef Q (instanceRef id00235))
+            )
+          )
+          (net (rename id00494 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1206") (joined
               (portRef B (instanceRef id00150))
               (portRef QN (instanceRef id00243))
             )
           )
-          (net (rename id00496 "$abc$1208$new_n205") (joined
+          (net (rename id00495 "$abc$1208$new_n205") (joined
               (portRef A (instanceRef id00012))
               (portRef B (instanceRef id00013))
               (portRef B (instanceRef id00018))
@@ -3844,17 +3857,17 @@
               (portRef QN (instanceRef id00009))
             )
           )
-          (net (rename id00497 "$abc$1208$new_n282") (joined
+          (net (rename id00496 "$abc$1208$new_n282") (joined
               (portRef A (instanceRef id00087))
               (portRef QN (instanceRef id00085))
             )
           )
-          (net (rename id00498 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1155") (joined
+          (net (rename id00497 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1155") (joined
               (portRef BN (instanceRef id00016))
               (portRef QN (instanceRef id00226))
             )
           )
-          (net (rename id00499 "$iopadmap$DRAM_CLK") (joined
+          (net (rename id00498 "$iopadmap$DRAM_CLK") (joined
               (portRef CLK (instanceRef id00003))
               (portRef CLK (instanceRef id00196))
               (portRef CLK (instanceRef id00197))
@@ -3913,12 +3926,9 @@
               (portRef R_W)
             )
           )
-          (net ct_3 (joined
-              (portRef A (instanceRef id00115))
-              (portRef AN (instanceRef id00113))
-              (portRef AN (instanceRef id00122))
-              (portRef BN (instanceRef id00116))
-              (portRef Q (instanceRef ct_3_comb))
+          (net (rename id00499 "$0tdiv[8:0]_8") (joined
+              (portRef D (instanceRef id00240))
+              (portRef Q (instanceRef id00057))
             )
           )
           (net A22 (joined
@@ -3926,16 +3936,12 @@
               (portRef A22)
             )
           )
-          (net ct_0 (joined
-              (portRef A (instanceRef id00114))
-              (portRef A (instanceRef id00131))
-              (portRef AN (instanceRef id00125))
-              (portRef AN (instanceRef id00136))
-              (portRef BN (instanceRef id00124))
-              (portRef Q (instanceRef ct_0_comb))
+          (net (rename id00500 "$0tdiv[8:0]_5") (joined
+              (portRef D (instanceRef id00237))
+              (portRef Q (instanceRef id00050))
             )
           )
-          (net (rename id00500 "$abc$1208$new_n207") (joined
+          (net (rename id00501 "$abc$1208$new_n207") (joined
               (portRef B (instanceRef id00012))
               (portRef C (instanceRef id00013))
               (portRef D (instanceRef id00014))
@@ -3943,13 +3949,13 @@
               (portRef QN (instanceRef id00011))
             )
           )
-          (net (rename id00501 "$abc$1208$A26") (joined
+          (net (rename id00502 "$abc$1208$A26") (joined
               (portRef A (instanceRef id00106))
               (portRef CN (instanceRef id00097))
               (portRef Q (instanceRef id00263))
             )
           )
-          (net (rename id00502 "$abc$1208$not$dram.v:255$158_Y") (joined
+          (net (rename id00503 "$abc$1208$not$dram.v:255$158_Y") (joined
               (portRef A (instanceRef DSACK1_n_comb))
               (portRef QN (instanceRef id00145))
             )
@@ -3959,12 +3965,12 @@
               (portRef SIZ1)
             )
           )
-          (net (rename id00503 "$abc$1208$DRAM_SEL_n") (joined
+          (net (rename id00504 "$abc$1208$DRAM_SEL_n") (joined
               (portRef CN (instanceRef id00094))
               (portRef Q (instanceRef id00273))
             )
           )
-          (net (rename id00504 "$abc$1208$new_n316") (joined
+          (net (rename id00505 "$abc$1208$new_n316") (joined
               (portRef B (instanceRef id00119))
               (portRef QN (instanceRef id00118))
             )
@@ -3974,7 +3980,7 @@
               (portRef A20)
             )
           )
-          (net (rename id00505 "$abc$1208$new_n317") (joined
+          (net (rename id00506 "$abc$1208$new_n317") (joined
               (portRef BN (instanceRef id00121))
               (portRef Q (instanceRef id00119))
             )
@@ -3991,7 +3997,7 @@
               (portRef Q (instanceRef id00220))
             )
           )
-          (net (rename id00506 "$abc$1208$PWR_RST_n") (joined
+          (net (rename id00507 "$abc$1208$PWR_RST_n") (joined
               (portRef A (instanceRef acl_comb))
               (portRef A (instanceRef cpu_clr_comb))
               (portRef A (instanceRef id00163))
@@ -4031,17 +4037,17 @@
               (portRef Q (instanceRef id00274))
             )
           )
-          (net (rename id00507 "$abc$1208$auto$rtlil.cc:3016:NotGate$1099") (joined
+          (net (rename id00508 "$abc$1208$auto$rtlil.cc:3016:NotGate$1099") (joined
               (portRef AR (instanceRef id00228))
               (portRef QN (instanceRef id00182))
             )
           )
-          (net (rename id00508 "$abc$1208$new_n199") (joined
+          (net (rename id00509 "$abc$1208$new_n199") (joined
               (portRef A (instanceRef id00005))
               (portRef QN (instanceRef id00276))
             )
           )
-          (net (rename id00509 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1151") (joined
+          (net (rename id00510 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1151") (joined
               (portRef C (instanceRef id00096))
               (portRef QN (instanceRef id00228))
             )
@@ -4051,17 +4057,17 @@
               (portRef A7)
             )
           )
-          (net (rename id00510 "$abc$1208$auto$rtlil.cc:3016:NotGate$1081") (joined
+          (net (rename id00511 "$abc$1208$auto$rtlil.cc:3016:NotGate$1081") (joined
               (portRef AR (instanceRef id00223))
               (portRef QN (instanceRef id00177))
             )
           )
-          (net (rename id00511 "$abc$1208$new_n261") (joined
+          (net (rename id00512 "$abc$1208$new_n261") (joined
               (portRef A (instanceRef id00066))
               (portRef QN (instanceRef id00064))
             )
           )
-          (net (rename id00512 "$abc$1208$A13") (joined
+          (net (rename id00513 "$abc$1208$A13") (joined
               (portRef A (instanceRef id00062))
               (portRef Q (instanceRef id00249))
             )
@@ -4076,42 +4082,42 @@
               (portRef Q (instanceRef MA6_comb))
             )
           )
-          (net (rename id00513 "$abc$1208$auto$rtlil.cc:3016:NotGate$1085") (joined
+          (net (rename id00514 "$abc$1208$auto$rtlil.cc:3016:NotGate$1085") (joined
               (portRef AR (instanceRef id00224))
               (portRef QN (instanceRef id00178))
             )
           )
-          (net (rename id00514 "$auto$dfflibmap.cc:514:dfflibmap$1177") (joined
+          (net (rename id00515 "$auto$dfflibmap.cc:514:dfflibmap$1177") (joined
               (portRef QN (instanceRef id00210))
             )
           )
-          (net (rename id00515 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1204") (joined
+          (net (rename id00516 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1204") (joined
               (portRef A (instanceRef id00147))
               (portRef B (instanceRef id00094))
               (portRef B (instanceRef id00146))
               (portRef QN (instanceRef id00242))
             )
           )
-          (net (rename id00516 "$abc$1208$new_n268") (joined
+          (net (rename id00517 "$abc$1208$new_n268") (joined
               (portRef B (instanceRef id00072))
               (portRef QN (instanceRef id00071))
             )
           )
-          (net (rename id00517 "$abc$1208$new_n315") (joined
+          (net (rename id00518 "$abc$1208$new_n315") (joined
               (portRef CN (instanceRef id00118))
               (portRef Q (instanceRef id00117))
             )
           )
-          (net (rename id00518 "$auto$dfflibmap.cc:514:dfflibmap$1203") (joined
+          (net (rename id00519 "$auto$dfflibmap.cc:514:dfflibmap$1203") (joined
               (portRef QN (instanceRef id00241))
             )
           )
-          (net (rename id00519 "$0tick[0:0]") (joined
+          (net (rename id00520 "$0tick[0:0]") (joined
               (portRef D (instanceRef id00241))
               (portRef QN (instanceRef id00035))
             )
           )
-          (net (rename id00520 "$abc$1208$auto$rtlil.cc:3016:NotGate$1097") (joined
+          (net (rename id00521 "$abc$1208$auto$rtlil.cc:3016:NotGate$1097") (joined
               (portRef AR (instanceRef id00227))
               (portRef QN (instanceRef id00181))
             )
@@ -4121,15 +4127,12 @@
               (portRef A11)
             )
           )
-          (net ct_2 (joined
-              (portRef A (instanceRef id00116))
-              (portRef B (instanceRef id00114))
-              (portRef BN (instanceRef id00125))
-              (portRef CN (instanceRef id00122))
-              (portRef Q (instanceRef ct_2_comb))
+          (net (rename id00522 "$0tdiv[8:0]_7") (joined
+              (portRef D (instanceRef id00239))
+              (portRef QN (instanceRef id00055))
             )
           )
-          (net (rename id00521 "$abc$1208$new_n246") (joined
+          (net (rename id00523 "$abc$1208$new_n246") (joined
               (portRef CN (instanceRef id00050))
               (portRef Q (instanceRef id00049))
             )
@@ -4144,12 +4147,12 @@
               (portRef Q (instanceRef MA5_comb))
             )
           )
-          (net (rename id00522 "$abc$1208$new_n288") (joined
+          (net (rename id00524 "$abc$1208$new_n288") (joined
               (portRef A (instanceRef id00093))
               (portRef QN (instanceRef id00091))
             )
           )
-          (net (rename id00523 "$0sI[0:0]") (joined
+          (net (rename id00525 "$0sI[0:0]") (joined
               (portRef D (instanceRef id00209))
               (portRef Q (instanceRef id00149))
             )
@@ -4164,12 +4167,13 @@
               (portRef A21)
             )
           )
-          (net (rename id00524 "$0tdiv[8:0]_0") (joined
-              (portRef D (instanceRef id00232))
-              (portRef Q (instanceRef id00036))
+          (net (rename id00526 "$auto$alumacc.cc:495:replace_alu$395.X_0") (joined
+              (portRef A (instanceRef id00025))
+              (portRef AN (instanceRef id00016))
+              (portRef QN (instanceRef id00224))
             )
           )
-          (net (rename id00525 "$abc$1208$new_n320") (joined
+          (net (rename id00527 "$abc$1208$new_n320") (joined
               (portRef BN (instanceRef id00123))
               (portRef Q (instanceRef id00122))
             )
@@ -4181,58 +4185,59 @@
               (portRef Q (instanceRef id00197))
             )
           )
-          (net (rename id00526 "$auto$dfflibmap.cc:514:dfflibmap$1170") (joined
+          (net (rename id00528 "$auto$dfflibmap.cc:514:dfflibmap$1170") (joined
               (portRef QN (instanceRef id00216))
             )
           )
-          (net (rename id00527 "$0tdiv[8:0]_3") (joined
-              (portRef D (instanceRef id00235))
-              (portRef QN (instanceRef id00044))
-            )
-          )
-          (net (rename id00528 "$abc$1208$new_n206") (joined
+          (net (rename id00529 "$abc$1208$new_n206") (joined
               (portRef B (instanceRef id00028))
               (portRef BN (instanceRef id00011))
               (portRef Q (instanceRef id00010))
             )
           )
-          (net (rename id00529 "$abc$1208$new_n297") (joined
+          (net (rename id00530 "$abc$1208$new_n297") (joined
               (portRef A (instanceRef id00103))
               (portRef A (instanceRef id00105))
               (portRef Q (instanceRef id00099))
             )
           )
-          (net (rename id00530 "$abc$1208$new_n336") (joined
+          (net (rename id00531 "$abc$1208$new_n336") (joined
               (portRef BN (instanceRef id00140))
               (portRef Q (instanceRef id00138))
             )
           )
-          (net (rename id00531 "$abc$1208$new_n249") (joined
+          (net (rename id00532 "$abc$1208$new_n249") (joined
               (portRef C (instanceRef id00053))
               (portRef QN (instanceRef id00052))
             )
           )
-          (net (rename id00532 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1173") (joined
+          (net (rename id00533 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1173") (joined
               (portRef B (instanceRef id00153))
               (portRef QN (instanceRef id00213))
             )
           )
-          (net (rename id00533 "$abc$1208$auto$rtlil.cc:3016:NotGate$1123") (joined
+          (net (rename id00534 "$abc$1208$auto$rtlil.cc:3016:NotGate$1123") (joined
               (portRef AR (instanceRef id00238))
               (portRef QN (instanceRef id00192))
             )
           )
-          (net (rename id00534 "$abc$1208$A12") (joined
+          (net tdiv_4 (joined
+              (portRef AN (instanceRef id00046))
+              (portRef E (instanceRef id00045))
+              (portRef Q (instanceRef id00236))
+            )
+          )
+          (net (rename id00535 "$abc$1208$A12") (joined
               (portRef A (instanceRef id00059))
               (portRef Q (instanceRef id00248))
             )
           )
-          (net (rename id00535 "$0tdiv[8:0]_4") (joined
-              (portRef D (instanceRef id00236))
-              (portRef Q (instanceRef id00047))
+          (net (rename id00536 "$auto$alumacc.cc:495:replace_alu$392.X_0") (joined
+              (portRef A (instanceRef id00036))
+              (portRef QN (instanceRef id00232))
             )
           )
-          (net (rename id00536 "$abc$1208$new_n286") (joined
+          (net (rename id00537 "$abc$1208$new_n286") (joined
               (portRef B (instanceRef id00090))
               (portRef QN (instanceRef id00089))
             )
@@ -4242,7 +4247,7 @@
               (portRef A15)
             )
           )
-          (net (rename id00537 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1181") (joined
+          (net (rename id00538 "$abc$1208$auto$dfflibmap.cc:514:dfflibmap$1181") (joined
               (portRef B (instanceRef id00154))
               (portRef QN (instanceRef id00003))
             )
@@ -4252,17 +4257,17 @@
               (portRef Q (instanceRef id00205))
             )
           )
-          (net (rename id00538 "$abc$1208$new_n253") (joined
+          (net (rename id00539 "$abc$1208$new_n253") (joined
               (portRef B (instanceRef id00057))
               (portRef QN (instanceRef id00056))
             )
           )
-          (net (rename id00539 "$abc$1208$auto$rtlil.cc:3016:NotGate$1053") (joined
+          (net (rename id00540 "$abc$1208$auto$rtlil.cc:3016:NotGate$1053") (joined
               (portRef AR (instanceRef id00210))
               (portRef QN (instanceRef id00164))
             )
           )
-          (net (rename id00540 "$abc$1208$new_n322") (joined
+          (net (rename id00541 "$abc$1208$new_n322") (joined
               (portRef B (instanceRef id00127))
               (portRef QN (instanceRef id00124))
             )
@@ -4271,11 +4276,6 @@
               (portRef A (instanceRef MUX_SEL_comb))
               (portRef A (instanceRef id00157))
               (portRef Q (instanceRef id00199))
-            )
-          )
-          (net (rename id00541 "$0tdiv[8:0]_2") (joined
-              (portRef D (instanceRef id00234))
-              (portRef Q (instanceRef id00042))
             )
           )
           (net RAS2_n (joined

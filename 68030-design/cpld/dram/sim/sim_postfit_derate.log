@@ -1,340 +1,340 @@
 seed 11
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 41036.19 / AR,AS release 1.04 ns before CLK)
-            47266739 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.73 ns after CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 32.00 / AR,AS release 0.65 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 2955.14 / AR,AS release 0.02 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 33.84 / AR,AS release 1.25 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 2953.98 / AR,AS release 0.16 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 32.47 / AR,AS release 0.43 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 33.51 / AR,AS release 1.65 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 31.18 / AR,AS release 0.64 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 33.32 / AR,AS release 1.55 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 30.98 / AR,AS release 1.13 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 3435.62 / AR,AS release 0.50 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 32.82 / AR,AS release 1.73 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 3434.46 / AR,AS release 0.64 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 31.46 / AR,AS release 0.91 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 32.49 / AR,AS release 2.13 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 30.17 / AR,AS release 1.12 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 32.31 / AR,AS release 2.03 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 31.76 / AR,AS release 0.44 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 60.85 / AR,AS release 1.37 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 61.64 / AR,AS release 0.74 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 273.06 / AR,AS release 1.97 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 60.20 / AR,AS release 0.88 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 271.70 / AR,AS release 1.15 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 62.36 / AR,AS release 2.37 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 60.03 / AR,AS release 1.36 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 62.17 / AR,AS release 2.27 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 61.62 / AR,AS release 0.68 ns before CLK)
-           113692370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 33.01 / AR,AS release 1.40 ns before CLK)
-           115534210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 26.93 / AR,AS release 2.91 ns before CLK)
-           115534210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 28.03 / AR,AS release 2.91 ns before CLK)
-           116695370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.26 / AR,AS release 1000116695.37 ns before CLK)
-           116735410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 39.23 / AR,AS release 2.82 ns before CLK)
-           116735410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 40.32 / AR,AS release 2.82 ns before CLK)
-           116735410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 40.82 / AR,AS release 2.91 ns before CLK)
-           117416090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 67.28 / AR,AS release 0.42 ns before CLK)
-           117416090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 68.40 / AR,AS release 0.76 ns before CLK)
-           117416090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 55.25 / AR,AS release 2.10 ns before CLK)
-           117416090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 68.37 / AR,AS release 0.42 ns before CLK)
-           117416090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 68.87 / AR,AS release 0.51 ns before CLK)
-           117616290 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 2.15 / AR,AS release 1000117616.29 ns before CLK)
-           118016690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.23 / AR,AS release 1000118016.69 ns before CLK)
-           118897570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 46.46 / AR,AS release 2.34 ns before CLK)
-           118897570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 46.93 / AR,AS release 2.10 ns before CLK)
-           120419964 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.87 ns after CLK)
-           122020690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 73.00 / AR,AS release 1.06 ns before CLK)
-           122020690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 55.25 / AR,AS release 2.40 ns before CLK)
-           123300010 lane test done, errors so far 0
-           126266739 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.81 ns after CLK)
-           136085884 misaligned test done, errors so far 0
+            47065810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.49 / AR,AS release 1000047065.81 ns before CLK)
+            47266316 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.31 ns after CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 112044.48 / AR,AS release 2.81 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 112043.01 / AR,AS release 2.38 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 112047.91 / AR,AS release 2.06 ns before CLK)
+           112290970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 59.97 / AR,AS release 0.14 ns before CLK)
+           112290970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 62.76 / AR,AS release 2.62 ns before CLK)
+           112290970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 61.71 / AR,AS release 2.30 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 60.21 / AR,AS release 0.38 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 63.00 / AR,AS release 2.86 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 61.95 / AR,AS release 2.54 ns before CLK)
+           112771450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 60.45 / AR,AS release 0.62 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 16.22 / AR,AS release 0.92 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 25.25 / AR,AS release 0.01 ns before CLK)
+           113413721 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.63 ns after CLK)
+           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 3956.54 / AR,AS release 0.31 ns before CLK)
+           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 31.97 / AR,AS release 0.19 ns before CLK)
+           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 33.99 / AR,AS release 0.50 ns before CLK)
+           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 3956.06 / AR,AS release 0.36 ns before CLK)
+           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 32.50 / AR,AS release 0.65 ns before CLK)
+           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 32.74 / AR,AS release 0.55 ns before CLK)
+           113692370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 56.26 / AR,AS release 2.75 ns before CLK)
+           113692370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 64.79 / AR,AS release 1.04 ns before CLK)
+           113692370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 64.44 / AR,AS release 1.65 ns before CLK)
+           113692370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 65.49 / AR,AS release 1.85 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 4557.14 / AR,AS release 0.91 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 27.34 / AR,AS release 0.79 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 29.36 / AR,AS release 1.10 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 232.57 / AR,AS release 0.35 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 4556.66 / AR,AS release 0.96 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 27.87 / AR,AS release 1.25 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 231.99 / AR,AS release 1.15 ns before CLK)
+           114773450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 28.03 / AR,AS release 2.69 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 5518.10 / AR,AS release 1.87 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 60.93 / AR,AS release 1.75 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 62.95 / AR,AS release 2.06 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 61.27 / AR,AS release 1.31 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 5517.62 / AR,AS release 1.92 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 61.46 / AR,AS release 2.21 ns before CLK)
+           115013690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 61.71 / AR,AS release 2.11 ns before CLK)
+           115253930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 61.51 / AR,AS release 1.55 ns before CLK)
+           117135810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.78 / AR,AS release 1000117135.81 ns before CLK)
+           118136810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 56.26 / AR,AS release 2.76 ns before CLK)
+           118136810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 68.88 / AR,AS release 1.66 ns before CLK)
+           118136810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 69.93 / AR,AS release 1.86 ns before CLK)
+           118857530 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 69.60 / AR,AS release 0.35 ns before CLK)
+           119018514 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.82 ns after CLK)
+           121299970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.13 / AR,AS release 1000121299.97 ns before CLK)
+           123486623 lane test done, errors so far 0
+           136617560 misaligned test done, errors so far 0
 ---- summary (POST-FIT netlist + SDF delays)
-SIMM model: 1492 reads, 532 writes (lane strobes), CBR side0 23 side1 23, timing errors 0
-  min tRAS 80.1 tRP 60.1 tRCD 39.1 tRAH 23.7 tASC 14.3 tCAH n/a(col held to CAS high) tCP 99.6 tCAS 59.8 tCSR 19.9 tCHR 79.7 tWCS 20.1 tWCH 57.1
+SIMM model: 1512 reads, 549 writes (lane strobes), CBR side0 24 side1 23, timing errors 0
+  min tRAS 80.1 tRP 60.1 tRCD 39.5 tRAH 23.8 tASC 14.7 tCAH n/a(col held to CAS high) tCP 98.6 tCAS 59.3 tCSR 19.6 tCHR 80.1 tWCS 20.3 tWCH 54.2
+  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
+  max refresh gap per side (after init): side0 15135.1 ns side1 15135.1 ns (limit 15625)
+cycles 817 (DRAM 664, foreign 152, early-timeout 1)
+DRAM wait states @   25 MHz:
+   0:0 1:0 2:582 3:61 4:4 5:7 6+:10
+  max wait states observed: 7 
+SIMM bus release -> next driver on (CPU write data / foreign device): min 17.5 ns
+EC #31 (DSACK -> data valid <= 28 ns): min margin 9.1 ns, violations 0
+EC #28 (AS negated -> DSACK negated <= 40 ns): max 5.5 ns to driven-high, max 11.8 ns to released (Z)
+DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 36.7 ns, overlaps 0
+U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
+DFF timing-check hits (setup/recovery 1814, hold 95): expected on the asynchronous AS_n synchroniser
+done, 0 errors
+tb_dram.v:315: $finish called at 334180010 (1ps)
+seed 22
+            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 41036.24 / AR,AS release 0.20 ns before CLK)
+            47065810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.39 / AR,AS release 1000047065.81 ns before CLK)
+           112212746 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.86 ns after CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 34.62 / AR,AS release 0.05 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 37.85 / AR,AS release 2.58 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 36.98 / AR,AS release 1.75 ns before CLK)
+           112651394 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.06 ns after CLK)
+           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 36.41 / AR,AS release 0.49 ns before CLK)
+           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 263.13 / AR,AS release 2.19 ns before CLK)
+           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 36.60 / AR,AS release 0.08 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 24.93 / AR,AS release 0.26 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 757.13 / AR,AS release 1.21 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 27.12 / AR,AS release 0.71 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 264.07 / AR,AS release 2.91 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 26.34 / AR,AS release 0.64 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 25.49 / AR,AS release 0.60 ns before CLK)
+           113412090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 27.35 / AR,AS release 0.80 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 36.52 / AR,AS release 2.64 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 36.75 / AR,AS release 2.94 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 37.73 / AR,AS release 2.99 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 37.31 / AR,AS release 2.17 ns before CLK)
+           114493170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 15.26 / AR,AS release 2.72 ns before CLK)
+           114493170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 34.96 / AR,AS release 1.70 ns before CLK)
+           114493170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 35.19 / AR,AS release 2.00 ns before CLK)
+           114493170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 36.17 / AR,AS release 2.04 ns before CLK)
+           114493170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 35.75 / AR,AS release 1.23 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 891.34 / AR,AS release 0.91 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 30.03 / AR,AS release 1.54 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 30.90 / AR,AS release 1.03 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 232.67 / AR,AS release 1.99 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 31.44 / AR,AS release 1.92 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 231.04 / AR,AS release 1.88 ns before CLK)
+           114693370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 232.90 / AR,AS release 2.08 ns before CLK)
+           114933610 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 65.46 / AR,AS release 2.38 ns before CLK)
+           114933610 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 65.68 / AR,AS release 2.68 ns before CLK)
+           114933610 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 66.67 / AR,AS release 2.73 ns before CLK)
+           115334010 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 2.62 / AR,AS release 1000115334.01 ns before CLK)
+           115374050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 37.18 / AR,AS release 1.59 ns before CLK)
+           115374050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 501.21 / AR,AS release 2.22 ns before CLK)
+           115374050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 264.34 / AR,AS release 1.71 ns before CLK)
+           115374050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 265.66 / AR,AS release 2.67 ns before CLK)
+           115374050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 502.63 / AR,AS release 2.60 ns before CLK)
+           115374050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 264.03 / AR,AS release 2.56 ns before CLK)
+           115614290 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 61.78 / AR,AS release 1.30 ns before CLK)
+           115614290 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 62.33 / AR,AS release 1.42 ns before CLK)
+           117177484 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.63 ns after CLK)
+           117656330 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.95 / AR,AS release 1000117656.33 ns before CLK)
+           121099770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 35.29 / AR,AS release 0.70 ns before CLK)
+           123260010 lane test done, errors so far 0
+           135724226 misaligned test done, errors so far 0
+---- summary (POST-FIT netlist + SDF delays)
+SIMM model: 1504 reads, 516 writes (lane strobes), CBR side0 23 side1 23, timing errors 0
+  min tRAS 80.1 tRP 60.1 tRCD 38.8 tRAH 23.2 tASC 14.0 tCAH 60.9 tCP 99.5 tCAS 60.6 tCSR 18.9 tCHR 80.1 tWCS 19.5 tWCH 56.9
+  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
+  max refresh gap per side (after init): side0 15115.1 ns side1 15155.1 ns (limit 15625)
+cycles 802 (DRAM 636, foreign 165, early-timeout 1)
+DRAM wait states @   25 MHz:
+   0:0 1:0 2:544 3:73 4:2 5:3 6+:14
+  max wait states observed: 7 
+SIMM bus release -> next driver on (CPU write data / foreign device): min 22.4 ns
+EC #31 (DSACK -> data valid <= 28 ns): min margin 8.5 ns, violations 0
+EC #28 (AS negated -> DSACK negated <= 40 ns): max 5.4 ns to driven-high, max 12.6 ns to released (Z)
+DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 31.5 ns, overlaps 0
+U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
+DFF timing-check hits (setup/recovery 1737, hold 59): expected on the asynchronous AS_n synchroniser
+done, 0 errors
+tb_dram.v:315: $finish called at 329540010 (1ps)
+seed 33
+           112210890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.27 / AR,AS release 1000112210.89 ns before CLK)
+           112411090 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.81 / AR,AS release 1000112411.09 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 37.01 / AR,AS release 0.16 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 2954.12 / AR,AS release 0.44 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 37.78 / AR,AS release 0.38 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 37.25 / AR,AS release 0.53 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 38.14 / AR,AS release 2.03 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 39.21 / AR,AS release 2.10 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 39.05 / AR,AS release 2.05 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 36.59 / AR,AS release 0.07 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 39.51 / AR,AS release 1.91 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 2955.29 / AR,AS release 0.70 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 38.19 / AR,AS release 0.85 ns before CLK)
+           112451130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 37.24 / AR,AS release 0.39 ns before CLK)
+           112891570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 25.17 / AR,AS release 0.75 ns before CLK)
+           112891570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 26.24 / AR,AS release 0.82 ns before CLK)
+           112891570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 26.09 / AR,AS release 0.77 ns before CLK)
+           112891570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 26.54 / AR,AS release 0.63 ns before CLK)
+           112891570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 27.34 / AR,AS release 1.81 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 501.01 / AR,AS release 0.84 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 60.83 / AR,AS release 1.12 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 501.77 / AR,AS release 1.06 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 61.24 / AR,AS release 1.21 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 62.13 / AR,AS release 2.71 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 63.20 / AR,AS release 2.78 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 63.05 / AR,AS release 2.73 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 60.59 / AR,AS release 0.75 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 63.50 / AR,AS release 2.59 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 62.53 / AR,AS release 1.38 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 62.19 / AR,AS release 1.53 ns before CLK)
+           113131810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 264.52 / AR,AS release 1.07 ns before CLK)
+           113612290 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 15.27 / AR,AS release 0.46 ns before CLK)
+           113772450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.37 / AR,AS release 1000113772.45 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 36.57 / AR,AS release 1.52 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 501.51 / AR,AS release 1.80 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 37.34 / AR,AS release 1.74 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 36.80 / AR,AS release 1.89 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 230.44 / AR,AS release 1.43 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 503.21 / AR,AS release 2.06 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 37.75 / AR,AS release 2.21 ns before CLK)
+           113812490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 231.09 / AR,AS release 1.75 ns before CLK)
+           115415747 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.66 ns after CLK)
+           115454130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 15.28 / AR,AS release 2.09 ns before CLK)
+           115896197 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.63 ns after CLK)
+           116134810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 27.63 / AR,AS release 2.09 ns before CLK)
+           118498972 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.80 ns after CLK)
+           119898570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 55.32 / AR,AS release 2.73 ns before CLK)
+           119898570 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 277.66 / AR,AS release 0.50 ns before CLK)
+           123405073 lane test done, errors so far 0
+           136014082 misaligned test done, errors so far 0
+---- summary (POST-FIT netlist + SDF delays)
+SIMM model: 1604 reads, 485 writes (lane strobes), CBR side0 24 side1 23, timing errors 0
+  min tRAS 80.1 tRP 60.1 tRCD 39.2 tRAH 23.6 tASC 14.2 tCAH n/a(col held to CAS high) tCP 99.4 tCAS 57.8 tCSR 19.4 tCHR 80.1 tWCS 19.6 tWCH 55.7
+  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
+  max refresh gap per side (after init): side0 15175.2 ns side1 15175.2 ns (limit 15625)
+cycles 806 (DRAM 660, foreign 145, early-timeout 1)
+DRAM wait states @   25 MHz:
+   0:0 1:0 2:572 3:65 4:1 5:6 6+:16
+  max wait states observed: 7 
+SIMM bus release -> next driver on (CPU write data / foreign device): min 18.3 ns
+EC #31 (DSACK -> data valid <= 28 ns): min margin 8.3 ns, violations 0
+EC #28 (AS negated -> DSACK negated <= 40 ns): max 8.2 ns to driven-high, max 13.2 ns to released (Z)
+DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 48.3 ns, overlaps 0
+U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
+DFF timing-check hits (setup/recovery 1815, hold 96): expected on the asynchronous AS_n synchroniser
+done, 0 errors
+tb_dram.v:315: $finish called at 332051758 (1ps)
+seed 44
+            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 41037.69 / AR,AS release 2.19 ns before CLK)
+            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 41053.12 / AR,AS release 1.19 ns before CLK)
+            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 41057.87 / AR,AS release 0.24 ns before CLK)
+            47046830 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.04 ns after CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 2754.51 / AR,AS release 0.24 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 2555.37 / AR,AS release 1.44 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 2755.71 / AR,AS release 0.02 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 2555.48 / AR,AS release 1.18 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 112043.09 / AR,AS release 1.46 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 112048.79 / AR,AS release 2.49 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 2555.29 / AR,AS release 0.27 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 112048.46 / AR,AS release 1.41 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 112043.89 / AR,AS release 2.13 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 2554.61 / AR,AS release 0.88 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 2555.59 / AR,AS release 0.36 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.93 / AR,AS release 1000112491.17 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 38.93 / AR,AS release 0.72 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 3035.85 / AR,AS release 1.92 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 38.34 / AR,AS release 0.50 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 39.29 / AR,AS release 1.66 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 39.54 / AR,AS release 1.94 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 41.38 / AR,AS release 2.97 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 37.79 / AR,AS release 0.76 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 39.41 / AR,AS release 1.89 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 40.22 / AR,AS release 2.61 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 3035.09 / AR,AS release 1.36 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 36.94 / AR,AS release 0.24 ns before CLK)
+           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 38.99 / AR,AS release 0.84 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 30.41 / AR,AS release 0.04 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 30.24 / AR,AS release 0.06 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 31.94 / AR,AS release 2.05 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 30.11 / AR,AS release 0.01 ns before CLK)
+           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 30.92 / AR,AS release 0.73 ns before CLK)
+           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 2.15 / AR,AS release 1000114052.73 ns before CLK)
+           114092770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 39.16 / AR,AS release 2.28 ns before CLK)
+           114092770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 38.57 / AR,AS release 2.06 ns before CLK)
+           114092770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 232.80 / AR,AS release 2.32 ns before CLK)
+           114092770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 673.31 / AR,AS release 2.92 ns before CLK)
+           114092770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 37.16 / AR,AS release 1.79 ns before CLK)
+           114092770 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 233.01 / AR,AS release 2.40 ns before CLK)
+           114573250 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 30.71 / AR,AS release 2.27 ns before CLK)
+           115053730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 56.75 / AR,AS release 2.84 ns before CLK)
+           115053730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 66.41 / AR,AS release 1.84 ns before CLK)
+           115293970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 16.71 / AR,AS release 2.74 ns before CLK)
+           116696560 TIMING HOLD tb.dut.DFFEARS_205 (D changed 1.19 ns after CLK)
+           116935610 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 236.38 / AR,AS release 1.99 ns before CLK)
+           120018690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 0.99 / AR,AS release 1000120018.69 ns before CLK)
+           122261533 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.60 ns after CLK)
+           123380010 lane test done, errors so far 0
+           136100010 misaligned test done, errors so far 0
+---- summary (POST-FIT netlist + SDF delays)
+SIMM model: 1444 reads, 512 writes (lane strobes), CBR side0 23 side1 23, timing errors 0
+  min tRAS 80.1 tRP 60.1 tRCD 38.9 tRAH 22.8 tASC 14.9 tCAH n/a(col held to CAS high) tCP 99.6 tCAS 60.4 tCSR 19.6 tCHR 80.1 tWCS 19.3 tWCH 57.7
   init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
   max refresh gap per side (after init): side0 15135.1 ns side1 15195.2 ns (limit 15625)
-cycles 802 (DRAM 657, foreign 144, early-timeout 1)
+cycles 796 (DRAM 632, foreign 163, early-timeout 1)
 DRAM wait states @   25 MHz:
-   0:0 1:0 2:571 3:69 4:1 5:1 6+:15
-  max wait states observed: 8 
-SIMM bus release -> next driver on (CPU write data / foreign device): min 20.5 ns
-EC #31 (DSACK -> data valid <= 28 ns): min margin 9.3 ns, violations 0
-EC #28 (AS negated -> DSACK negated <= 40 ns): max 5.2 ns to driven-high, max 12.3 ns to released (Z)
-DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 43.8 ns, overlaps 0
-U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
-DFF timing-check hits (setup/recovery 1891, hold 80): expected on the asynchronous AS_n synchroniser
-done, 0 errors
-tb_dram.v:315: $finish called at 328860010 (1ps)
-seed 22
-            47065810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.77 / AR,AS release 1000047065.81 ns before CLK)
-            47266043 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.03 ns after CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 24.92 / AR,AS release 0.06 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 16.06 / AR,AS release 2.05 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 26.41 / AR,AS release 1.13 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 62.42 / AR,AS release 0.81 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 61.61 / AR,AS release 0.14 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 62.25 / AR,AS release 0.26 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 56.11 / AR,AS release 2.79 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 63.92 / AR,AS release 1.88 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 2.07 / AR,AS release 1000112691.37 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 25.16 / AR,AS release 0.05 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 3917.70 / AR,AS release 0.07 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 26.38 / AR,AS release 1.52 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 24.78 / AR,AS release 0.35 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 25.57 / AR,AS release 0.86 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 26.21 / AR,AS release 0.98 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 27.87 / AR,AS release 2.59 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 26.33 / AR,AS release 0.50 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 61.74 / AR,AS release 1.68 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 4157.19 / AR,AS release 1.35 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 62.12 / AR,AS release 2.01 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 4157.94 / AR,AS release 2.03 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 61.74 / AR,AS release 2.31 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 62.53 / AR,AS release 2.82 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 63.17 / AR,AS release 2.94 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 62.18 / AR,AS release 1.83 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 61.76 / AR,AS release 1.26 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 61.04 / AR,AS release 1.20 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 63.29 / AR,AS release 2.46 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 29.02 / AR,AS release 2.28 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 232.13 / AR,AS release 1.95 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 29.41 / AR,AS release 2.61 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 232.88 / AR,AS release 2.63 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 29.03 / AR,AS release 2.91 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 29.46 / AR,AS release 2.43 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 232.11 / AR,AS release 1.85 ns before CLK)
-           114052730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 231.28 / AR,AS release 1.80 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 62.57 / AR,AS release 2.52 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 472.37 / AR,AS release 2.19 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 63.02 / AR,AS release 2.67 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 62.60 / AR,AS release 2.10 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 61.88 / AR,AS release 2.04 ns before CLK)
-           115253930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 56.10 / AR,AS release 0.03 ns before CLK)
-           115694370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 29.67 / AR,AS release 0.18 ns before CLK)
-           116296872 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.90 ns after CLK)
-           119978650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 0.12 / AR,AS release 1000119978.65 ns before CLK)
-           123287902 lane test done, errors so far 0
-           125506043 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.87 ns after CLK)
-           136004226 misaligned test done, errors so far 0
----- summary (POST-FIT netlist + SDF delays)
-SIMM model: 1424 reads, 582 writes (lane strobes), CBR side0 24 side1 23, timing errors 0
-  min tRAS 80.1 tRP 60.1 tRCD 39.5 tRAH 22.4 tASC 14.6 tCAH n/a(col held to CAS high) tCP 99.7 tCAS 59.2 tCSR 19.7 tCHR 79.9 tWCS 20.3 tWCH 57.3
-  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
-  max refresh gap per side (after init): side0 15195.2 ns side1 15195.2 ns (limit 15625)
-cycles 813 (DRAM 656, foreign 156, early-timeout 1)
-DRAM wait states @   25 MHz:
-   0:0 1:0 2:546 3:89 4:3 5:3 6+:15
+   0:0 1:0 2:516 3:98 4:1 5:4 6+:13
   max wait states observed: 7 
-SIMM bus release -> next driver on (CPU write data / foreign device): min 14.7 ns
+SIMM bus release -> next driver on (CPU write data / foreign device): min 20.4 ns
 EC #31 (DSACK -> data valid <= 28 ns): min margin 10.6 ns, violations 0
-EC #28 (AS negated -> DSACK negated <= 40 ns): max 6.9 ns to driven-high, max 15.9 ns to released (Z)
-DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 34.6 ns, overlaps 0
+EC #28 (AS negated -> DSACK negated <= 40 ns): max 6.4 ns to driven-high, max 15.3 ns to released (Z)
+DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 29.3 ns, overlaps 0
 U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
-DFF timing-check hits (setup/recovery 1629, hold 90): expected on the asynchronous AS_n synchroniser
+DFF timing-check hits (setup/recovery 1765, hold 101): expected on the asynchronous AS_n synchroniser
 done, 0 errors
-tb_dram.v:315: $finish called at 333212983 (1ps)
-seed 33
-            47065810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 2.14 / AR,AS release 1000047065.81 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 112042.60 / AR,AS release 0.14 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 112044.36 / AR,AS release 2.49 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 112048.44 / AR,AS release 1.14 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 112043.60 / AR,AS release 1.96 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 112048.99 / AR,AS release 2.24 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 26.88 / AR,AS release 1.58 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 25.73 / AR,AS release 0.23 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 15.51 / AR,AS release 2.48 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 26.25 / AR,AS release 1.05 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 26.72 / AR,AS release 1.33 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 25.21 / AR,AS release 0.46 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 24.20 / AR,AS release 0.07 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 28.11 / AR,AS release 2.82 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 26.96 / AR,AS release 1.46 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 304.23 / AR,AS release 2.29 ns before CLK)
-           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 27.95 / AR,AS release 2.56 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 60.40 / AR,AS release 0.63 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 60.94 / AR,AS release 1.85 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 263.25 / AR,AS release 0.31 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 62.21 / AR,AS release 1.98 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 62.18 / AR,AS release 2.44 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 264.44 / AR,AS release 2.04 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 59.91 / AR,AS release 0.94 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 61.15 / AR,AS release 0.48 ns before CLK)
-           112971650 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 61.24 / AR,AS release 1.36 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 60.64 / AR,AS release 0.87 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 61.18 / AR,AS release 2.09 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 503.49 / AR,AS release 0.55 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 62.45 / AR,AS release 2.22 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 504.68 / AR,AS release 2.29 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 60.15 / AR,AS release 1.18 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 61.39 / AR,AS release 0.72 ns before CLK)
-           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 301.48 / AR,AS release 1.60 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 60.88 / AR,AS release 1.11 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 61.42 / AR,AS release 2.33 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 743.73 / AR,AS release 0.79 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 62.69 / AR,AS release 2.46 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 60.39 / AR,AS release 1.42 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 61.63 / AR,AS release 0.96 ns before CLK)
-           113452130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 61.72 / AR,AS release 1.84 ns before CLK)
-           114493170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 0.57 / AR,AS release 1000114493.17 ns before CLK)
-           115213890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 0.26 / AR,AS release 1000115213.89 ns before CLK)
-           116455130 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 55.55 / AR,AS release 1.57 ns before CLK)
-           120460856 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.73 ns after CLK)
-           121820490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 35.53 / AR,AS release 0.67 ns before CLK)
-           123300010 lane test done, errors so far 0
-           125145667 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.86 ns after CLK)
-           125985667 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.02 ns after CLK)
-           136255199 misaligned test done, errors so far 0
----- summary (POST-FIT netlist + SDF delays)
-SIMM model: 1640 reads, 478 writes (lane strobes), CBR side0 24 side1 23, timing errors 0
-  min tRAS 80.1 tRP 60.1 tRCD 39.1 tRAH 22.9 tASC 14.7 tCAH n/a(col held to CAS high) tCP 99.1 tCAS 60.4 tCSR 19.5 tCHR 80.1 tWCS 19.0 tWCH 57.7
-  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
-  max refresh gap per side (after init): side0 15115.1 ns side1 15135.1 ns (limit 15625)
-cycles 816 (DRAM 664, foreign 151, early-timeout 1)
-DRAM wait states @   25 MHz:
-   0:0 1:0 2:566 3:76 4:4 5:3 6+:15
-  max wait states observed: 7 
-SIMM bus release -> next driver on (CPU write data / foreign device): min 16.8 ns
-EC #31 (DSACK -> data valid <= 28 ns): min margin 10.4 ns, violations 0
-EC #28 (AS negated -> DSACK negated <= 40 ns): max 6.3 ns to driven-high, max 12.6 ns to released (Z)
-DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 32.1 ns, overlaps 0
-U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
-DFF timing-check hits (setup/recovery 1724, hold 88): expected on the asynchronous AS_n synchroniser
-done, 0 errors
-tb_dram.v:315: $finish called at 334255650 (1ps)
-seed 44
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 2755.04 / AR,AS release 0.43 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 2555.06 / AR,AS release 0.29 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 112044.73 / AR,AS release 2.42 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 112048.26 / AR,AS release 2.77 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 2553.88 / AR,AS release 0.47 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 2554.28 / AR,AS release 0.24 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 112043.32 / AR,AS release 2.10 ns before CLK)
-           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 112047.78 / AR,AS release 2.17 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 26.86 / AR,AS release 0.91 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 3035.54 / AR,AS release 0.77 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 29.84 / AR,AS release 2.90 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 26.15 / AR,AS release 0.95 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 27.14 / AR,AS release 0.73 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 29.56 / AR,AS release 2.58 ns before CLK)
-           112531210 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 28.80 / AR,AS release 2.65 ns before CLK)
-           112972302 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.65 ns after CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 35.34 / AR,AS release 0.31 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 35.99 / AR,AS release 1.39 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 3516.23 / AR,AS release 0.35 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 34.97 / AR,AS release 0.40 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 3516.02 / AR,AS release 1.25 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 35.28 / AR,AS release 1.43 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 36.27 / AR,AS release 1.21 ns before CLK)
-           113011690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 35.21 / AR,AS release 0.29 ns before CLK)
-           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 60.73 / AR,AS release 0.55 ns before CLK)
-           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 3756.46 / AR,AS release 0.59 ns before CLK)
-           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 60.37 / AR,AS release 0.64 ns before CLK)
-           113251930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 275.45 / AR,AS release 0.53 ns before CLK)
-           114333010 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.88 / AR,AS release 1000114333.01 ns before CLK)
-           114373050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 37.87 / AR,AS release 1.67 ns before CLK)
-           114373050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 4877.59 / AR,AS release 1.71 ns before CLK)
-           114373050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 37.51 / AR,AS release 1.76 ns before CLK)
-           114373050 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 37.74 / AR,AS release 1.65 ns before CLK)
-           116775450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 67.92 / AR,AS release 1.45 ns before CLK)
-           116775450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 67.88 / AR,AS release 0.23 ns before CLK)
-           116775450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 67.94 / AR,AS release 0.59 ns before CLK)
-           116775450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 56.07 / AR,AS release 2.01 ns before CLK)
-           116977113 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.46 ns after CLK)
-           117696370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 31.79 / AR,AS release 2.28 ns before CLK)
-           117696370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 31.82 / AR,AS release 1.42 ns before CLK)
-           117696370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 16.03 / AR,AS release 2.84 ns before CLK)
-           117696370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 31.47 / AR,AS release 0.75 ns before CLK)
-           117696370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 30.71 / AR,AS release 0.81 ns before CLK)
-           118058284 TIMING HOLD tb.dut.DFFEARS_867 (D changed 1.55 ns after CLK)
-           120218890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 71.36 / AR,AS release 2.29 ns before CLK)
-           120218890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 56.07 / AR,AS release 2.85 ns before CLK)
-           122781450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 2.34 / AR,AS release 1000122781.45 ns before CLK)
-           123460010 lane test done, errors so far 0
-           125183850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.98 / AR,AS release 1000125183.85 ns before CLK)
-           136133956 misaligned test done, errors so far 0
----- summary (POST-FIT netlist + SDF delays)
-SIMM model: 1420 reads, 530 writes (lane strobes), CBR side0 23 side1 23, timing errors 0
-  min tRAS 80.1 tRP 60.1 tRCD 39.2 tRAH 23.1 tASC 15.0 tCAH 96.5 tCP 99.1 tCAS 60.5 tCSR 19.6 tCHR 80.1 tWCS 19.2 tWCH 57.8
-  init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
-  max refresh gap per side (after init): side0 15115.1 ns side1 15195.2 ns (limit 15625)
-cycles 798 (DRAM 629, foreign 168, early-timeout 1)
-DRAM wait states @   25 MHz:
-   0:0 1:0 2:527 3:84 4:1 5:4 6+:13
-  max wait states observed: 7 
-SIMM bus release -> next driver on (CPU write data / foreign device): min 19.6 ns
-EC #31 (DSACK -> data valid <= 28 ns): min margin 10.3 ns, violations 0
-EC #28 (AS negated -> DSACK negated <= 40 ns): max 8.6 ns to driven-high, max 14.0 ns to released (Z)
-DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 24.7 ns, overlaps 0
-U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
-DFF timing-check hits (setup/recovery 1755, hold 85): expected on the asynchronous AS_n synchroniser
-done, 0 errors
-tb_dram.v:315: $finish called at 329048965 (1ps)
+tb_dram.v:315: $finish called at 328536677 (1ps)
 seed 55
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 41047.93 / AR,AS release 1.27 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 41048.64 / AR,AS release 1.55 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 41049.00 / AR,AS release 1.78 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 41049.28 / AR,AS release 2.08 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 41048.51 / AR,AS release 2.14 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 41048.29 / AR,AS release 1.40 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 41048.45 / AR,AS release 1.95 ns before CLK)
-            41059810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 41050.04 / AR,AS release 2.57 ns before CLK)
-            47065810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.84 / AR,AS release 1000047065.81 ns before CLK)
-            47266165 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.15 ns after CLK)
-           112210890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 1.41 / AR,AS release 1000112210.89 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 37.14 / AR,AS release 0.02 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 2754.59 / AR,AS release 0.26 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 37.78 / AR,AS release 0.56 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 2755.44 / AR,AS release 0.61 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 38.51 / AR,AS release 2.30 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 36.95 / AR,AS release 0.43 ns before CLK)
-           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 38.54 / AR,AS release 1.04 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_83 (D 61.34 / AR,AS release 0.05 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_105 (D 2995.68 / AR,AS release 0.10 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 62.07 / AR,AS release 1.79 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 63.61 / AR,AS release 2.55 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1061 (D 62.10 / AR,AS release 0.53 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 63.93 / AR,AS release 2.74 ns before CLK)
-           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 63.42 / AR,AS release 2.70 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 25.15 / AR,AS release 0.14 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_50 (D 25.85 / AR,AS release 0.42 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_63 (D 3195.03 / AR,AS release 0.65 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_125 (D 27.22 / AR,AS release 2.70 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 25.50 / AR,AS release 0.28 ns before CLK)
-           112691370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1042 (D 25.66 / AR,AS release 0.82 ns before CLK)
-           113132417 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.61 ns after CLK)
-           113171850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 39.41 / AR,AS release 2.44 ns before CLK)
-           113171850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 38.04 / AR,AS release 1.72 ns before CLK)
-           113171850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 15.68 / AR,AS release 2.83 ns before CLK)
-           113171850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 38.36 / AR,AS release 1.91 ns before CLK)
-           113171850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 37.85 / AR,AS release 1.87 ns before CLK)
-           114012690 TIMING SETUP/RECOVERY tb.dut.DFFEARS_867 (D 2.94 / AR,AS release 1000114012.69 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_37 (D 32.21 / AR,AS release 1.57 ns before CLK)
-           114292970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1002 (D 32.56 / AR,AS release 1.71 ns before CLK)
-           115213890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 27.88 / AR,AS release 0.01 ns before CLK)
-           115213890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 15.68 / AR,AS release 0.39 ns before CLK)
-           116855530 TIMING SETUP/RECOVERY tb.dut.DFFEARS_93 (D 34.98 / AR,AS release 1.06 ns before CLK)
-           116855530 TIMING SETUP/RECOVERY tb.dut.DFFEARS_247 (D 33.61 / AR,AS release 0.34 ns before CLK)
-           116855530 TIMING SETUP/RECOVERY tb.dut.DFFEARS_941 (D 15.68 / AR,AS release 1.45 ns before CLK)
-           116855530 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1077 (D 33.93 / AR,AS release 0.53 ns before CLK)
-           116855530 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1091 (D 33.42 / AR,AS release 0.49 ns before CLK)
-           120419913 TIMING HOLD tb.dut.DFFEARS_867 (D changed 0.82 ns after CLK)
-           123180010 lane test done, errors so far 0
-           135940010 misaligned test done, errors so far 0
+            47065810 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 1.62 / AR,AS release 1000047065.81 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 47093.97 / AR,AS release 1.24 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 47095.39 / AR,AS release 2.00 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 47095.95 / AR,AS release 2.47 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 47095.28 / AR,AS release 2.12 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 47096.02 / AR,AS release 1.94 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 47095.12 / AR,AS release 2.61 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 47094.29 / AR,AS release 1.54 ns before CLK)
+            47105850 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 47095.79 / AR,AS release 2.15 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 112043.93 / AR,AS release 0.60 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 112043.47 / AR,AS release 1.26 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 112049.16 / AR,AS release 1.47 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 112048.94 / AR,AS release 1.79 ns before CLK)
+           112050730 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 112043.52 / AR,AS release 1.06 ns before CLK)
+           112210890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 2.64 / AR,AS release 1000112210.89 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 2954.45 / AR,AS release 0.24 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 40.43 / AR,AS release 2.03 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 41.13 / AR,AS release 2.70 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 42.27 / AR,AS release 2.90 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 40.29 / AR,AS release 2.49 ns before CLK)
+           112250930 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 37.96 / AR,AS release 0.38 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 60.52 / AR,AS release 0.01 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_88 (D 3194.69 / AR,AS release 0.48 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 60.41 / AR,AS release 0.12 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_197 (D 62.73 / AR,AS release 2.27 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_218 (D 63.43 / AR,AS release 2.94 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1021 (D 62.58 / AR,AS release 2.73 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1034 (D 60.26 / AR,AS release 0.62 ns before CLK)
+           112491170 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 60.92 / AR,AS release 0.16 ns before CLK)
+           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_75 (D 60.76 / AR,AS release 0.25 ns before CLK)
+           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_121 (D 60.65 / AR,AS release 0.37 ns before CLK)
+           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 61.39 / AR,AS release 0.19 ns before CLK)
+           112731410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1088 (D 61.16 / AR,AS release 0.40 ns before CLK)
+           113211890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 15.97 / AR,AS release 2.05 ns before CLK)
+           113692370 TIMING SETUP/RECOVERY tb.dut.DFFEARS_205 (D 2.46 / AR,AS release 1000113692.37 ns before CLK)
+           113732410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 15.97 / AR,AS release 0.84 ns before CLK)
+           114093256 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.49 ns after CLK)
+           114613290 TIMING SETUP/RECOVERY tb.dut.DFFEARS_991 (D 33.68 / AR,AS release 0.70 ns before CLK)
+           114613290 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 31.96 / AR,AS release 0.30 ns before CLK)
+           114774355 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.90 ns after CLK)
+           114813490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 479.42 / AR,AS release 1.56 ns before CLK)
+           114813490 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1069 (D 232.16 / AR,AS release 1.87 ns before CLK)
+           115293970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_263 (D 27.54 / AR,AS release 1.12 ns before CLK)
+           115293970 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 27.13 / AR,AS release 1.44 ns before CLK)
+           115774450 TIMING SETUP/RECOVERY tb.dut.DFFEARS_1005 (D 42.29 / AR,AS release 2.70 ns before CLK)
+           116175004 TIMING HOLD tb.dut.DFFEARS_205 (D changed 0.15 ns after CLK)
+           116214890 TIMING SETUP/RECOVERY tb.dut.DFFEARS_55 (D 477.68 / AR,AS release 2.96 ns before CLK)
+           119738410 TIMING SETUP/RECOVERY tb.dut.DFFEARS_161 (D 56.01 / AR,AS release 2.37 ns before CLK)
+           123260010 lane test done, errors so far 0
+           136060010 misaligned test done, errors so far 0
 ---- summary (POST-FIT netlist + SDF delays)
-SIMM model: 1564 reads, 539 writes (lane strobes), CBR side0 24 side1 23, timing errors 0
-  min tRAS 80.1 tRP 60.1 tRCD 39.4 tRAH 23.5 tASC 14.7 tCAH n/a(col held to CAS high) tCP 99.6 tCAS 57.7 tCSR 19.7 tCHR 80.1 tWCS 19.5 tWCH 56.1
+SIMM model: 1584 reads, 533 writes (lane strobes), CBR side0 24 side1 23, timing errors 0
+  min tRAS 80.1 tRP 60.1 tRCD 39.6 tRAH 22.9 tASC 14.3 tCAH 95.2 tCP 99.6 tCAS 59.7 tCSR 19.8 tCHR 80.1 tWCS 19.4 tWCH 59.4
   init: first RAS 105.2 us after reset release; CBR cycles before first access: side0 9 side1 8
-  max refresh gap per side (after init): side0 15155.1 ns side1 15175.2 ns (limit 15625)
-cycles 823 (DRAM 674, foreign 148, early-timeout 1)
+  max refresh gap per side (after init): side0 15175.2 ns side1 15195.2 ns (limit 15625)
+cycles 817 (DRAM 680, foreign 136, early-timeout 1)
 DRAM wait states @   25 MHz:
-   0:0 1:0 2:552 3:98 4:2 5:3 6+:19
-  max wait states observed: 8 
-SIMM bus release -> next driver on (CPU write data / foreign device): min 17.7 ns
-EC #31 (DSACK -> data valid <= 28 ns): min margin 9.3 ns, violations 0
-EC #28 (AS negated -> DSACK negated <= 40 ns): max 5.8 ns to driven-high, max 13.8 ns to released (Z)
-DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 38.2 ns, overlaps 0
+   0:0 1:0 2:577 3:84 4:4 5:3 6+:12
+  max wait states observed: 7 
+SIMM bus release -> next driver on (CPU write data / foreign device): min 17.3 ns
+EC #31 (DSACK -> data valid <= 28 ns): min margin 9.2 ns, violations 0
+EC #28 (AS negated -> DSACK negated <= 40 ns): max 5.3 ns to driven-high, max 13.1 ns to released (Z)
+DSACK hand-over: U4 released -> next driver (68882-like agent at AS+7.5+0..25 / 8-bit device) on: min 33.8 ns, overlaps 0
 U4 DSACK drive still on when the next AS falls: 0 times, longest 0.0 ns into the next cycle
-DFF timing-check hits (setup/recovery 1801, hold 77): expected on the asynchronous AS_n synchroniser
+DFF timing-check hits (setup/recovery 1874, hold 70): expected on the asynchronous AS_n synchroniser
 done, 0 errors
-tb_dram.v:315: $finish called at 336578785 (1ps)
+tb_dram.v:315: $finish called at 334380010 (1ps)

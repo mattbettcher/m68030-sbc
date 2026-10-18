@@ -12,69 +12,69 @@ Copyright 1999,2000 Atmel Corporation
  
                                                    P                                
                                                    W     D                          
-                                                   R     R        M                 
-                     C  R  R  R     R              _     A        U        C  C  C  
-                     A  A  A  A     A              R     M        X        A  A  A  
-                     S  S  S  S     S  M  M        S  A  _        _  W     S  S  S  
-                     0  3  2  1  G  0  A  A  V     T  S  C  G     S  E  V  3  2  1  
-                     _  _  _  _  N  _  1  1  C     _  _  L  N     E  _  C  _  _  _  
-                     n  n  n  n  D  n  1  0  C     n  n  K  D     L  n  C  n  n  n  
+                                                   R     R                          
+                              R     R  R  C        _     A           C     C  R     
+                              A     A  A  A        R     M           A     A  A     
+                        M  M  S     S  S  S        S  A  _           S     S  S  W  
+                     M  A  A  3  G  2  1  0  V     T  S  C  G     A  3  V  1  0  E  
+                     A  1  1  _  N  _  _  _  C     _  _  L  N     2  _  C  _  _  _  
+                     7  0  1  n  D  n  n  n  C     n  n  K  D     0  n  C  n  n  n  
                  +------------------------------------------------------------------+
                  |  11 10  9  8  7  6  5  4  3  2  1 84 83 82 81 80 79 78 77 76 75  |
-         DSACK0_n| 12                                                            74 |A11
-              VCC| 13                                                            73 |A12
+              MA6| 12                                                            74 |MUX_SEL
+              VCC| 13                                                            73 |A16
               TDI| 14                                                            72 |GND
-         DSACK1_n| 15                                                            71 |TDO
-                 | 16                                                            70 |A13
+              MA5| 15                                                            71 |TDO
+                 | 16                                                            70 |CAS2_n
                  | 17                                                            69 |A14
-                 | 18                                                            68 |A15
-              GND| 19                                                            67 |A16
-              MA0| 20                                                            66 |VCC
-              MA1| 21                                                            65 |A17
-              MA2| 22                           ATF1508                          64 |A18
-              TMS| 23                         84-Lead PLCC                       63 |A19
-              MA3| 24                                                            62 |TCK
-              MA4| 25                                                            61 |A20
-              VCC| 26                                                            60 |A21
-              MA5| 27                                                            59 |GND
-              MA6| 28                                                            58 |A22
-              MA7| 29                                                            57 |A23
-              MA8| 30                                                            56 |A24
-              MA9| 31                                                            55 |A25
-              GND| 32                                                            54 |A26
+                 | 18                                                            68 |A5
+              GND| 19                                                            67 |A15
+              MA1| 20                                                            66 |VCC
+              MA3| 21                                                            65 |A12
+              MA0| 22                           ATF1508                          64 |A3
+              TMS| 23                         84-Lead PLCC                       63 |A9
+              MA4| 24                                                            62 |TCK
+              MA2| 25                                                            61 |A6
+              VCC| 26                                                            60 |A2
+              MA8| 27                                                            59 |GND
+         DSACK0_n| 28                                                            58 |A4
+              MA9| 29                                                            57 |A8
+         DSACK1_n| 30                                                            56 |A7
+              R_W| 31                                                            55 |A13
+              GND| 32                                                            54 |A10
                  |  33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53  |
                  +------------------------------------------------------------------+
-                     A  A  A  A  A  V  A  A  A  G  V  A  A  A  G  S  S     R  D  V  
-                     1  9  8  7  6  C  5  4  3  N  C  2  1  0  N  I  I     _  R  C  
-                     0              C           D  C           D  Z  Z     W  A  C  
-                                                                  1  0        M     
-                                                                              _     
-                                                                              S     
-                                                                              E     
-                                                                              L     
-                                                                              _     
-                                                                              n     
+                     D  A  S  S  A  V  A  A  A  G  V  A  A  A  G  A  A     A  A  V  
+                     R  0  I  I  1  C  2  2  2  N  C  2  2  2  N  1  1     1  1  C  
+                     A     Z  Z     C  6  5  4  D  C  3  1  2  D  8  9     1  7  C  
+                     M     1  0                                                     
+                     _                                                              
+                     S                                                              
+                     E                                                              
+                     L                                                              
+                     _                                                              
+                     n                                                              
 
 Logic Array Block       Macro Cells     I/O Pins        Foldbacks       TotalPT         FanIN           Cascades
-A: MC1	- MC16		11/16(68%)	8/16(50%)	1/16(6%)	32/80(40%)	25/40(62%)	1
-B: MC17	- MC32		14/16(87%)	5/16(31%)	2/16(12%)	47/80(58%)	22/40(55%)	2
-C: MC33	- MC48		12/16(75%)	8/16(50%)	1/16(6%)	28/80(35%)	25/40(62%)	1
-D: MC49	- MC64		13/16(81%)	8/16(50%)	0/16(0%)	51/80(63%)	25/40(62%)	3
-E: MC65	- MC80		13/16(81%)	7/16(43%)	0/16(0%)	19/80(23%)	19/40(47%)	0
-F: MC81	- MC96		0/16(0%)	8/16(50%)	0/16(0%)	0/80(0%)	19/40(47%)	0
-G: MC97	- MC112		1/16(6%)	8/16(50%)	0/16(0%)	0/80(0%)	19/40(47%)	0
-H: MC113- MC128		5/16(31%)	7/16(43%)	2/16(12%)	29/80(36%)	19/40(47%)	2
+A: MC1	- MC16		10/16(62%)	8/16(50%)	0/16(0%)	27/80(33%)	25/40(62%)	1
+B: MC17	- MC32		15/16(93%)	5/16(31%)	2/16(12%)	35/80(43%)	25/40(62%)	1
+C: MC33	- MC48		14/16(87%)	8/16(50%)	1/16(6%)	46/80(57%)	21/40(52%)	2
+D: MC49	- MC64		7/16(43%)	8/16(50%)	0/16(0%)	16/80(20%)	25/40(62%)	0
+E: MC65	- MC80		13/16(81%)	7/16(43%)	0/16(0%)	46/80(57%)	21/40(52%)	3
+F: MC81	- MC96		3/16(18%)	8/16(50%)	0/16(0%)	3/80(3%)	3/40(7%)	0
+G: MC97	- MC112		2/16(12%)	8/16(50%)	0/16(0%)	7/80(8%)	10/40(25%)	1
+H: MC113- MC128		5/16(31%)	7/16(43%)	2/16(12%)	25/80(31%)	20/40(50%)	1
 
 Total dedicated input used:	3/4 	(75%)
 Total I/O pins used		59/64 	(92%)
 Total Macro cells used 		78/128 	(60%)
 Total Flip-Flop used 		50/128 	(39%)
-Total Foldback logic used 	6/128 	(4%)
-Total Nodes+FB/MCells 		75/128 	(58%)
+Total Foldback logic used 	5/128 	(3%)
+Total Nodes+FB/MCells 		74/128 	(57%)
 Total cascade used 		9
 Total input pins		37
 Total output pins 		25
-Total Pts			206
+Total Pts			205
 
 $Device PLCC84 fits; JTAG ON; Secure OFF
 
