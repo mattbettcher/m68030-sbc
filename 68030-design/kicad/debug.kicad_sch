@@ -2048,6 +2048,18 @@
 		)
 		(uuid "8fbf1a8a-d0a7-54e5-9c40-ce7257b0d6ce")
 	)
+	(no_connect
+		(at 425.45 182.88)
+		(uuid "d0d98059-f89b-4aa1-ac02-706ee955ca87")
+	)
+	(no_connect
+		(at 438.15 182.88)
+		(uuid "389e46e6-893a-45c8-a752-eff0e74c7bd3")
+	)
+	(no_connect
+		(at 425.45 185.42)
+		(uuid "2c725356-2c60-4fdc-b9c3-feec5776642f")
+	)
 	(wire
 		(pts
 			(xy 74.93 137.16)
@@ -3246,39 +3258,6 @@
 			(type default)
 		)
 		(uuid "85613b72-65a5-5dfb-9e8b-7fe3a19d020b")
-	)
-	(wire
-		(pts
-			(xy 425.45 182.88)
-			(xy 417.83 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "07ff258e-7242-5970-8337-70afb3bc0b97")
-	)
-	(wire
-		(pts
-			(xy 438.15 182.88)
-			(xy 445.77 182.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0630042-3ba8-5cf5-a4a4-a5261172652d")
-	)
-	(wire
-		(pts
-			(xy 425.45 185.42)
-			(xy 417.83 185.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05a01f68-f6d4-5148-8773-31a065851e47")
 	)
 	(wire
 		(pts
@@ -4778,36 +4757,6 @@
 		)
 		(uuid "e88a65ad-f781-5f4f-bb30-b22bb8c1527d")
 	)
-	(label "RAS0_n"
-		(at 417.83 182.88 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "4f0aa322-8819-53cc-95c4-06f298f504fb")
-	)
-	(label "CAS3_n"
-		(at 445.77 182.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a776b1c7-d81f-5c09-85e5-c772806e93f6")
-	)
-	(label "WE_n"
-		(at 417.83 185.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b2ba5282-dae9-544c-ac77-ec6c32b5852e")
-	)
 	(hierarchical_label "A[0..31]"
 		(shape input)
 		(at 25.4 27.94 180)
@@ -5544,7 +5493,7 @@
 		)
 		(uuid "d0dde830-7fd0-55e2-80f8-67f9dccc1be2")
 	)
-	(text "Logic analyzer (spec §8.4). Keep the headers within about 25 mm of the CPU [EST] so the stubs stay short.\nPin order on each header: signals on every pin that is not a multiple of 5; pins 5/10/15/20/25/30/35/40 are GND.\nLA1 is A31 down to A0. LA2 is D31 down to D0. LA3 is the §8.4 list, in that order, starting at pin 1.\nLED_n and HALT_LED_n are TP1101/TP1102 only. The LEDs themselves are D701/D702 on the glue sheet."
+	(text "Logic analyzer (spec §8.4). Keep the headers within about 25 mm of the CPU [EST] so the stubs stay short.\nPin order on each header: signals on every pin that is not a multiple of 5; pins 5/10/15/20/25/30/35/40 are GND.\nLA1 is A31 down to A0. LA2 is D31 down to D0. LA3 is the §8.4 list, in that order, starting at pin 1.\nLED_n and HALT_LED_n are TP1101/TP1102 only. The LEDs themselves are D701/D702 on the glue sheet.\nSI fix 2026-10-18: LA3 pins 37/38/39 (RAS0_n/CAS3_n/WE_n) are no-connect, so the DRAM strobes have no long stub.\nProbe them at TP801/TP806/TP807, next to the SIMM-side 33R resistors."
 		(exclude_from_sim no)
 		(at 29.845 360.045 0)
 		(effects

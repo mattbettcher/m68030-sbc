@@ -18110,7 +18110,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "9fd1f728-0c15-5670-93a1-0e1b48935d4a")
 		(property "Reference" "U801"
@@ -18425,7 +18425,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "40ef1f7c-8684-5aeb-8aaa-059e7c77fa86")
 		(property "Reference" "R829"
@@ -18492,7 +18492,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "f9881177-98bf-5c92-95ff-8fc2f90d51aa")
 		(property "Reference" "R830"
@@ -18559,7 +18559,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "72d87e76-d295-58c0-8ab9-4b03036760ab")
 		(property "Reference" "R831"
@@ -18626,7 +18626,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "46bbc85a-c3e5-50b8-b94f-62b25745b4ce")
 		(property "Reference" "R832"
@@ -18693,7 +18693,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "a4c26c2f-817f-5420-8563-7dac3437738a")
 		(property "Reference" "U802"
@@ -19008,7 +19008,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "29393e19-32fb-58f2-ba42-0f3327f93802")
 		(property "Reference" "R833"
@@ -19075,7 +19075,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "d51d494a-f766-59c1-95ca-51f9112767cd")
 		(property "Reference" "R834"
@@ -19142,7 +19142,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "33262e16-dc71-5890-85b0-39265d600805")
 		(property "Reference" "R835"
@@ -19209,7 +19209,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "6e00c9e0-c856-5333-8cd0-591a3cf8119c")
 		(property "Reference" "R836"
@@ -19276,7 +19276,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "a7732068-5dfd-59e0-8bc1-75210aca81b3")
 		(property "Reference" "U803"
@@ -19591,7 +19591,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "c589325e-8af8-50dd-9c59-cbd8acc1d496")
 		(property "Reference" "R837"
@@ -19658,7 +19658,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp yes)
 		(uuid "da64f311-c5d1-5262-8151-00fe712df4eb")
 		(property "Reference" "R838"

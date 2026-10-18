@@ -113,13 +113,15 @@ placed next to the pins they serve, decaps on their host's supply pin.
   (BT1 centre, U8 tab) get vias in the pad. No signal tracks.
 - +3V3 vias are kept inside the island, +5V vias outside it. The +5V pads inside the
   island are escaped on F.Cu to vias outside: U9.3, J9.2, C1002.1, R1002.1, R1003.1.
+  (Signals were routed afterwards, see "Scripted full route".)
 - No edge GND stitch vias: with GND only on In1 they have nothing to stitch to
   (DRC flags them as dangling). Add them back if F/B GND pours are added.
 
 ## DRC (kicad-cli, schematic parity on)
 
-0 errors, 0 parity issues, 499 unconnected (signals, intentional), 5 warnings
-(3 silk_overlap, 2 silk_over_copper, reference texts that could not be moved).
+Routed board (2026-10-18): 0 errors, 0 parity issues, **0 unconnected**, 5 warnings
+(3 silk_overlap, 2 silk_over_copper, reference texts that could not be moved; same as before routing).
+ERC 0 / 0.
 
 ## Silkscreen connector labels
 
@@ -130,7 +132,67 @@ room in `condense_layout.py` (`LABEL_ROOM`).
 
 ## Routing
 
-Signals unrouted on purpose. Test autoroute: see "Autoroute test" below.
+**Fully routed on 4 layers (2026-10-18), all 499 connections, by a scripted grid router** — see
+"Scripted full route" below. The autoroute tests further down are the earlier scratch experiments.
+
+### Scripted full route (4L, 2026-10-18)
+
+Signals only on F.Cu and B.Cu; In1 GND and In2 +5V (+3V3 island) stay solid planes. Backup of the
+unrouted board, project and sheets: `backup/pre-route-20261017/` (progress log `PROGRESS.md` there).
+Tools: `tools/route/` (re-runnable; work dir was /tmp/route).
+
+- Router: own grid router, not FreeRouting. Grid 2.54/6 = 0.4233 mm aligned to the U1 PGA pins,
+  so a 1.27 / 2.54 mm pin field has a track lane exactly in the middle of every pin gap.
+  Orthogonal 0.20 mm tracks (0.25 mm for the CLK_DRAM class, `.kicad_pro` unchanged), 0.6/0.3 vias.
+  Obstacles come from the real pad/track/via polygons with 0.16 mm (0.15 rule + margin) clearance,
+  0.2 mm hole clearance, 0.25 mm hole-to-hole and 0.3 mm edge clearance.
+  A* in C (`astar.c`) with bend and via costs. PathFinder negotiated congestion (`router.py`, `run.py`)
+  across all 346 nets until no grid cell is shared. `writer.py` writes the tracks/vias **locked**.
+- Order (as requested):
+  1. The 53 two-pin clock and DRAM nets were routed first, alone, and then frozen as hard obstacles:
+     clocks and series terminations, U4 → R804-R824, R → SIMM. Clocks cost 2× on B.Cu, so they
+     stay on F.Cu over In1 GND.
+  2. Then the multi-pin DRAM nets (RAS/CAS/WE with their LA/TP branches), the CPU nets, the
+     FPU/glue/ROM/DUART/LA buses and the rest, in that priority, negotiated together.
+- PGA escape: 4 layers have no inner signal layer, so "channel vias" can't help inside the PGA field.
+  Each 2.54 mm gap carries 1 track per layer (F and B). The router ran the escape together with the
+  other nets in the new CPLD bus order instead of a separate fanout pass. All 120 U1 signal pins escaped.
+- Placement nudges: 55 ICs/connectors/jumpers (U*, J*, JP*, X*, SW*, Y1; not U1) were moved by
+  ≤ 0.212 mm so their pins sit on the grid. Their power stubs moved with them.
+  Without this, the staggered SIMM rows had no lane between pads, and MA1/3/5/10 took 40-55 mm detours.
+- DNP fallback removed: U801-U803 and R829-R838, all `dnp yes` in `dram.kicad_sch`, now
+  `(on_board no)` there. Their 13 power stubs and vias went with them. R825-R828 are fitted pull-ups and
+  were kept. C818-C820 (DNP decaps) were kept.
+- Result: 100 % routed. 2453 signal vias, 56.1 m of signal track (F 27.3 m, B 28.8 m), all locked.
+  In1 GND fills 33,400 mm² in one piece (87 % of the board after via antipads), In2 +5V 31,600 mm².
+- Clocks (length / vias; % on F.Cu):
+
+  | Net | Length / vias | On F.Cu |
+  |---|---|---|
+  | CLK_CPU | 75 mm / 2 | 87 % |
+  | CLK_GLUE | 109 / 0 | 100 % |
+  | CLK_FPU | 26 / 0 | 100 % |
+  | CLK_DRAMC | 38 / 0 | 100 % |
+  | DRAM_CLK | 37 / 0 | 100 % |
+  | CLK_LA | 28 / 0 | 100 % |
+  | CLK_EXP | 147 / 2 | 98 % |
+  | CLK_FPU_CPU | 52 / 2 | 96 % |
+  | CLKB_* (driver to series R) | 15-98 / 0-2 | — |
+
+- DRAM:
+  - U4 → series R (U4_MA*): 3-38 mm, 0-1 via.
+  - R → SIMM (MA0-11): 3-9 mm.
+  - RAS2/3 3-6 mm, RAS1 40 mm, CAS0 24, CAS2 40, CAS1 84 mm.
+  - RAS0_n 325 mm / 17 vias, CAS3_n 232 / 7 and WE_n 224 / 5. These include their branches to TP80x and LA J13.
+- Risky areas:
+  - The long SIMM-side RAS0/CAS3/WE nets: the LA/TP branch is an unterminated stub.
+  - CLK_EXP (147 mm to the DIN) and CLK_GLUE (109 mm) are long because of the oscillator/buffer
+    placement (U10 at the right-hand side).
+  - Series Rs sit at the SIMM, up to 38 mm from U4 (source termination is less effective at that distance).
+  - Orthogonal-only routing with many vias (≈ 2450). Rows of antipads perforate In1/In2 under the
+    buses, but both planes stay in one piece.
+  - Not yet checked: crosstalk on long parallel bus runs. Hand clean-up (45° corners, via
+    reduction) is cosmetic and was not done.
 
 ### Autoroute test (scratch only, 2026-10-17)
 
@@ -216,6 +278,18 @@ Both still have router artefacts: 11 track_width errors each, and 78 (4L) / 127 
   Then re-run the autoroute with the fanout locked. Not done.
 - The DNP fallback parts (U801-U803, R825-R838) still add routing load. Removing them
   is a candidate cleanup.
+
+### SI fix: DRAM resistors, strobe stubs, clocks (2026-10-18)
+
+Backup of the pre-fix board and sheets: `kicad/backup/pre-sifix-20261018/` (pcb sha1 07fb0239…). All signal tracks were stripped, parts moved, and the board re-routed with the scripted router (`kicad/tools/route/sifix/`). Result: 100% routed, DRC 0 errors, 0 unconnected, parity 0, ERC 0/0, `.kicad_pro` unchanged. 53.84 m signal track, 2365 vias (was 56.12 m / 2453).
+
+- **DRAM 33R (R804–R824):** all on B.Cu right next to U4. Pad-to-U4-pin distance is now 1.6–6.9 mm (was 2.9–27.2 mm).
+- **RAS0_n / CAS3_n / WE_n:** J13 (LA3) pins 37/38/39 are now no-connect in `debug.kicad_sch`. J13 is ~190 mm from the SIMM, so a daisy chain was not an option. TP801/TP806/TP807 moved next to the SIMM-side resistors at y 14.4. Totals: RAS0_n 27.5 mm/1 via (TP inline), CAS3_n 17.8 mm/0 (TP stub 13.5 mm), WE_n 17.4 mm/1 (TP stub 9.7 mm). Was 325/17, 232/7, 224/5.
+- **Clock block moved** to the left of U4, above U3: U10 (62.2, 38.2), X1 (61.3, 49.3), R301–R306 at 3.3 mm from the U10 pins, plus C301/C302/C305/C306. R307 moved to the X2 output and R308 to the X3 output. C304 moved too.
+- **U10 output swap** (`clock.kicad_sch` labels only; all inputs are still OSC_CPU): pin 18 = CLKB_DRAMC, pin 14 = CLKB_CPU, pin 12 = CLKB_GLUE. Pins 16 (FPU), 3 (LA) and 5 (EXP) are unchanged.
+- Clocks route mostly or entirely on F.Cu over In1 GND (B.Cu was cost-weighted 4× for clocks). CLK_CPU 57/0, CLK_GLUE 22/0, CLK_EXP 56/0, CLK_DRAMC 62/0, CLK_FPU_CPU 70/0, DRAM_CLK 59/0, CLK_LA 202/2, CLKB_X3 80/0 (mm/vias).
+- The JP801/JP802 legend was rotated 90° and placed between the jumpers at (78, 40).
+- **Note:** `build.py` / `sheet_debug.py` / `sheet_clock.py` do not contain these schematic edits. Re-running them would undo the J13 NC and the U10 swap.
 
 ## Unverified, left as drawn
 

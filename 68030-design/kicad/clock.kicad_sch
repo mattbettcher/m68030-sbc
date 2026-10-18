@@ -2403,7 +2403,7 @@
 		)
 		(uuid "d0f6f80e-3db6-575f-b7ee-bc472d5a090b")
 	)
-	(label "CLKB_CPU"
+	(label "CLKB_DRAMC"
 		(at 129.54 76.2 0)
 		(effects
 			(font
@@ -2423,7 +2423,7 @@
 		)
 		(uuid "5b3e4e8e-1f46-5f6a-91d9-2a80f678e3b3")
 	)
-	(label "CLKB_GLUE"
+	(label "CLKB_CPU"
 		(at 129.54 81.28 0)
 		(effects
 			(font
@@ -2433,7 +2433,7 @@
 		)
 		(uuid "b3ecae9d-f941-5421-a9d6-f0e75ede000f")
 	)
-	(label "CLKB_DRAMC"
+	(label "CLKB_GLUE"
 		(at 129.54 83.82 0)
 		(effects
 			(font
