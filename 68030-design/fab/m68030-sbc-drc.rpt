@@ -1,0 +1,25 @@
+** Drc report for m68030-sbc.kicad_pcb **
+** Created on 2026-10-18T14:05:42-0400 **
+
+** Found 4 DRC violations **
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(116.6355 mm, 56.2376 mm): Reference field of C514
+[silk_overlap]: Silkscreen overlap (board setup constraints silk clearance 0.1000 mm; actual 0.0272 mm)
+    Rule: board setup constraints silk; warning
+    @(69.1717 mm, 128.3467 mm): Segment of U5 on F.Silkscreen
+    @(69.7550 mm, 110.0258 mm): Reference field of R1001
+[silk_overlap]: Silkscreen overlap (board setup constraints silk clearance 0.1000 mm; actual 0.0000 mm)
+    Rule: board setup constraints silk; warning
+    @(164.9800 mm, 78.0000 mm): Reference field of C607
+    @(164.5717 mm, 93.7783 mm): Segment of U2 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap (board setup constraints silk clearance 0.1000 mm; actual 0.0375 mm)
+    Rule: board setup constraints silk; warning
+    @(70.5176 mm, 99.8519 mm): Reference field of C705
+    @(70.6916 mm, 100.2924 mm): Segment of R705 on F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

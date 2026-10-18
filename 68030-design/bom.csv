@@ -34,8 +34,6 @@ U18-U21,4,SN74ACT245DW,"Expansion data buffers D31:0 (OE=EXP_BUF_EN_n, DIR=R/W, 
 U22,1,SN74LVC125ADR,"Quad buffer, 5 V tolerant inputs, SPI 5 V to 3.3 V (SCK, MOSI, CS0, CS1). OE tied low",Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,TI,,Powered from +3V3. MISO is not shifted. C1003 100 nF
 U23,1,DS3234S#,SPI RTC with TCXO. VCC is +3V3 (VIH = 0.7*VCC). NC pins 2 and 7-14 to GND,Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,DigiKey,16.63,Maxim 19-5339. Both SCLK pins tied. No series diode on VBAT. C1004 100 nF. Linux rtc-ds3234 [VERIFY]
 BT1,1,Keystone 3034,"CR2032 SMD coin-cell retainer (20 mm), RTC backup",Battery:BatteryHolder_Keystone_3034_1x20mm,DigiKey 36-3034-ND,0.52,"Pad 1 (+) = outer tabs, pad 2 (-) = centre pad (GND, 4 in-pad vias). DigiKey ~44k stock 2026-10"
-U801-U803,3,MC74ACT257DR2G (DNP),"Fallback B: external SIMM MA2-MA11 row/column muxes (S = MUX_SEL, OE = GND)",Package_SO:SOIC-16_3.9x9.9mm_P1.27mm,TBD,,"DNP; not needed for the fit. To use: fit U801-U803, R829-R838, C818-C820, remove R806-R815, new CPLD image"
-R829-R838,10,33 ohm 0603 (DNP),Fallback mux outputs -> MA2-MA11,Resistor_SMD:R_0603_1608Metric,TBD,,DNP
 C818-C820,3,0.1 uF X7R 0805 (DNP),Fallback mux decoupling,Capacitor_SMD:C_0805_2012Metric,TBD,,DNP
 J1,1,TE Connectivity 5822021-4,"72-pin SIMM socket, vertical, 1.27 mm pitch","m68030-sbc:SIMM-72_TE-5822021-4 (new, from TE customer drawing; drill 1.02 mm, NPTH 1.63/1.63/2.41 mm)",TBD,,Replaces the Mackerel footprint (0.762 mm drill was the hole-size bug); [VERIFY] locating-hole plating per TE 114-1061
 M1,1,"72-pin 5 V SIMM, 60 ns EDO or FPM, 16-128 MB",Main memory (start with known-good 16 or 64 MB),n/a (module),"Arch Memory (64 MB 60 ns EDO, new-old-stock)",55.95,"Price for 64 MB module; prefer 11/11, 12/11 or 12/12 geometries"
@@ -72,16 +70,16 @@ R904,1,5.6k 0603,DMARQ host pull-down (ATA-6 Table 5). DMA is not used,Resistor_
 R905,1,10k 0603,Holds DMACK high (PIO only; host does not drive it),Resistor_SMD:R_0603_1608Metric,TBD,,[VERIFY] on a real drive
 R906,1,1k 0603,IDE activity LED D5 series (DASP open-collector),Resistor_SMD:R_0603_1608Metric,TBD,,
 R911-R918,8,33 ohm 0603,U13 output damping into DA/CS/DIOR/DIOW/RESET,Resistor_SMD:R_0603_1608Metric,TBD,,[EST]; not an ATA PIO requirement
-R-duart,4,4.7k / 10k 0603,"Still on the undrawn duart sheet: INTRN pull-up, NIC RST divider",Resistor_SMD:R_0603_1608Metric,TBD,,Quantities approximate until duart_spi_rtc is drawn
 "C801-C808,C810-C812",11,0.1 uF X7R 0805,U4 decoupling (one per VCC pin) + SIMM VDD pins 10/30/59,Capacitor_SMD:C_0805_2012Metric,TBD,,
 "C551,C911-C913,C1401-C1408",12,0.1 uF X7R 0805,"U5 (C551), U11-U13 (C911-C913), U14-U21 (C1401-C1408)",Capacitor_SMD:C_0805_2012Metric,TBD,,
 "C552,C1409",2,10 uF X7R 1206,U5 bulk and the expansion buffer group,Capacitor_SMD:C_1206_3216Metric,TBD,,
-C-decouple,59,0.1 uF X7R 0805,Decoupling already counted above plus CPU/FPU/U3; this line is the older approximate bucket and does not add U5 or U11-U21 again,Capacitor_SMD:C_0805_2012Metric,TBD,,Quantity approximate; do not double-order C551/C911-C913/C1401-C1408
-C-hf,4,330 pF C0G 0603,CPU HF decoupling (UM 12 recommendation),Capacitor_SMD:C_0603_1608Metric,TBD,,
+"C301,C303-C305,C401,C402",6,100 nF X7R 0603,Decoupling (0603) not listed above,Capacitor_SMD:C_0603_1608Metric,TBD,,
+"C501-C510,C601-C608,C701-C708",26,0.1 uF X7R 0805,"Decoupling: CPU U1 (C501-C510), FPU U2 (C601-C608), glue U3 (C701-C708) and others not listed above",Capacitor_SMD:C_0805_2012Metric,TBD,,
+C511-C514,4,330 pF C0G 0603,CPU HF decoupling (UM 12 recommendation),Capacitor_SMD:C_0603_1608Metric,TBD,,
 "C809,C813-C815",4,10 uF X7R 1206,U4 bulk + SIMM VDD pins,Capacitor_SMD:C_1206_3216Metric,TBD,,
-C-10u,10,10 uF X7R 1206,"Local bulk per IC cluster (incl. C515/C516 CPU, C609 FPU, C709 U3)",Capacitor_SMD:C_1206_3216Metric,TBD,,
+"C302,C306,C515,C516,C609,C709",6,10 uF X7R 1206,"Local bulk per IC cluster (C515/C516 CPU, C609 FPU, C709 U3, ...)",Capacitor_SMD:C_1206_3216Metric,TBD,,
 "C816,C817",2,470 uF 10 V low-ESR electrolytic,SIMM bulk at the socket ends (refresh current),Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,TBD,,Value [EST] (KISS-68030 lesson)
-C-bulk,1,470 uF low-ESR electrolytic,CPU area (C517 220 uF on the cpu sheet),Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,TBD,,No 470 uF at the regulator: LM2678 output caps are C206-C208
+C517,1,220 uF low-ESR electrolytic,CPU area bulk,Capacitor_THT:CP_Radial_D8.0mm_P3.50mm,TBD,,
 C201-C203,3,10 uF 50 V X7R 1210,LM2678 input capacitors (Irms > Iload/2 = 2 A total),Capacitor_SMD:C_1210_3225Metric,TBD,,Deliberate deviation from SNVS029L Table 7-7 tantalum; [VERIFY ripple rating]
 C204,1,"100 uF 50 V low-ESR aluminium electrolytic, 10x10.5",LM2678 input bulk / damping,Capacitor_SMD:CP_Elec_10x10.5,TBD,,
 C205,1,10 nF 50 V X7R 0603,LM2678 boost capacitor CB (SNVS029L step 7),Capacitor_SMD:C_0603_1608Metric,TBD,,Pin table says 100 nF; design procedure 0.01 uF - see NOTES.md
@@ -100,6 +98,6 @@ D6,1,LED 0805,OP6 spare indicator (off at reset; OP pins reset high),LED_SMD:LED
 C1001,1,100 nF X7R 0805,U6 decoupling,Capacitor_SMD:C_0805_2012Metric,TBD,,One VCC pin (PLCC pin 44)
 "C1003,C1004",2,100 nF X7R 0603,U22 and U23 decoupling (DS3234: 0.1 uF to 1.0 uF on VCC),Capacitor_SMD:C_0603_1608Metric,TBD,,
 C1002,1,10 uF X7R 1206,U6 bulk decoupling,Capacitor_SMD:C_1206_3216Metric,TBD,,
-TP,26,Test point,"TP201 VIN, TP202 +5V, TP203 +3V3, TP204 GND, TP501-503 CIOUT/DBEN/BG, TP701-706 BUS_RD/BUS_WR/ROM_CE/DUART_CS/IDE_DIOR/IDE_DIOW, TP801-802 RAS0/RAS1, TP803-806 CAS0-3, TP807 WE, TP808 MUX_SEL, TP809 U4 spare pin 81, TP1101 LED_n, TP1102 HALT_LED_n, TP1001 OP7, TP1002 RTC_INT",TestPoint:TestPoint_Pad_D1.5mm,TBD,,
+"TP201-TP204,TP501-TP503,TP701-TP706,TP801-TP809,TP1001,TP1002,TP1101,TP1102",26,"Test point (PCB pad, no part)","TP201 VIN, TP202 +5V, TP203 +3V3, TP204 GND, TP501 CIOUT#, TP502 DBEN#, TP503 BG#, TP701 BUS_RD#, TP702 BUS_WR#, TP703 ROM_CE#, TP704 DUART_CS#, TP705 IDE_DIOR#, TP706 IDE_DIOW#, TP801 RAS0#, TP802 RAS1#, TP803 CAS0#, TP804 CAS1#, TP805 CAS2#, TP806 CAS3#, TP807 WE#, TP808 MUX_SEL, TP809 U4-81, TP1001 OP7, TP1002 RTC_INT, TP1101 LED_n, TP1102 HALT_LED_n",TestPoint:TestPoint_Pad_D1.5mm,n/a,,
 H1-H4,4,M3 mounting hole,Mounting,MountingHole:MountingHole_3.2mm_M3_Pad,n/a,,
 HS1,1,PGA stick-on heatsink,CPU cooling (up to 2.6 W),n/a,TBD,,

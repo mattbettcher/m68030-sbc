@@ -363,6 +363,31 @@ Method: each track path between fixed points (pads, vias, T-junctions; tracks sp
 - DRC 0 errors, 0 unconnected, parity 0; 4 silk warnings (same as before). ERC 0/0. `.kicad_pro` unchanged.
 - Renders: `renders/m68030-sbc-dehitch-{top,bottom,zoom}.png`. The zoom covers the same x 70–118, y 40–76 mm window as `-45deg-zoom`.
 
+### Fab package, Rev A (2026-10-18)
+
+`fab/` holds the files for ordering. They were made with kicad-cli 9.0.2 from pcb sha1 e88d2ee4, with the zones refilled before DRC and plotting.
+
+- **Gerbers** (`gerbers/`), Protel extensions:
+  - F/In1/In2/B copper, F/B mask, F/B silkscreen, F/B paste and Edge.Cuts.
+  - The `.gbrjob` job file.
+  - Excellon drill files in mm, with PTH and NPTH separate, plus PDF drill maps.
+- **Two hand edits to KiCad's output:**
+  - The inner Gerbers are renamed `-In1_Cu.g1` and `-In2_Cu.g2`, because the layer names GND and +5V would otherwise end up in the file names.
+  - The job file has the inner FileFunction set to L2/L3. KiCad 9.0.2 wrote L5/L7.
+- **Board:** 220 × 175 mm, 4 layers, 1.6 mm.
+  - Min track 0.20 mm. The clearance rule is 0.15 mm; the smallest measured gap is 0.162 mm.
+  - Min drill 0.30 mm. 2685 vias.
+  - DRC 0 errors / 0 unconnected / parity 0.
+- **Inner planes:** `check/` has gerbv renders of In1/In2. Both are about 83 % copper; In2 shows the +3V3 island.
+- **BOM** `fab/m68030-sbc-bom.csv`: grouped by value and footprint. Sections are Fitted (67 lines / 232 parts), DNP (5 / 7), PCB-only features (31 / 40) and extras that are not footprints (sockets, SIMM, heatsink).
+- **CPL** `fab/m68030-sbc-pos.csv`: 232 parts (201 top, 31 bottom), with DNP parts excluded.
+- **Archive:** everything is zipped as `fab/m68030-sbc-fab.zip`.
+- **bom.csv** was regenerated to match the board:
+  - The U801–U803 and R829–R838 rows are removed.
+  - C517 is now 220 µF (CP_Radial_D8.0mm).
+  - The approximate group rows (C-decouple, C-hf, C-10u, C-bulk, TP, R-duart) are replaced by exact reference lists.
+  - Every one of the 279 board footprints is now covered exactly once.
+
 ## Unverified, left as drawn
 
 - SIMM locating holes stay NPTH as drawn (1.63 mm pin-1 end and center, 2.41 mm far end). Plating vs TE 114-1061 is unverified. No extra holes were added.
